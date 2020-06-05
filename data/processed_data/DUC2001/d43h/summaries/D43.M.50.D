@@ -1,0 +1,2 @@
+De Beers Consolidated Mines Ltd., the South African concern that controls 80% of the world's uncut-diamond market, is thriving.
+De Beers's Central Selling Organization is the pipeline between diamond mines and dealers based mainly in Antwerp, Belgium; Bombay, India; Tel Aviv, Israel, and New York.

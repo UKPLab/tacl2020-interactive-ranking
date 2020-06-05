@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (DT The) (NN world)) (PP (IN of) (NP (NNS marathons)))) (VP (VBZ has) (VP (VBN experienced) (NP (VBG aging) (NNS participants)) (, ,) (S (VP (VB speed) (NP (NNS duels) (, ,) (NN stamina) (CC and) (NN determination)))))) (. .)))
+(ROOT (S (NP (PRP It)) (VP (VBZ is) (ADVP (RB also)) (NP (NP (DT a) (NN world)) (PP (IN of) (NP (NN patience) (, ,) (NN victory) (CC and) (NN defeat))))) (. .)))
+(ROOT (S (PP (IN In) (NP (DT the) (JJ American) (NN marathon) (NN arena))) (, ,) (NP (NNS foreigners)) (VP (VBP have) (VP (VBN become) (S (ADJP (JJ dominant))))) (. .)))
+(ROOT (S (S (VP (TO To) (VP (VB satisfy) (NP (NN demand))))) (, ,) (NP (NNS companies)) (ADVP (RB now)) (VP (VBP offer) (NP (DT a) (NN combination) (NN marathon) (CC and) (NN vacation) (NN tour) (NN package))) (. .)))

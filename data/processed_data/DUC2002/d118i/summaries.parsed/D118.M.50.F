@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (JJ Former) (NN senator) (NNP John) (NNP Tower) (POS 's)) (NN bid) (S (VP (TO to) (VP (VB become) (NP (NNP Defense) (NNP Secretary)))))) (VP (VBD failed) (PP (IN on) (NP (DT a) (CD 53-47) (NN vote))) (PP (IN in) (NP (DT the) (NNP Senate)))) (. .)))
+(ROOT (S (NP (NNP Tower)) (VP (VBZ 's) (NP (NP (NN drinking)) (, ,) (NP (VBG womanizing)) (, ,) (CC and) (NP (NP (JJ questionable) (NNS dealings)) (PP (IN with) (NP (NP (NN defense) (NNS contractors)) (VP (VBN led) (PP (TO to) (NP (PRP$ his) (NN defeat))))))))) (. .)))
+(ROOT (S (NP (NP (DT No) (JJ lasting) (NN damage)) (PP (TO to) (NP (NP (NNS relations)) (PP (IN between) (NP (NP (DT the) (NNP Senate)) (CC and) (NP (DT the) (NN president))))))) (VP (VBP are) (VP (VBN expected))) (. .)))
+(ROOT (S (NP (NNP Tower)) (VP (VBD was) (VP (VBN killed) (PP (IN in) (NP (DT a) (CD 1991) (NN plane) (NN crash))))) (. .)))

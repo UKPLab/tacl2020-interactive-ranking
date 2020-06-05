@@ -1,0 +1,13 @@
+America has the Pulitzer Prize for fiction and the National Book Awards but in terms of hoopla and excitement, there's nothing akin to Britain's Booker Prize.
+British publishers each submit three new titles for a total of approximately 100.
+There's a jury of judges, including writers, academics, politicians, editors and critics.
+Each juror reads every book and odds are given with reviews.
+The jurors then meet and select six finalists.
+Literary insiders bet on which book will win the Booker Prize.
+The winner is announced at a banquet in London's Elizabethan Guildhall, the seat the city's Lord Mayor, on the last Thursday in October.
+The authors can win up to $38,000.
+The event also guarantees great prestige and sales for the winner and brings the novel to public attention.
+Critics say the brouhaha distorts the annual fiction industry and the intense media hype does a disservice to other gifted but unlisted authors.
+On one recent occasion following heated deliberation between the judges, the chairman went public with a rousing condemnation of contemporary fiction.
+The Prize, first awarded in 1969, is administered by Book Trust, an educational charity promoting books.
+It is sponsored by Booker, an international food and farming business.

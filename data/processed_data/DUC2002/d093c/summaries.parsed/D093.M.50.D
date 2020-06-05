@@ -1,0 +1,4 @@
+(ROOT (S (NP (NNP Overloading)) (VP (VBZ is) (NP (NP (DT a) (JJ major) (NN contributor)) (PP (PP (TO to) (NP (NN ferry) (CC and) (NN passenger) (NN boat) (NNS accidents))) (, ,) (RB particularly) (PP (IN in) (NP (DT the) (JJ third) (NN world)))))) (. .)))
+(ROOT (S (NP (JJ Many) (NN ferry) (NNS accidents)) (VP (VBD occurred) (SBAR (WHADVP (WRB when)) (S (NP (DT the) (NNS boats)) (VP (VBD were) (VP (VBG carrying) (NP (ADJP (RB far) (JJR more)) (NNS passengers)) (PP (IN than) (ADJP (VBN authorized)))))))) (. .)))
+(ROOT (S (NP (RB Even) (VBN advanced) (NNS countries)) (VP (VBP have) (NP (NN ferry) (NNS accidents))) (. .)))
+(ROOT (S (NP (NNP Nineteen) (NNP U.S.) (NNS sailors)) (VP (VBD were) (VP (VBN lost) (PP (IN in) (NP (DT an) (JJ Israeli) (NN ferry) (NN accident))))) (. .)))

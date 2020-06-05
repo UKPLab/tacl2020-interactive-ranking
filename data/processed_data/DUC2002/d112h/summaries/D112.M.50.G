@@ -1,0 +1,2 @@
+British media entrepreneur Robert Maxwell died in 1991 in the waters off Canary Island while on vacation.
+His sons Kevin and Ian took over the Maxwell business but were soon found guilty along with their father of using illegal financial schemes and looting pension funds to pay off crushing debts.

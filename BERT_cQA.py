@@ -1,0 +1,514 @@
+"""
+Train BERT-based models for each of the three cQA StackExchange topics: Apple, Cooking and Travel. Make predictions
+for the corresponding test sets and save to a CSV file.
+
+Steps for each topic:
+1. Load training data.
+2. Load validation data.
+3. Initialise and train a model. <SKIP>
+4. Sanity check by testing on the training and validation sets. <SKIP>
+5. Load test data.
+6. Compute predictions. <INITIALLY put 1 for the gold and 0 for the other answers>
+7. Write to CSV files.
+
+Each topic stores CSV files under 'BERT_cQA_vec_pred/%s/' % topic.
+For each question in the test dataset, we save a separate CSV file.
+The csv files contain a row per candidate answer + a row at the end for the gold answer (this row will be a
+ duplicate of one of the others.)
+The columns are: 'answer' (the text of the answer), 'prediction' (the score), 'vector' (the embedding of the answer
+taken from our final BERT layer).
+
+"""
+import csv
+import pandas as pd
+import logging
+import os
+import numpy as np
+import torch
+from torch.utils.data import Dataset, DataLoader
+from transformers import BertTokenizer, BertModel, AdamW, get_linear_schedule_with_warmup, DistilBertModel, \
+    DistilBertTokenizer
+from torch import nn, tensor
+
+logging.basicConfig(level=logging.INFO)
+
+
+class BertRanker(nn.Module):
+    def __init__(self):
+        super(BertRanker, self).__init__()
+        self.bert = BertModel.from_pretrained("bert-base-cased")
+        # self.bert = DistilBertModel.from_pretrained("distilbert-base-cased")
+        self.pooling = nn.AdaptiveAvgPool1d(1)
+        # self.out = nn.Linear(self.bert.config.hidden_size, 1)
+        self.W1 = nn.Linear(self.bert.config.hidden_size, 100)
+        self.W2 = nn.Linear(100, 10)
+        self.out = nn.Linear(10, 1)  # only need one output because we just want a rank score
+
+    def forward(self, input_ids1, attention_mask1, input_ids2, attention_mask2):
+        sequence_emb = self.bert(
+            input_ids=input_ids1,
+            attention_mask=attention_mask1
+        )[0]
+        sequence_emb = sequence_emb.transpose(1, 2)
+        pooled_output_1 = self.pooling(sequence_emb)
+        pooled_output_1 = pooled_output_1.transpose(2, 1)
+
+        h1_1 = self.W1(pooled_output_1)
+        h2_1 = self.W2(h1_1)
+        scores_1 = self.out(h2_1)
+
+        sequence_emb = self.bert(
+            input_ids=input_ids2,
+            attention_mask=attention_mask2
+        )[0]
+        sequence_emb = sequence_emb.transpose(1, 2)
+        pooled_output_2 = self.pooling(sequence_emb)
+        pooled_output_2 = pooled_output_2.transpose(2, 1)
+
+        h1_2 = self.W1(pooled_output_2)
+        h2_2 = self.W2(h1_2)
+        scores_2 = self.out(h2_2)
+
+        return scores_1, scores_2
+
+    def forward_single_item(self, input_ids, attention_mask):
+        sequence_emb = self.bert(
+            input_ids=input_ids,
+            attention_mask=attention_mask
+        )[0]
+        sequence_emb = sequence_emb.transpose(1, 2)
+        pooled_output = self.pooling(sequence_emb)
+        pooled_output = pooled_output.transpose(2, 1)
+
+        h1 = self.W1(pooled_output)
+        h2 = self.W2(h1)
+        scores = self.out(h2)
+
+        return scores, torch.squeeze(pooled_output)
+
+
+def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
+    model = model.train()
+
+    losses = []
+    ncorrect = 0
+    count_examples = 0
+
+    for step, batch in enumerate(data_loader):
+        print("Training step %i / %i" % (step, len(data_loader)))
+
+        input_ids1 = batch["input_ids1"].to(device)
+        attention_mask1 = batch["attention_mask1"].to(device)
+
+        input_ids2 = batch["input_ids2"].to(device)
+        attention_mask2 = batch["attention_mask2"].to(device)
+
+        scores_1, scores_2 = model(
+            input_ids1=input_ids1,
+            attention_mask1=attention_mask1,
+            input_ids2=input_ids2,
+            attention_mask2=attention_mask2
+        )
+
+        ncorrect += torch.sum(torch.gt(scores_1, scores_2))  # first score is always meant to be higher
+        count_examples += len(scores_1)
+
+        loss = loss_fn(scores_1, scores_2, batch['targets'])
+        losses.append(loss.item())
+        loss.backward()
+        nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        optimizer.step()
+        scheduler.step()
+        optimizer.zero_grad()
+
+    return ncorrect / float(count_examples), np.mean(losses)
+
+
+def train_BERTcQA(nepochs=1, random_seed=42):
+    # For reproducibility while debugging. TODO: vary this during real experiments.
+    np.random.seed(random_seed)
+    torch.manual_seed(random_seed)
+
+    # Get the device for running the training and prediction
+    if torch.cuda.is_available():
+        device = torch.device("cuda:0")
+        print('Selecting device -- using cuda:0')
+    else:
+        device = torch.device("cpu")
+        print('Selecting device -- using CPU')
+
+    # Create the BERT-based model
+    bertcqa_model = BertRanker()
+    bertcqa_model = bertcqa_model.to(device)
+
+    optimizer = AdamW(bertcqa_model.parameters(), lr=5e-5, correct_bias=False)
+    optimizer.zero_grad()
+    scheduler = get_linear_schedule_with_warmup(
+        optimizer,
+        num_warmup_steps=10,
+        num_training_steps=len(tr_data_loader) * nepochs
+    )
+
+    loss_fn = nn.MarginRankingLoss(margin=0.0).to(device)
+
+    for epoch in range(nepochs):
+        print('Training epoch %i' % epoch)
+        train_acc, train_loss = train_epoch(
+            bertcqa_model,
+            tr_data_loader,
+            loss_fn,
+            optimizer,
+            device,
+            scheduler
+        )
+        print(f'Train loss {train_loss} accuracy {train_acc}')
+
+    return bertcqa_model, device
+
+
+def predict_BERTcQA(model, data_loader, device):
+    scores = np.zeros(0)
+    vectors = np.zeros(0)
+
+    for step, batch in enumerate(data_loader):
+        print("Prediction step  %i / %i" % (step, len(data_loader)))
+
+        input_ids = batch["input_ids"].to(device)
+        attention_mask = batch["attention_mask"].to(device)
+
+        batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
+
+        scores = np.append(scores, batch_scores.flatten().tolist())
+        print(batch_vectors.shape)
+        vectors = np.append(vectors, batch_vectors.tolist())
+
+    return scores, vectors
+
+
+def evaluate_accuracy(model, data_loader, device, qids, goldids):
+    scores, vectors = predict_BERTcQA(model, data_loader, device)
+
+    unique_questions = np.unique(qids)
+
+    ncorrect = 0
+    nqs = 0
+
+    for q_id in unique_questions:
+        qscores = scores[qids == q_id]
+
+        if np.argmax(qscores) == goldids[q_id]:
+            ncorrect += 1
+        nqs += 1
+
+    acc = ncorrect / float(nqs)
+    print("Accuracy = %f" % acc)
+    return acc, scores, vectors
+
+
+# Create the dataset class
+class SEPairwiseDataset(Dataset):
+    def __init__(self, qa_pairs: list):
+        self.tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-cased')
+        # BertTokenizer.from_pretrained('bert-base-cased')
+        self.qa_pairs = qa_pairs
+        self.max_len = 512
+
+    def __len__(self):
+        return len(self.qa_pairs)
+
+    def __getitem__(self, i):
+        # first item in the pair
+        encoding1 = self.tokenizer.encode_plus(
+            self.qa_pairs[i][0],
+            add_special_tokens=True,
+            max_length=self.max_len,
+            return_token_type_ids=False,
+            pad_to_max_length=True,
+            return_attention_mask=True,
+            return_tensors='pt',
+        )
+        # second item in the pair
+        encoding2 = self.tokenizer.encode_plus(
+            self.qa_pairs[i][1],
+            add_special_tokens=True,
+            max_length=self.max_len,
+            return_token_type_ids=False,
+            pad_to_max_length=True,
+            return_attention_mask=True,
+            return_tensors='pt',
+        )
+
+        return {
+            'text1': self.qa_pairs[i][0],
+            'text2': self.qa_pairs[i][1],
+            'input_ids1': encoding1['input_ids'].flatten(),
+            'input_ids2': encoding2['input_ids'].flatten(),
+            'attention_mask1': encoding1['attention_mask'].flatten(),
+            'attention_mask2': encoding2['attention_mask'].flatten(),
+            'targets': tensor(1, dtype=torch.long)
+        }
+
+
+class SESingleDataset(Dataset):
+    def __init__(self, qas: list):
+        self.tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-cased')
+        # BertTokenizer.from_pretrained('bert-base-cased')
+        self.qas = qas
+        self.max_len = 512
+
+    def __len__(self):
+        return len(self.qas)
+
+    def __getitem__(self, i):
+        # first item in the pair
+        encoding1 = self.tokenizer.encode_plus(
+            self.qas[i],
+            add_special_tokens=True,
+            max_length=self.max_len,
+            return_token_type_ids=False,
+            pad_to_max_length=True,
+            return_attention_mask=True,
+            return_tensors='pt',
+        )
+
+        return {
+            'text1': self.qas[i],
+            'input_ids': encoding1['input_ids'].flatten(),
+            'attention_mask': encoding1['attention_mask'].flatten(),
+            'targets': tensor(1, dtype=torch.long)
+        }
+
+
+def construct_pairwise_dataset(dataframe, n_neg_samples=10):
+    """
+    Function for constructing a pairwise training set where each pair consists of a matching QA sequence and a
+    non-matching QA sequence.
+    :param n_neg_samples: Number of pairs to generate for each question by sampling non-matching answers and pairing
+    them with matching answers.
+    :param dataframe:
+    :return:
+    """
+    # Get the positive (matching) qs and as from traindata and put into pairs
+    # Sample a number of negative (non-matching) qs and as from the answers listed for each question in traindata
+
+    qa_pairs = []
+
+    for idx, qid in enumerate(dataframe.index):
+        # Reconstruct the text sequences for the training questions
+        tokids = questions.loc[qid].values[0].split(' ')
+        toks = vocab[np.array(tokids).astype(int)]
+        question = ' '.join(toks)
+
+        # Reconstruct the text sequences for the true answers
+        gold_ans_id = dataframe.loc[qid]["goldid"]
+        tokids = answers.loc[gold_ans_id].values[0].split(' ')
+        toks = vocab[np.array(tokids).astype(int)]
+        gold_ans = ' '.join(toks)
+
+        # Join the sequences. Insert '[SEP]' between the two sequences
+        qa_gold = question + ' [SEP] ' + gold_ans
+
+        # Reconstruct the text sequences for random wrong answers
+        wrong_ans_ids = dataframe.loc[qid]["ansids"]
+        wrong_ans_ids = wrong_ans_ids.split(' ')
+        if len(wrong_ans_ids) < n_neg_samples + 1:
+            continue
+
+        if n_neg_samples == 0:
+            # use all the wrong answers (exclude the gold one that is mixed in)
+            n_wrongs = len(wrong_ans_ids) - 1
+            widx = 0
+        else:
+            # use a specified sample size
+            n_wrongs = n_neg_samples
+
+        qa_wrongs = []
+        while len(qa_wrongs) < n_wrongs:
+            if n_neg_samples == 0:
+                # choose the next wrong answer, skip over the gold answer.
+                wrong_ans_id = wrong_ans_ids[widx]
+                widx += 1
+                if wrong_ans_id == gold_ans_id:
+                    wrong_ans_id = wrong_ans_ids[widx]
+                    widx += 1
+            else:
+                # choose a new negative sample
+                wrong_ans_id = gold_ans_id
+                while wrong_ans_id == gold_ans_id:
+                    wrong_ans_id = wrong_ans_ids[np.random.randint(len(wrong_ans_ids))]
+
+            tokids = answers.loc[wrong_ans_id].values[0].split(' ')
+            toks = vocab[np.array(tokids).astype(int)]
+            wrong_ans = ' '.join(toks)
+
+            qa_wrong = question + ' [SEP] ' + wrong_ans
+            qa_wrongs.append(qa_wrong)
+            qa_pairs.append((qa_gold, qa_wrong))
+
+    data_loader = DataLoader(
+        SEPairwiseDataset(qa_pairs),
+        batch_size=64,
+        num_workers=4
+    )
+
+    data = next(iter(data_loader))
+
+    return qa_pairs, data_loader, data
+
+
+def construct_single_item_dataset(dataframe):
+    """
+    Constructs a dataset where each element is a single QA pair. It contains all the sampled non-matching answers from
+    the given dataframe. A list of question IDs is returned to indicate which items relate to the same question,
+    along with a dict with question IDs as keys and the indexes of the gold answers within the answers for their
+    corresponding questions as items.
+    :param dataframe:
+    :return:
+    """
+    ntrain = dataframe.shape[0] * 100  # this is not quite right as some questions have fewer answers...
+
+    # Get the positive (matching) qs and as from traindata and put into pairs
+    # Sample a number of negative (non-matching) qs and as from the answers listed for each question in traindata
+
+    qas = []
+    qids = []
+    goldids = {}
+
+    for idx, qid in enumerate(dataframe.index):
+        # Reconstruct the text sequences for the training questions
+        tokids = questions.loc[qid].values[0].split(' ')
+        toks = vocab[np.array(tokids).astype(int)]
+        question = ' '.join(toks)
+
+        # Reconstruct the text sequences for random wrong answers
+        ans_ids = dataframe.loc[qid]["ansids"]
+        ans_ids = ans_ids.split(' ')
+        if len(ans_ids) < 2:
+            continue
+
+        for ans_idx, ans_id in enumerate(ans_ids):
+            tokids = answers.loc[ans_id].values[0].split(' ')
+            toks = vocab[np.array(tokids).astype(int)]
+            wrong_ans = ' '.join(toks)
+
+            qa_wrong = question + ' [SEP] ' + wrong_ans
+            qas.append(qa_wrong)
+            qids.append(qid)
+
+            if ans_id == dataframe.loc[qid]["goldid"]:
+                goldids[qid] = ans_idx
+
+    data_loader = DataLoader(
+        SESingleDataset(qas),
+        batch_size=128,
+        num_workers=4
+    )
+
+    data = next(iter(data_loader))
+
+    return qas, qids, goldids, data_loader, data
+
+
+if __name__ == "__main__":
+
+    # Create the output dir
+    outputdir = './BERT_cQA_vec_pred'
+    if not os.path.exists(outputdir):
+        os.mkdir(outputdir)
+
+    # Our chosen topics
+    topics = ['apple', 'cooking', 'travel']
+
+    for topic in topics:
+        print('Loading the training data for %s' % topic)
+
+        # Data directory:
+        datadir = './coala_data/%s.stackexchange.com' % topic
+
+        # answers.tsv: each row corresponds to an answer; first column is answer ID; rows contain
+        # the space-separated IDs of the tokens in the answers.
+        # questions.tsv: as above but first column is question ID, rows contain space-separated token IDs of questions.
+        # train.tsv, test.tsv and valid.tsv contain the questions & candidates in each set. First column is question ID,
+        # second column is gold answer ID, third column is a space-separated list of candidate answer IDs.
+        # vocab.tsv is needed to retrieve the text of the questions and answers from the token IDs. First col is ID and
+        # second col is the token.
+
+        # load the vocab
+        vocab = pd.read_csv(os.path.join(datadir, 'vocab.tsv'), sep='\t', quoting=csv.QUOTE_NONE, header=None,
+                            index_col=0, names=['tokens'], dtype=str, keep_default_na=False)["tokens"].values
+
+        # load the questions
+        questions = pd.read_csv(os.path.join(datadir, 'questions.tsv'), sep='\t', header=None, index_col=0)
+
+        # load the answers
+        answers = pd.read_csv(os.path.join(datadir, 'answers.tsv'), sep='\t', header=None, index_col=0)
+
+        # Load the training set
+        traindata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
+                                index_col=0, nrows=2)
+        tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=2)
+
+        # Load the validation set
+        # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
+        #                              names=['goldid', 'ansids'], index_col=0, nrows=2)
+        # va_qas, va_qids, va_goldids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
+
+        # Load the test set
+        testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
+                               index_col=0, nrows=3)
+        te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
+
+        # Train the model ----------------------------------------------------------------------------------------------
+        bertcqa_model, device = train_BERTcQA(1)
+
+        # Compute performance on validation set ------------------------------------------------------------------------
+        # print("Evaluating on validation set:")
+        # evaluate_accuracy(bertcqa_model, va_data_loader, device, va_qids, va_goldids)
+
+        # Compute performance on test set ------------------------------------------------------------------------------
+        print("Evaluating on test set:")
+        _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device, te_qids, te_goldids)
+
+        # Output predictions in the right format for the GPPL experiments ----------------------------------------------
+        # Save predictions for the test data
+        fname = os.path.join(outputdir, '%s.tsv' % topic)
+
+        output_df = pd.DataFrame(columns=['qid', 'answer', 'prediction', 'vector'])
+
+        for te_idx, te_qid in enumerate(testdata.index):
+            if np.mod(te_idx, 100) == 0:
+                print('Processing question %i' % te_idx)
+
+            # The columns are: 'answer', 'prediction', 'vector'.
+            goldid = testdata['goldid'].loc[te_qid].split(' ')
+            ansids = np.unique(testdata['ansids'].loc[te_qid].split(' ')).tolist()
+            qscores = te_scores[te_qids == te_qid]
+            qvectors = te_vectors[te_qids == te_qid]
+
+            # only use the first gold answer if there are multiple. Put gold answer at the end of the list of answers.
+            ansids.append(goldid[0])
+            qscores = np.append(qscores, te_goldids[te_qid])
+            qvectors = np.append(qvectors, te_goldids[te_qid])
+
+            qids = [te_qid] * len(ansids)
+
+            if len(ansids) != 101:
+                print("Unexpected number of answers for q %i = %i" % (te_idx, len(ansids)))
+                if len(ansids) <= 2:
+                    # This is useless, don't write it
+                    continue
+
+            answer_texts = []
+            for ans_id in ansids:
+                ans_tokids = answers.loc[ans_id].values[0].split(' ')
+                ans_toks = vocab[np.array(ans_tokids).astype(int)]
+
+                answer = ' '.join(ans_toks)
+                answer_texts.append(answer)
+
+            output_df = output_df.append(
+                {'qid': qids, 'answer': answer_texts, 'prediction': qscores, 'vector': qvectors},
+                ignore_index=True
+            )
+
+        output_df.to_csv(fname, sep='\t')

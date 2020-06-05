@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (NNP John) (NNP Lennon) (POS 's)) (NN spirit)) (VP (VBZ is) (ADVP (RB still)) (ADJP (JJ alive) (PP (TO to) (S (VP (VBG adoring) (NP (NNS fans)) (ADVP (RB worldwide)) (PP (NP (CD ten) (NNS years)) (IN after) (NP (PRP$ his) (NN death)))))))) (. .)))
+(ROOT (S (NP (PRP$ His) (JJ 50th) (NN birthday)) (VP (VBD was) (VP (VBN observed) (PP (IN with) (NP (NP (DT a) (JJ global) (NN celebration)) (PP (IN of) (NP (PRP$ his) (NN peace) (NN anthem) (`` ``) (FW Imagine) ('' ''))))))) (. .)))
+(ROOT (S (NP (NNP Lennon)) (VP (VP (VBD acknowledged) (NP (NP (NN drug) (NN use)) (CC and) (NP (JJ sexual) (NN promiscuity)))) (, ,) (CC but) (VP (VBD said) (SBAR (S (NP (DT the) (JJS worst)) (VP (VBD was) (PP (IN behind) (NP (PRP him)))))))) (. .)))
+(ROOT (S (NP (NNP Lennon)) (VP (VBD was) (VP (VBN killed) (PP (IN by) (NP (NP (DT a) (JJ deranged) (NN fan)) (PP (IN in) (NP (NNP December) (CD 1980))))))) (. .)))

@@ -1,0 +1,15 @@
+The death toll from last week's floods reached 21 today when a body was pulled from the Ohio River.
+Hope is fading that the 14 people still listed as missing are alive.
+Violent thunderstorms swept through central and eastern Ohio Thursday night.
+The Wegee and Pipe creeks outside the Ohio River village Shadyside overflowed when about 4 inches of rain fell in about an hour.
+Authorities said dams formed by debris at bridges broke under the water pressure, creating a "wall of water."
+Homes were knocked off their foundations and a bar in Shadyside was swept away.
+In Licking and Jefferson counties, about 200 people were evacuated from their homes.
+Many residents recounted stories of narrow escapes and lost property.
+Few people carried flood insurance, and homeowners' insurance will not cover the damage.
+The Federal Emergency Management Agency will open an office in Shadyside to accept applications for aid.
+The National Weather Service said a flood watch, but not a warning, was issued before the disaster.
+Gov.
+Richard Celeste declared a state of emergency.
+The Shadyside Fire Department established a command center at the Jefferson Elementary School to coordinate rescue efforts.
+Authorities said dog teams assisted in the search for victims.

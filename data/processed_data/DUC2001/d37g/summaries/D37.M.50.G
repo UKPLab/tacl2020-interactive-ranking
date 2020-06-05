@@ -1,0 +1,1 @@
+Between 1979 and 1994, a number of notable political leaders and government officials were killed by assassins: the President of South Korea, one Colombian and two Mexican presidential candidates, a Philippine police chief, an Egyptian government official, a former prime minister of India, a Jordanian diplomat, and a high-level PLO commander.

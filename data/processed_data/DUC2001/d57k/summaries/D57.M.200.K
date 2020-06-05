@@ -1,0 +1,12 @@
+The year 1988 had the highest earthquake toll in 12 years.
+The Armenian quake killed 25,000 people, while others killed 2,000 more.
+The U.S. Geological Survey reported 61 significant quakes worldwide in 1988.
+In 1988 that agency also predicted that the bay area in California was likely to have an earthquake, based on time elapsed since the 1906 occurrence.
+On Oct. 17, 1989, Santa Cruz experienced a 6.9 tremblor, causing widespread damage.
+On the 28th of that month Guadacanal Island in the Solomons experienced a quake measuring 7.2 on the Richter.
+No injuries or damage were reported, but this was the strongest reported in five months.
+The world's most seismic country is Chile, with a coastline of 2,270 miles along the "ring of fire."
+In 1985 a 7.1 tremblor occurred, and in 1960 a 9.5 earthquake destroyed the city of Valparaiso.
+In the United States, Iben Browning has predicted an eruption of the New Madrid, Tennessee fault, which experienced major earthquakes in 1811 and 1812.
+The U.S. Geological Survey disagrees, saying that forecasting earthquakes is difficult if not impossible.
+Japan, however, supports an early warning center at a cost of 2.5 million dollars annually.

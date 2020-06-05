@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (NP (NNP Japan) (POS 's)) (NNP Emperor) (NNP Hirohito)) (, ,) (VP (VBN renamed) (NP (NNP Showa)) (PP (IN after) (NP (PRP$ his) (NNP Jan.) (CD 7) (NN death)))) (, ,)) (VP (VBD reigned) (PP (IN for) (NP (CD 62) (NNS years)))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (MD will) (VP (VB be) (VP (VBN remembered) (PP (IN for) (S (VP (VBG surrendering) (PP (IN in) (NP (NNP WW) (NNP II))))))))) (. .)))
+(ROOT (S (SBAR (IN Though) (S (VP (VBN mourned) (PP (IN by) (NP (JJ many)))))) (, ,) (NP (NNPS Asians)) (ADVP (RB often)) (VP (VBD viewed) (NP (PRP him)) (PP (IN as) (NP (NP (DT a) (NN symbol)) (PP (IN of) (NP (JJ Japanese) (NN aggression)))))) (. .)))
+(ROOT (S (NP (DT A) (NNP BBC) (NN documentary)) (VP (VBZ claims) (SBAR (S (NP (NNP Truman)) (VP (VBD helped) (S (NP (NNP Hirohito)) (VP (VB avoid) (NP (DT a) (NN war) (NNS crimes) (NN trial)))))))) (. .)))

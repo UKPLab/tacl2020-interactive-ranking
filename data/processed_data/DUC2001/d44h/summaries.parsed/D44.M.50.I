@@ -1,0 +1,4 @@
+(ROOT (S (NP (EX There)) (VP (VBD was) (NP (NP (DT a) (VBN heated) (NN battle)) (PP (IN before) (NP (NP (DT the) (CD 1993) (NN ratification)) (PP (IN of) (NP (DT the) (NNP North) (NNP American) (NNP Free) (NNP Trade) (NNP Agreement))))) (S (VP (TO to) (VP (VB establish) (NP (JJ free) (NN trade)) (PP (IN among) (NP (DT the) (NNP United) (NNP States) (, ,) (NNP Canada) (CC and) (NNP Mexico)))))))) (. .)))
+(ROOT (S (NP (NNS Supporters)) (VP (VBD were) (NP (NP (DT the) (NN administration)) (, ,) (NP (NN business) (NNS leaders)) (CC and) (NP (DT the) (NN republican) (NN establishment)))) (. .)))
+(ROOT (S (NP (NNS Opponents)) (VP (VBD included) (NP (NP (NN labor)) (CC and) (NP (JJ many) (NNS democrats) (, ,) (NNS Hispanics) (CC and) (NNS blacks)))) (. .)))
+(ROOT (S (ADVP (RB Afterward)) (, ,) (NP (NNP Caribbean) (NNS nations)) (VP (VBD awaited) (NP (PRP$ its) (NN impact))) (. .)))

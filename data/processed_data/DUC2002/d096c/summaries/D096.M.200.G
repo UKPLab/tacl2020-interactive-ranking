@@ -1,0 +1,12 @@
+The San Francisco 49ers won the Super Bowl in 1989 and 1990 marking the fourth win in four tries.
+Super Bowl records were set by the 49ers quarterback Joe Montana and wide receiver Jerry Rice.
+President Bush congratulated the 1989 victors at an East Room reception.
+Super Bowl XXIV (1990) was the most watched TV event of the week although it was the lowest-rated Super Bowl in 21 years.
+Anheuser Busch Cos., Inc. and Miller Brewing Co., taking advantage of weeks of hype, staged mock football games in TV commercials using animated beer bottles.
+Super Bowl XXV will kickoff in Tampa Stadium in 1991.
+It will feature an extravaganza with marching bands, a street festival and floats.
+Two black men were named to head a community relations committee in order to resolve a local racial dispute.
+Several minority-owned business won lucrative contracts with the NFL.
+New tax lows place higher restrictions on what can be claimed as business-entertainment expense.
+For Super Bowl events, this means only 80% of the face value of tickets can be deducted.
+For Super Bowl XXVII in 1993, the Rose Bowl is being offered rent free to the NFL, along with all income from concessions and novelty sales.

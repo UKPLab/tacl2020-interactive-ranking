@@ -1,0 +1,8 @@
+(ROOT (S (NP (NP (NNP South) (NNP Africa) (NNP Truth)) (CC and) (NP (NP (NP (NNP Reconciliation) (NNP Commission) (POS 's)) (JJ 3,500-page) (NN report)) (PP (IN on) (NP (JJ apartheid-era) (NNS atrocities))))) (VP (VBD was) (VP (VBN issued) (PRT (RP on)) (NP (NNP Oct) (CD 30)))) (. .)))
+(ROOT (S (NP (DT This) (NN report)) (VP (VBD was) (VP (VBN intended) (S (VP (TO to) (VP (VP (VB clear) (NP (DT the) (NN air))) (, ,) (VP (VB grant) (NP (NN amnesty)) (PP (TO to) (NP (NP (DT those)) (SBAR (WHNP (WP who)) (S (VP (VBD confessed))))))) (, ,) (CC and) (VP (VB begin) (NP (DT the) (NN healing) (NN process)))))))) (. .)))
+(ROOT (S (NP (NP (DT Those)) (VP (VBN named) (PP (IN for) (NP (NN prosecution))))) (VP (VBD were) (VP (VBN warned) (PP (IN before) (NP (DT the) (NN release))))) (. .)))
+(ROOT (S (NP (NP (JJ Ex-prime) (NN minister) (NNP de) (NNP Klerk) (POS 's)) (NN name)) (VP (VBD was) (VP (VBN removed))) (. .)))
+(ROOT (S (NP (DT The) (VBG ruling) (NNP African) (NNP National) (NNP Congress)) (VP (VBD remained)) (. .)))
+(ROOT (S (SBAR (IN While) (S (NP (DT the) (JJ white) (NN government)) (VP (VBD bore) (NP (NP (DT the) (NN brunt)) (PP (IN of) (NP (DT the) (NN blame))))))) (, ,) (NP (JJ several) (JJ black) (NNS movements)) (VP (VBD were) (VP (VBN included))) (. .)))
+(ROOT (S (PP (IN After) (NP (DT the) (NN release))) (NP (DT many)) (VP (VBD talked) (PP (IN of) (NP (NP (DT a) (JJ new) (NN amnesty) (NN period)) (CC or) (NP (DT a) (JJ limited) (NN time)))) (S (VP (TO to) (VP (VB prosecute))))) (. .)))
+(ROOT (S (S (NP (NNS Prosecutions)) (VP (MD could) (VP (VB take) (NP (CD 6) (NNS years))))) (: ;) (S (VP (VP (VBG diverting) (NP (NNS judges))) (, ,) (VP (VBG threatening) (NP (NNS elections))) (, ,) (CC and) (VP (VBG slowing) (NP (NN recovery))))) (. .)))

@@ -1,0 +1,6 @@
+(ROOT (S (NP (NNP Pinatubo)) (VP (VBD began) (S (VP (VBG erupting) (ADVP (NP (RB about) (CD two) (NNS weeks)) (RB ago))))) (. .)))
+(ROOT (S (NP (NNS Explosions)) (VP (VBP are) (ADJP (RB increasingly) (JJ severe))) (. .)))
+(ROOT (S (NP (NNP U.S.) (NNS officials)) (VP (VBD denied) (NP (NP (DT the) (NN possibility)) (PP (IN of) (NP (JJ radioactive) (NN contamination)))) (SBAR (IN if) (S (NP (JJ volcanic) (NN debris)) (VP (VBZ hits) (SBAR (S (NP (DT the) (NNS weapons)) (VP (VBZ depots) (PP (IN at) (NP (NP (NNP Clark) (NNP AFB)) (, ,) (VP (VBN located) (ADVP (NP (CD 10) (NNS miles)) (RB away)))))))))))) (. .)))
+(ROOT (S (NP (NNP Clark)) (VP (VBD was) (VP (VBN evacuated))) (. .)))
+(ROOT (S (NP (NP (CD Four) (NN dead)) (CC and) (NP (CD 24) (NNS injured))) (VP (VBP are) (VP (VBN attributed) (PP (TO to) (NP (DT the) (NNS eruptions))))) (. .)))
+(ROOT (S (NP (QP (RB About) (CD 84,000))) (VP (VBP have) (VP (VBN been) (VP (VBN evacuated)))) (. .)))
