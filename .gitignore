@@ -1,3 +1,9 @@
+data/coala_ref_vals*
+data/coala_cache*
+data/summary_vectors*
+GPPRL-DocSum.zip
+summariser/rouge/ROUGE-RELEASE-1.5.5/sample-output/*
+summariser/rouge/ROUGE-RELEASE-1.5.5/docs
 transformers
 *.old
 data/bert_ref_vals*
