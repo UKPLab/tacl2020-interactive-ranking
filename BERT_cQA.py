@@ -131,8 +131,12 @@ def train_BERTcQA(nepochs=1, random_seed=42):
 
     # Get the device for running the training and prediction
     if torch.cuda.is_available():
-        device = torch.device("cuda:0")
-        print('Selecting device -- using cuda:0')
+        device = torch.device("cuda")
+        print('Selecting device -- using cuda')
+        print('Selected device: ')
+        print(device)
+        print('Current cuda device:')
+        print(torch.cuda.current_device())
     else:
         device = torch.device("cpu")
         print('Selecting device -- using CPU')
@@ -245,7 +249,7 @@ class SEPairwiseDataset(Dataset):
             'input_ids2': encoding2['input_ids'].flatten(),
             'attention_mask1': encoding1['attention_mask'].flatten(),
             'attention_mask2': encoding2['attention_mask'].flatten(),
-            'targets': tensor(1, dtype=torch.long)
+            'targets': tensor(1, dtype=torch.float)
         }
 
 
