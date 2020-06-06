@@ -196,9 +196,9 @@ def predict_BERTcQA(model, data_loader, device):
 
         batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
 
-        scores = np.append(scores, batch_scores.detach().numpy().flatten())
+        scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
         print(batch_vectors.shape)
-        vectors = np.append(vectors, batch_vectors.numpy())
+        vectors = np.append(vectors, batch_vectors.cpu().numpy())
 
     return scores, vectors
 
