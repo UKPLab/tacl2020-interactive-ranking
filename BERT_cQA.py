@@ -404,7 +404,7 @@ def construct_single_item_dataset(dataframe):
 
     data_loader = DataLoader(
         SESingleDataset(qas),
-        batch_size=128,
+        batch_size=64,
         num_workers=4
     )
 
