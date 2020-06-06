@@ -110,11 +110,11 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
             attention_mask2=attention_mask2
         )
 
-        ncorrect += torch.sum(torch.gt(scores_1, scores_2))  # first score is always meant to be higher
+        ncorrect += float(torch.sum(torch.gt(scores_1, scores_2)))  # first score is always meant to be higher
         count_examples += len(scores_1)
 
         loss = loss_fn(scores_1, scores_2, batch['targets'].to(device))
-        losses.append(loss.item())
+        losses.append(float(loss.item()))
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
@@ -142,10 +142,10 @@ def train_BERTcQA(nepochs=1, random_seed=42):
         print('Selecting device -- using CPU')
 
     # Create the BERT-based model
-    bertcqa_model = BertRanker()
-    bertcqa_model = bertcqa_model.to(device)
+    model = BertRanker()
+    model = model.to(device)
 
-    optimizer = AdamW(bertcqa_model.parameters(), lr=5e-5, correct_bias=False)
+    optimizer = AdamW(model.parameters(), lr=5e-5, correct_bias=False)
     optimizer.zero_grad()
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
@@ -158,7 +158,7 @@ def train_BERTcQA(nepochs=1, random_seed=42):
     for epoch in range(nepochs):
         print('Training epoch %i' % epoch)
         train_acc, train_loss = train_epoch(
-            bertcqa_model,
+            model,
             tr_data_loader,
             loss_fn,
             optimizer,
@@ -167,7 +167,7 @@ def train_BERTcQA(nepochs=1, random_seed=42):
         )
         print(f'Train loss {train_loss} accuracy {train_acc}')
 
-    return bertcqa_model, device
+    return model, device
 
 
 def predict_BERTcQA(model, data_loader, device):
