@@ -463,8 +463,8 @@ if __name__ == "__main__":
 
         # Load the training set
         traindata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                                index_col=0, nrows=2)
-        tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=2)
+                                index_col=0)
+        tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=0)
 
         # Load the validation set
         # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
@@ -473,11 +473,11 @@ if __name__ == "__main__":
 
         # Load the test set
         testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                               index_col=0, nrows=3)
+                               index_col=0)
         te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
         # Train the model ----------------------------------------------------------------------------------------------
-        bertcqa_model, device = train_BERTcQA(1)
+        bertcqa_model, device = train_BERTcQA(3)
 
         # Compute performance on validation set ------------------------------------------------------------------------
         # print("Evaluating on validation set:")
