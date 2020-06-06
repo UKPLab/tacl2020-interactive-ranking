@@ -1,3 +1,6 @@
+*output.log
+*err.log
+*out.log
 data/coala_ref_vals*
 data/coala_cache*
 data/summary_vectors*
