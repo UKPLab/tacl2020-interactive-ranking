@@ -113,7 +113,7 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
         ncorrect += torch.sum(torch.gt(scores_1, scores_2))  # first score is always meant to be higher
         count_examples += len(scores_1)
 
-        loss = loss_fn(scores_1, scores_2, batch['targets'])
+        loss = loss_fn(scores_1, scores_2, batch['targets'].to(device))
         losses.append(loss.item())
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
