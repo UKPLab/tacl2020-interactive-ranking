@@ -36,20 +36,20 @@ logging.basicConfig(level=logging.INFO)
 class BertRanker(nn.Module):
     def __init__(self):
         super(BertRanker, self).__init__()
-        self.bert = BertModel.from_pretrained("bert-base-cased")
+        bert = BertModel.from_pretrained("bert-base-cased")
         # self.bert = DistilBertModel.from_pretrained("distilbert-base-cased")
-        self.bert = nn.DataParallel(self.bert)
+        self.bert = nn.DataParallel(bert)
 
         self.pooling = nn.AdaptiveAvgPool1d(1)
         self.pooling = nn.DataParallel(self.pooling)
 
-        # self.out = nn.Linear(self.bert.config.hidden_size, 1)
-        self.W1 = nn.Linear(self.bert.config.hidden_size, 100)
+        # self.out = nn.Linear(bert.config.hidden_size, 1)
+        self.W1 = nn.Linear(bert.config.hidden_size, 100)
         self.W1 = nn.DataParallel(self.W1)
 
         self.W2 = nn.Linear(100, 10)
         self.W2 = nn.DataParallel(self.W2)
-        
+
         self.out = nn.Linear(10, 1)  # only need one output because we just want a rank score
 
     def forward(self, input_ids1, attention_mask1, input_ids2, attention_mask2):
