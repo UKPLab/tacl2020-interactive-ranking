@@ -121,6 +121,12 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
         scheduler.step()
         optimizer.zero_grad()
 
+        del input_ids1
+        del input_ids2
+        del attention_mask1
+        del attention_mask2
+        torch.cuda.empty_cache()
+
     return ncorrect / float(count_examples), np.mean(losses)
 
 
@@ -351,7 +357,7 @@ def construct_pairwise_dataset(dataframe, n_neg_samples=10):
 
     data_loader = DataLoader(
         SEPairwiseDataset(qa_pairs),
-        batch_size=32,
+        batch_size=16,
         num_workers=8
     )
 
@@ -404,7 +410,7 @@ def construct_single_item_dataset(dataframe):
 
     data_loader = DataLoader(
         SESingleDataset(qas),
-        batch_size=32,
+        batch_size=16,
         num_workers=8
     )
 
