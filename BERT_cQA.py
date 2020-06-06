@@ -351,8 +351,8 @@ def construct_pairwise_dataset(dataframe, n_neg_samples=10):
 
     data_loader = DataLoader(
         SEPairwiseDataset(qa_pairs),
-        batch_size=64,
-        num_workers=4
+        batch_size=32,
+        num_workers=8
     )
 
     data = next(iter(data_loader))
@@ -404,8 +404,8 @@ def construct_single_item_dataset(dataframe):
 
     data_loader = DataLoader(
         SESingleDataset(qas),
-        batch_size=64,
-        num_workers=4
+        batch_size=32,
+        num_workers=8
     )
 
     data = next(iter(data_loader))
