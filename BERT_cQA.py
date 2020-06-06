@@ -92,7 +92,7 @@ class BertRanker(nn.Module):
         h2 = self.W2(h1)
         scores = self.out(h2)
 
-        return scores, torch.squeeze(pooled_output)
+        return scores, torch.squeeze(pooled_output).detach()
 
 
 def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
@@ -196,9 +196,9 @@ def predict_BERTcQA(model, data_loader, device):
 
         batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
 
-        scores = np.append(scores, batch_scores.flatten().tolist())
+        scores = np.append(scores, batch_scores.detach().numpy().flatten())
         print(batch_vectors.shape)
-        vectors = np.append(vectors, batch_vectors.tolist())
+        vectors = np.append(vectors, batch_vectors.numpy())
 
     return scores, vectors
 
