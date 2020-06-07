@@ -132,7 +132,8 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
     return ncorrect / float(count_examples), np.mean(losses)
 
 
-def train_BERTcQA(nepochs=1, random_seed=42):
+def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl'):
+
     # For reproducibility while debugging. TODO: vary this during real experiments.
     np.random.seed(random_seed)
     torch.manual_seed(random_seed)
@@ -152,6 +153,11 @@ def train_BERTcQA(nepochs=1, random_seed=42):
     # Create the BERT-based model
     model = BertRanker()
     model = model.to(device)
+
+    if os.path.exists(save_path):
+        print('Found a previously-saved model... reloading')
+        model.load_state_dict(torch.load(save_path))
+        return model, device
 
     optimizer = AdamW(model.parameters(), lr=5e-5, correct_bias=False)
     optimizer.zero_grad()
@@ -175,12 +181,17 @@ def train_BERTcQA(nepochs=1, random_seed=42):
         )
         print(f'Train loss {train_loss} accuracy {train_acc}')
 
+        print('Saving trained model')
+        torch.save(model.state_dict(), save_path)
+
     return model, device
 
 
 def predict_BERTcQA(model, data_loader, device):
     scores = np.zeros(0)
     vectors = np.zeros(0)
+
+    model.eval()
 
     for step, batch in enumerate(data_loader):
         print("Prediction step  %i / %i" % (step, len(data_loader)))
