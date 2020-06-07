@@ -39,10 +39,17 @@ class BertRanker(nn.Module):
         bert = BertModel.from_pretrained("bert-base-cased")
         # self.bert = DistilBertModel.from_pretrained("distilbert-base-cased")
         self.bert = nn.DataParallel(bert)
+
         self.pooling = nn.AdaptiveAvgPool1d(1)
+        self.pooling = nn.DataParallel(self.pooling)
+
         # self.out = nn.Linear(bert.config.hidden_size, 1)
         self.W1 = nn.Linear(bert.config.hidden_size, 100)
+        self.W1 = nn.DataParallel(self.W1)
+
         self.W2 = nn.Linear(100, 10)
+        self.W2 = nn.DataParallel(self.W2)
+
         self.out = nn.Linear(10, 1)  # only need one output because we just want a rank score
 
     def forward(self, input_ids1, attention_mask1, input_ids2, attention_mask2):
@@ -144,7 +151,6 @@ def train_BERTcQA(nepochs=1, random_seed=42):
 
     # Create the BERT-based model
     model = BertRanker()
-    model = nn.DataParallel(model)
     model = model.to(device)
 
     optimizer = AdamW(model.parameters(), lr=5e-5, correct_bias=False)
