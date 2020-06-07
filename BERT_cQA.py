@@ -129,12 +129,6 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
         scheduler.step()
         optimizer.zero_grad()
 
-        del input_ids1
-        del input_ids2
-        del attention_mask1
-        del attention_mask2
-        torch.cuda.empty_cache()
-
     return ncorrect / float(count_examples), np.mean(losses)
 
 
