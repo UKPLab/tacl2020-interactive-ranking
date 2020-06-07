@@ -156,8 +156,12 @@ def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl
 
     if os.path.exists(save_path):
         print('Found a previously-saved model... reloading')
-        model.load_state_dict(torch.load(save_path))
-        return model, device
+        model.load_state_dict(torch.load(save_path+'.pkl'))
+        with open(save_path+'_num_epochs.txt', 'r') as fh:
+            epochs_completed = int(fh.read())
+            print('Number of epochs already completed: %i' % epochs_completed)
+    else:
+        epochs_completed = 0
 
     optimizer = AdamW(model.parameters(), lr=5e-5, correct_bias=False)
     optimizer.zero_grad()
@@ -169,7 +173,7 @@ def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl
 
     loss_fn = nn.MarginRankingLoss(margin=0.0).to(device)
 
-    for epoch in range(nepochs):
+    for epoch in range(epochs_completed, nepochs):
         print('Training epoch %i' % epoch)
         train_acc, train_loss = train_epoch(
             model,
@@ -182,7 +186,10 @@ def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl
         print(f'Train loss {train_loss} accuracy {train_acc}')
 
         print('Saving trained model')
-        torch.save(model.state_dict(), save_path)
+        torch.save(model.state_dict(), save_path+'.pkl')
+        # write the number of epochs to file. If we need to restart training, we don't need to repeat all epochs.
+        with open(save_path+'_num_epochs.txt', 'w') as fh:
+            fh.write(str(epoch))
 
     return model, device
 
