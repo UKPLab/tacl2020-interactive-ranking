@@ -28,7 +28,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from transformers import BertTokenizer, BertModel, AdamW, get_linear_schedule_with_warmup, DistilBertModel, \
     DistilBertTokenizer
-from torch import nn, tensor
+from torch import nn, tensor, dtype
 
 logging.basicConfig(level=logging.INFO)
 
@@ -482,7 +482,7 @@ if __name__ == "__main__":
         te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
         # Train the model ----------------------------------------------------------------------------------------------
-        bertcqa_model, device = train_BERTcQA(3)
+        bertcqa_model, device = train_BERTcQA(3, 42, 'BERT_cQA_vec_pred/model_params_%s.pkl' % topic)
 
         # Compute performance on validation set ------------------------------------------------------------------------
         # print("Evaluating on validation set:")
