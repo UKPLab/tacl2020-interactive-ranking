@@ -28,3 +28,9 @@ python -u BERT_cQA.py
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
 # Display server status: qstat -B <server>
 # Display job information: qstat <jobID>
+
+# To monitor job progress:
+# qstat -f | grep exec_host
+# Find the node where this job is running.
+# ssh to the node.
+# tail /var/spool/pbs/spool/<job ID>.bp1.OU
