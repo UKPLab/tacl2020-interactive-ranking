@@ -144,7 +144,7 @@ if __name__ == '__main__':
                         else:
                             # the rewards we need don't exist, so learn them now
                             print('no learnt reward available. start learnign now')
-                            summary_vectors = load_summary_vectors(summaries, topic, root_dir, docs)
+                            summary_vectors = load_summary_vectors(summaries, dataset, topic, root_dir, docs)
 
                             if n_debug:
                                 heuristic_list = heuristic_list[:n_debug]

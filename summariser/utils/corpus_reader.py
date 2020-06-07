@@ -67,6 +67,10 @@ class CorpusReader(object):
 
         dir_listing = sorted(os.listdir(corpus_base_dir))
         for ctopic in dir_listing:
+
+            if ctopic[0] == '.':
+                continue # skip over some system files that shouldn't really be there! E.g., .DS_store.
+
             docs_path = path.join(corpus_base_dir, ctopic, docs_directory_name)
             summary_path = path.join(corpus_base_dir, ctopic, models_directory_name)
 

@@ -2,6 +2,8 @@ import datetime
 import json
 import os
 import sys
+from datetime import datetime
+
 import pandas as pd
 
 from summariser.oracle.lno_ref_values import SimulatedUser
@@ -27,10 +29,6 @@ from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewar
 from random import seed
 import numpy as np
 
-# possible future work: plot the results at each AL iteration (or at 10, 50, 100) to see if we really need so many when the prior is given.
-#TODO: reduce the number of interactions to 10 to make the experiments quicker -- how does it affect results? --> so far
-# not good. So try the next step...
-#TODO: test with perfect oracle
 
 def process_cmd_line_args(args):
 
@@ -253,9 +251,9 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
 
     return learnt_rewards
 
-def load_summary_vectors(summaries, topic, root_dir, docs):
+def load_summary_vectors(summaries, dataset, topic, root_dir, docs):
 
-    summary_vecs_cache_file = root_dir + '/data/summary_vectors_topic_%s.csv' % topic
+    summary_vecs_cache_file = root_dir + '/data/summary_vectors_%s_%s.csv' % (dataset, topic)
     if os.path.exists(summary_vecs_cache_file):
         print(
             'Warning: reloading feature vectors for summaries from cache -- ensure that the loading order has not changed.')
@@ -323,6 +321,7 @@ def make_output_dir(root_dir, output_folder_name, rep):
 
     return output_path
 
+
 if __name__ == '__main__':
 
     '''
@@ -345,11 +344,11 @@ if __name__ == '__main__':
     '''
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-    seeds, n_debug, n_threads, dataset = process_cmd_line_args(sys.argv)
+        seeds, n_debug, n_threads, dataset = process_cmd_line_args(sys.argv)
 
-    ### parameters
+    # parameters
     if dataset is None:
-        dataset = 'DUC2001' #'DUC2001'  # DUC2001, DUC2002, 'DUC2004'#
+        dataset = 'DUC2001'  # 'DUC2001'  # DUC2001, DUC2002, 'DUC2004'#
 
     max_topics = -1  # set to greater than zero to use a subset of topics for debugging
     folders = []
@@ -382,36 +381,37 @@ if __name__ == '__main__':
             seed(seeds[rep])
             np.random.seed(seeds[rep])
 
-            ### read documents and ref. summaries
+            # read documents and ref. summaries
             reader = CorpusReader(PROCESSED_PATH)
             data = reader.get_data(dataset)
 
-            ### store all results
+            # store all results
             all_result_dic = {}
             topic_cnt = 0
 
-            for topic,docs,models in data:
+            for topic, docs, models in data:
 
                 print('\n=====(repeat {}) TOPIC {}, QUERIER {}, INTER ROUND {}====='.format(rep, topic,
                                                                   querier_type.upper(), n_inter_rounds))
 
                 topic_cnt += 1
-                if max_topics > 0 and topic_cnt > max_topics or (n_debug and topic_cnt > 1):
+                if 0 < max_topics < topic_cnt or (n_debug and topic_cnt > 1):
                     continue
 
                 summaries, ref_values_dic, heuristic_list = readSampleSummaries(dataset, topic)
                 print('num of summaries read: {}'.format(len(summaries)))
 
-                summary_vectors = load_summary_vectors(summaries, topic, root_dir, docs)
+                summary_vectors = load_summary_vectors(summaries, datetime, dataset, topic, root_dir, docs)
 
                 if n_debug:
                     heuristic_list = heuristic_list[:n_debug]
                     summary_vectors = summary_vectors[:n_debug]
 
                 for model in models:
-                    learnt_rewards = learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str,
-                                summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
-                                output_path, n_threads)
+                    learnt_rewards = learn_model(
+                        topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors,
+                        heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug, output_path, n_threads
+                    )
                     # best summary idx
                     bestidx = np.argmax(learnt_rewards)
                     sentidxs = summaries[bestidx]

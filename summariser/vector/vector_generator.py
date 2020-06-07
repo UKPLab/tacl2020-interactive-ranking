@@ -9,7 +9,7 @@ import random
 
 class Vectoriser:
 
-    def __init__(self,docs,sum_len=100,no_stop_words=True,stem=True,block=1,base=200,lang='english'):
+    def __init__(self, docs, sum_len=100, no_stop_words=True, stem=True, block=1, base=200, lang='english'):
         self.docs = docs
         self.without_stopwords = no_stop_words
         self.stem = stem
@@ -59,13 +59,20 @@ class Vectoriser:
         return act_list, heuristic_list, rouge_list
 
 
-    def getSummaryVectors(self,summary_acts_list):
+    def getSummaryVectors(self, summary_acts_list):
         vector_list = []
 
         for act_list in summary_acts_list:
+            # For each summary, we create a state object
             state = State(self.sum_token_length, self.base_length, len(self.sentences), self.block_num, self.language)
-            for i, act in enumerate(act_list):
+
+            # Now, we construct the text of the summary from the list of actions, which are IDs of sentences to add.
+            for _, act in enumerate(act_list):
                 state.updateState(act, self.sentences, read=True)
+
+            # state.getSelfVector will return the vector representation of the summary. This calls self.getStateVector,
+            # which we need to overwrite to define a new type of vector representation. This makes use of
+            # state.draft_summary_list, which is a list of the sentence strings in the summary.
             vector = state.getSelfVector(self.top_ngrams_list, self.sentences)
             vector_list.append(vector)
 
@@ -80,7 +87,6 @@ class Vectoriser:
             return sent2tokens_wostop(sent_str, self.stoplist, self.language)
         else:  # both false
             return sent2tokens(sent_str, self.language)
-
 
     def load_data(self):
         self.sentences = []

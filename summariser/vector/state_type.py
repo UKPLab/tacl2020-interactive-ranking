@@ -45,8 +45,7 @@ class State:
         self.newReward = False
 
     def getSelfVector(self, top_ngrams, sentences):
-        return self.getStateVector(self.draft_summary_list,self.historical_actions,
-                                   top_ngrams, sentences)
+        return self.getStateVector(self.draft_summary_list, self.historical_actions, top_ngrams, sentences)
 
     def getStateVector(self, draft_list, draft_index_list, top_ngrams, sentences):
         '''

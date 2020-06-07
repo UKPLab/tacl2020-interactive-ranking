@@ -9,24 +9,27 @@ def read_csv(filename):
         rows = [row for row in reader]
         return rows
 
+
 def read_file(filename):
     with codecs.open(filename, 'r', 'utf-8', errors='ignore') as fp:
         return fp.read()
 
-def readSampleSummaries(dataset,topic):
-    summaries, ref_values = readSummaries(dataset,topic,'rouge')
-    summaries, heu_values = readSummaries(dataset,topic,'heuristic')
+
+def readSampleSummaries(dataset, topic):
+    summaries, ref_values = readSummaries(dataset, topic, 'rouge')
+    summaries, heu_values = readSummaries(dataset, topic, 'heuristic')
 
     return summaries, ref_values, heu_values
 
-def readSummaries(dataset,topic,reward_type='rouge'):
-    path = os.path.join(SUMMARY_DB_DIR,dataset,topic,reward_type)
+
+def readSummaries(dataset, topic, reward_type='rouge'):
+    path = os.path.join(SUMMARY_DB_DIR, dataset, topic, reward_type)
     summary_list = []
     value_list = []
     model_names = []
     sample_num = 9999
 
-    with open(path,'r') as ff:
+    with open(path, 'r') as ff:
         if reward_type == 'heuristic':
             cnt = 0
             while cnt < sample_num:

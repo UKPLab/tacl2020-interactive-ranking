@@ -132,7 +132,7 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
     return ncorrect / float(count_examples), np.mean(losses)
 
 
-def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl'):
+def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl'):
 
     # For reproducibility while debugging. TODO: vary this during real experiments.
     np.random.seed(random_seed)
@@ -168,7 +168,7 @@ def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
         num_warmup_steps=10,
-        num_training_steps=len(tr_data_loader) * nepochs
+        num_training_steps=len(data_loader) * nepochs
     )
 
     loss_fn = nn.MarginRankingLoss(margin=0.0).to(device)
@@ -177,7 +177,7 @@ def train_BERTcQA(nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl
         print('Training epoch %i' % epoch)
         train_acc, train_loss = train_epoch(
             model,
-            tr_data_loader,
+            data_loader,
             loss_fn,
             optimizer,
             device,
@@ -489,7 +489,12 @@ if __name__ == "__main__":
         te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
         # Train the model ----------------------------------------------------------------------------------------------
-        bertcqa_model, device = train_BERTcQA(3, 42, 'BERT_cQA_vec_pred/model_params_%s.pkl' % topic)
+        bertcqa_model, device = train_BERTcQA(tr_data_loader, 3, 42, 'BERT_cQA_vec_pred/model_params_%s.pkl' % topic)
+
+        # Compute performance on training set --------------------------------------------------------------------------
+        print("Evaluating on training set:")
+        tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(testdata)
+        evaluate_accuracy(bertcqa_model, tr_data_loader2, device, tr_qids2, tr_goldids2)
 
         # Compute performance on validation set ------------------------------------------------------------------------
         # print("Evaluating on validation set:")
@@ -542,3 +547,25 @@ if __name__ == "__main__":
             )
 
         output_df.to_csv(fname, sep='\t')
+
+        del bertcqa_model
+        del te_scores
+        del te_vectors
+
+        del tr_data_loader
+        del tr_qa_pairs
+        del tr_data_loader
+        del tr_data
+        
+        del te_data_loader
+        del te_qas
+        del te_qids
+        del te_goldids
+        del te_data
+
+        del tr_data_loader2
+        del tr_qas2
+        del tr_qids2
+        del tr_goldids2
+        del tr_data2
+
