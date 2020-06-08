@@ -43,7 +43,7 @@ class SupertVectoriser(Vectoriser):
         supert_scores, supert_vectors = get_sbert_score_metrics(docs, summ_list, 'top15', return_summary_vectors=True)
 
         for i, supert_vector in enumerate(supert_vectors):
-            supert_vector.append(vector_list[i])
+            supert_vector = supert_vector.tolist().append(vector_list[i])
             vector_list[i] = supert_vector
 
         return vector_list, supert_scores
