@@ -144,21 +144,20 @@ def get_token_vecs(model,sents,remove_stopwords=True):
     return full_vec[wanted_idx], np.array(full_token)[wanted_idx]
 
 
-
 def get_sbert_score_metrics(docs, summaries, ref_metric, sim_metric='f1', mute=True, return_summary_vectors=False):
     bert_model = SentenceTransformer('bert-large-nli-stsb-mean-tokens')
     # word and sentence tokenization
-    sent_info_dic, _, sents_weights = parse_documents(docs,None,ref_metric)
+    sent_info_dic, _, sents_weights = parse_documents(docs, None, ref_metric)
     all_token_vecs, all_tokens = get_all_token_vecs(bert_model, sent_info_dic)
     # build pseudo-ref
-    ref_dic = {k:sent_info_dic[k] for k in sent_info_dic if sents_weights[k]>=0.1}
+    ref_dic = {k: sent_info_dic[k] for k in sent_info_dic if sents_weights[k] >= 0.1}
     # get sents in the pseudo ref
     ref_sources = set(ref_dic[k]['doc'] for k in ref_dic)
     ref_idxs = []
-    if len(ref_dic) >= 15: #all(['ref' in rs for rs in ref_sources]):
+    if len(ref_dic) >= 15:  # all(['ref' in rs for rs in ref_sources]):
         # group sentences from the same doc into one pseudo ref
         for rs in ref_sources:
-            ref_idxs.append([k for k in ref_dic if ref_dic[k]['doc']==rs])
+            ref_idxs.append([k for k in ref_dic if ref_dic[k]['doc'] == rs])
     else:
         ref_idxs.append([k for k in ref_dic])
     # get vecs and tokens of the pseudo reference

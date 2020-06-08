@@ -39,6 +39,7 @@ class SupertVectoriser(Vectoriser):
             summ_list.append(summ_text)
 
         # Obtain the SUPERT scores for the summaries from their embedding vectors
+        # TODO Ask YG: By default this uses 'f1' as the similarity metric. Is this equivalent to the WMD?
         supert_scores, supert_vectors = get_sbert_score_metrics(docs, summ_list, 'top15', return_summary_vectors=True)
 
         for i, supert_vector in enumerate(supert_vectors):
@@ -70,8 +71,9 @@ for dataset in ['DUC2001', 'DUC2002', 'DUC2004']:
         output_file = os.path.join(SUMMARY_DB_DIR, dataset, topic, 'supert')
         with open(output_file, 'w') as ofh:
             for i, summ in enumerate(summaries_acts_list):
-                actions_line = "actions:" + ",".join(str(summ))
-                ofh.writelines([actions_line])
+                act_str = np.array(summ).astype(str)
+                actions_line = "actions:" + ",".join(act_str) + "\n"
+                ofh.write(actions_line)
 
-                utility_line = "utility:" + str(scores[i])
-                ofh.writelines(utility_line)
+                utility_line = "utility:" + str(scores[i]) + "\n"
+                ofh.write(utility_line)

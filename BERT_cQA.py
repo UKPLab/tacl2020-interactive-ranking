@@ -556,7 +556,7 @@ if __name__ == "__main__":
         del tr_qa_pairs
         del tr_data_loader
         del tr_data
-        
+
         del te_data_loader
         del te_qas
         del te_qids

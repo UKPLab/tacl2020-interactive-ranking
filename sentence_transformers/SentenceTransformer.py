@@ -21,6 +21,7 @@ from .evaluation import SentenceEvaluator
 from .util import import_from_string, batch_to_device, http_get
 from . import __version__
 
+
 class SentenceTransformer(nn.Sequential):
     def __init__(self, model_name_or_path: str = None, modules: Iterable[nn.Module] = None, device: str = None):
         if modules is not None and not isinstance(modules, OrderedDict):
@@ -48,7 +49,6 @@ class SentenceTransformer(nn.Sequential):
                 model_path = os.path.join(default_cache_path, folder_name)
                 os.makedirs(model_path, exist_ok=True)
 
-
                 if not os.listdir(model_path):
                     if model_url[-1] is "/":
                         model_url = model_url[:-1]
@@ -75,7 +75,6 @@ class SentenceTransformer(nn.Sequential):
                     module_class = import_from_string(module_config['type'])
                     module = module_class.load(os.path.join(model_path, module_config['path']))
                     modules[module_config['name']] = module
-
 
         super().__init__(modules)
         if device is None:
