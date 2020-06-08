@@ -25,6 +25,7 @@ import logging
 import os
 import numpy as np
 import torch
+from torch.nn import ReLU
 from torch.utils.data import Dataset, DataLoader
 from transformers import BertTokenizer, BertModel, AdamW, get_linear_schedule_with_warmup, DistilBertModel, \
     DistilBertTokenizer
@@ -52,6 +53,8 @@ class BertRanker(nn.Module):
 
         self.out = nn.Linear(10, 1)  # only need one output because we just want a rank score
 
+        self.relu = ReLU()
+
     def forward(self, input_ids1, attention_mask1, input_ids2, attention_mask2):
         sequence_emb = self.bert(
             input_ids=input_ids1,
@@ -61,8 +64,8 @@ class BertRanker(nn.Module):
         pooled_output_1 = self.pooling(sequence_emb)
         pooled_output_1 = pooled_output_1.transpose(2, 1)
 
-        h1_1 = self.W1(pooled_output_1)
-        h2_1 = self.W2(h1_1)
+        h1_1 = self.relu(self.W1(pooled_output_1))
+        h2_1 = self.relu(self.W2(h1_1))
         scores_1 = self.out(h2_1)
 
         sequence_emb = self.bert(
@@ -73,8 +76,8 @@ class BertRanker(nn.Module):
         pooled_output_2 = self.pooling(sequence_emb)
         pooled_output_2 = pooled_output_2.transpose(2, 1)
 
-        h1_2 = self.W1(pooled_output_2)
-        h2_2 = self.W2(h1_2)
+        h1_2 = self.relu(self.W1(pooled_output_2))
+        h2_2 = self.relu(self.W2(h1_2))
         scores_2 = self.out(h2_2)
 
         return scores_1, scores_2
@@ -88,8 +91,8 @@ class BertRanker(nn.Module):
         pooled_output = self.pooling(sequence_emb)
         pooled_output = pooled_output.transpose(2, 1)
 
-        h1 = self.W1(pooled_output)
-        h2 = self.W2(h1)
+        h1 = self.relu(self.W1(pooled_output))
+        h2 = self.relu(self.W2(h1))
         scores = self.out(h2)
 
         return scores, torch.squeeze(pooled_output).detach()
@@ -132,7 +135,7 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
     return ncorrect / float(count_examples), np.mean(losses)
 
 
-def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertcqa_params.pkl'):
+def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertcqa_params'):
 
     # For reproducibility while debugging. TODO: vary this during real experiments.
     np.random.seed(random_seed)
@@ -167,7 +170,7 @@ def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
     optimizer.zero_grad()
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
-        num_warmup_steps=10,
+        num_warmup_steps=len(data_loader) * nepochs * 0.1,
         num_training_steps=len(data_loader) * nepochs
     )
 
@@ -189,7 +192,7 @@ def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
         torch.save(model.state_dict(), save_path+'.pkl')
         # write the number of epochs to file. If we need to restart training, we don't need to repeat all epochs.
         with open(save_path+'_num_epochs.txt', 'w') as fh:
-            fh.write(str(epoch))
+            fh.write(str(epoch+1))
 
     return model, device
 
@@ -500,11 +503,11 @@ if __name__ == "__main__":
         te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
         # Train the model ----------------------------------------------------------------------------------------------
-        bertcqa_model, device = train_BERTcQA(tr_data_loader, 3, 42, 'BERT_cQA_vec_pred/model_params_%s.pkl' % topic)
+        bertcqa_model, device = train_BERTcQA(tr_data_loader, 5, 42, 'BERT_cQA_vec_pred/model_params_%s' % topic)
 
         # Compute performance on training set --------------------------------------------------------------------------
         print("Evaluating on training set:")
-        tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(testdata)
+        tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
         evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
 
         # Compute performance on validation set ------------------------------------------------------------------------
@@ -565,7 +568,6 @@ if __name__ == "__main__":
 
         del tr_data_loader
         del tr_qa_pairs
-        del tr_data_loader
         del tr_data
 
         del te_data_loader
