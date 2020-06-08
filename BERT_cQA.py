@@ -197,6 +197,8 @@ def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
 def predict_BERTcQA(model, data_loader, device):
     scores = np.zeros(0)
     vectors = np.zeros(0)
+    qids = np.zeros(0)
+    ismatch = np.zeros(0)
 
     model.eval()
 
@@ -211,24 +213,26 @@ def predict_BERTcQA(model, data_loader, device):
         scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
         print(batch_vectors.shape)
         vectors = np.append(vectors, batch_vectors.cpu().numpy())
+        qids = np.append(qids, batch["qid"].detach().numpy().flatten())
+        ismatch = np.append(ismatch, batch["ismatch"].detach().numpy().flatten())
 
-    return scores, vectors
+    return scores, vectors, qids, ismatch
 
 
-def evaluate_accuracy(model, data_loader, device, qids, goldids):
-    scores, vectors = predict_BERTcQA(model, data_loader, device)
+def evaluate_accuracy(model, data_loader, device):
+    scores, vectors, qids, matches = predict_BERTcQA(model, data_loader, device)
 
     unique_questions = np.unique(qids)
 
     ncorrect = 0
-    nqs = 0
+    nqs = len(unique_questions)
 
     for q_id in unique_questions:
         qscores = scores[qids == q_id]
+        isgold = matches[qids == q_id]
 
-        if np.argmax(qscores) == goldids[q_id]:
+        if isgold[np.argmax(qscores)]:
             ncorrect += 1
-        nqs += 1
 
     acc = ncorrect / float(nqs)
     print("Accuracy = %f" % acc)
@@ -280,10 +284,13 @@ class SEPairwiseDataset(Dataset):
 
 
 class SESingleDataset(Dataset):
-    def __init__(self, qas: list):
+    def __init__(self, qas: list, qids: list, aids: list, goldids: dict):
         self.tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-cased')
         # BertTokenizer.from_pretrained('bert-base-cased')
         self.qas = qas
+        self.qids = qids
+        self.aids = aids
+        self.goldids = goldids
         self.max_len = 512
 
     def __len__(self):
@@ -305,7 +312,9 @@ class SESingleDataset(Dataset):
             'text1': self.qas[i],
             'input_ids': encoding1['input_ids'].flatten(),
             'attention_mask': encoding1['attention_mask'].flatten(),
-            'targets': tensor(1, dtype=torch.long)
+            'targets': tensor(1, dtype=torch.long),
+            'qid': self.qids[i],
+            'ismatch': self.goldids[self.qids[i]] == self.aids[i]
         }
 
 
@@ -402,6 +411,7 @@ def construct_single_item_dataset(dataframe):
 
     qas = []
     qids = []
+    aids = []
     goldids = {}
 
     for idx, qid in enumerate(dataframe.index):
@@ -424,12 +434,13 @@ def construct_single_item_dataset(dataframe):
             qa_wrong = question + ' [SEP] ' + wrong_ans
             qas.append(qa_wrong)
             qids.append(qid)
+            aids.append(ans_id)
 
             if ans_id == dataframe.loc[qid]["goldid"]:
-                goldids[qid] = ans_idx
+                goldids[qid] = ans_id
 
     data_loader = DataLoader(
-        SESingleDataset(qas),
+        SESingleDataset(qas, qids, aids, goldids),
         batch_size=16,
         num_workers=8
     )
@@ -475,7 +486,7 @@ if __name__ == "__main__":
 
         # Load the training set
         traindata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                                index_col=0)
+                                index_col=0, nrows=2)
         tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=0)
 
         # Load the validation set
@@ -485,16 +496,16 @@ if __name__ == "__main__":
 
         # Load the test set
         testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                               index_col=0)
+                               index_col=0, nrows=2)
         te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
         # Train the model ----------------------------------------------------------------------------------------------
-        bertcqa_model, device = train_BERTcQA(tr_data_loader, 3, 42, 'BERT_cQA_vec_pred/model_params_%s.pkl' % topic)
+        bertcqa_model, device = train_BERTcQA(tr_data_loader, 1, 42, 'BERT_cQA_vec_pred/model_params_%s.pkl' % topic)
 
         # Compute performance on training set --------------------------------------------------------------------------
         print("Evaluating on training set:")
         tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(testdata)
-        evaluate_accuracy(bertcqa_model, tr_data_loader2, device, tr_qids2, tr_goldids2)
+        evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
 
         # Compute performance on validation set ------------------------------------------------------------------------
         # print("Evaluating on validation set:")
@@ -502,7 +513,7 @@ if __name__ == "__main__":
 
         # Compute performance on test set ------------------------------------------------------------------------------
         print("Evaluating on test set:")
-        _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device, te_qids, te_goldids)
+        _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device)
 
         # Output predictions in the right format for the GPPL experiments ----------------------------------------------
         # Save predictions for the test data
