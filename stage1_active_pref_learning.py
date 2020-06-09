@@ -6,6 +6,7 @@ from datetime import datetime
 
 import pandas as pd
 
+from obtain_supert_scores import SupertVectoriser
 from summariser.oracle.lno_ref_values import SimulatedUser
 from summariser.querier.expected_improvement_querier import ExpectedImprovementQuerier
 from summariser.querier.expected_information_querier import InformationGainQuerier
@@ -76,6 +77,11 @@ def process_cmd_line_args(args):
         n_inter_rounds = int(args[8])
     else:
         n_inter_rounds = n_debug if n_debug else 100
+
+    if len(args) > 9:
+        feature_type = args[9] # can be april or supert
+    else:
+        feature_type = 'april'
 
     if learner_type_str == 'LR':
         if querier_types is None:
@@ -153,7 +159,7 @@ def process_cmd_line_args(args):
         learner_type = None
 
     return learner_type, learner_type_str, n_inter_rounds, output_folder_name_in, querier_types, root_dir, post_weight, \
-           reps, seeds, n_debug, nthreads, dataset
+           reps, seeds, n_debug, nthreads, dataset, feature_type
 
 
 def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors, heuristics_list,
@@ -269,7 +275,7 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
 
     elif feature_type == 'supert':
         vec = SupertVectoriser(docs)
-        summary_vectors, _ = vec.getSummaryVectors(summaries_acts_list)
+        summary_vectors, _ = vec.getSummaryVectors(summaries)
         np.savetxt(summary_vecs_cache_file, summary_vectors)
 
     return summary_vectors
@@ -353,7 +359,7 @@ if __name__ == '__main__':
     '''
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-        seeds, n_debug, n_threads, dataset = process_cmd_line_args(sys.argv)
+        seeds, n_debug, n_threads, dataset, feature_type = process_cmd_line_args(sys.argv)
 
     # parameters
     if dataset is None:
@@ -410,7 +416,7 @@ if __name__ == '__main__':
                 summaries, ref_values_dic, heuristic_list = readSampleSummaries(dataset, topic)
                 print('num of summaries read: {}'.format(len(summaries)))
 
-                summary_vectors = load_summary_vectors(summaries, datetime, dataset, topic, root_dir, docs, )
+                summary_vectors = load_summary_vectors(summaries, datetime, dataset, topic, root_dir, docs, feature_type)
 
                 if n_debug:
                     heuristic_list = heuristic_list[:n_debug]
