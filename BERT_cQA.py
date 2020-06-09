@@ -503,7 +503,7 @@ if __name__ == "__main__":
     te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
     # Train the model ----------------------------------------------------------------------------------------------
-    bertcqa_model, device = train_bertcqa(tr_data_loader, 5, 42, os.path.join(outputdir, 'model_params_%s' % topic),
+    bertcqa_model, device = train_bertcqa(tr_data_loader, 3, 42, os.path.join(outputdir, 'model_params_%s' % topic),
                                           reload=reload_model)
 
     # Compute performance on training set --------------------------------------------------------------------------
