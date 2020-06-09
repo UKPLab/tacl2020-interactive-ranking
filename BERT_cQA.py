@@ -462,7 +462,7 @@ if __name__ == "__main__":
         os.mkdir(outputdir)
 
     # Our chosen topics
-    topic = sys.argv(1)  # ['apple', 'cooking', 'travel']
+    topic = sys.argv[1]  # ['apple', 'cooking', 'travel']
 
     print('Loading the training data for %s' % topic)
 
