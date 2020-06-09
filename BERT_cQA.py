@@ -510,7 +510,7 @@ if __name__ == "__main__":
 
     # Train the model ----------------------------------------------------------------------------------------------
     bertcqa_model, device = train_bertcqa(tr_data_loader, 3, 42, os.path.join(outputdir, 'model_params_%s' % topic),
-                                          reload=False)
+                                          reload_model=False)
 
     # Compute performance on training set --------------------------------------------------------------------------
     print("Evaluating on training set:")
