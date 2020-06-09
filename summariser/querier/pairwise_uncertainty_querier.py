@@ -2,8 +2,7 @@ from summariser.querier.random_querier import RandomQuerier
 import numpy as np
 
 import sys
-sys.path.append('../GitHub/tacl2018-preference-convincing/python/models/')
-from gp_pref_learning import pref_likelihood
+from gppl.gp_pref_learning import pref_likelihood
 
 class PairUncQuerier(RandomQuerier):
     '''

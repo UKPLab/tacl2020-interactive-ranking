@@ -277,6 +277,7 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
         vec = SupertVectoriser(docs)
         summary_vectors, _ = vec.getSummaryVectors(summaries)
         np.savetxt(summary_vecs_cache_file, summary_vectors)
+        print('Cached summary vectors to %s' % summary_vecs_cache_file)
 
     return summary_vectors
 
@@ -364,6 +365,9 @@ if __name__ == '__main__':
     # parameters
     if dataset is None:
         dataset = 'DUC2001'  # 'DUC2001'  # DUC2001, DUC2002, 'DUC2004'#
+
+    print('Running stage1 summary preference learning with %s, writing to %s/results/%s' % (
+        dataset, root_dir, output_folder_name))
 
     max_topics = -1  # set to greater than zero to use a subset of topics for debugging
     folders = []
