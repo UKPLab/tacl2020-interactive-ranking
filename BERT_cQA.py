@@ -344,6 +344,12 @@ def construct_pairwise_dataset(dataframe, n_neg_samples=10):
 
         # Reconstruct the text sequences for the true answers
         gold_ans_id = dataframe.loc[qid]["goldid"]
+
+        # some of the lines seem to have two gold ids. Just use the first.
+        gold_ans_ids = gold_ans_id.split(' ')
+        if len(gold_ans_ids) > 1:
+            gold_ans_id = gold_ans_ids[0]
+
         tokids = answers.loc[gold_ans_id].values[0].split(' ')
         toks = vocab[np.array(tokids).astype(int)]
         gold_ans = ' '.join(toks)
