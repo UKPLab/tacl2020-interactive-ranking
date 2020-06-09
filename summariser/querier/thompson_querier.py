@@ -1,4 +1,4 @@
-from gp_pref_learning import pref_likelihood
+from gppl.gp_pref_learning import pref_likelihood
 from scipy.stats import norm
 import numpy as np
 from summariser.querier.pairwise_uncertainty_querier import PairUncQuerier

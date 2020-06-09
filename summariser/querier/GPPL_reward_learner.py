@@ -8,9 +8,8 @@ import numpy as np
 
 import sys
 
-sys.path.append('../personalised_argumentation/python/models/')
-from gp_classifier_vb import compute_median_lengthscales
-from gp_pref_learning import GPPrefLearning
+from gppl.gp_classifier_vb import compute_median_lengthscales
+from gppl.gp_pref_learning import GPPrefLearning
 
 class GPPLRewardLearner():
 
