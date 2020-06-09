@@ -1,0 +1,6 @@
+(ROOT (S (NP (DT The) (JJ British) (CC and) (JJ French)) (VP (VBD were) (VP (VBG building) (NP (DT a) (NN tunnel)) (PP (IN under) (NP (DT the) (NNP English) (NNP Channel))) (PP (IN by) (NP (NNP October) (CD 1988))))) (. .)))
+(ROOT (S (NP (DT This) (JJ costly) (NN project)) (VP (VBD was) (S (VP (TO to) (VP (VB be) (VP (VBN completed) (PP (IN by) (NP (CD 1993-94)))))))) (. .)))
+(ROOT (S (NP (DT The) (NNP British)) (VP (VBD were) (NP (ADJP (RB not) (JJ eager)) (NNS partners))) (. .)))
+(ROOT (S (NP (DT The) (NNP French)) (, ,) (ADVP (RB however)) (, ,) (VP (VBD considered) (S (NP (PRP it)) (NP (DT an) (JJ economic) (NN boost)))) (. .)))
+(ROOT (S (NP (NNP Belgium)) (VP (MD would) (ADVP (RB also)) (VP (VB realize) (NP (JJ economic) (NNS benefits)))) (. .)))
+(ROOT (S (NP (NP (NN Property) (NNS values)) (PP (IN near) (NP (DT the) (NN tunnel)))) (VP (VBD improved)) (. .)))

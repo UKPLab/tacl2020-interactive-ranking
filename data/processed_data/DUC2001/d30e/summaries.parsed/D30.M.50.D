@@ -1,4 +1,0 @@
-(ROOT (S (NP (NNP Poverty)) (VP (VBZ is) (NP (NP (DT a) (JJ near) (JJ universal) (NN condition)) (PP (IN in) (NP (NP (RB much)) (PP (IN of) (NP (DT the) (NN world))))))) (. .)))
-(ROOT (S (NP (QP (CD One) (CD billion)) (NNS people)) (VP (VBP live) (PP (IN on) (NP (NP (QP (JJR less) (IN than) (CD one)) (NN dollar)) (NP (DT a) (NN day))))) (. .)))
-(ROOT (S (NP (QP (JJR More) (IN than) (CD 110) (CD million)) (NNP Third) (NNP World) (NNS children)) (VP (VBP lack) (NP (NN access)) (ADVP (RB even) (PP (TO to) (NP (JJ primary) (NN education))))) (. .)))
-(ROOT (S (PP (IN In) (NP (NNP Mexico))) (, ,) (NP (NP (NN life) (NN expectancy)) (PP (IN for) (NP (DT the) (JJS poorest) (CD 10) (NNS percent)))) (VP (VBZ is) (ADJP (NP (CD 20) (NNS years)) (JJR less) (PP (IN than) (PP (IN for) (NP (DT the) (JJS richest) (CD 10) (NNS percent)))))) (. .)))

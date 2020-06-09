@@ -1,6 +1,0 @@
-(ROOT (S (NP (NP (NP (NNP Sunday) (POS 's)) (JJ strong)) (, ,) (NP (JJ Himalayan) (NN earthquake)) (, ,)) (VP (VBD triggered) (NP (NP (NNS landslides)) (CC and) (NP (VBN collapsed) (NNS houses)))) (. .)))
-(ROOT (S (NP (NNS Authorities)) (VP (VBP say) (SBAR (S (NP (CD 704)) (VP (VBD died) (PP (IN in) (NP (NNP Nepal) (, ,) (NNP 277))) (PP (IN in) (NP (NNP India))))))) (. .)))
-(ROOT (S (NP (NN Monsoon) (NNS rains) (CC and) (NNS aftershocks)) (VP (VBD hampered) (NP (NN search) (CC and) (NN recovery) (NNS efforts)) (PP (IN throughout) (NP (DT the) (NN quake) (NN area)))) (. .)))
-(ROOT (S (NP (NNP Flooding)) (VP (VBZ is) (ADJP (JJ possible))) (. .)))
-(ROOT (S (PP (IN Of) (NP (NP (NNP Nepal) (POS ')) (JJ 157) (NNP Peace) (NNP Corps) (NNS volunteers))) (, ,) (NP (CD 154)) (VP (VBP have) (VP (VBN been) (VP (VBN found) (S (ADJP (JJ safe)))))) (. .)))
-(ROOT (S (NP (NNP India)) (VP (VBZ has) (NP (DT no) (NNP Peace) (NNP Corp) (NNS workers))) (. .)))

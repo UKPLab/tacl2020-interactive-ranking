@@ -1,0 +1,5 @@
+(ROOT (S (NP (NP (DT A) (JJ major) (NN earthquake)) (VP (VBG measuring) (NP (CD 7.1)) (PP (IN on) (NP (DT the) (NNP Richter) (NN scale))))) (VP (VBD struck) (NP (DT the) (NNP San) (NNP Francisco) (NNP Bay) (NN area)) (NP (NNP Tuesday))) (. .)))
+(ROOT (S (NP (JJ Initial) (NNS reports)) (VP (VBD indicated) (NP (JJ widespread) (NN damage))) (. .)))
+(ROOT (S (NP (NP (NNS Earthquakes)) (SBAR (WHNP (WDT that)) (S (VP (VB measure) (NP (CD 5)) (PP (IN on) (NP (DT the) (NNP Richter) (NN scale))))))) (VP (MD can) (VP (VB cause) (NP (JJ considerable) (NN damage)))) (. .)))
+(ROOT (S (NP (NP (NN Anything)) (PP (IN above) (NP (CD 6)))) (VP (VBZ is) (NP (DT a) (JJ major) (NN quake))) (. .)))
+(ROOT (S (NP (NP (DT The) (JJS largest) (NN quake)) (VP (ADVP (RB ever)) (VBN recorded))) (VP (VP (VBD occurred) (PP (IN in) (NP (CD 1960))) (PP (IN in) (NP (NNP Chile)))) (CC and) (VP (VBD measured) (NP (CD 9.5)))) (. .)))

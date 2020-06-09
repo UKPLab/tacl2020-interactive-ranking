@@ -1,0 +1,4 @@
+British media entrepreneur Robert Maxwell, owner of the Mirror Group Newspaper Ltd. of Britain and publisher of Britain's Daily Mirror and the New York Daily News, died in 1991 in the waters off Canary Island while on vacation.
+His sons Kevin and Ian took over the business but were soon implicated along with their father in an illegal scheme to deal with crushing debts.
+Allegedly, unauthorized loans were acquired by using a Maxwell company to buy currency in one financial center while promising, but often failing, to make payments to another center.
+Some repayments were made by looting pension funds.

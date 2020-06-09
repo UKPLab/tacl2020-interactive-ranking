@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (NP (NNP Britain) (POS 's)) (NNP Booker) (NNP Prize)) (PP (IN for) (NP (NN fiction)))) (VP (VBZ is) (VP (VBN awarded) (ADVP (RB yearly)) (PP (IN from) (NP (NP (DT a) (JJ long) (NN list)) (PP (IN of) (NP (NP (NNS novels)) (VP (VBN narrowed) (PRT (RP down)) (PP (TO to) (NP (DT a) (JJ final) (CD six)))))))))) (. .)))
-(ROOT (S (NP (NP (DT A) (NN panel)) (PP (IN of) (NP (NNS judges)))) (VP (VBZ selects) (NP (DT the) (NN winner))) (. .)))
-(ROOT (S (S (NP (NNS Odds)) (VP (VBP are) (VP (VBN given)))) (CC and) (S (NP (NP (JJ literary) (NNS insiders)) (VP (VBN bet) (WHPP (IN on) (WHNP (WDT which) (NN book))))) (VP (MD will) (VP (VB win)))) (. .)))
-(ROOT (S (NP (DT The) (NN winner)) (VP (VBZ receives) (NP (NP (DT a) (NN cash) (NN award)) (CC and) (NP (JJ great) (NN prestige) (CC and) (NNS sales)))) (. .)))

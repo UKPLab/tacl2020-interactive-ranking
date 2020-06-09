@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (NNPS Airlines)) (CC and) (NP (JJ private) (NNS owners))) (VP (VBD had) (NP (NP (DT a) (NN number)) (PP (IN of) (NP (NN air) (NNS disasters)))) (PP (IN during) (NP (DT the) (NN period) (CD 1960))) (PP (TO to) (NP (CD 1991)))) (. .)))
+(ROOT (S (NP (NP (NNS Causes)) (PP (IN of) (NP (DT these) (NNS crashes)))) (VP (VBD were) (NP (NP (NNS terrorists)) (, ,) (NP (JJ mechanical) (NNS failures)) (, ,) (NP (NN pilot) (NNS errors)) (CC and) (NP (NN weather)))) (. .)))
+(ROOT (S (NP (NNP Aircraft) (NNS types)) (VP (VBD ranged) (PP (IN from) (NP (NP (DT the) (JJS largest)) (, ,) (NP (DT a) (NNP Boeing) (CD 747)) (, ,))) (PP (TO to) (NP (NP (DT the) (JJS smallest)) (, ,) (NP (DT a) (NNP Cessna))))) (. .)))
+(ROOT (S (NP (DT The) (NNS casualties)) (VP (VBD prompted) (NP (NP (DT a) (NN call)) (PP (IN for) (NP (VBN improved) (NN safety) (NNS measures))))) (. .)))

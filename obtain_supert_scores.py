@@ -63,7 +63,9 @@ for dataset in ['DUC2001', 'DUC2002', 'DUC2004']:
         summary_vectors, scores = vec.getSummaryVectors(summaries_acts_list)
 
         # Save the vectors to the cache file
-        summary_vecs_cache_file = './data/summary_vectors_%s_%s.csv' % (dataset, topic)
+        if not os.path.exists('./data/supert'):
+            os.mkdir('./data/supert')
+        summary_vecs_cache_file = './data/summary_vectors/supert/summary_vectors_%s_%s.csv' % (dataset, topic)
         np.savetxt(summary_vecs_cache_file, summary_vectors)
 
         # Write to the output file

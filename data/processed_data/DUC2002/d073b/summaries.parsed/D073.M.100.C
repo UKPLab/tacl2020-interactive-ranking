@@ -1,7 +1,0 @@
-(ROOT (NP (NNP Mt.)))
-(ROOT (S (NP (NNP Pinatubo)) (VP (VBD erupted) (PP (IN on) (NP (CD 9))) (NP (NNP June) (CD 1991)) (PP (IN for) (NP (NP (DT the) (JJ first) (NN time)) (PP (IN in) (NP (CD 600) (NNS years)))))) (. .)))
-(ROOT (S (NP (JJ Further) (NNS explosions)) (VP (VBD continued) (PP (IN for) (NP (CD five) (NNS days))) (, ,) (PP (IN with) (NP (NP (QP (RB as) (JJ many) (IN as) (CD six))) (PP (IN in) (NP (DT a) (JJ single) (NN day)))))) (. .)))
-(ROOT (S (NP (NNP Philippine) (CC and) (NNP U.S.) (NNS experts)) (VP (VBD said) (SBAR (IN that) (S (NP (DT a) (JJR more) (JJ massive) (NN eruption)) (VP (MD could) (VP (VB occur)))))) (. .)))
-(ROOT (S (NP (DT The) (NN mountain)) (VP (VBD shot) (PRT (RP out)) (NP (NP (NNS gases)) (, ,) (ADJP (NN rock) (CC and) (JJ ash)))) (. .)))
-(ROOT (S (NP (NP (NNS Clouds)) (VP (VBG ascending) (PP (IN from) (NP (NNP Pinatubo))))) (VP (VBD rose) (PP (TO to) (NP (NP (NNS heights)) (PP (IN of) (NP (CD ten) (NNS miles))))) (, ,) (S (VP (VP (VBG turning) (NP (NN day)) (PP (IN into) (NP (NN night)))) (CC and) (VP (VBG covering) (NP (JJ wide) (NNS areas)) (PP (IN in) (ADJP (JJ ash))))))) (. .)))
-(ROOT (S (NP (NP (NNP Personnel)) (PP (IN from) (NP (NP (DT the) (JJ large) (NNP U.S.) (NN facility)) (PP (IN at) (NP (NNP Clark) (NNP Air) (NNP Base)))))) (VP (VBD were) (VP (VBN evacuated) (PP (TO to) (NP (DT the) (JJ naval) (NN base))) (PP (IN at) (NP (NP (NNP Subic) (NNP Bay)) (, ,) (NP (NP (JJS most)) (PP (IN of) (NP (PRP them)))))) (PP (ADVP (RB soon)) (IN after) (NP (DT the) (JJ first) (NN eruption))))) (. .)))

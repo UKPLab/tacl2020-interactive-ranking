@@ -1,0 +1,5 @@
+(ROOT (S (NP (NP (NNP Sam) (NNP Walton) (POS 's)) (NN chain)) (VP (VBD was) (NP (NP (DT the) (NN country) (POS 's)) (JJS largest) (NN retailer))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD was) (NP (NP (DT the) (NN country) (POS 's)) (JJS richest) (NN man))) (. .)))
+(ROOT (S (NP (NNP Wal-Mart)) (VP (VBD grossed) (NP (QP (CD 44) (CD billion)) (NNS dollars)) (PP (IN in) (NP (DT the) (NN year))) (SBAR (IN before) (S (NP (PRP he)) (VP (VBD died))))) (. .)))
+(ROOT (S (PP (IN Despite) (NP (PRP$ his) (NN wealth))) (, ,) (NP (PRP he)) (VP (VBD lived) (ADVP (RB humbly))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD was) (VP (VBN criticized) (UCP (PP (IN for) (NP (JJ anti-union) (NNS policies))) (, ,) (CC and) (SBAR (IN because) (S (NP (NP (PRP$ his) (NNS stores)) (PP (IN in) (NP (JJ small) (NNS towns)))) (VP (VBD destroyed) (NP (JJ many) (JJ small) (NNS businesses)))))))) (. .)))

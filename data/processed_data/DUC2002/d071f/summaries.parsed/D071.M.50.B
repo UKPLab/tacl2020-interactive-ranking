@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (NN Dog) (NNS shows)) (PP (IN throughout) (NP (DT the) (NN world)))) (VP (VBP bring) (PRT (RP together)) (NP (NP (NNS hundreds) (CONJP (IN if) (RB not)) (NNS thousands)) (PP (IN of) (NP (NNS contestants)))) (S (VP (VBG representing) (NP (NP (DT the) (NN world) (POS 's)) (CD 135) (NN dog) (NN breeds))))) (. .)))
-(ROOT (S (NP (NP (NN Publicity) (NNS stunts)) (, ,) (NP (JJ professional) (NNS handlers)) (, ,) (NP (RB sometimes) (DT the) (NNS courts)) (CC and) (NP (RB possibly) (RB even) (NN violence))) (VP (MD may) (VP (VB be) (VP (VBN involved)))) (. .)))
-(ROOT (S (NP (NNS Awards) (CC and) (NN glory)) (VP (VBP await) (NP (DT the) (NNS champions))) (. .)))
-(ROOT (S (ADVP (RB Occasionally)) (, ,) (NP (DT some) (NNS dogs)) (VP (VBP manage) (S (VP (TO to) (VP (VB gain) (NP (NP (NN fame) (NN outside)) (PP (IN of) (NP (DT the) (NN dog) (NN show) (NN scene)))))))) (. .)))

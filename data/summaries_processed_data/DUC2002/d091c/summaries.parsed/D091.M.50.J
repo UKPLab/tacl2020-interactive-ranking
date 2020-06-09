@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (NP (NNP Thursday) (NN night) (POS 's)) (NN flood)) (PP (IN in) (NP (NNP Ohio)))) (VP (VBD left) (ADJP (ADJP (JJ twenty-one) (JJ dead)) (, ,) (ADJP (CD 14) (JJ missing)) (CC and) (ADJP (RB dozens) (JJ homeless)))) (. .)))
+(ROOT (S (NP (NP (CD Two) (NNS creeks)) (PP (IN outside) (NP (NNP Shadyside)))) (VP (VBD overflowed) (, ,) (S (VP (VP (VBG knocking) (NP (NNS homes)) (PP (IN off) (NP (PRP$ their) (NNS foundations)))) (CC and) (VP (VBG washing) (PRT (RP away)) (NP (DT a) (NN bar)))))) (. .)))
+(ROOT (S (NP (NNS Authorities)) (VP (VBD said) (SBAR (S (NP (NP (NNS dams)) (VP (VBN formed) (PP (IN by) (NP (NN debris))) (PP (IN at) (NP (NNS bridges))))) (VP (VBD broke) (PP (IN under) (NP (NN pressure))) (, ,) (S (VP (VBG creating) (NP (NP (DT a) (`` ``) (NN wall)) (PP (IN of) (NP (NN water)))))))))) (. .) ('' '')))
+(ROOT (S (NP (NNP Area) (NNS residents)) (VP (VBP are) (ADJP (JJ eligible) (PP (IN for) (NP (JJ federal) (NN aid))))) (. .)))

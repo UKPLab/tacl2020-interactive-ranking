@@ -1,0 +1,2 @@
+Throughout 1988 and into 1989, over 31,000 wildfires burned over 1,111,000 acres in national parks, forests, and wilderness areas in twelve Western states, Michigan Kentucky, Tennessee, and Georgia.
+A moratorium was declared on the "natural burn" policy and by mid-1989 rain and higher humidity helped firefighters contain the major fires.

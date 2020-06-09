@@ -1,6 +1,0 @@
-(ROOT (S (NP (DT The) (NNP Super) (NNP Bowl)) (VP (VBZ is) (ADJP (JJ big))) (. .)))
-(ROOT (S (S (NP (DT The) (VBG viewing) (NN audience)) (VP (VBZ is) (ADJP (JJ large)))) (, ,) (CC and) (S (NP (NNP Beer) (NNS companies)) (VP (VBP spend) (NP (NP (NNS millions)) (PP (IN on) (NP (JJ game-related) (NNS ads)))))) (. .)))
-(ROOT (S (NP (NNS Communities)) (VP (VBP offer) (SBAR (S (NP (JJ rent-free) (NN stadium)) (VP (VBP use) (S (VP (TO to) (VP (VB lure) (NP (DT the) (NN game))))))))) (. .)))
-(ROOT (S (NP (JJ Tighter) (NN tax) (NNS laws)) (VP (VBP have) (RB n't) (VP (VBN diminished) (NP (JJ corporate) (NN attendance)))) (. .)))
-(ROOT (S (PP (IN In) (NP (NNP Tampa) (CD 1991))) (, ,) (NP (DT the) (JJ black) (NN community)) (VP (VBD shared) (PP (IN in) (NP (DT the) (NNS profits)))) (. .)))
-(ROOT (S (NP (NNP San) (NNP Francisco)) (VP (VBZ has) (NP (CD four) (NNP Vince) (NNP Lombardi) (NNPS Trophies))) (. .)))

@@ -1,0 +1,3 @@
+(ROOT (NP (NP (QP ($ $) (CD 3.9) (CD billion)) (NN drought)) (NP (NP (NN relief) (NN bill)) (, ,) (SBAR (WHNP (WDT which)) (S (VP (VBD helped) (NP (NP (NNS thousands)) (PP (IN of) (NP (NNS farmers) (CC and) (NNS ranchers)))) (ADVP (RB nationwide)))))) (. .)))
+(ROOT (S (NP (NNP North) (NNP Dakota)) (, ,) (ADVP (IN along) (PP (IN with) (NP (NNP Iowa) (, ,) (NNP Illinois) (, ,) (NNP Minnesota) (CC and) (NNP Wisconsin)))) (VP (VBD received) (NP (NP (QP (RB nearly) (PDT half))) (PP (IN of) (NP (DT the) (VBN allocated) (NN aid))))) (. .)))
+(ROOT (S (NP (NNP Farmers)) (VP (VBD did) (RB not) (VP (VB suffer) (NP (JJ long-term) (JJ ill) (NNS affects)))) (. .)))

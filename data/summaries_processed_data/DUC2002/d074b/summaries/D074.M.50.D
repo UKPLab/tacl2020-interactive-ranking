@@ -1,0 +1,2 @@
+Clarence Thomas completed five days of grueling days of testimony, apparently well on his way to becoming the second black justice in the history of the Supreme Court.
+Thomas, a federal judge, was picked by President Bush to replace Thurgood Marshall, the high court's only black justice.

@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (FW i)) (SBAR (S (NP (DT Some) (NN police)) (VP (VBZ forces) (PP (IN in) (NP (NP (NNS cities)) (PP (IN of) (NP (DT the) (NNP U.S.))))))))) (VP (VBD were) (PP (IN in) (NP (NP (NN difficulty)) (PP (IN in) (NP (DT the) (JJ late) (JJ 1980s-early) (NNS 1990s))))) (PP (IN with) (NP (NP (NNS charges)) (PP (IN of) (NP (NP (NN racism)) (, ,) (NP (NN brutality)) (CC and) (NP (JJ false) (NN arrest))))))) (. .)))
+(ROOT (S (NP (DT The) (NNP Los) (NNP Angeles) (NNP Police) (NNP Department)) (VP (VBD was) (ADJP (JJ prominent) (PP (IN in) (NP (DT these) (NNS charges))))) (. .)))
+(ROOT (S (NP (NNP Police) (NNS chiefs)) (VP (VBD were) (VP (VBN blamed))) (. .)))
+(ROOT (S (NP (CD One) (NN district) (NN attorney)) (VP (VBD refused) (S (VP (TO to) (VP (VB prosecute) (NP (NP (NNS suspects)) (SBAR (WHNP (WP who)) (S (VP (VBD claimed) (NP (NN police) (NN brutality)))))))))) (. .)))

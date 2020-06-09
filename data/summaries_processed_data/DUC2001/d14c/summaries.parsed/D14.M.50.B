@@ -1,0 +1,4 @@
+(ROOT (S (NP (NNP U.S.) (JJ military) (NN aircraft) (NNS crashes)) (VP (VBP occur) (PP (IN throughout) (NP (DT the) (NN world))) (ADVP (ADVP (RBR more) (RB often)) (SBAR (IN than) (S (NP (PRP one)) (VP (MD might) (VP (VB suspect))))))) (. .)))
+(ROOT (S (S (NP (PRP They)) (VP (VBP are) (ADVP (RB normally)) (VP (VBN reported) (PP (IN in) (NP (DT the) (NN press)))))) (: ;) (S (ADVP (RB however)) (, ,) (NP (NP (RB only) (DT those)) (PP (VBG involving) (NP (NP (JJ major) (NN damage) (CC or) (NN loss)) (PP (IN of) (NP (NN life)))))) (VP (VBP attract) (NP (JJ extensive) (NNS media) (NN coverage)))) (. .)))
+(ROOT (S (NP (NNS Investigations)) (VP (VBP are) (ADVP (RB always)) (VP (VBN conducted))) (. .)))
+(ROOT (S (NP (NN Flight) (NN safety) (NNS records) (CC and) (NNS statistics)) (VP (VBP are) (VP (VBN kept) (PP (IN for) (NP (DT all) (NN aircraft) (NNS models))))) (. .)))

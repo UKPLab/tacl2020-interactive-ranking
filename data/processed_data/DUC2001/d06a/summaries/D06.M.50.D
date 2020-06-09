@@ -1,2 +1,0 @@
-The subject of police brutality and racism received national attention following the airing of the videotaped beating of Rodney King by four Los Angeles Policemen back in March.
-In other cities across the country, recent reports of police brutality and tense race relations have occurred in Chicago, Kansas City, and Minneapolis.

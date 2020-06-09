@@ -1,0 +1,16 @@
+Large Western wildfires occurred in the 1700s and probably at 200-300 year intervals over the past 10,000 years.
+In 1926, wildfires destroyed 28 million acres.
+1977's Sycamore Canyon fire destroyed 200 homes near Santa Barbara.
+1985's Los Altos Hills fire destroyed 100 acres and 12 homes, and a six-day fire above Lexington Reservoir destroyed 14,000 acres and 42 homes.
+In 1987, 900,000 acres burned in California.
+1,500 fires attacked Klamath National Forest in one month.
+1988 was the most expensive fire season in US history, with 25,000 firefighters called in and $583.8 million spent to fight 75,000 fires that burned 5.9 million acres.
+706,000 of Yellowstone's 2.2 million acres burned over four months, stopped by light rain and snow in September.
+Smoke sickened 12,000 firefighters.
+The "let-burn" policy was lifted in July.
+From January-July 1989, 1.3 million acres had burned in the contiguous US.
+In August, 102,000 acres in Idaho and 118,000 in Oregon, California and Utah were ablaze.
+In 1990, fires in Santa Barbara destroyed 600 homes and did $200 million damage, and burned 15,000 acres in Yosemite.
+170 fires burned in Oregon's Umatilla National Forest.
+In October 1991, fire devastated the Oakland hills.
+Nine Saratoga foothills fires were deliberately set.

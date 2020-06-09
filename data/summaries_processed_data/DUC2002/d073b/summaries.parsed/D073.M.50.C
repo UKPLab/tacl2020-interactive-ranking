@@ -1,0 +1,7 @@
+(ROOT (S (NP (NP (DT A) (NN series)) (PP (IN of) (NP (NP (JJ volcanic) (NNS eruptions)) (PP (IN in) (NP (NNP June) (CD 1991)))))) (VP (VBD rocked) (NP (NNP Mt.)))))
+(ROOT (NP (NP (NNP Pinatubo)) (PP (IN in) (NP (DT the) (NNPS Philippines))) (. .)))
+(ROOT (S (NP (NP (NNS Gases)) (, ,) (ADJP (NN rock) (CC and) (JJ ash))) (VP (VBD shot) (PP (IN from) (NP (DT the) (NN mountain)))) (. .)))
+(ROOT (S (NP (VBG Ascending) (NNS clouds)) (VP (VBD blanketed) (NP (DT the) (NN area))) (. .)))
+(ROOT (S (NP (NP (DT The) (JJ large) (NNP U.S.) (NN facility)) (NP (NNP Clark) (NNP Air) (NNP Base))) (VP (VBD was) (VP (VBN evacuated))) (. .)))
+(ROOT (S (NP (NNP Farm) (NNS villages)) (VP (VBD were) (VP (VBN emptied))) (. .)))
+(ROOT (S (NP (NNS Experts)) (VP (VBD issued) (NP (NP (NNS warnings)) (PP (IN of) (NP (DT a) (RBR more) (JJ massive) (NN eruption))))) (. .)))

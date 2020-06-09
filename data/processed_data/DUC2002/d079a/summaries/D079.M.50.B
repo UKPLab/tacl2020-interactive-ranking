@@ -1,2 +1,0 @@
-Gilbert, the most intense hurricane ever recorded, ripped through the Caribbean, slammed into the Yucatan, then lost it's punch at the Texas-Mexico border.
-It has caused massive flooding, took 109 lives, left about $8 billion damage in its wake and destroyed approximately 100,000 of Jamaica's 500,000 homes.

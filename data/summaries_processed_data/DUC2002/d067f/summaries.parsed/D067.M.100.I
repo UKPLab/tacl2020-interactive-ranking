@@ -1,0 +1,8 @@
+(ROOT (S (NP (NP (NN Damage)) (PP (IN from) (NP (NNP Hurricane) (NNP Andrew)))) (VP (VBZ is) (VP (VBN estimated) (PP (IN at) (NP (QP ($ $) (CD 20) (CD billion)))) (, ,) (PP (IN with) (NP (NP (QP ($ $) (CD 8) (CD billion))) (VP (VBN covered) (PP (IN by) (NP (NN insurance)))))))) (. .)))
+(ROOT (S (S (NP (JJ American) (NNS insurers)) (VP (MD will) (VP (VB take) (NP (NP (DT the) (NN brunt)) (PP (IN of) (NP (DT the) (NNS claims))))))) (, ,) (CC but) (S (NP (NP (NNP General) (NNP Accident)) (, ,) (NP (DT the) (VBG leading) (JJ British) (NN insurer)) (, ,)) (VP (VBZ expects) (S (NP (NNS claims)) (VP (TO to) (VP (VB rise) (ADJP (RB as) (JJ high)) (PP (IN as) (NP (QP ($ $) (CD 40) (CD million))))))))) (. .)))
+(ROOT (S (NP (NNP Andrew)) (VP (VBD tore) (PP (IN through) (NP (JJ southern) (NNP Florida))) (, ,) (S (VP (VBG leaving) (NP (NP (CD 15) (NN dead)) (, ,) (NP (NN power) (NNS outages)) (, ,) (CC and) (NP (NP (JJ polluted) (NN water)) (PP (IN in) (NP (PRP$ his) (NN wake)))))))) (. .)))
+(ROOT (S (NP (NP (NNP Homestead)) (CC and) (NP (DT the) (JJ nearby) (NN air) (NN force) (NN base))) (VP (VBD were) (VP (VBN flattened))) (. .)))
+(ROOT (S (PP (IN In) (NP (NNP Dade) (NNP County))) (, ,) (NP (CD 250,000) (NNS people)) (VP (VBP are) (ADJP (JJ homeless))) (. .)))
+(ROOT (S (NP (NNP Andrew)) (ADVP (RB next)) (VP (VBD smashed) (PP (IN into) (NP (NNP Louisiana))) (, ,) (S (VP (VBG killing) (NP (CD two))))) (. .)))
+(ROOT (S (NP (PRP It)) (VP (VP (VBD missed) (NP (DT the) (JJ important) (NN oil) (NNS refineries))) (, ,) (CC but) (VP (VBD damaged) (NP (NP (NNS crops)) (CC and) (NP (DT the) (NN oyster) (CC and) (NN alligator) (NNS businesses))))) (. .)))
+(ROOT (S (NP (DT The) (NN dollar)) (VP (VBD sustained) (NP (DT a) (JJ similar) (NN assault))) (. .)))

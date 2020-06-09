@@ -11,7 +11,7 @@ imp = 'results_coala/lno03_gpplhh_apple_rep0/'
 
 topic = 'apple'
 
-fname = 'coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
+fname = 'data/coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
 qa_list, vec_list, pred_list = pickle.load(open(fname, 'rb'), encoding='latin1')
 
 max_no_egs = 5 # find five examples
@@ -33,7 +33,7 @@ for question_id in range(len(qa_list)):
 
     gold_answer = re.sub('<[^<]+>', "", original_gold_answer)
     # cache it to file
-    gold_filename = 'data/coala_cache_%s_%i.txt' % (topic, question_id)
+    gold_filename = 'data/cache/coala_cache_%s_%i.txt' % (topic, question_id)
     if not os.path.exists(gold_filename):
         with open(gold_filename, 'w') as fh:
             fh.writelines(gold_answer)

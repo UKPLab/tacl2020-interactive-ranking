@@ -1,6 +1,0 @@
-(ROOT (S (NP (NNP Clarence) (NNP Thomas)) (VP (VBD was) (VP (VBN confirmed) (NP (NP (DT a) (NNP Supreme) (NNP Court) (NN justice)) (PP (IN on) (NP (CD 16)))) (NP (NNP October) (CD 1991)))) (. .)))
-(ROOT (S (NP (NNP Thomas)) (VP (VBD was) (VP (VBN born) (PP (IN in) (NP (CD 1948))))) (. .)))
-(ROOT (S (NP (PRP He)) (VP (VP (VBD attended) (NP (JJ catholic) (NNS schools))) (CC and) (VP (VBD finished) (NP (NP (NNP Yale) (NNP Law)) (PP (IN in) (NP (CD 1974)))))) (. .)))
-(ROOT (S (NP (PRP He)) (ADVP (RB then)) (VP (VBD changed) (PP (IN from) (NP (DT a) (NN liberal))) (PP (TO to) (NP (DT a) (JJ conservative) (NN outlook)))) (. .)))
-(ROOT (S (NP (NNP Thomas)) (VP (VBD held) (NP (NNS positions)) (PP (IN as) (NP (NP (DT a) (NN lawyer)) (CC and) (NP (DT a) (NN judge))))) (. .)))
-(ROOT (S (NP (PRP He)) (VP (VBD was) (VP (VBN helped) (PP (IN by) (NP (JJ affirmative) (NN action))))) (. .)))

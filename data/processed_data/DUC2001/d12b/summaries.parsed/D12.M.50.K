@@ -1,4 +1,0 @@
-(ROOT (S (NP (NNPS Presidents) (NNP Reagan) (CC and) (NNP Clinton)) (DT both) (VP (VBD struggled) (PP (IN with) (NP (NN welfare) (NN reform))) (, ,) (S (VP (VBG responding) (PP (TO to) (NP (JJ public) (NN pressure)))))) (. .)))
-(ROOT (S (NP (DT Both)) (VP (VBD agreed) (SBAR (S (NP (DT a) (NN work) (NN provision)) (VP (MD must) (VP (VB be) (VP (VBN included))))))) (. .)))
-(ROOT (S (NP (NP (NNP Reagan) (POS 's)) (CD 1987) (NN plan)) (VP (VBD was) (VP (VBN criticized) (PP (IN for) (NP (NP (NP (RB too) (JJ little) (NN emphasis)) (PP (PP (IN on) (NP (NN work))) (, ,) (CC and) (PP (IN in) (NP (CD 1993) (NNP Clinton) (JJ proposed) (NN job) (NN training))))) (CC and) (NP (NP (NN work)) (PP (IN for) (NP (NNS enrollees)))))))) (. .)))
-(ROOT (S (NP (JJ Other) (NNS countries)) (VP (VBD struggled) (PP (IN with) (NP (VBG mounting) (NN welfare) (NNS costs)))) (. .)))

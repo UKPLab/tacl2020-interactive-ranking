@@ -1,2 +1,0 @@
-The Tories will make Prime Minister John Major, protege of Margaret Thatcher, the scapegoat for their stunning defeat in local elections across Britain in May.
-Though he won the 1992 general election, the high-school dropout is now accused of being a weak leader, incompetent on both domestic and international issues.

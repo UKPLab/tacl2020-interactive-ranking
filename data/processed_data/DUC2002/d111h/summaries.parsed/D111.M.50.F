@@ -1,5 +1,0 @@
-(ROOT (S (NP (NP (JJ Many) (NNS reasons)) (PP (IN for) (NP (NNS ships) (NN sinking)))) (VP (VBP exist)) (. .)))
-(ROOT (S (NP (NP (NNS Ships)) (SBAR (WHNP (WDT that)) (S (VP (VBN run) (NP (ADJP (JJ aground) (PP (IN from) (ADJP (JJ unseen)))) (NNS hazards)) (ADVP (RB often)))))) (VP (VB sink)) (. .)))
-(ROOT (S (NP (NNP Naval) (NNS battles)) (ADVP (RB generally)) (VP (VBP result) (PP (IN in) (NP (NP (NNS ships)) (VP (VBG being) (VP (VBN sunk)))))) (. .)))
-(ROOT (S (NP (NP (JJ Faulty) (NN design)) (CC and) (NP (JJ rough) (NNS seas))) (VP (MD may) (VP (VB cause) (NP (DT a) (NN ship) (S (VP (TO to) (VP (VB sink))))))) (. .)))
-(ROOT (S (NP (DT A) (NN crew)) (VP (MD may) (VP (VB scuttle) (NP (PRP$ its) (NN ship) (S (VP (VP (TO to) (VP (VB avoid) (NP (NN capture)))) (CC or) (VP (TO to) (VP (VB conceal) (NP (JJ illegal) (NN activity))))))))) (. .)))

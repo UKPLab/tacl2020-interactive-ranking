@@ -1,4 +1,0 @@
-(ROOT (S (NP (NNP Eastern) (NNP Ohio)) (VP (VBP flash) (SBAR (S (NP (NP (NNS floods)) (VP (VBG resulting) (PP (IN from) (NP (NP (CD 5.5) (NNS inches)) (PP (IN of) (NP (NP (NN rain)) (PP (IN in) (NP (QP (JJR less) (IN than) (CD four)) (NNS hours))))))))) (VP (VP (VBD killed) (NP (CD 21) (NNS persons))) (CC and) (VP (VBD caused) (NP (JJ extensive) (NN damage))))))) (. .)))
-(ROOT (S (NP (DT The) (NN governor)) (VP (VP (VBD declared) (NP (NP (DT a) (NN state)) (PP (IN of) (NP (NN emergency))))) (CC and) (VP (VBD sent) (PP (IN in) (NP (DT the) (NNP National) (NNP Guard))))) (. .)))
-(ROOT (S (NP (CD Fourteen) (NNS persons)) (VP (VBP remain) (S (VP (VBG missing) (NP (DT a) (NN week)) (ADVP (RB later))))) (. .)))
-(ROOT (S (NP (JJ Few) (NNS homeowners)) (VP (VBD had) (S (NP (NN flood) (NN insurance)) (VP (TO to) (VP (VB cover) (NP (NN damage)))))) (. .)))

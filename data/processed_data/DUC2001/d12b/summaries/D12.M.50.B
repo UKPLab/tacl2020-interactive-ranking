@@ -1,2 +1,0 @@
-"Ending welfare as we know it" has been a goal of federal, state and European legislatures from the Reagan era through the Clinton years.
-Some success is being made by reforming welfare, specifically, limiting the time period of welfare eligibility and requiring recipients to earn benefits through work or study.

@@ -1,0 +1,4 @@
+(ROOT (S (PP (IN Since) (NP (NNP Saturday))) (, ,) (NP (DT the) (JJ ferocious) (NNP Hurricane) (NNP Gilbert)) (VP (VBZ has) (VP (VBN roared) (PP (IN through) (NP (DT the) (NNP Greater) (NNPS Antilles))))) (. .)))
+(ROOT (S (NP (NNP Gilbert)) (VP (VP (VBD killed) (NP (CD five)) (PP (IN in) (NP (DT the) (NNP Dominican) (NNP Republic)))) (CC and) (VP (VBD hit) (NP (NNP Jamaica)) (PP (IN with) (NP (PRP$ its) (JJ full) (NN force)))) (, ,) (S (VP (VP (VBG killing) (NP (CD 19))) (CC and) (VP (VBG causing) (NP (JJ extensive) (NN damage)))))) (. .)))
+(ROOT (S (NP (PRP$ Its) (CD 160) (NN mph) (NNS winds)) (VP (VBD pummeled) (NP (NP (NNP Mexico) (POS 's)) (NNP Yucatan) (NN peninsula)) (, ,) (S (VP (VBG causing) (NP (NN flooding) (CC and) (NNS outages))))) (. .)))
+(ROOT (S (NP (NNS Forecasters)) (VP (VBP ask) (SBAR (SBARQ (WHADVP (WRB why)) (SQ (VBD did) (NP (NNP Gilbert)) (VP (VB become) (ADJP (RB so) (JJ intense)))) (. ?))))))

@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (CD Five) (NNS students)) (PP (IN of) (NP (JJ Asian) (NN descent)))) (VP (VBD were) (VP (VBN slain) (PP (IN in) (NP (NP (DT the) (NN schoolyard)) (PP (IN of) (NP (NNP Cleveland) (NNP Elementary) (NNP School))))) (PP (RB shortly) (IN before) (NP (NN noon))))) (. .)))
-(ROOT (S (NP (NP (DT Another) (CD 29) (NNS students)) (CC and) (NP (DT a) (NN teacher))) (VP (VBD were) (VP (VBN wounded) (PP (IN in) (NP (DT the) (NN attack))))) (. .)))
-(ROOT (S (NP (NP (PRP$ Their) (NN killer)) (, ,) (NP (NNP Patrick) (NNP Edward) (NNP Purdy)) (, ,)) (VP (VBD lay) (ADJP (JJ dead)) (ADVP (RB nearby)) (PP (IN of) (NP (DT a) (JJ self-inflicted) (NN gunshot) (NN wound)))) (. .)))
-(ROOT (S (NP (NNP Purdy)) (VP (VBD was) (NP (NP (DT a) (NN drifter)) (PP (IN with) (NP (NP (DT a) (JJ long) (NN history)) (PP (IN of) (NP (NP (NNS problems)) (PP (IN with) (NP (DT the) (NN law))))))))) (. .)))

@@ -1,0 +1,4 @@
+(ROOT (S (PP (IN During) (NP (NP (DT the) (JJ prior) (CD three) (NNS elections)) (NP (NP (QP (CD 96) (NN %) (CC or) (JJR more))) (PP (IN of) (NP (NP (NNP House) (NNS incumbents)) (SBAR (WHNP (WP who)) (S (VP (VBD ran) (PP (IN for) (NP (NN re))))))))) (: -))) (NP (NN election)) (VP (VBD won)) (. .)))
+(ROOT (S (NP (JJS Most) (NNPS Americans)) (VP (VBP believe) (SBAR (IN that) (S (NP (NN career) (NNS politicians)) (VP (VBP are) (ADJP (RBR more) (JJ concerned) (PP (IN with) (NP (PRP$ their) (NN self-preservation)))) (ADVP (RB that) (PP (IN with) (NP (NP (NNS people) (POS 's)) (NNS concerns)))))))) (. .)))
+(ROOT (S (NP (NP (DT A) (NN solution)) (PP (TO to) (NP (DT this) (NN problem)))) (VP (VBZ is) (NP (NN term) (NNS limits))) (. .)))
+(ROOT (S (NP (JJ Many) (JJ political) (NNS scientists)) (VP (VBP do) (RB not) (VP (VB agree) (SBAR (IN that) (S (NP (NN term) (NNS limits)) (VP (VBP are) (ADJP (JJ good))))))) (. .)))

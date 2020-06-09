@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (DT The) (NN collapse)) (PP (IN of) (NP (DT the) (NNP Soviet) (NNP Union)))) (VP (VBD was) (VP (VBN accompanied) (PP (IN by) (NP (NP (JJ major) (JJ civil) (NN unrest)) (CC and) (NP (JJ ethnic) (NN conflict)))) (PP (IN in) (NP (DT the) (JJ former) (NNS republics))))) (. .)))
+(ROOT (S (NP (DT The) (NNP Caucasus) (, ,) (NNP Baltic) (CC and) (NNP Central) (NNP Asian) (NNS republics)) (ADVP (DT all)) (VP (VBD experienced) (NP (NN unrest))) (. .)))
+(ROOT (S (NP (NP (DT The) (NNS reasons)) (PP (IN for) (NP (DT the) (NN strife)))) (VP (VBD included) (NP (NP (NN nationalism)) (, ,) (NP (JJ ethnic) (NNS tensions)) (CC and) (NP (JJ old) (NNS grievances)))) (. .)))
+(ROOT (S (NP (NNP Gorbachev)) (VP (VBD tried) (ADVP (RB unsuccessfully)) (S (VP (TO to) (VP (VB hold) (NP (DT the) (NNP Soviet) (NNP Union)) (ADVP (RB together)))))) (. .)))

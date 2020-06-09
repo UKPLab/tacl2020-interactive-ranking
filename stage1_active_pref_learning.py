@@ -77,7 +77,6 @@ def process_cmd_line_args(args):
     else:
         n_inter_rounds = n_debug if n_debug else 100
 
-
     if learner_type_str == 'LR':
         if querier_types is None:
             querier_types = ['random', 'unc']
@@ -156,6 +155,7 @@ def process_cmd_line_args(args):
     return learner_type, learner_type_str, n_inter_rounds, output_folder_name_in, querier_types, root_dir, post_weight, \
            reps, seeds, n_debug, nthreads, dataset
 
+
 def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors, heuristics_list,
                 post_weight, n_inter_rounds, all_result_dic, n_debug, output_path, n_threads):
     model_name = model[0].split('/')[-1].strip()
@@ -192,7 +192,8 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         elif querier_type == 'imp':
             querier = ExpectedImprovementQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
         elif querier_type == 'eig':
-            querier = InformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = Informati
+            onGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
         elif querier_type == 'ttt':
             querier = ThompsonTopTwoQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
         elif querier_type == 'tig':
@@ -251,16 +252,24 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
 
     return learnt_rewards
 
-def load_summary_vectors(summaries, dataset, topic, root_dir, docs):
 
-    summary_vecs_cache_file = root_dir + '/data/summary_vectors_%s_%s.csv' % (dataset, topic)
+def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type):
+    # TODO distinguish between the supert and other summary vectors! Rename supert?
+    summary_vecs_cache_file = root_dir + '/data/summary_vectors/%s/summary_vectors_%s_%s.csv' % (feature_type,
+                                                                                                 dataset, topic)
     if os.path.exists(summary_vecs_cache_file):
-        print(
-            'Warning: reloading feature vectors for summaries from cache -- ensure that the loading order has not changed.')
+        print('Warning: reloading feature vectors for summaries from cache')
+        # This should be fine, but if there is an error, we may need to check that the loading order has not changed.
         summary_vectors = np.genfromtxt(summary_vecs_cache_file)
-    else:
+
+    elif feature_type == 'april':
         vec = Vectoriser(docs)
         summary_vectors = vec.getSummaryVectors(summaries)
+        np.savetxt(summary_vecs_cache_file, summary_vectors)
+
+    elif feature_type == 'supert':
+        vec = SupertVectoriser(docs)
+        summary_vectors, _ = vec.getSummaryVectors(summaries_acts_list)
         np.savetxt(summary_vecs_cache_file, summary_vectors)
 
     return summary_vectors
@@ -401,7 +410,7 @@ if __name__ == '__main__':
                 summaries, ref_values_dic, heuristic_list = readSampleSummaries(dataset, topic)
                 print('num of summaries read: {}'.format(len(summaries)))
 
-                summary_vectors = load_summary_vectors(summaries, datetime, dataset, topic, root_dir, docs)
+                summary_vectors = load_summary_vectors(summaries, datetime, dataset, topic, root_dir, docs, )
 
                 if n_debug:
                     heuristic_list = heuristic_list[:n_debug]

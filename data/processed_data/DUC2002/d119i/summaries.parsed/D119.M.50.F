@@ -1,3 +1,0 @@
-(ROOT (S (NP (NP (JJS Most)) (PP (IN of) (NP (NP (NNP President) (NNP Bush) (POS 's)) (JJ ambassadorial) (NNS nominees)))) (VP (VBD won) (NP (JJ easy) (NN approval)) (PP (IN in) (NP (NN senate) (NN committee) (NNS hearings)))) (. .)))
-(ROOT (S (NP (DT A) (JJ few)) (, ,) (ADVP (RB however)) (, ,) (VP (VBD faced) (NP (NN opposition)) (PP (IN from) (NP (NNPS Democrats))) (PP (IN in) (NP (NP (NN committee)) (SBAR (WHNP (WP who)) (S (VP (VBD believed) (SBAR (S (NP (PRP they)) (VP (VBD were) (VP (VBN nominated) (PP (ADVP (RB only)) (IN because) (IN of) (NP (NP (JJ large) (NNS contributions)) (PP (TO to) (NP (DT the) (NNP Republican))))))))))))))) (. .)))
-(ROOT (S (CC But) (NP (DT all)) (VP (VBD were) (VP (ADVP (RB finally)) (VBN approved))) (. .)))

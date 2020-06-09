@@ -1,5 +1,0 @@
-(ROOT (S (NP (DT The) (NNP Booker) (NNP Prize)) (VP (VBD was) (VP (VBN established) (PP (IN in) (NP (CD 1969))) (S (VP (TO to) (VP (VB honor) (NP (DT the) (JJS best) (NN fiction) (NN work)) (PP (IN by) (NP (DT a) (JJ British) (CC or) (NN Commonwealth) (NN author)))))))) (. .)))
-(ROOT (S (NP (DT The) (NNP Booker) (NN Company)) (VP (VBZ is) (NP (DT the) (NN sponsor))) (. .)))
-(ROOT (S (NP (PRP It)) (VP (VBZ is) (ADVP (RB now)) (NP (NP (NNP Britain) (POS 's)) (ADJP (RBS most) (JJ prestigious)) (JJ literary) (NN award))) (. .)))
-(ROOT (S (NP (NNS Winners)) (VP (VBP receive) (NP (DT a) (JJ substantial) (JJ monetary) (NN award))) (. .)))
-(ROOT (S (S (NP (NNP Booker)) (VP (VBZ creates) (NP (NN interest)))) (, ,) (NP (NNS motivates)) (VP (VP (VBZ bettors)) (, ,) (CC and) (VP (NN boost) (NP (NN book) (NNS sales)))) (. .)))

@@ -1,4 +1,0 @@
-(ROOT (S (PP (IN In) (NP (CD 1989))) (, ,) (NP (JJ former) (NNP East) (JJ German) (NN leader) (NNP Erich) (NNP Honecker)) (VP (VBD was) (VP (VBN arrested) (S (VP (TO to) (VP (VB await) (NP (NN trial)) (PP (IN for) (NP (NP (NNS treason)) (, ,) (NP (NN corruption)) (, ,) (CC and) (NP (JJ possible) (NN murder) (NNS charges))))))))) (. .)))
-(ROOT (S (S (VP (VBN Judged) (S (ADJP (RB too) (JJ ill))) (PP (IN for) (NP (NN imprisonment))))) (, ,) (NP (PRP he)) (VP (VBD was) (VP (VBN placed) (PP (IN in) (NP (DT an) (ADJP (NNP East) (NNP German)) (NN hospital))))) (. .)))
-(ROOT (S (PP (IN In) (NP (CD 1992))) (, ,) (NP (PRP he)) (VP (VBD was) (VP (VP (VBN tried)) (, ,) (VP (VBN imprisoned)) (, ,) (CC and) (VP (VBN released) (PP (IN in) (NP (CD 1993)))))) (. .)))
-(ROOT (S (NP (PRP He)) (VP (VBD died) (PP (IN in) (NP (NNP Santiago) (, ,) (NNP Chile))) (PP (IN in) (NP (CD 1994)))) (. .)))

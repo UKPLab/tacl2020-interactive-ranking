@@ -1,8 +1,0 @@
-(ROOT (S (NP (NNS Marathons)) (VP (VBP are) (NP (NP (DT an) (NN experience)) (PP (IN of) (NP (NP (NN success)) (, ,) (NP (NN failure)) (, ,) (CC and) (NP (NN excitement)))))) (. .)))
-(ROOT (S (NP (JJ Such)) (VP (VBZ is) (NP (NP (DT the) (NNP Boston) (NNP Marathon)) (PP (IN with) (NP (PRP$ its) (JJ storied) (NN past))))) (. .)))
-(ROOT (S (NP (DT This) (NN race)) (ADVP (RB often)) (VP (VBZ turns) (PP (IN into) (NP (DT a) (NN speed) (NN duel)))) (. .)))
-(ROOT (S (NP (NNS Ethiopians)) (VP (VBP have) (VP (VP (VBN dominated) (NP (NNP U.S.) (NNS marathons)) (PP (IN in) (NP (DT the) (NN past)))) (CC and) (VP (VB appear) (ADJP (JJ ready) (S (VP (TO to) (VP (VB do) (NP (PRP it)) (ADVP (RB again))))))))) (. .)))
-(ROOT (S (NP (NNP Patience)) (VP (VBZ is) (NP (NP (DT an) (NN asset)) (PP (IN in) (NP (NP (NN marathon)) (VP (VBG running)))))) (. .)))
-(ROOT (S (NP (NNS Foreigners)) (VP (VBP have) (VP (VBN prevailed) (PP (IN in) (NP (NNP U.S.) (NNS marathons))) (, ,) (SBAR (IN as) (S (NP (PRP they)) (VP (VBD did) (PP (IN in) (NP (DT the) (CD 1990) (NNP New) (NNP York) (NNP City) (NNP Marathon)))))))) (. .)))
-(ROOT (S (PP (IN In) (NP (NP (NN addition)) (PP (TO to) (NP (NN patience))))) (, ,) (NP (NN stamina) (CC and) (NN determination)) (VP (VBP are) (NP (NP (ADJP (RB almost) (JJ necessary)) (NNS requirements)) (PP (IN for) (NP (DT the) (JJ successful) (NN marathon) (NN runner))))) (. .)))
-(ROOT (S (PP (IN For) (NP (NN marathon) (NNS enthusiasts))) (, ,) (`` ``) (NP (NN marathon) (NNS vacations)) ('' '') (VP (VBP are) (ADVP (RB now)) (ADJP (JJ available) (PP (IN for) (NP (NP (DT those)) (SBAR (WHNP (WP who)) (S (VP (VBP want) (S (VP (TO to) (VP (VB mix) (NP (DT a) (NN marathon)) (PP (IN with) (NP (DT a) (NN vacation))))))))))))) (. .)))

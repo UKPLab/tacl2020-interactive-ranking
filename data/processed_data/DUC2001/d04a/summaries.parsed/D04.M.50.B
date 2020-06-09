@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (DT An) (VBN estimated) (QP ($ $) (CD 20) (CD billion)) (NNS dollars)) (PP (IN in) (NP (NN damage))) (VP (VBN caused) (PP (IN by) (NP (NNP Hurricane) (NNP Andrew))))) (VP (MD could) (VP (VB generate) (NP (QP (IN up) (TO to) ($ $) (CD 7.3) (CD billion))) (PP (IN in) (NP (NNS claims))) (, ,) (S (VP (VBG making) (NP (DT this) (NP (DT the) (JJS costliest) (NN year)) (ADVP (RB ever) (PP (IN for) (NP (DT the) (NNP US) (NN property)))) (: -) (NP (NN casualty) (NN industry))))))) (. .)))
-(ROOT (S (NP (JJS Most) (NN damage)) (VP (VBD occurred) (PP (IN in) (NP (JJ south) (NNP Florida)))) (. .)))
-(ROOT (S (ADVP (RB Very)) (NP (NP (RB little)) (PP (IN of) (NP (DT the) (NN loss)))) (VP (VBZ is) (VP (VBN covered) (PP (IN by) (NP (JJ foreign) (NNS reinsurers))))) (. .)))
-(ROOT (S (NP (NNP Government) (NN relief) (NNS efforts)) (VP (VBP are) (ADJP (JJ underway))) (. .)))

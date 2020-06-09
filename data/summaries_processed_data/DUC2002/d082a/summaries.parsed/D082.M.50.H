@@ -1,0 +1,5 @@
+(ROOT (S (NP (NP (NNP Andrei) (NNP Sakharov)) (, ,) (NP (JJ Soviet) (NN hydrogen) (NN bomb) (NN developer) (CC and) (JJ prominent) (NNS 1970s) (NN dissident)) (, ,)) (VP (VBD won) (NP (DT the) (CD 1975) (NNP Nobel) (NNP Peace) (NNP Prize))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD was) (VP (VBN exiled) (PP (TO to) (NP (NNP Gorky))) (PP (IN from) (NP (CD 1980-1986))))) (. .)))
+(ROOT (S (NP (NNP Sakharov)) (VP (VP (VBD supported) (NP (NP (NNP Gorbachev) (POS 's)) (NNS reforms))) (CC but) (VP (VBD urged) (NP (VBN improved) (JJ human) (NNS rights)))) (. .)))
+(ROOT (S (PP (IN In) (NP (NNP April) (CD 1989))) (NP (PRP he)) (VP (VBD was) (VP (VBN elected) (PP (TO to) (NP (NN parliament))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD died) (PRT (RP in)) (NP (NNP December) (CD 1989)) (, ,) (VP (VBN aged) (NP (CD 68))) (, ,) (PP (IN of) (NP (DT an) (JJ apparent) (NN heart) (NN attack)))) (. .)))

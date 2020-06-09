@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (DT A) (NN number)) (PP (IN of) (NP (JJ domestic) (CC and) (JJ foreign) (NNS planes)))) (VP (VBD crashed) (PP (IN during) (NP (DT the) (NNS years) (NN 1987-1991)))) (. .)))
-(ROOT (S (NP (NP (DT Some)) (PP (IN of) (NP (DT the) (VBN suspected) (NNS causes)))) (VP (VBP are) (NP (NP (JJ mechanical) (NN failure)) (, ,) (NP (NN pilot) (NN error)) (, ,) (NP (JJ extreme) (NN weather)) (CC and) (NP (JJ terrorist) (NN activity)))) (. .)))
-(ROOT (S (ADVP (RB Occasionally)) (NP (NNS causes)) (VP (VBP overlap) (, ,) (PP (JJ such) (IN as) (NP (NP (NP (NN pilot) (NN error)) (PP (IN during) (NP (DT a) (JJ mechanical) (NN crisis)))) (, ,) (CC or) (NP (NP (JJ navigational) (NNS problems)) (PP (IN in) (NP (JJ bad) (NN weather))))))) (. .)))
-(ROOT (S (NP (DT Some) (NNS crashes)) (VP (VBP remain) (NP (DT a) (NN mystery))) (. .)))

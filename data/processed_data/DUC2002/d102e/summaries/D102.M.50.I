@@ -1,2 +1,0 @@
-When Lucille Ball died at 77, fans from presidents to neighbors to co-stars to critics paid tributes to her life, person and comedic skills.
-Although she was a chorus girl, model, movie star, and television entrepreneur, she is best remembered for "I Love Lucy," a 1950's show that revolutionized television comedy.

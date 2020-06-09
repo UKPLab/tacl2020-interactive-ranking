@@ -1,8 +1,0 @@
-(ROOT (S (NP (NNP Security)) (ADVP (JJ high) (PP (IN for) (NP (NP (NNP Clinton) (POS 's)) (NN visit)) (PP (TO to) (NP (NP (NP (NNP Gaza)) (, ,) (NP (NP (NN part)) (PP (IN of) (NP (DT the) (NNP Wye) (NNP Accord)))) (, ,)) (PP (IN as) (NP (JJ Palestinian) (NNS leaders))))))) (VP (VB revoke) (NP (DT a) (JJ 1964) (JJ Israeli) (NN destruction) (NN clause))) (. .)))
-(ROOT (S (NP (NNP Israel)) (VP (VBZ claims) (NP (NP (NNP Air) (NNP Force)) (SBAR (S (NP (NP (CD One) (NN landing)) (PP (IN in) (NP (NNP Palestinian)))) (VP (VBZ is) (NP (JJ sovereign) (NN recognition))))))) (. .)))
-(ROOT (S (NP (PRP It)) (VP (MD wo) (RB n't) (VP (VB withdraw) (NP (NNP West) (NNP Bank) (NNS troops)) (SBAR (IN unless) (S (NP (NNPS Palestinians)) (ADVP (RB formally)) (VP (VBP vote) (S (VP (TO to) (VP (VB revoke) (NP (DT the) (NN clause) (CC and) (NN violence) (NNS stops)))))))))) (. .)))
-(ROOT (S (NP (NNP Palestine)) (VP (VBZ says) (SBAR (S (NP (NNP Israel)) (VP (VBD violated) (NP (DT the) (NNP Accord)) (PP (IN by) (NP (NP (JJ improper) (NN prisoner) (NNS releases)) (, ,) (NP (NN roadbuilding)) (CC and) (NP (NN settlement) (NN expansion)))))))) (. .)))
-(ROOT (S (S (NP (PRP It)) (VP (VBZ warns) (PP (IN of) (NP (NN violence))))) (CC and) (S (NP (EX there)) (VP (VBP have) (VP (VBN been) (NP (JJ stone-throwing) (NNS protests))))) (. .)))
-(ROOT (S (NP (NNP Radical) (NNP Islam) (NN group) (NNP Hamas)) (VP (VBZ denounces) (NP (NP (DT the) (NN visit)) (CC and) (NP (DT the) (NNP Accord)))) (. .)))
-(ROOT (S (NP (NNP Clinton)) (VP (VBZ has) (VP (VBN made) (S (VP (VBG ending) (S (NP (DT the) (JJ long) (NN feud)) (NP (DT a) (NN crusade))))))) (. .)))
-(ROOT (S (NP (NP (DT Both) (NNP Clinton) (CC and) (NNP Netanyahu) (POS 's)) (NN leadership)) (VP (VBD threatened)) (. .)))

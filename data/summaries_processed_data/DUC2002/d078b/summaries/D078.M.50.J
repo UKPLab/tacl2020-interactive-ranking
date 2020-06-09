@@ -1,0 +1,2 @@
+In its 61-year history, many of Hollywood's highest achievers, among them directors Brooks (1988), Spielberg (1988) and Lee (1989) did not win nominations for the famous, but not copyright protected, award of the Academy of Arts and Sciences.
+Millions watch the televised presentation of awards worth millions to film studios.

@@ -1,0 +1,8 @@
+A barracks at the Royal Marine Music School in Deal was leveled in an explosion on Friday, which killed 10 persons and injured 22 others, 12 seriously.
+Responsibility for the blast was claimed by the Irish Republican Army, which said the attack was in response to a recent speech made by Prime Minister Thatcher to the Ulster Defense Regiment.
+Calling the speech an "act of war," the IRA said such attacks would continue until the British withdrew their forces from Northern Ireland and allow a unification of the protestant Northern Ireland with the Roman Catholic Republic of Ireland.
+The explosion, which could be heard two miles away, came at 8:30 in the morning, just as the musicians were taking a coffee break.
+Destroying the barracks, it also severely damaged a number of neighborhood homes, causing minor injuries among their residents.
+Neighbors of the barracks as well as opposition politicians blamed the use of private security firms, which, they say, caused the security at the base to be lax.
+Defending the use of the firms, Defense Secretary Tome King issued an alert for all military bases in Britain.
+The attack is the latest in a series of deadly attacks against British bases in the last 20 years.

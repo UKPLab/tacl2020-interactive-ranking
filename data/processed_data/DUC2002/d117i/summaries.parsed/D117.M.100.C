@@ -1,8 +1,0 @@
-(ROOT (S (NP (DT The) (NNP Booker) (NNP Prize)) (VP (VBD was) (VP (VBN established) (PP (IN in) (NP (CD 1969))) (S (VP (TO to) (VP (VB honor) (NP (NP (DT the) (JJS best) (NN work)) (PP (IN of) (NP (NN fiction)))) (PP (IN by) (NP (DT a) (JJ British) (CC or) (NN Commonwealth) (NN author)))))))) (. .)))
-(ROOT (S (NP (PRP It)) (VP (VBZ is) (VP (VBN sponsored) (PP (IN by) (NP (NP (NNP Booker)) (, ,) (NP (DT an) (JJ international) (NN food)) (CC and) (NP (NN farming) (NN business)))))) (. .)))
-(ROOT (S (S (NP (DT The) (NNP Booker)) (VP (VBZ carries) (NP (DT a) (JJ substantial) (JJ monetary) (NN award)))) (, ,) (CC and) (SINV (VP (VBZ is) (ADVP (RB now))) (NP (NP (NNP Britain) (POS 's)) (RBS most) (JJ prestigious) (NN fiction) (NN prize))) (. .)))
-(ROOT (S (NP (NNP Judges)) (VP (VP (VBP name) (NP (CD six) (NNS finalists))) (, ,) (CC and) (VP (ADVP (RB later)) (VBP select) (NP (NP (DT the) (NN winner)) (PP (IN from) (NP (DT those) (CD six)))))) (. .)))
-(ROOT (S (NP (DT The) (NN competition)) (VP (VBZ creates) (NP (JJ great) (NN interest) (CC and) (NNS motivates) (NNS bettors))) (. .)))
-(ROOT (S (NP (PRP It)) (ADVP (RB also)) (VP (VBZ boosts) (NP (NN book) (NNS sales))) (. .)))
-(ROOT (S (NP (NP (CD Three)) (PP (IN of) (NP (DT the) (JJ recent) (NNS winners)))) (ADVP (RB now)) (VP (VP (VBP live) (PP (IN in) (NP (NP (NNP Britain)) (CC or) (NP (DT a) (NNP Commonwealth) (NN country))))) (, ,) (CC but) (VP (VBD were) (VP (VBN born) (ADVP (RB elsewhere))))) (. .)))
-(ROOT (S (NP (NP (RB Only) (NNS books)) (VP (VBN written) (PP (IN in) (NP (NNP English))))) (VP (MD can) (VP (VB be) (VP (VBN entered) (PP (IN into) (NP (NNP Booker) (NN competition)))))) (. .)))

@@ -1,4 +1,0 @@
-De Beers is a century-old South African company that produces and markets gem quality diamonds.
-The company's marketing arm, the London-based Central Selling Organization, controls the selling of 80 percent of the world's gem quality diamonds by cleverly manipulating their supply and demand.
-Uncut diamonds from Namibia, Botswana, Zimbabwe, Angola, Australia, Zaire and the Soviet Union are sold to dealers concentrated in Antwerp., New York, Tel Aviv and Bombay.
-In recent years the countries selling through the CSO have aggressively sought more independence in selling their diamonds, but De Beers has successfully deflected those efforts.

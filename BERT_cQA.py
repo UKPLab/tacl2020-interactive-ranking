@@ -11,7 +11,7 @@ Steps for each topic:
 6. Compute predictions. <INITIALLY put 1 for the gold and 0 for the other answers>
 7. Write to CSV files.
 
-Each topic stores CSV files under 'BERT_cQA_vec_pred/%s/' % topic.
+Each topic stores CSV files under 'data/BERT_cQA_vec_pred/%s/' % topic.
 For each question in the test dataset, we save a separate CSV file.
 The csv files contain a row per candidate answer + a row at the end for the gold answer (this row will be a
  duplicate of one of the others.)
@@ -20,6 +20,8 @@ taken from our final BERT layer).
 
 """
 import csv
+import sys
+
 import pandas as pd
 import logging
 import os
@@ -135,7 +137,7 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
     return ncorrect / float(count_examples), np.mean(losses)
 
 
-def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertcqa_params'):
+def train_bertcqa(data_loader, nepochs=1, random_seed=42, save_path='saved_bertcqa_params', reload_model=False):
 
     # For reproducibility while debugging. TODO: vary this during real experiments.
     np.random.seed(random_seed)
@@ -157,7 +159,7 @@ def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
     model = BertRanker()
     model = model.to(device)
 
-    if os.path.exists(save_path):
+    if reload_model and os.path.exists(save_path):
         print('Found a previously-saved model... reloading')
         model.load_state_dict(torch.load(save_path+'.pkl'))
         with open(save_path+'_num_epochs.txt', 'r') as fh:
@@ -186,7 +188,7 @@ def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
             device,
             scheduler
         )
-        print(f'Train loss {train_loss} accuracy {train_acc}')
+        print(f'Train loss {train_loss} pairwise label accuracy {train_acc}')
 
         print('Saving trained model')
         torch.save(model.state_dict(), save_path+'.pkl')
@@ -197,7 +199,7 @@ def train_BERTcQA(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
     return model, device
 
 
-def predict_BERTcQA(model, data_loader, device):
+def predict_bertcqa(model, data_loader, device):
     scores = np.zeros(0)
     vectors = np.zeros(0)
     qids = np.zeros(0)
@@ -214,7 +216,6 @@ def predict_BERTcQA(model, data_loader, device):
         batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
 
         scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
-        print(batch_vectors.shape)
         vectors = np.append(vectors, batch_vectors.cpu().numpy())
         qids = np.append(qids, batch["qid"].detach().numpy().flatten())
         ismatch = np.append(ismatch, batch["ismatch"].detach().numpy().flatten())
@@ -223,7 +224,7 @@ def predict_BERTcQA(model, data_loader, device):
 
 
 def evaluate_accuracy(model, data_loader, device):
-    scores, vectors, qids, matches = predict_BERTcQA(model, data_loader, device)
+    scores, vectors, qids, matches = predict_bertcqa(model, data_loader, device)
 
     unique_questions = np.unique(qids)
 
@@ -456,129 +457,109 @@ def construct_single_item_dataset(dataframe):
 if __name__ == "__main__":
 
     # Create the output dir
-    outputdir = './BERT_cQA_vec_pred'
+    outputdir = './data/cqa_base_models/BERT_vec_pred'
     if not os.path.exists(outputdir):
         os.mkdir(outputdir)
 
     # Our chosen topics
-    topics = ['apple', 'cooking', 'travel']
+    topic = sys.args(1)  # ['apple', 'cooking', 'travel']
 
-    for topic in topics:
-        print('Loading the training data for %s' % topic)
+    print('Loading the training data for %s' % topic)
 
-        # Data directory:
-        datadir = './coala_data/%s.stackexchange.com' % topic
+    # Data directory:
+    datadir = './data/cqa_data/%s.stackexchange.com' % topic
 
-        # answers.tsv: each row corresponds to an answer; first column is answer ID; rows contain
-        # the space-separated IDs of the tokens in the answers.
-        # questions.tsv: as above but first column is question ID, rows contain space-separated token IDs of questions.
-        # train.tsv, test.tsv and valid.tsv contain the questions & candidates in each set. First column is question ID,
-        # second column is gold answer ID, third column is a space-separated list of candidate answer IDs.
-        # vocab.tsv is needed to retrieve the text of the questions and answers from the token IDs. First col is ID and
-        # second col is the token.
+    # answers.tsv: each row corresponds to an answer; first column is answer ID; rows contain
+    # the space-separated IDs of the tokens in the answers.
+    # questions.tsv: as above but first column is question ID, rows contain space-separated token IDs of questions.
+    # train.tsv, test.tsv and valid.tsv contain the questions & candidates in each set. First column is question ID,
+    # second column is gold answer ID, third column is a space-separated list of candidate answer IDs.
+    # vocab.tsv is needed to retrieve the text of the questions and answers from the token IDs. First col is ID and
+    # second col is the token.
 
-        # load the vocab
-        vocab = pd.read_csv(os.path.join(datadir, 'vocab.tsv'), sep='\t', quoting=csv.QUOTE_NONE, header=None,
-                            index_col=0, names=['tokens'], dtype=str, keep_default_na=False)["tokens"].values
+    # load the vocab
+    vocab = pd.read_csv(os.path.join(datadir, 'vocab.tsv'), sep='\t', quoting=csv.QUOTE_NONE, header=None,
+                        index_col=0, names=['tokens'], dtype=str, keep_default_na=False)["tokens"].values
 
-        # load the questions
-        questions = pd.read_csv(os.path.join(datadir, 'questions.tsv'), sep='\t', header=None, index_col=0)
+    # load the questions
+    questions = pd.read_csv(os.path.join(datadir, 'questions.tsv'), sep='\t', header=None, index_col=0)
 
-        # load the answers
-        answers = pd.read_csv(os.path.join(datadir, 'answers.tsv'), sep='\t', header=None, index_col=0)
+    # load the answers
+    answers = pd.read_csv(os.path.join(datadir, 'answers.tsv'), sep='\t', header=None, index_col=0)
 
-        # Load the training set
-        traindata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                                index_col=0)
-        tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=0)
+    # Load the training set
+    traindata = pd.read_csv(os.path.join(datadir, 'train.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
+                            index_col=0)
+    tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=0)
 
-        # Load the validation set
-        # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
-        #                              names=['goldid', 'ansids'], index_col=0, nrows=2)
-        # va_qas, va_qids, va_goldids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
+    # Load the validation set
+    # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
+    #                              names=['goldid', 'ansids'], index_col=0, nrows=2)
+    # va_qas, va_qids, va_goldids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
 
-        # Load the test set
-        testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                               index_col=0)
-        te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
+    # Load the test set
+    testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
+                           index_col=0)
+    te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
-        # Train the model ----------------------------------------------------------------------------------------------
-        bertcqa_model, device = train_BERTcQA(tr_data_loader, 5, 42, 'BERT_cQA_vec_pred/model_params_%s' % topic)
+    # Train the model ----------------------------------------------------------------------------------------------
+    bertcqa_model, device = train_bertcqa(tr_data_loader, 5, 42, os.path.join(outputdir, 'model_params_%s' % topic),
+                                          reload=reload_model)
 
-        # Compute performance on training set --------------------------------------------------------------------------
-        print("Evaluating on training set:")
-        tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
-        evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
+    # Compute performance on training set --------------------------------------------------------------------------
+    print("Evaluating on training set:")
+    tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
+    evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
 
-        # Compute performance on validation set ------------------------------------------------------------------------
-        # print("Evaluating on validation set:")
-        # evaluate_accuracy(bertcqa_model, va_data_loader, device, va_qids, va_goldids)
+    # Compute performance on validation set ------------------------------------------------------------------------
+    # print("Evaluating on validation set:")
+    # evaluate_accuracy(bertcqa_model, va_data_loader, device, va_qids, va_goldids)
 
-        # Compute performance on test set ------------------------------------------------------------------------------
-        print("Evaluating on test set:")
-        _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device)
+    # Compute performance on test set ------------------------------------------------------------------------------
+    print("Evaluating on test set:")
+    _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device)
 
-        # Output predictions in the right format for the GPPL experiments ----------------------------------------------
-        # Save predictions for the test data
-        fname = os.path.join(outputdir, '%s.tsv' % topic)
+    # Output predictions in the right format for the GPPL experiments ----------------------------------------------
+    # Save predictions for the test data
+    fname = os.path.join(outputdir, '%s.tsv' % topic)
 
-        output_df = pd.DataFrame(columns=['qid', 'answer', 'prediction', 'vector'])
+    output_df = pd.DataFrame(columns=['qid', 'answer', 'prediction', 'vector'])
 
-        for te_idx, te_qid in enumerate(testdata.index):
-            if np.mod(te_idx, 100) == 0:
-                print('Processing question %i' % te_idx)
+    for te_idx, te_qid in enumerate(testdata.index):
+        if np.mod(te_idx, 100) == 0:
+            print('Processing question %i' % te_idx)
 
-            # The columns are: 'answer', 'prediction', 'vector'.
-            goldid = testdata['goldid'].loc[te_qid].split(' ')
-            ansids = np.unique(testdata['ansids'].loc[te_qid].split(' ')).tolist()
-            qscores = te_scores[te_qids == te_qid]
-            qvectors = te_vectors[te_qids == te_qid]
+        # The columns are: 'answer', 'prediction', 'vector'.
+        goldid = testdata['goldid'].loc[te_qid].split(' ')
+        ansids = np.unique(testdata['ansids'].loc[te_qid].split(' ')).tolist()
+        qscores = te_scores[te_qids == te_qid]
+        qvectors = te_vectors[te_qids == te_qid]
 
-            # only use the first gold answer if there are multiple. Put gold answer at the end of the list of answers.
-            ansids.append(goldid[0])
-            qscores = np.append(qscores, te_goldids[te_qid])
-            qvectors = np.append(qvectors, te_goldids[te_qid])
+        # only use the first gold answer if there are multiple. Put gold answer at the end of the list of answers.
+        ansids.append(goldid[0])
+        qscores = np.append(qscores, te_goldids[te_qid])
+        qvectors = np.append(qvectors, te_goldids[te_qid])
 
-            qids = [te_qid] * len(ansids)
+        qids = [te_qid] * len(ansids)
 
-            if len(ansids) != 101:
-                print("Unexpected number of answers for q %i = %i" % (te_idx, len(ansids)))
-                if len(ansids) <= 2:
-                    # This is useless, don't write it
-                    continue
+        if len(ansids) != 101:
+            print("Unexpected number of answers for q %i = %i" % (te_idx, len(ansids)))
+            if len(ansids) <= 2:
+                # This is useless, don't write it
+                continue
 
-            answer_texts = []
-            for ans_id in ansids:
-                ans_tokids = answers.loc[ans_id].values[0].split(' ')
-                ans_toks = vocab[np.array(ans_tokids).astype(int)]
+        answer_texts = []
+        for ans_id in ansids:
+            ans_tokids = answers.loc[ans_id].values[0].split(' ')
+            ans_toks = vocab[np.array(ans_tokids).astype(int)]
 
-                answer = ' '.join(ans_toks)
-                answer_texts.append(answer)
+            answer = ' '.join(ans_toks)
+            answer_texts.append(answer)
 
-            output_df = output_df.append(
-                {'qid': qids, 'answer': answer_texts, 'prediction': qscores, 'vector': qvectors},
-                ignore_index=True
-            )
+        output_df = output_df.append(
+            {'qid': qids, 'answer': answer_texts, 'prediction': qscores, 'vector': qvectors},
+            ignore_index=True
+        )
 
-        output_df.to_csv(fname, sep='\t')
-
-        del bertcqa_model
-        del te_scores
-        del te_vectors
-
-        del tr_data_loader
-        del tr_qa_pairs
-        del tr_data
-
-        del te_data_loader
-        del te_qas
-        del te_qids
-        del te_goldids
-        del te_data
-
-        del tr_data_loader2
-        del tr_qas2
-        del tr_qids2
-        del tr_goldids2
-        del tr_data2
+    output_df.to_csv(fname, sep='\t')
 

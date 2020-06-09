@@ -1,2 +1,0 @@
-Major strikes, mostly by coal miners seeking higher wages, seriously disrupted industries throughout the world from 1987 to 1994 in South Africa, Poland, Romania, the Ukraine, Siberia and Central Asia in the Soviet Union.
-In the United States, coal miners' strikes occurred in Virginia and West Virginia, Pennsylvania, Indiana and Kentucky.

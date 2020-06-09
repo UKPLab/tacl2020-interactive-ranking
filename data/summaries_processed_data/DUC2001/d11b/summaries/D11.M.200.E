@@ -1,0 +1,13 @@
+Weather Service and other records have yielded valuable data concerning the pattern of tornado occurrences in the U.S. Spring in Texas and the U.S. heartland brings the tornado season.
+The Weather Service advises people to have safety plans before tornadoes strike.
+A particularly dangerous tornado occurred on 19 April, 1988 when it cut a 12-mile swath through the town of Madison, Florida.
+The neighboring state of Georgia was also struck.
+On fewer occasions, tornadoes have occurred at other times of the year.
+On 15 and 16 November 1989, for example, a dangerous series of tornadoes, thunderstorms and high winds struck the Mid-Atlantic, Great Lakes, and Southeast area states.
+Huntsville, Alabama took the major portion of these casualties.
+Tornado watches for the two days extended as far north as the Northeast.
+1990 was notable for its disastrous tornadoes and floods in the Mid-West and Southeast.
+Floods occurred in the South and the Plains.
+Tetsuya Fujita, a science professor at the University of Chicago in 1990, became one of the world's foremost authorities on tornadoes.
+He developed a scale to measure tornadoes.
+He also pioneered the deployment of doppler radars at airports so that aircraft could avoid dangerous air currents.

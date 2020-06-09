@@ -1,0 +1,6 @@
+(ROOT (S (NP (NNS Oscars)) (VP (VBP increase) (NP (NN film) (NNS earnings)) (, ,) (S (VP (VBG prompting) (NP (NNS studios)) (S (VP (TO to) (VP (VB woo) (NP (NNS votes)))))))) (. .)))
+(ROOT (S (NP (DT The) (NNP Thalberg) (NN award)) (VP (VBZ recognizes) (NP (NP (JJ overlooked) (NNS giants)) (PP (IN like) (NP (NNP Steven) (NNP Spielberg))))) (. .)))
+(ROOT (S (NP (NNP Oscar) (NNS shows)) (VP (VBP have) (VP (VBN been) (VP (VBN criticized) (PP (IN for) (NP (PRP$ their) (NNS excesses)))))) (. .)))
+(ROOT (S (S (NP (NNP Disney)) (VP (VBD sued) (PP (IN over) (NP (DT an) (JJ unauthorized) (NNP Snow) (NNP White) (NN routine))))) (, ,) (CC and) (S (NP (DT the) (NN academy)) (VP (VBD sued) (SBAR (WHADVP (WRB when)) (S (NP (JJ other) (NNS awards)) (VP (VBD resembled) (S (NP (DT the) (NNP Oscar)) (ADJP (RB too) (JJ much)))))))) (. .)))
+(ROOT (S (NP (DT The) (JJ gold-plated) (NNP Oscar)) (VP (VBZ is) (VP (VBN manufactured) (PP (IN by) (NP (NNP R.S.)))))))
+(ROOT (NP (NNP Owens) (NNP Co.) (. .)))

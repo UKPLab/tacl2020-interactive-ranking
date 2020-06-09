@@ -1,2 +1,0 @@
-Miners throughout the world have used strikes not only to achieve economic gains, but also to gain greater control over their industries and to achieve political ends.
-In addition to higher wages, miners in the Soviet Union struck for more local control of their industry and in Poland miners struck for the legalization of Solidarity.

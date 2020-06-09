@@ -1,4 +1,0 @@
-(ROOT (S (NP (NNP Clarence) (NNP Thomas)) (VP (VBD rose) (PP (IN from) (NP (DT an) (JJ impoverished) (NN childhood))) (PP (TO to) (NP (NP (DT a) (NN seat)) (PP (IN on) (NP (DT the) (NNP Supreme) (NNP Court)))))) (. .)))
-(ROOT (S (NP (NP (DT The) (JJS greatest) (NN influence)) (PP (IN in) (NP (PRP$ his) (NN life)))) (VP (VBD was) (NP (NP (PRP$ his) (NN grandfather)) (SBAR (WHNP (WP who)) (S (VP (VBD taught) (SBAR (S (NP (PRP him)) (VP (VBZ values) (SBAR (IN that) (S (VP (VBN anchored) (NP (PRP$ his) (NN conservatism))))))))))))) (. .)))
-(ROOT (S (NP (PRP He)) (VP (VBD earned) (NP (DT a) (NNP Yale) (NN law) (NN degree))) (. .)))
-(ROOT (S (NP (PRP He)) (VP (VBD held) (NP (NP (DT a) (NN variety)) (PP (IN of) (NP (JJR lesser) (NNS posts)))) (PP (IN before) (S (VP (VBG reaching) (NP (DT the) (NNP Supreme) (NNP Court)))))) (. .)))

@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (DT A) (JJ violent) (NN earthquake)) (NP (NNP Tuesday))) (, ,) (S (VP (VBG registering) (NP (CD 6.9)) (PP (IN on) (NP (DT the) (NNP Richter) (NN scale))))) (, ,) (VP (VBD caused) (NP (JJ widespread) (NN damage)) (PP (IN in) (NP (DT the) (NNP San) (NNP Francisco) (NNP Bay) (NN area)))) (. .)))
-(ROOT (S (NP (NP (DT A) (NN section)) (PP (IN of) (NP (NP (DT the) (NNP San) (NNP Francisco) (NNP Bridge)) (CC and) (NP (DT the) (NNP Oakland-San) (NNP Francisco) (NNP Bridge))))) (VP (VBD collapsed)) (. .)))
-(ROOT (S (NP (NNP Swaying)) (VP (VBZ stands) (PP (IN at) (NP (NP (DT the) (NNP World) (NNP Series) (NN game)) (PP (IN in) (NP (NNP Candlestick) (NNP Park) (NNP terrified) (NNS fans)))))) (. .)))
-(ROOT (S (NP (NNP President) (NNP Bush)) (VP (VBD directed) (NP (QP ($ $) (CD 273) (CD million))) (PP (IN in) (NP (NN aid)))) (. .)))

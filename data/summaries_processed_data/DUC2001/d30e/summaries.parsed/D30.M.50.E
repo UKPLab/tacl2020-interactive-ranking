@@ -1,0 +1,4 @@
+(ROOT (S (NP (DT The) (NNP World) (NNP Bank)) (VP (VBZ has) (RB not) (VP (VBN been) (ADJP (JJ successful) (PP (IN in) (S (VP (VBG reducing) (NP (JJ Third) (NNP World) (NN debt)))))))) (. .)))
+(ROOT (S (NP (NNP Third) (NNP World) (NNS countries)) (VP (VBP are) (VP (VBN overwhelmed) (PP (IN by) (NP (NP (NN interest) (NNS payments)) (PP (IN on) (NP (NNS loans))))))) (. .)))
+(ROOT (S (NP (DT The) (NNS solutions)) (VP (VBP range) (PP (IN from) (S (VP (VBG remaining) (PP (IN with) (NP (NP (DT the) (FW status) (FW quo)) (PP (TO to) (S (VP (VBG canceling) (NP (DT these) (NNS debts)) (ADVP (RB entirely))))))))))) (. .)))
+(ROOT (S (NP (NP (DT Some) (JJ individual) (NNS initiatives)) (VP (VBN directed) (PP (IN at) (NP (NP (JJ human) (NNS resources)) (PP (IN in) (NP (NNP Third) (NNP World) (NNS countries))))))) (VP (VBP are) (VP (VBG promising))) (. .)))

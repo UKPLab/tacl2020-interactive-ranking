@@ -1,9 +1,0 @@
-In early May elections across Britain, the Conservatives suffered their worst defeat ever, losing 444 seats.
-One editorial claims some Conservatives will link the defeats to Prime Minister John Major, and there is speculation that he could be forced out this autumn.
-A former welfare recipient, John Major was elected Conservative Party leader and successor to his mentor Margaret Thatcher when she resigned under pressure in November 1990.
-After Mrs. Thatcher submitted her seals of office, Major was called by Queen Elizabeth II to form a new government, and it was expected that there would be no significant policy shift.
-Major's comment while visiting America a month later that Iraqi troops might have to be "forcibly removed" from Kuwait echoed Mrs. Thatcher's hard- line on the Persian Gulf.
-Within a year of winning the general election, his popularity had plunged.
-In the July 1993 Christchurch by-election the Conservative majority of 23,015 the previous year was converted into a 16,427 majority for the Liberal Democrats.
-Though Major's personal style is preferable to that of Mrs. Thatcher, he is characterized as a vacillating, weak leader, lacking vision and political conviction.
-Not even recent revelations that Major uses salty language can alter his wimp image.

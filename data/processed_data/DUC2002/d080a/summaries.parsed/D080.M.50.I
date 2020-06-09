@@ -1,4 +1,0 @@
-(ROOT (S (NP (DT The) (NNP McMartin) (NNP Pre-School) (NN molestation) (NN trial)) (VP (VBD ended) (NP (NNP Thursday)) (PP (IN without) (NP (DT any) (NNS convictions)))) (. .)))
-(ROOT (S (NP (NP (NNS Reactions)) (PP (TO to) (NP (DT the) (NN verdict)))) (VP (VBD were) (ADJP (JJ strong)) (, ,) (S (VP (VBG ranging) (PP (IN from) (NP (NNS tears))) (S (VP (TO to) (VP (VB finger) (S (VP (VBG pointing))))))))) (. .)))
-(ROOT (S (NP (DT The) (NN case)) (VP (VP (VBD began) (PP (IN in) (NP (CD 1983)))) (CC and) (VP (VBD became) (NP (DT a) (JJ media-fed) (NN witch-hunt)) (S (VP (VBG ending) (PP (IN with) (NP (NP (DT the) (JJS longest)) (, ,) (NP (NP (JJS costliest) (JJ criminal) (NN trial)) (PP (IN in) (NP (NN history)))))))))) (. .)))
-(ROOT (S (NP (PRP It)) (VP (MD will) (VP (VB continue) (S (VP (TO to) (VP (VB reverberate) (PP (PP (IN in) (NP (NP (JJ civil) (NNS courts)) (, ,) (NP (NNS bookstores)))) (CC and) (PP (IN on) (NP (NN television))))))))) (. .)))

@@ -1,8 +1,0 @@
-(ROOT (S (NP (NNP Overloading)) (VP (VBZ is) (NP (NP (DT a) (JJ major) (NN contributor)) (PP (PP (TO to) (NP (NN ferry) (CC and) (NN passenger) (NN boat) (NNS accidents))) (, ,) (RB particularly) (PP (IN in) (NP (DT the) (JJ third) (NN world)))))) (. .)))
-(ROOT (S (NP (NP (NNS Ferries)) (PP (IN in) (NP (NNP India) (, ,) (NNP Guatemala) (, ,) (NNP Egypt) (, ,) (NNP China) (CC and) (NNP Bangladesh)))) (RB all) (VP (VBD carried) (PP (IN for) (NP (JJR more) (NNS passengers))) (PP (IN than) (NP (JJ authorized))) (, ,) (SBAR (WHADVP (WRB when)) (S (NP (PRP they)) (VP (VBD sank))))) (. .)))
-(ROOT (S (NP (NP (JJ Many) (NNS deaths)) (NP (JJR more) (NN passenger))) (VP (VBP occur) (PP (TO to) (NP (NP (DT those)) (PP (IN below) (NP (NNS decks))))) (ADVP (IN than) (PP (TO to) (NP (DT those)))) (ADVP (RB above))) (. .)))
-(ROOT (S (NP (NNP Captain) (NN error)) (ADVP (RB also)) (VP (VBD contributed) (PP (TO to) (NP (NNS accidents)))) (. .)))
-(ROOT (S (NP (JJ Other) (NNS accidents)) (VP (VBP have) (VP (VP (VBN involved) (NP (JJ poor) (NN weather))) (CC and) (VP (PP (IN in) (NP (NP (CD one) (NN case)) (PP (IN in) (NP (NNP Bangladesh))))) (, ,) (NP (NN river) (NNS pirates))))) (. .)))
-(ROOT (S (CC But) (NP (RB even) (JJ advanced) (NNS countries)) (VP (VBP have) (NP (NN ferry) (NNS accidents))) (. .)))
-(ROOT (S (NP (NNP Nineteen) (NNP U.S.) (NNS sailors)) (VP (VBD died) (SBAR (WHADVP (WRB when)) (S (NP (DT an) (JJ Israeli) (NN ferry)) (VP (VBD sank) (SBAR (IN while) (S (VP (VBG returning) (NP (DT the) (NNS sailors)) (PP (TO to) (NP (DT the) (NNP USS) (NNP Saratoga)))))))))) (. .)))
-(ROOT (S (NP (NP (DT No) (NN cause)) (PP (IN for) (NP (DT the) (NN accident)))) (VP (VBD was) (VP (VBN reported))) (. .)))

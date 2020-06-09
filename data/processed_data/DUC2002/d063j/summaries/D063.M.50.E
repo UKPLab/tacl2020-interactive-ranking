@@ -1,2 +1,0 @@
-A barracks belonging to the Royal Marines Music School in Deal was blown up by the Irish Republican Army on Friday, killing 10 and injuring 22.
-The IRA said the bombing was in response to a speech by Prime Minister Thatcher to the Ulster Defense Regiment; a speech they considered an act of war.

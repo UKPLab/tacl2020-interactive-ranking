@@ -1,2 +1,0 @@
-Soviet President Mikhail Gorbachev returned to power as the coup against him collapsed.
-Although the junta couldn't cope with the resistance of thousands of people around the Russian Parliament, the real issue was not Gorbachev but the new political culture he initiated and the popular anti-Communist stand of Boris Yeltsin.

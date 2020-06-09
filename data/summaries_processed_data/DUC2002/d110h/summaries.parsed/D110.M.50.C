@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (NNP Iraq) (POS 's)) (NN army)) (ADVP (RB quickly)) (VP (VBP overran) (NP (NP (NNP Kuwait)) (PP (IN on) (NP (CD 2)))) (NP (NNP August) (CD 1990))) (. .)))
+(ROOT (S (NP (DT The) (NN invasion)) (VP (VBD came) (SBAR (IN after) (S (NP (NNP Iraq)) (VP (VBD accused) (NP (NP (NNP Kuwait)) (PP (IN of) (S (VP (VP (VBG stealing) (NP (NN oil)) (PP (IN from) (NP (DT a) (NN border) (NN area)))) (, ,) (CC and) (VP (VBG exceeding) (NP (NP (NNP OPEC) (POS 's)) (NN production) (NN quota))))))))))) (. .)))
+(ROOT (S (NP (DT The) (NNP United) (NNPS Nations)) (VP (VBD voted) (PP (IN on) (NP (CD 6))) (NP (NNP August)) (S (VP (TO to) (VP (VB impose) (NP (NP (JJ broad) (NN trade) (CC and) (JJ military) (NNS sanctions)) (PP (IN on) (NP (NNP Iraq)))))))) (. .)))
+(ROOT (S (NP (NP (NN Market) (NN price)) (PP (IN of) (NP (NN oil)))) (VP (VBD soared)) (. .)))

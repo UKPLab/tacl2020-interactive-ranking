@@ -1,0 +1,9 @@
+British media entrepreneur Robert Maxwell, publisher of Britain's Daily Mirror, bought the New York Daily News in 1990.
+He then planned to raise $448 million through the sale of shares in his Mirror Group Newspaper Ltd. of Britain.
+He bought Mirror Group in 1984 and turned it into one of Britain's most profitable newspaper groups.
+A year after the Daily News purchase, he was found dead in the waters off the Canary Island where he was vacationing on his yacht.
+Investigators say Maxwell siphoned money from his companies in an attempt to deal with crushing debts.
+Some $630 million was taken from his Mirror Group pension fund without authority.
+His sons Kevin and Ian, who took over the business, were investigated and found guilty for their knowledge of illegal schemes using two Swiss trusts, a private UK trust company and a US investment bank to support the Maxwell Communications Company (MCC).
+In a flurry of foreign exchange deals, the MCC would buy currency in one financial center promising, but often failing, to make payment in another center; thus getting an unauthorized loan.
+Some repayments were made by looting pension funds assets.

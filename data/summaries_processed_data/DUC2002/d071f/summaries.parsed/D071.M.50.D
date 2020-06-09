@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (NN Dog) (NN competition)) (PP (IN in) (NP (JJ national) (CC and) (JJ international) (NNS events)))) (VP (VBZ is) (NP (NP (DT both) (NN entertainment)) (CC and) (NP (JJ big) (NN business)))) (. .)))
+(ROOT (S (NP (NNP Worldwide) (NNS competitions)) (VP (VBP attract) (NP (JJ numerous) (NNS contestants) (CC and) (NNS visitors))) (. .)))
+(ROOT (S (S (NP (CD One) (NN dog)) (VP (VBD was) (NP (NP (DT the) (NN subject)) (PP (IN of) (NP (DT a) (NN law) (NN suit)))))) (CC and) (S (NP (NNS others)) (VP (VBP have) (VP (VBN appeared) (PP (IN on) (NP (NNP Sesame) (NNP Street)))))) (. .)))
+(ROOT (S (S (NP (NNP Dog) (NN handling)) (VP (MD can) (VP (VB be) (ADJP (JJ lucrative))))) (, ,) (CC but) (S (NP (DT the) (NNS hours)) (VP (VBP are) (ADJP (ADJP (JJ long)) (CC and) (ADJP (NP (DT the) (NN overhead)) (JJ high))))) (. .)))

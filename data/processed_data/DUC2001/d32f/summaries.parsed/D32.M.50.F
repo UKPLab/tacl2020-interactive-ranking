@@ -1,5 +1,0 @@
-(ROOT (S (NP (DT An) (NNP Exxon) (NN oil) (NN tanker)) (VP (VBD ran) (ADJP (JJ aground)) (PP (IN in) (NP (NP (JJ Alaskan)) (VP (VBG creating) (NP (NP (DT the) (JJS largest) (NN oil) (NN spill)) (PP (IN in) (NP (NNP US) (NN history)))))))) (. .)))
-(ROOT (S (NP (PRP It)) (VP (VBD killed) (NP (NP (NNS thousands)) (PP (IN of) (NP (NNS birds) (CC and) (NN sea) (NNS animals))))) (. .)))
-(ROOT (S (NP (NP (DT The) (NN captain)) (PP (IN of) (NP (DT the) (NN vessel)))) (VP (VBD was) (ADJP (JJ drunk) (CC and) (JJ guilty)) (PP (IN of) (NP (NN negligence)))) (. .)))
-(ROOT (S (NP (DT The) (JJ clean)) (ADVP (RB up)) (VP (VBD cost) (PP (IN over) (NP ($ $) (CD 2B)))) (. .)))
-(ROOT (S (NP (DT The) (NN area)) (VP (MD could) (ADVP (RB still)) (RB not) (VP (VB cope) (PP (IN with) (NP (NP (JJ future) (NNS spills)) (PP (IN of) (NP (DT that) (NN size))))))) (. .)))

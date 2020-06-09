@@ -1,5 +1,0 @@
-(ROOT (S (NP (NNS Marathons)) (VP (VBP attract) (NP (NP (DT both) (JJ professional) (NNS athletes)) (CONJP (RB as) (RB well) (IN as)) (NP (JJ amateur) (NNS runners)))) (. .)))
-(ROOT (S (NP (DT Some) (NNS marathons)) (VP (VBP concentrate) (PP (IN on) (NP (NP (DT the) (ADJP (JJ commercial) (CC and) (JJ moneymaking)) (NN side)) (PP (IN of) (NP (NNS marathons))))) (, ,) (SBAR (IN while) (S (NP (NNS others)) (VP (VBP attract) (NP (JJ world-class) (NNS runners)))))) (. .)))
-(ROOT (S (ADVP (RB Still)) (NP (NNS others)) (VP (VBP are) (VP (VBN organized) (ADVP (RB simply)) (PP (IN for) (NP (DT the) (NN sport))))) (. .)))
-(ROOT (S (NP (NNP Tour) (NNS companies)) (VP (VBP sponsor) (NP (NP (JJ international) (NNS trips)) (VP (VBN organized) (PP (IN around) (NP (NNS marathons)))))) (. .)))
-(ROOT (S (NP (NP (CD One)) (ADJP (JJ 83-year) (JJ old))) (VP (VBZ plans) (S (VP (TO to) (VP (VB run) (PP (IN in) (NP (DT the) (NNP Boston) (NN marathon))))))) (. .)))

@@ -1,0 +1,4 @@
+(ROOT (S (PP (IN In) (NP (CD 1989))) (, ,) (S (NP (PRP it)) (VP (VBD was) (VP (VBN reported) (SBAR (IN that) (S (NP (DT some) (CD 150,000) (NNS Americans)) (VP (VBD died) (PP (IN from) (NP (NN diabetes))))))))) (CC and) (S (NP (DT another) (CD 150,000)) (VP (VBD died) (PP (IN from) (NP (JJ diabetes-related) (NN illness))))) (. .)))
+(ROOT (S (NP (DT The) (ADJP (RBS most) (JJ common)) (NN form)) (VP (VBD was) (NP (NNP Type) (NNP II) (NNP diabetes))) (. .)))
+(ROOT (S (NP (NNPS Hispanics)) (VP (VBD were) (NP (DT the) (ADJP (RBS most) (JJ likely))) (S (VP (TO to) (VP (VB develop) (NP (DT the) (NN disease)))))) (. .)))
+(ROOT (S (PP (IN In) (NP (NNP California))) (, ,) (NP (NP (NNS programs)) (PP (IN on) (NP (NP (NN diet)) (, ,) (NP (NN exercise)) (, ,) (CC and) (NP (NN medicine))))) (VP (VBD were) (VP (VBN set) (PRT (RP up)) (S (VP (TO to) (VP (VB educate) (NP (NNPS Hispanics)) (PP (IN about) (NP (NN diabetes)))))))) (. .)))

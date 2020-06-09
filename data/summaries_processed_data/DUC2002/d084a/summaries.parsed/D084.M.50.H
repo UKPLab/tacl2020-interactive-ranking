@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (DT An) (NN explosion)) (PP (IN in) (NP (NP (DT a) (NNP battleship) (NNP Iowa) (NN gun) (NN turret)) (PP (IN on) (NP (NP (NNP April) (CD 19) (, ,) (CD 1989)) (PP (IN during) (NP (DT a) (NN training) (NN exercise)))))))) (VP (VBD killed) (NP (CD 47))) (. .)))
+(ROOT (S (NP (NNS Investigators)) (VP (VBP say) (SBAR (S (NP (DT the) (NN explosion)) (VP (VBD occurred) (SBAR (IN while) (S (NP (NN gunpowder)) (VP (VBD was) (PP (IN in) (NP (NN transit)))))))))) (. .)))
+(ROOT (S (PP (IN In) (NP (NNP Norfolk))) (, ,) (NP (NNS thousands)) (VP (VBD welcomed) (SBAR (S (NP (NP (DT the) (NNP Iowa) (NN home)) (CC and) (NP (NNP President) (NNP Bush))) (VP (VBD spoke) (PP (IN at) (NP (DT a) (NN memorial) (NN service))))))) (. .)))
+(ROOT (S (NP (NNS Critics)) (VP (VBP say) (SBAR (S (NP (DT the) (JJ WWII-era) (JJ 16-inch) (NNS guns)) (VP (VBP are) (ADJP (JJ outdated) (CC and) (JJ dangerous)))))) (. .)))

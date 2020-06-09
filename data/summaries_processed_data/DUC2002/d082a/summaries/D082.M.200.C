@@ -1,0 +1,12 @@
+Andrei Sakharov, 68, a Nobel Peace Prize winner and a human rights activist, died in Moscow on 14 December 1989.
+Sakharov was a physicist who attained hero status for his work on the Soviet hydrogen bomb.
+He later made himself a nuisance to the Kremlin with his continual calls for improvement in the rights of the Soviet people.
+In 1973 the International League for Human Rights gave him an award, but he was not able to accept it until his first visit to New York City in 1989.
+His humanitarianism won him the 1975 Noble Peace Prize.
+His gadfly activities throughout the 1970s exasperated the Kremlin.
+In January 1980, when he criticized the invasion of Afghanistan, President Brezhnev exiled him to the closed city of Gorky.
+President Gorbachev freed Sakharov in December 1986.
+He and Yelena Bonner, his wile and fellow activist, settled in Moscow.
+He praised Gorbachev for the new direction in foreign affairs, but loudly criticized the slow pace of economic reform.
+In April 1989 Sakharov was elected to membership in the Soviet Congress of People's Deputies.
+Sakharov's obituary, signed by Gorbachev and published in Pravda, and the outpouring of remorse constituted a public apology for his exile.

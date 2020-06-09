@@ -1,0 +1,15 @@
+An overloaded ferry capsized in India's Ganges River in August 1988, killing 400, many women and children from the lower deck.
+In July 1970, 150 died when a boat capsized in the Krishna River.
+An overloaded ferry sank while turning at a Meghna River junction in Bangladesh in October 1988, killing 100, mostly in the hull.
+An overloaded ferry capsized and sank off China's Hainan Island in December 1988, killing 55 students and teachers.
+In September an overloaded ferry sank in the Guangxi Zhuang Autonomous Region killing 61.
+In July a capsized ferry on the Min River killed 133 and a boat sinking on the Yangtze killed 71.
+In January 1989, an overloaded ferry sank off Guatemala's east coast, killing 67.
+It ran out of fuel and its wheel remained unattended while under tow.
+An Israeli ferry bringing sailors back to the USS Saratoga capsized in heavy seas in December 1990.
+Nineteen drowned.
+A ferry carrying 600 Somali refugees sank off Kenya in March 1991 after striking a reef.
+180 drowned, mostly from the lower deck.
+Eleven refugees drowned when a boat capsized in February 1991.
+An Egyptian ferry returning from Saudi Arabia sank in December 1991 after leaving the channel and hitting a reef.
+352 were missing.

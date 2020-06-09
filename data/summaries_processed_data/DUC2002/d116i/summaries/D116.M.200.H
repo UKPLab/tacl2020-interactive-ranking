@@ -1,0 +1,14 @@
+On Tuesday, April 24, 1990, shuttle Discovery carried the 12.5-ton Hubble Space Telescope 380 miles into space.
+Once in orbit above Earth's distorting atmosphere, Hubble would be able to see 10 times better than the largest Earth telescopes.
+Wednesday it was lifted into space by Discovery's mechanical arm and released into orbit.
+Friday the 94.5-inch mirror was exposed to starlight.
+Saturday controllers took Hubble out of safe mode.
+Problems with a solar power array, communications antennas, and two position- stabilizing gyroscopes -- exacerbated by conservative limits set on systems -- put Hubble several days behind schedule and delayed transmittal of the first photograph.
+Discovery's astronauts -- Shriver, Bolden, Hawley, McCandless, and Sullivan - - were all veterans of previous flights.
+The shuttle followed Hubble for two days to assist if necessary.
+A seven- month checkout period would follow.
+Spacelab Astro was to be put up two weeks later to give Hubble additional target information.
+Hubble, delayed since 1983, cost $1.5 billion.
+Spare parts, training, and software cost $500 million more.
+Maintenance cost $7 million a month on Earth and will cost $200 million yearly in orbit, for Hubble's 15-year lifetime.
+Discovery carried the Hooker Telescope eyepiece used by astronomer Edwin Hubble, for whom the Hubble is named.

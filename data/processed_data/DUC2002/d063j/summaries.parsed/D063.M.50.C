@@ -1,4 +1,0 @@
-(ROOT (S (NP (DT The) (NNP IRA)) (VP (VBD claimed) (NP (NN responsibility)) (PP (IN for) (NP (NP (DT a) (NN bomb)) (SBAR (WHNP (WDT that)) (S (VP (VBD destroyed) (NP (DT a) (JJ military) (NNS barracks)) (PP (IN on) (NP (CD 22))) (NP (NNP September)))))))) (. .)))
-(ROOT (S (NP (NP (CD Ten) (NN bandsmen)) (PP (IN of) (NP (NP (DT the) (NNP Royal) (NNPS Marines) (NNP School)) (PP (IN of) (NP (NNP Music)))))) (VP (VBD were) (VP (VBN killed))) (. .)))
-(ROOT (S (NP (NP (VBG Neighboring) (NNS homes)) (PP (IN in) (NP (NNP Deal)))) (VP (VBD were) (VP (VBN damaged))) (. .)))
-(ROOT (S (NP (NP (NN Government) (NN policy)) (PP (IN of) (S (VP (VBG using) (NP (JJ private) (NN security) (NNS firms)) (PP (IN at) (NP (NP (DT some) (NNS installations)) (, ,) (PP (VBG including) (NP (DT the) (NNP School))) (, ,))))))) (VP (VBZ is) (VP (VBG being) (VP (VBN criticized)))) (. .)))

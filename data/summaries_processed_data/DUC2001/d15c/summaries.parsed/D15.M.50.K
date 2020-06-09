@@ -1,0 +1,4 @@
+(ROOT (S (NP (NP (DT The) (NN rate)) (PP (IN of) (NP (NNP tuberculosis) (NN infection)))) (VP (VBD rose) (PP (IN in) (NP (DT the) (JJ early) (CD 90) (NNS 's))) (PP (IN after) (NP (DT a) (JJ long) (NN decline)))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN prevalence)) (PP (IN of) (NP (NNP AIDS))) (, ,) (SBAR (WHNP (WDT which)) (S (VP (VBZ suppresses) (NP (NN immunity))))) (, ,)) (VP (VBD was) (VP (VBN blamed))) (. .)))
+(ROOT (S (NP (NNS Officials)) (VP (VBD urged) (NP (NP (NN identification) (CC and) (NN treatment)) (PP (IN of) (NP (NN TB)))) (PP (IN among) (NP (DT the) (NNP AIDS) (NN population)))) (. .)))
+(ROOT (S (NP (NP (JJ Crowded) (, ,) (JJ underventilated) (NNS environments)) (PP (JJ such) (IN as) (NP (JJ inner) (NNS cities) (CC and) (NNS prisons)))) (VP (VBD were) (VP (VBN noted) (PP (IN as) (NP (NP (JJ prime) (NNS locations)) (PP (IN for) (NP (NP (NN TB) (POS 's)) (NN spread))))))) (. .)))

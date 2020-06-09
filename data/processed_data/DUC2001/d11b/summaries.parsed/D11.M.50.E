@@ -1,4 +1,0 @@
-(ROOT (S (NP (JJS Most) (NNS tornadoes)) (VP (VBP occur) (PP (VBG according) (PP (TO to) (NP (NP (DT a) (NN pattern)) (PP (IN of) (NP (NNS locations) (CC and) (NNS times))))))) (. .)))
-(ROOT (S (S (NP (NP (NNP Texas)) (CC and) (NP (DT the) (NNP U.S.) (NN heartland))) (VP (VBP are) (NP (NP (DT the) (JJ prime) (NNS locations)) (PP (IN for) (NP (NN tornado) (NN occurrence) (CC and) (NN noon)))) (PP (TO to) (NP (CD 6))))) (NP (NNP P.M.)) (VP (VBZ is) (NP (DT the) (ADJP (RBS most) (JJ common)) (NN time))) (. .)))
-(ROOT (S (NP (NP (NNS Tornadoes)) (, ,) (PP (IN on) (NP (JJR fewer) (NNS occasions))) (, ,)) (VP (VBP have) (VP (VBN ranged) (PP (IN beyond) (NP (DT these) (NNS parameters))))) (. .)))
-(ROOT (S (NP (NNS Experts)) (VP (VBP have) (VP (VBN developed) (NP (NN equipment)) (S (VP (TO to) (VP (VB improve) (NP (NN detection) (CC and) (NN warning))))))) (. .)))

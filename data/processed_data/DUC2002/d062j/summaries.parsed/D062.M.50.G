@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (DT The) (NNP White) (NNP House)) (CC and) (NP (DT the) (NNP California) (NN government))) (VP (VBP are) (VP (VBN provided) (NP (NN aid)) (PP (TO to) (NP (NP (NNP Tuesday) (POS 's)) (NNP California) (NN earthquake) (NNS victims))))) (. .)))
-(ROOT (S (NP (NP (RB Only) (CD 25-30) (NN %)) (PP (IN of) (NP (NP (NNS homes)) (PP (IN in) (NP (DT the) (NNP San) (NNP Francisco) (NN area)))))) (VP (VBP are) (VP (VBN insured))) (. .)))
-(ROOT (S (S (NP (NNS Insurers)) (VP (MD may) (VP (VB have) (S (VP (TO to) (VP (VB pay) (NP (NNS billions)))))))) (CC but) (S (NP (DT no) (NN company)) (VP (VBZ is) (VP (VBN expected) (S (VP (TO to) (VP (VB suffer) (NP (JJ financial) (NN damage)))))))) (. .)))
-(ROOT (NP (NP (NNS Insurers) (NN price)) (: -) (S (NP (NN cutting)) (VP (MD may) (VP (VB end) (SBAR (IN as) (S (NP (NNS prices)) (VP (VBP rise) (PP (IN from) (NP (NN reinsurance) (NNS investments))))))))) (. .)))

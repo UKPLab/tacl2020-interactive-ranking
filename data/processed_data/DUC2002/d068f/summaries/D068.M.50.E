@@ -1,2 +1,0 @@
-As a U.S. army band played and the foreign ministers of the four World War II allies watched, Checkpoint Charlie, the symbol of the Cold War, was lifted into history today.
-Its removal came after East Germany overthrew its communist government and opened the border between the two Germanys.

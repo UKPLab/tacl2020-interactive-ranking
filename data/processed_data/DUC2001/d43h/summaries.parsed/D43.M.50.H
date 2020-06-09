@@ -1,4 +1,0 @@
-(ROOT (S (NP (DT The) (NNP De) (NNP Beers) (NN cartel)) (VP (VBZ has) (VP (VBN kept) (S (NP (DT the) (NN diamond) (NN market)) (ADJP (JJ stable) (PP (IN by) (S (VP (VBG matching) (NP (NN supply)) (PP (TO to) (NP (NN demand)))))))))) (. .)))
-(ROOT (S (NP (JJ African) (NNS nations)) (VP (VBP have) (ADVP (RB recently)) (VP (VBN demanded) (NP (JJR better) (NNS terms)) (PP (IN from) (NP (DT the) (NN cartel))))) (. .)))
-(ROOT (S (PP (IN After) (NP (DT the) (JJ Soviet) (NN breakup))) (, ,) (NP (NNP De) (NNP Beers)) (VP (VBD contracted) (PP (IN for) (NP (NNS diamonds))) (PP (IN with) (NP (DT the) (NNP Yukutian) (NNP Republic)))) (. .)))
-(ROOT (S (NP (DT The) (NNP US)) (VP (VBZ remains) (NP (NP (DT the) (JJS largest) (NN diamond) (NN market)) (, ,) (VP (VBN followed) (PP (IN by) (NP (NNP Japan)))))) (. .)))

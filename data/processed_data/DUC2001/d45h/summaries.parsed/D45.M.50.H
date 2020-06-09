@@ -1,5 +1,0 @@
-(ROOT (S (S (PP (IN In) (NP (CD 1988))) (NP (JJ Slovenian-Serbian) (NN friction)) (VP (VBD was) (VP (VBG increasing)))) (CC and) (S (PP (IN in) (NP (CD 1990))) (NP (NNP Slovenia)) (VP (VBD proposed) (NP (NN sovereignty)) (PP (IN within) (NP (DT a) (NNP Yugoslav) (NN confederation))))) (. .)))
-(ROOT (S (NP (NP (NN Fighting)) (VP (VBN surrounded) (NP (PRP$ its)) (NP (NNP June) (CD 25) (, ,) (CD 1991)))) (VP (VBP secession)) (. .)))
-(ROOT (S (ADVP (RB Afterward)) (, ,) (NP (NNP Slovenia)) (VP (VBD sought) (S (VP (TO to) (VP (VP (VB become) (NP (DT a) (JJ market-oriented) (NN democracy))) (CC and) (VP (VB replace) (NP (VBN lost) (NNP Yugoslav) (NNS markets))))))) (. .)))
-(ROOT (S (PP (IN By) (NP (CD 1993))) (NP (NN privatization)) (VP (VBD had) (VP (VBN begun))) (. .)))
-(ROOT (S (S (PP (IN In) (NP (CD 1994))) (NP (NNP Slovenia)) (VP (VBD approached) (NP (NP (NNP Belgrade)) (PP (VBG regarding) (NP (VBG normalizing) (NNS relations)))))) (CC but) (S (NP (NNP Serbia)) (VP (VBD remained) (ADJP (JJ distrustful)))) (. .)))

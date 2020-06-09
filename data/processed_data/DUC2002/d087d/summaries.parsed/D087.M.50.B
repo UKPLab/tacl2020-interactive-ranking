@@ -1,5 +1,0 @@
-(ROOT (S (NP (NP (JJ International) (JJ athletic) (NN competition)) (, ,) (RB particularly) (NP (DT the) (NNPS Olympics)) (, ,)) (VP (MD can) (VP (VB bring) (NP (NN glory) (CC and) (NN wealth)) (PP (TO to) (NP (DT some))))) (. .)))
-(ROOT (S (NP (PRP It)) (VP (MD can) (ADVP (RB also)) (VP (VB bring) (NP (NN disgrace)) (PP (TO to) (NP (NP (DT those)) (VP (VBN caught) (S (VP (VBG using) (NP (NNS drugs))))))))) (. .)))
-(ROOT (S (NP (NNS Nations) (CONJP (RB as) (RB well) (IN as)) (NNS individuals)) (VP (VBP share) (NP (DT the) (NNS honors))) (. .)))
-(ROOT (S (NP (DT The) (JJ former) (NNP Soviet) (NNP Union)) (VP (VBD seemed) (S (VP (TO to) (VP (ADVP (RB always)) (VB top) (NP (DT the) (`` ``) (ADJP (RBS most) (JJ -)) (JJ medals-won) ('' '') (NN list)))))) (. .)))
-(ROOT (S (ADVP (RB However)) (, ,) (NP (DT the) (NNP U.S.) (NNS superstars)) (VP (VBP enjoy) (NP (DT the) (JJS most) (NN fame))) (. .)))
