@@ -1,0 +1,4 @@
+(ROOT (S (PP (IN From) (NP (CD 1989) (TO to) (CD 1991))) (, ,) (NP (NP (NNS professionals) (CC and) (NNS amateurs)) (PP (IN from) (NP (RB around) (DT the) (NN world)))) (VP (VBD competed) (PP (IN in) (NP (NNS marathons) (CC and) (NNS half-marathons)))) (. .)))
+(ROOT (S (NP (NP (NNP Prize) (NN money)) (CC and) (NP (NNS times))) (VP (VBD varied) (ADVP (RB widely))) (. .)))
+(ROOT (S (NP (NNP Tour) (NNS companies)) (VP (VBD offered) (NP (NN marathon) (NNS vacations))) (. .)))
+(ROOT (S (NP (JJ Unusual) (CD 1991) (NNS marathoners)) (VP (VBD included) (S (NP (DT an) (CD 83) (NN year)) (ADJP (JJ old) (PP (IN in) (NP (NP (PRP$ his) (JJ 60th) (NNP Boston) (NNP Marathon)) (CC and) (NP (DT a) (NN man))))) (S (VP (VBG running) (NP (NP (DT the) (CD 26.2) (NNS miles)) (PP (IN on) (NP (DT a) (NN battleship)))))))) (. .)))

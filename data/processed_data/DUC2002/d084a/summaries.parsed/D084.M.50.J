@@ -1,4 +1,0 @@
-(ROOT (SINV (PP (IN On) (NP (NP (NNP Monday) (NNP President) (NNP Bush)) (CC and) (NP (DT the) (NNP USS) (NNP Iowa) (NN commander)))) (VP (VBD attended) (NP (DT a) (NN memorial)) (PP (IN at) (NP (NNP Norfolk) (NNP Naval)))) (NP (NP (NNP Air) (NNP Station)) (PP (IN for) (NP (NP (CD 47) (NNS sailors)) (SBAR (WHNP (WDT that)) (S (VP (VBD were) (VP (VBN killed) (PP (IN in) (NP (NP (DT an) (NN explosion)) (PP (IN of) (NP (NP (DT the) (NN battleship) (POS 's)) (NN No.))))))))))))))
-(ROOT (S (NP (CD 2) (NN gun)) (VP (VBD turret) (NP (JJ last) (NNP Wednesday))) (. .)))
-(ROOT (S (NP (DT The) (NNP Iowa)) (VP (VBD was) (VP (VBG conducting) (NP (NP (NN firing) (NNS exercises)) (PP (IN near) (NP (NP (NNP Puerto) (NNP Rico)) (PP (IN at) (NP (DT the) (NN time)))))))) (. .)))
-(ROOT (S (NP (DT The) (NNP Navy)) (VP (VBZ is) (VP (VBG investigating))) (. .)))

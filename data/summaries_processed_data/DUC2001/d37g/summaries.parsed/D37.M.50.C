@@ -1,0 +1,6 @@
+(ROOT (S (NP (NNS Assassinations)) (VP (VBD occurred) (PP (IN in) (NP (NP (CD seven) (NNS countries)) (PP (IN between) (NP (NP (NNP May) (CD 1988)) (CC and) (NP (NNP October) (CD 1994))))))) (. .)))
+(ROOT (S (NP (NP (CD Ten) (NN office) (NNS holders)) (, ,) (NP (NNS candidates)) (CC or) (NP (NNS diplomats))) (VP (VBD were) (VP (VBN killed))) (. .)))
+(ROOT (S (NP (NNP Rajiv) (NNP Gandhi)) (VP (VBD was) (NP (DT the) (JJ best-known) (NN victim))) (. .)))
+(ROOT (S (NP (CD Three) (JJ presidential) (NNS candidates)) (VP (VBD were) (VP (VBN assassinated) (PP (IN in) (NP (NNP Columbia))))) (. .)))
+(ROOT (S (NP (CD Two) (NNS politicians)) (VP (VBD were) (VP (VBN slain) (PP (IN in) (NP (NNP Mexico))))) (. .)))
+(ROOT (S (NP (JJ Single) (NNS killings)) (VP (VBD occurred) (PP (IN in) (NP (NP (NNP Tunisia) (, ,) (NNP Egypt) (, ,) (NNP Lebanon) (, ,)) (CC and) (NP (DT the) (NNPS Philippines))))) (. .)))

@@ -1,5 +1,0 @@
-(ROOT (S (PP (IN On) (NP (NNP August) (CD 2nd) (, ,) (CD 1990))) (, ,) (NP (NNP Iraq)) (VP (VBD invaded) (NP (NP (NNP Kuwait)) (PP (IN with) (NP (CD 100,000) (NNS troops)))) (, ,) (S (VP (VP (VBG destroying) (NP (NN government) (NNS installations))) (CC and) (VP (VBG killing) (NP (CD 200)))))) (. .)))
-(ROOT (S (NP (NNP Saddam) (NNP Hussain)) (, ,) (S (VP (VBG claiming) (NP (NN invitation)) (PP (IN by) (NP (NNS revolutionaries))))) (, ,) (VP (VBD accused) (NP (NP (NNP Kuwait)) (PP (IN of) (S (VP (VP (VBG driving) (PRT (RP down)) (NP (NN oil) (NNS prices))) (CC and) (VP (VBG stealing) (NP (JJ Iraqi) (NN oil)))))))) (. .)))
-(ROOT (S (NP (DT The) (NNP US)) (VP (VBD sent) (NP (JJ naval) (NNS forces)) (PP (TO to) (NP (DT the) (NNP Persian) (NNP Gulf)))) (. .)))
-(ROOT (S (NP (NP (DT The) (NNP US)) (, ,) (NP (NNP UN)) (, ,) (CC and) (NP (NNP EEC))) (VP (VBD imposed) (NP (JJ economic) (CC and) (JJ military) (NNS sanctions))) (. .)))
-(ROOT (S (NP (NNP Oil) (NNS prices)) (VP (VBD soared)) (. .)))

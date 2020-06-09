@@ -1,0 +1,4 @@
+(ROOT (S (NP (NNP Sam) (NNP Walton)) (VP (VBD revolutionized) (NP (NN discount) (NN retailing)) (, ,) (PP (IN at) (NP (NP (DT the) (JJ same) (NN time)) (VP (VBG becoming) (NP (NP (DT the) (JJS richest) (NN man)) (PP (IN in) (NP (NNP America)))))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD took) (NP (NN discount) (NN shopping)) (PP (TO to) (NP (JJ rural) (NNP America))) (PP (IN with) (NP (NP (NNP Wal-Mart)) (, ,) (NP (NP (DT the) (NN world) (POS 's)) (JJS largest) (NN retailer))))) (. .)))
+(ROOT (S (NP (NP (PRP$ His) (JJ down-home) (NN personality)) (, ,) (VP (VBN chronicled) (PP (IN in) (NP (NP (PRP$ his) (NN autobiography)) (CC and) (NP (NP (DT the) (NNP Wal-Mart) (NN visitor) (POS 's)) (NN center))))) (, ,)) (VP (VBD permeated) (NP (NP (DT the) (NN chain) (POS 's)) (NNS operations))) (. .)))
+(ROOT (S (NP (NNS Scholars)) (ADVP (RB also)) (VP (VB credit) (NP (PRP$ his) (ADJP (JJ adaptability) (CC and) (JJ responsive)) (NN management))) (. .)))

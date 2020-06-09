@@ -1,0 +1,4 @@
+(ROOT (S (PP (IN By) (NP (CD 1990))) (, ,) (NP (NP (CD 75) (NN %)) (PP (IN of) (NP (NNPS Americans)))) (VP (VBD favored) (S (VP (VBG placing) (NP (NN term) (NNS limits)) (PP (IN on) (NP (VBN elected) (NNS officials)))))) (. .)))
+(ROOT (S (NP (DT Some)) (VP (VP (VBD believed) (SBAR (S (NP (NNS limits)) (VP (VBD were) (ADJP (JJ constitutional)))))) (CC and) (VP (MD would) (VP (VB make) (S (NP (DT the) (NNS legislatures)) (ADJP (RBR more) (JJ responsive)))))) (. .)))
+(ROOT (S (NP (NNS Others)) (VP (VBD believed) (SBAR (S (NP (NNS limits)) (VP (VP (VBD were) (RB not) (VP (VBN supported) (PP (IN by) (NP (DT the) (VBG founding) (NNS fathers))))) (CC and) (VP (MD would) (ADVP (RB only)) (VP (VB give) (NP (NN power)) (PP (TO to) (NP (NNS lobbyists) (, ,) (NNS staffs) (, ,) (CC and) (NNS bureaucrats))))))))) (. .)))
+(ROOT (S (NP (DT Some) (NNS writers)) (VP (VBD suggested) (NP (JJ other) (NNS solutions))) (. .)))

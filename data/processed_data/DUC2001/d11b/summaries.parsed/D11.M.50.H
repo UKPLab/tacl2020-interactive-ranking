@@ -1,5 +1,0 @@
-(ROOT (S (NP (NP (NNS Tornadoes)) (, ,) (VP (ADVP (RB violently)) (VBG twisting) (NP (NNS winds)) (S (VP (VBG reaching) (PRT (RP down)) (PP (IN from) (NP (NNS thunderclouds)))))) (, ,)) (VP (VBP are) (ADJP (ADJP (RBS most) (JJ common)) (PP (IN in) (NP (NNP May) (CC and) (NNP June))) (PP (IN from) (ADJP (JJ 3-6pm))))) (. .)))
-(ROOT (S (NP (DT A) (NN tornado) (NN watch)) (VP (VBZ means) (SBAR (S (NP (NNS conditions)) (VP (VBP are) (ADJP (JJ suitable)))))) (. .)))
-(ROOT (S (NP (DT A) (NN warning)) (VP (VBZ means) (SBAR (S (NP (PRP one)) (VP (VBZ has) (VP (VBN developed)))))) (. .)))
-(ROOT (S (PP (IN In) (NP (NP (NN case)) (PP (IN of) (NP (DT a) (NN tornado))))) (, ,) (VP (VB go) (ADVP (ADVP (RB underground)) (CC or) (PP (TO to) (NP (NP (DT a) (NN building) (POS 's)) (NN center))))) (. .)))
-(ROOT (S (PP (IN If) (PP (IN in) (NP (NP (DT a) (NN car)) (CC or) (NP (JJ mobile) (NN home))))) (, ,) (VP (VB leave) (NP (PRP it))) (. .)))

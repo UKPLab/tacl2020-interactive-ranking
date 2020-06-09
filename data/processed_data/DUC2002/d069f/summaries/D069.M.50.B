@@ -1,2 +1,0 @@
-With growing numbers of disgruntled East Germans emigrating to West Germany, the idea of reunification seemed possible and became actively discussed among western leaders.
-Some people and neighboring states had concerns about reunification, but after Soviet and East German communists dropped their opposition, things moved quickly to that end.

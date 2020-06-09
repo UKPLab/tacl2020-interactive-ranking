@@ -1,0 +1,8 @@
+(ROOT (S (NP (EX There)) (VP (VBD was) (NP (NP (DT a) (JJ critical) (NN need)) (PP (IN for) (NP (NP (NN reform)) (PP (IN of) (NP (NP (DT the) (NNP U.) (NNP S.) (NN welfare) (NN system)) (PP (IN during) (NP (DT the) (NNP Reagan) (CC and) (NNP Clinton) (NNS administrations))))))))) (. .)))
+(ROOT (S (S (NP (JJ Several) (CD million) (NNS families)) (VP (VBD were) (PP (IN in) (NP (NP (DT a) (JJ poverty-dependency) (NN status)) (, ,) (NP (NP (NN welfare)) (VP (VBN consumed) (NP (JJ huge) (NNS sums)) (PP (IN with) (NP (DT no) (NN improvement))))))))) (, ,) (CC and) (S (NP (JJ public) (NN pressure)) (VP (VBD increased))) (. .)))
+(ROOT (S (NP (DT Both) (NNS presidents)) (VP (VBD worked) (ADVP (RB closely)) (PP (IN with) (NP (DT the) (NNS governors)))) (. .)))
+(ROOT (S (NP (NNS Changes)) (VP (VBD focused) (PP (IN on) (NP (NP (DT the) (NN need)) (PP (IN for) (NP (NN welfare) (NNS recipients))))) (S (VP (TO to) (VP (VB work))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NNP House)) (PP (IN of) (NP (NNPS Representatives)))) (, ,) (ADVP (RB however)) (, ,) (VP (VBD paid) (NP (JJ lip) (NN service)) (PP (TO to) (NP (NN reform)))) (. .)))
+(ROOT (S (NP (DT The) (CD two) (NNS administrations)) (VP (VBD encouraged) (NP (DT the) (NNS states)) (S (VP (TO to) (VP (VB initiate) (NP (PRP$ their) (JJ own) (NN reform) (NNS plans)))))) (. .)))
+(ROOT (S (NP (DT These)) (VP (VBD included) (NP (NN time) (NNS limits)) (PP (IN on) (NP (NN welfare) (NNS checks)))) (. .)))
+(ROOT (S (ADVP (RB Meanwhile)) (, ,) (ADVP (RB overseas)) (, ,) (NP (DT the) (JJ capitalist) (NNS nations)) (VP (VBD were) (ADVP (RB also)) (VP (VBG having) (NP (NP (PRP$ their) (JJ own) (NNS problems)) (PP (IN with) (NP (VBG spiraling) (NN welfare) (NNS costs)))))) (. .)))

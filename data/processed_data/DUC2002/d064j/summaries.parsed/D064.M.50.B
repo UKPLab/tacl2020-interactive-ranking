@@ -1,4 +1,0 @@
-(ROOT (S (NP (NNP McDonald) (POS 's)) (VP (VBZ continues) (NP (PRP$ its) (JJ worldwide) (NN expansion))) (. .)))
-(ROOT (S (S (VP (TO To) (VP (VB participate) (PP (IN in) (NP (NP (NNP Asia) (POS 's)) (JJS fastest) (JJ expanding) (NN economy)))))) (, ,) (VP (VBD came) (NP (PRP$ their) (JJ first) (NN restaurant)) (PP (IN in) (NP (NNP South) (NNP Korea)))) (. .)))
-(ROOT (S (S (VP (VBG Moving) (PP (IN into) (NP (NP (JJ communist) (NNS countries)) (, ,) (NP (NP (PRP$ its) (NN opening)) (PP (IN in) (NP (NNP Belgrade)))))))) (, ,) (NP (NNP Yugoslavia)) (VP (VBD was) (VP (VBN followed) (PP (IN by) (NP (NP (DT a) (NN record)) (VP (VBG shattering) (NP (NP (NN opening)) (PP (IN of) (NP (NP (PRP$ its) (JJS largest) (NN outlet) (RB anywhere)) (PP (IN in) (NP (NNP Moscow))))))))))) (. .)))
-(ROOT (SINV (RB Then) (VP (VBD came)) (NP (NP (NNP Shenzhan)) (, ,) (NP (NP (NP (NNP McDonald) (POS 's)) (JJ first) (NN foray)) (PP (IN into) (NP (NNP China))))) (. .)))

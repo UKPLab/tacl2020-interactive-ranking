@@ -1,8 +1,0 @@
-(ROOT (S (NP (NNP East) (NNP Germany)) (VP (VBD was) (PP (IN near) (NP (NN chaos))) (PP (IN by) (NP (NP (DT the) (NN end)) (PP (IN of) (NP (CD 1989)))))) (. .)))
-(ROOT (S (NP (JJ Woeful) (JJ economic) (NNS conditions)) (VP (VBD prevailed)) (. .)))
-(ROOT (S (NP (NP (JJ Massive) (NNS demonstrations)) (PP (IN for) (NP (JJ democratic) (NN reform)))) (VP (VBD swept) (NP (DT the) (NN nation))) (. .)))
-(ROOT (S (NP (DT The) (JJ hard-line) (JJ Communist) (NN government)) (VP (VBD admitted) (NP (PRP$ its) (NN failure)) (, ,) (S (VP (VBG giving) (NP (JJ strong) (NN impetus)) (PP (TO to) (NP (DT the) (JJ German) (NN reunification) (NN movement)))))) (. .)))
-(ROOT (S (NP (DT The) (NNPS Soviets)) (VP (VBD endorsed) (NP (PRP it)) (PP (IN in) (NP (NNP February))) (SBAR (IN as) (S (NP (DT the) (NNP World) (NNP War) (NNP II) (NNPS Allies)) (VP (VBD did) (ADVP (RB later)))))) (. .)))
-(ROOT (S (NP (NNP Unification)) (VP (VBD was) (ADVP (RB now)) (ADJP (JJ imminent))) (. .)))
-(ROOT (S (NP (NP (DT The) (NN specter)) (PP (IN of) (NP (DT an) (ADJP (ADJP (JJ economically)) (CC and) (ADJP (RB politically) (JJ powerful))) (NNP Germany)))) (VP (VBN disturbed) (NP (NP (JJ many)) (, ,) (CC but) (RB particularly) (NP (NP (DT the) (NNPS Poles)) (, ,) (NP (NNS Soviets)) (CC and) (NP (NN world) (NN Jewry))))) (. .)))
-(ROOT (S (PP (IN Despite) (NP (NNS concerns))) (, ,) (NP (NN reunification)) (VP (MD would) (VP (VB be) (VP (VBN accepted) (PP (IN as) (NP (NP (DT a) (JJR lesser) (NN threat)) (PP (IN than) (NP (DT a) (JJ chaotic) (NNP East) (NNP Germany)))))))) (. .)))

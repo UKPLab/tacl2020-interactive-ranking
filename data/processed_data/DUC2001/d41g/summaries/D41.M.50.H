@@ -1,1 +1,0 @@
-Destructive US wildfires occurred at 200-300 year intervals over the past 10,000 years, also in 1926, 1977 (Santa Barbara), 1985 (Los Altos Hills, Lexington Reservoir), 1987 (California, Klamath National Forest), 1988 (the South, California and Yellowstone, Pacific Northwest), 1989 (Idaho, Oregon, California, Utah), 1990 (Santa Barbara, Yosemite), and 1991 (Oakland hills).

@@ -1,0 +1,2 @@
+From 1986 to 1994, more than 120,000 cattle and a few other creatures in the UK died from "mad cow disease," which is caused by an abnormal protein.
+The British cattle industry was under siege, while many nations were imposing or discussing bans on imports, fearing "mad cow" could be transmitted to humans.

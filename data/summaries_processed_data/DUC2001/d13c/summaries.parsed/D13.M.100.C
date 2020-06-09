@@ -1,0 +1,8 @@
+(ROOT (S (NP (NNP Clarence) (NNP Thomas)) (VP (VBD was) (VP (VBN born) (PP (IN in) (NP (JJ rural) (NNP Georgia))))) (. .)))
+(ROOT (S (PP (IN At) (NP (NN age) (CD seven))) (NP (PRP he)) (VP (VBD came) (PP (IN under) (NP (NP (DT the) (NN care)) (PP (IN of) (NP (PRP$ his) (JJ maternal) (NNS grandparents)))))) (. .)))
+(ROOT (S (NP (PRP They)) (VP (VBD taught) (S (NP (PRP him)) (NP (NP (DT the) (NNS merits)) (PP (IN of) (NP (NP (ADJP (JJ self-reliance) (CC and) (JJ hard)) (NN work)) (, ,) (NP (NP (NNS values)) (SBAR (WHNP (WDT that)) (S (VP (VBD fueled) (NP (PRP$ his) (NN conservatism))))))))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD was) (VP (VBN educated) (PP (IN at) (NP (NP (NNP Holy) (NNP Cross)) (CC and) (NP (NNP Yale) (NNP Law)))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD held) (NP (NP (DT a) (NN series)) (PP (IN of) (NP (NN government) (NNS positions)))) (PP (IN before) (S (VP (VBG serving) (NP (CD eight) (NNS years)) (PP (IN as) (NP (NP (NNP Chairman)) (PP (IN of) (NP (DT the) (NNP Equal) (NNP Employment) (NNP Opportunity) (NNP Commission))))))))) (. .)))
+(ROOT (S (PP (IN In) (NP (CD 1990))) (NP (NNP President) (NNP Bush)) (VP (VBD appointed) (NP (PRP him)) (PP (TO to) (NP (DT a) (JJ federal) (JJ appellate) (NN court)))) (. .)))
+(ROOT (S (ADVP (NP (DT A) (NN year)) (RB later)) (NP (PRP he)) (VP (VBD was) (VP (VBN nominated) (S (VP (TO to) (VP (VB succeed) (NP (NP (NNP Thurgood) (NNP Marshall)) (PP (IN on) (NP (DT the) (NNP Supreme) (NNP Court))))))))) (. .)))
+(ROOT (S (PP (IN After) (NP (JJ contentious) (NNS hearings))) (NP (PRP he)) (VP (VBD was) (VP (VBN confirmed) (PP (IN as) (NP (DT an) (JJ Associate) (NNP Supreme) (NNP Court) (NNP Judge))))) (. .)))

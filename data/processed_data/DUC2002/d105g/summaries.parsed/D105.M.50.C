@@ -1,5 +1,0 @@
-(ROOT (S (NP (JJ Ethnic) (NNS conflicts)) (VP (VBD broke) (PRT (RP out)) (PP (IN in) (NP (NP (DT the) (NN USSR) (POS 's)) (JJ final) (NNS years)))) (. .)))
-(ROOT (S (NP (PRP They)) (VP (VBN proliferated) (PP (IN after) (NP (PRP$ its) (NN dissolution)))) (. .)))
-(ROOT (S (NP (NNP Russian)) (VP (VBD sent) (NP (NNS troops)) (PP (TO to) (NP (NNP Tajikistan))) (SBAR (WHADVP (WRB where)) (S (NP (CD 100,00)) (VP (VBD were) (VP (VBN killed)))))) (. .)))
-(ROOT (S (NP (JJ Ethnic) (NNS groups)) (ADVP (RB also)) (VP (VBD fought) (PP (IN in) (NP (NP (NNP Armenia) (, ,) (NNP Azerbaijan) (, ,) (NNP Georgia) (, ,) (NNP Kirghizia) (, ,) (NNP Uzbekistan) (, ,) (NNP Kazakhstan) (, ,)) (CC and) (NP (NNP Moldavia))))) (. .)))
-(ROOT (S (NP (NP (NNP Destabilization)) (PP (IN of) (NP (NP (DT the) (NNS states)) (PP (IN of) (NP (NP (DT the) (NNS states)) (PP (IN of) (NP (DT the) (JJ former) (NNP Soviet) (NNP Union)))))))) (VP (VBD threatened) (NP (DT the) (JJ international) (NN community))) (. .)))

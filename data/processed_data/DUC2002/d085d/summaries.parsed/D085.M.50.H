@@ -1,5 +1,0 @@
-(ROOT (S (PP (IN In) (NP (NNP September) (CD 1989))) (, ,) (NP (NP (NNP Category) (CD 4) (NNP Hurricane) (NNP Hugo)) (, ,) (PP (IN with) (NP (JJ 135mph) (NNS winds))) (, ,)) (VP (VBD damaged) (SBAR (S (NP (DT the) (JJ eastern) (NNP Caribbean)) (ADVP (RB then)) (VP (VBD hit) (NP (NP (NNP South) (NNP Carolina)) (, ,) (SBAR (WHADVP (WRB where)) (S (NP (JJ coastal) (NNS residents)) (VP (VBD fled) (UCP (ADVP (RB inland)) (CC or) (PP (IN into) (NP (NNS shelters)))))))))))) (. .)))
-(ROOT (S (NP (CD 17) (NNPS Carolinians)) (VP (VBD were) (VP (VBN killed))) (. .)))
-(ROOT (S (NP (NP (NNS Satellites)) (, ,) (NP (NNS computers)) (, ,) (CC and) (NP (JJ reconnaissance) (NNS planes))) (VP (VBD helped) (SBAR (S (NP (NNS forecasters)) (VP (VBP monitor) (NP (NP (NNP Hugo) (POS 's)) (NN progress)))))) (. .)))
-(ROOT (S (NP (NNP Insurance) (NNS claims)) (VP (VBD broke) (NP (NNS records))) (. .)))
-(ROOT (S (NP (DT The) (NN greenhouse) (NN effect)) (VP (MD could) (VP (VB raise) (NP (NP (JJ future) (NNS storms) (POS ')) (JJ destructive) (NN power)) (PP (IN by) (NP (CD 50) (NN %))))) (. .)))

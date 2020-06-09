@@ -1,5 +1,0 @@
-(ROOT (S (PP (IN With) (NP (JJ little) (NN warning))) (, ,) (NP (NNP Iraq)) (VP (VBD invaded) (NP (NP (JJ tiny) (NNP Kuwait)) (PP (IN on) (NP (NNP August) (CD 2)))) (, ,) (S (ADVP (RB quickly)) (VP (VBG taking) (NP (DT the) (NN country))))) (. .)))
-(ROOT (S (NP (DT Many)) (VP (VBD fled) (SBAR (IN as) (S (NP (NNP Iraq)) (VP (VBD began) (S (VP (VBG rounding) (PRT (RP up)) (NP (JJ foreign) (NNS nationals)))) (, ,) (S (VP (VBG flying) (NP (DT some)) (PP (TO to) (NP (NNP Jordan))))))))) (. .)))
-(ROOT (S (NP (NP (NNS Reactions)) (PP (TO to) (NP (DT the) (NN invasion)))) (VP (VBP have) (VP (VBN been) (ADJP (JJ strong)))) (. .)))
-(ROOT (S (NP (NP (DT The) (NNP United) (NNPS Nations) (POS ')) (NN trade) (CC and) (JJ military) (NNS sanctions)) (VP (VBP are) (VP (VBG being) (ADJP (VBN honored)))) (. .)))
-(ROOT (S (NP (NNP Oil) (NNS prices)) (VP (VBP are) (VP (VBG soaring))) (. .)))

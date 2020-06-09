@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (NNS Tuberculosis)) (VP (VBN increased) (ADVP (RB rapidly)) (PP (PP (IN during) (NP (DT the) (NNS 1980s))) (CC and) (PP (IN by) (NP (CD 1990)))))) (VP (VBD was) (NP (NP (DT the) (NN world) (POS 's)) (JJS deadliest) (JJ infectious) (NN disease))) (. .)))
-(ROOT (S (NP (NNP AIDS) (NNS sufferers)) (VP (VP (, ,) (PP (IN with) (NP (PRP$ their) (JJ damaged) (JJ immune) (NNS systems))) (, ,) (VBD developed) (NP (NP (NNP tuberculosis)) (PP (IN in) (NP (JJ great) (NNS numbers))))) (CC and) (VP (VBD transmitted) (NP (PRP it)) (PP (TO to) (NP (NNS others))))) (. .)))
-(ROOT (S (NP (NNS Tuberculosis)) (VP (VBD was) (ADJP (RB especially) (JJ prevalent)) (PP (IN in) (NP (JJR poorer) (NNS countries)))) (. .)))
-(ROOT (S (PP (IN In) (NP (DT the) (NNP United) (NNPS States))) (, ,) (NP (PRP it)) (VP (VBD was) (ADVP (RBS most) (RB often)) (VP (VBN seen) (PP (IN in) (NP (DT the) (JJ northeastern) (NNS states))))) (. .)))

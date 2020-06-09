@@ -1,0 +1,10 @@
+Confounding predictions of its demise four years ago during the worst diamond slump since the 1930s, De Beers Consolidated Mines Ltd., the South African concern that controls 80% of the world's uncut-diamond market, is thriving.
+De Beers's Central Selling Organization is the pipeline between diamond mines and dealers based mainly in Antwerp, Belgium; Bombay, India; Tel Aviv, Israel, and New York.
+Some analysts warn, however, that De Beers's future may not be stable.
+In London, the Office of Trading is investigating the anti-competitive practices of De Beers.
+Complaints suggest the De Beers have a monopoly on diamond trading in London.
+In Botswana some politicians want to change De Beers' exclusive sales contract so that part of their country's output can be sold independently.
+In Angola, more than $1 million worth of diamonds a day are being smuggled out of that country for sale in Antwerp.
+While De Beers have been faced with some uncertainly over the control of the uncut diamond market, other ventures are giving them more power.
+The new Venetia mine more than doubled output and processed 3.6m tons of ore to recover 4.96m carats.
+The mine has revitalized De Beers' production and accounts for half the output in South Africa and replaces production from its 100-year-old Kimberley mines.

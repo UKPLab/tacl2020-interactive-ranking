@@ -1,0 +1,5 @@
+(ROOT (S (NP (DT An) (JJ Anglo-French) (NN consortium)) (VP (VBN constructed) (NP (NP (DT the) (JJ 31-mile) (JJ long) (`` ``) (NN chunnel) ('' '')) (PP (IN between) (NP (NNP Folkestone) (CC and) (NNP Calais))))) (. .)))
+(ROOT (S (NP (DT The) (NN work)) (VP (VBD was) (ADJP (JJ arduous) (, ,) (JJ costly) (CC and) (JJ dangerous))) (. .)))
+(ROOT (S (NP (DT The) (`` ``) (NNP chunnel) ('' '')) (VP (VBD opened) (PP (IN in) (NP (CD 1944))) (, ,) (S (VP (ADVP (RB significantly)) (VBG cutting) (NP (NP (NN travel) (NN time)) (PP (IN between) (NP (NNP Paris) (CC and) (NNP London))))))) (. .)))
+(ROOT (S (NP (DT The) (NNP French)) (VP (VBD liked) (NP (PRP it))) (. .)))
+(ROOT (S (NP (DT The) (NNP British)) (VP (VBD considered) (S (NP (PRP it)) (NP (NP (DT a) (NN threat)) (PP (TO to) (NP (PRP$ their) (NN island) (NN identity)))))) (. .)))

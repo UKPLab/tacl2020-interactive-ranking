@@ -1,0 +1,14 @@
+In October 1988 the British and French were tunneling 80-130 feet under the English Channel.
+It was the beginning of the "Chunnel", intended to connect Folkstone, England with Calais, France.
+It was scheduled for completion in 1993-94.
+Britain was a reluctant partner in building the tunnel, unlike France.
+Britain bemoaned the loss of its island status and pondered the possibility of importing "Continental ills."
+Britain also did not want the environmental pollution of a high speed train that would improve the transit of people and goods.
+France, on the other hand, was eager to improve the poor economy of northern France and to build a high speed train on their side.
+The tunnel was the center of Europe's attention.
+It would revolutionize the economy of northern Europe.
+The project, however, was running into cost overruns.
+Finally, on 30 October 1990, the connection between Britain and France was made by a 2-inch probe.
+The economic promise of the tunnel was expected to cause a real estate recovery on both sides of the Channel.
+Property was at bargain prices.
+The Belgians as well as the French expected an economic boost from the tunnel for the depressed West Flanders and Hainaut areas.

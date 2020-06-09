@@ -1,0 +1,5 @@
+From the prestigious Westminster Kennel Club Show in Madison Square Garden, to Tel Aviv, Israel's violence threatened show, to the massive 2500 contestant show in Los Angeles, proud owners, or professional handlers such as Bill McFadden, let their pampered pouches strut their stuff for awards and glory.
+For some dogs, shows aren't necessary to attain fame.
+Police dog Nero, the NYPD's finest, was feted for apprehending more than 50 felons.
+And photographer William Wegman's Weimaraners are, through his work, know to artists and children around the world.
+And like other international championship events, sometimes lawyers and court are involved.

@@ -1,0 +1,4 @@
+(ROOT (S (PP (IN On) (NP (NNP April) (CD 24) (, ,) (CD 1990))) (, ,) (NP (NNP shuttle) (NNP Discovery)) (VP (VBD carried) (NP (DT the) (NNP Hubble) (NNP Space) (NNP Telescope)) (PP (NP (CD 380) (NNS miles)) (IN into) (NP (NP (NN space)) (, ,) (VP (ADVP (RB then)) (VBN followed) (ADVP (RB briefly)) (S (VP (TO to) (VP (VB assist) (SBAR (IN if) (FRAG (ADJP (JJ necessary))))))))))) (. .)))
+(ROOT (S (PP (IN In) (NP (NP (NN orbit)) (PP (IN above) (NP (NP (NP (NNP Earth) (POS 's)) (VBG distorting) (NN atmosphere)) (PP (IN for) (NP (CD 15) (NNS years))))))) (, ,) (NP (NNP Hubble)) (VP (MD would) (VP (VB see) (ADJP (NP (CD 10) (NNS times)) (JJR better) (PP (IN than) (NP (NNP Earth) (NNS telescopes)))))) (. .)))
+(ROOT (S (NP (NP (NNP Hubble) (POS 's)) (NN launch)) (VP (VBD had) (VP (VBN been) (VP (VBN delayed) (PP (IN since) (NP (CD 1983)))))) (. .)))
+(ROOT (S (NP (NNP Hubble)) (VP (VBD cost) (NP (QP ($ $) (CD 1.5) (CD billion)))) (. .)))

@@ -1,0 +1,9 @@
+The violent thunderstorms that struck central and eastern Ohio Thursday left twenty-one dead, 14 missing, and dozens homeless.
+Two creeks outside Shadyside overflowed in the heavy rain.
+Authorities said dams formed by debris at bridges broke under the water pressure, creating a "wall of water."
+Homes were knocked off their foundations and a Shadyside bar was swept away.
+Dog teams assisted in the search for victims.
+The National Weather Service had not issued a flood warning before the disaster.
+Gov.
+Celeste declared a state of emergency.
+The Federal Emergency Management Agency will open an office in Shadyside to accept applications for aid.

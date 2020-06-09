@@ -1,4 +1,0 @@
-(ROOT (S (NP (DT The) (NNP Second) (NNP Amendment)) (VP (VBZ concerns) (NP (DT the) (JJ right) ('' '') (NN -)) (: -) (S (VP (TO to) (VP (VB keep) (CC and) (VB bear) (NP (NNS arms)))))) (. .) ('' '')))
-(ROOT (S (NP (DT The) (NNP National) (NNP Rifle) (NNP Association)) (VP (VP (VBZ leads) (NP (DT the) (JJ pro-gun) (NN lobby))) (CC and) (VP (ADVP (RB strictly)) (VBZ interprets) (NP (DT the) (NN Amendment)) (PP (IN without) (NP (NNS controls))))) (. .)))
-(ROOT (S (VP (VB Gun) (S (NP (NN control) (NNS advocates)) (VP (VP (VB interpret) (NP (DT the) (NN Amendment)) (PP (VBG according) (PP (TO to) (NP (PRP$ its) (CD 1792) (NN context))))) (CC and) (VP (VB see) (NP (NP (DT the) (NN need)) (PP (IN for) (NP (NNS controls)))))))) (. .)))
-(ROOT (S (NP (NNP Public) (NN opinion)) (VP (VBZ appears) (S (VP (TO to) (VP (VB favor) (NP (NN gun) (NNS controls)))))) (. .)))

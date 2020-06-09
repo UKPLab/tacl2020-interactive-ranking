@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (DT A) (NN series)) (PP (IN of) (NP (NNS tornadoes) (CC and) (NN sever) (NNS thunderstorms)))) (VP (VBD swept) (PP (IN through) (NP (NP (CD fourteen) (NNS states)) (CC and) (NP (NNP Washington) (, ,) (NNP D.C.)))) (S (VP (VBG causing) (NP (NN death) (CC and) (NN destruction))))) (. .)))
-(ROOT (S (S (NP (QP (IN At) (JJS least) (CD 27)) (NNS people)) (VP (VBP have) (VP (VBN died)))) (, ,) (S (NP (QP (JJR more) (IN than) (CD 500))) (VP (VBP are) (VP (VBN injured)))) (CC and) (S (NP (NNS hundreds)) (VP (VBP are) (ADJP (JJ homeless)))) (. .)))
-(ROOT (S (NP (DT The) (ADJP (RBS most) (JJ severe)) (NN damage)) (VP (VBD was) (PP (IN in) (NP (NNP Huntsville) (, ,) (NNP Alabama)))) (. .)))
-(ROOT (S (NP (DT The) (NNP Governor)) (VP (VBZ asks) (SBAR (IN that) (S (NP (NNP Huntsville)) (VP (VB be) (VP (VBN declared) (NP (DT a) (NN disaster) (NN area))))))) (. .)))

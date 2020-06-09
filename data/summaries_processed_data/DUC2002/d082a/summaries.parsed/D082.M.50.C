@@ -1,0 +1,4 @@
+(ROOT (S (NP (NNP Andrei) (NNP Sakharov)) (VP (VBD died) (PP (IN in) (NP (NNP December) (CD 1989)))) (. .)))
+(ROOT (S (NP (DT The) (JJ Soviet) (NN physicist)) (VP (VP (VBD helped) (VP (VB develop) (NP (DT the) (NN hydrogen) (NN bomb)))) (, ,) (CC but) (VP (VBD was) (VP (RBR better) (VBN known) (PP (IN for) (S (VP (VBG winning) (NP (DT the) (NNP Nobel) (NNP Peace) (NNP Prize)))))))) (. .)))
+(ROOT (S (NP (NP (NP (PRP$ His) (NN advocacy)) (PP (IN of) (NP (JJ human) (NNS rights)))) (CC and) (NP (NP (NN criticism)) (PP (IN of) (NP (DT the) (NNP Kremlin))))) (VP (VBD resulted) (PP (IN in) (NP (DT a) (JJ seven-year) (NN exile)))) (. .)))
+(ROOT (S (NP (PRP$ His) (NN obituary)) (VP (VBD constituted) (NP (DT a) (JJ public) (NN apology)) (PP (IN for) (NP (NP (DT the) (NN treatment)) (VP (VBN afforded) (NP (PRP him)))))) (. .)))

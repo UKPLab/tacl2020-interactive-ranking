@@ -1,4 +1,0 @@
-(ROOT (S (PP (IN Between) (NP (NP (NNP June) (CD 1988)) (CC and) (NP (NNP October) (CD 1990)))) (NP (DT the) (NNP Air) (NNP Force)) (VP (VBD lost) (NP (NP (CD three) (NNS fighters)) (, ,) (NP (CD two) (NN attack) (NNS jets)) (, ,) (NP (DT a) (JJ reconnaissance) (NN jet)) (, ,) (NP (DT a) (NN bomber)) (CC and) (NP (DT a) (NN transport)))) (. .)))
-(ROOT (S (NP (NNP Navy) (NNS crashes)) (VP (VBD accounted) (PP (IN for) (NP (NP (DT the) (NN loss)) (PP (IN of) (NP (NP (CD two) (NNS fighters)) (CC and) (NP (DT a) (NN trainer))))))) (. .)))
-(ROOT (S (NP (DT The) (NNPS Marines)) (VP (VBD lost) (NP (CD two) (NNS helicopters))) (. .)))
-(ROOT (S (NP (NNS Crashes)) (VP (VP (VBD occurred) (PP (IN in) (NP (ADJP (RB widely) (JJ separated)) (NNS areas)))) (, ,) (CC and) (VP (VBD varied) (PP (IN in) (NP (NP (DT the) (NN degree)) (PP (IN of) (NP (NN disaster))))))) (. .)))

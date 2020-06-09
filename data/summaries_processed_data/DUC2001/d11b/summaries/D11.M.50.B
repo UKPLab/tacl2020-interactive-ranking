@@ -1,0 +1,2 @@
+Tornados, prevalent in April through June, in a section of America called "Tornado Alley" often leave a trail of death and millions of dollars of destruction behind.
+Although we are learning more of the causes, nature and protections against tornadoes, as one of natures more terrifying phenomena, they cannot be prevented.

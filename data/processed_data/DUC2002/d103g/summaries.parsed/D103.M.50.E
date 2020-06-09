@@ -1,3 +1,0 @@
-(ROOT (S (NP (NP (DT An) (NN earthquake)) (PP (IN in) (NP (JJ northern) (NNP Iran) (NNP Thursday) (NN morning)))) (VP (VBD killed) (NP (NP (QP (RB as) (JJ many) (IN as) (CD 55,000))) (CC and) (NP (NP (JJ injured) (NNS thousands)) (NP (JJR more))))) (. .)))
-(ROOT (S (NP (DT The) (NN earthquake)) (VP (VP (VBD measured) (NP (QP (IN between) (CD 7.3) (CC and) (CD 7.7))) (PP (IN on) (NP (DT the) (NNP Richter) (NN scale)))) (CC and) (VP (VBZ is) (NP (NP (DT the) (JJS largest)) (VP (ADVP (RB ever)) (VBN recorded) (PP (IN in) (NP (DT that) (NN area))))))) (. .)))
-(ROOT (S (NP (DT The) (NNP U.S.)) (VP (MD will) (VP (VB provide) (NP (NN aid)) (PP (IN through) (NP (NP (DT the) (NNP American) (NNP Red) (NNP Cross)) (CC and) (NP (JJ other) (NNP U.S.) (NNS agencies)))))) (. .)))

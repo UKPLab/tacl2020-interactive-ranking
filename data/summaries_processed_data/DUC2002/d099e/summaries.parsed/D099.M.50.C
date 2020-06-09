@@ -1,0 +1,5 @@
+(ROOT (S (NP (RB Nearly) (PDT all) (DT the) (NN world)) (VP (VBZ 's) (NP (NP (JJ major) (NNS cities)) (SBAR (S (VP (VBP sponsor) (NP (DT an) (JJ annual) (NN marathon))))))) (. .)))
+(ROOT (S (NP (PRP They)) (VP (VBP are) (NP (JJ popular) (NNS events))) (. .)))
+(ROOT (S (NP (NNS Thousands)) (VP (VBP participate) (PP (IN over) (NP (DT the) (CD 26.2) (NN distance)))) (. .)))
+(ROOT (S (S (NP (JJS Most) (NNS marathons)) (VP (VBP offer) (NP (NN prize) (NN money)) (PP (TO to) (NP (NNS winners))))) (, ,) (CC but) (S (NP (NP (JJS most)) (PP (IN in) (NP (DT the) (VBG participating) (NNS throngs)))) (VP (VBP run) (PP (IN for) (NP (NN self-satisfaction))))) (. .)))
+(ROOT (S (NP (NP (JJ Climactic) (NNS conditions)) (CC and) (NP (NP (DT a) (NN city) (POS 's)) (NN beauty) (CC and) (NN history))) (VP (VBP attract) (NP (NNS runners))) (. .)))

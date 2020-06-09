@@ -1,4 +1,0 @@
-(ROOT (S (NP (DT Each) (NN year)) (, ,) (NP (NP (QP (NNS tens) (IN of) (NNS thousands))) (PP (IN of) (NP (NNS fires)))) (VP (VBP burn) (NP (NP (QP (NNS hundreds) (IN of) (NNS thousands))) (PP (IN of) (NP (NP (NNS acres)) (PP (IN in) (NP (JJ national) (NNS parklands) (CC and) (NNS forests))))))) (. .)))
-(ROOT (S (NP (NNP Lightening)) (VP (VBZ starts) (NP (NP (JJS most)) (PP (IN of) (NP (PRP them))))) (. .)))
-(ROOT (S (NP (NNP Government) (NN policy)) (VP (VBZ is) (S (VP (TO to) (VP (VB allow) (NP (NNS fires)) (S (VP (TO to) (VP (VB burn) (NP (PRP themselves)) (PRT (RP out))))) (, ,) (PP (IN except) (SBAR (WHADVP (WRB when)) (S (NP (PRP they)) (VP (VBP threaten) (NP (NNS towns) (CC or) (NN park) (NNS buildings)))))))))) (. .)))
-(ROOT (S (NP (PRP It)) (ADVP (RB often)) (VP (VBZ costs) (S (NP (NP (NNS millions)) (PP (IN of) (NP (NNS dollars)))) (VP (TO to) (VP (VB fight) (NP (PRP them)))))) (. .)))

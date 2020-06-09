@@ -1,8 +1,0 @@
-(ROOT (S (NP (NNP Rajiv) (NNP Gandhi)) (VP (VBD was) (VP (VBN assassinated) (PP (IN in) (NP (CD 1991))))) (. .)))
-(ROOT (S (S (NP (NP (DT The) (JJ last)) (PP (IN of) (NP (DT a) (JJ political) (NN dynasty))))) (, ,) (NP (PRP he)) (VP (VBD was) (VP (NP (DT the) (RBS best)) (VBN known) (PP (IN of) (NP (NP (DT the) (DT those)) (VP (VBN assassinated) (PP (IN between) (NP (CD 1988) (CC and) (CD 1994)))))))) (. .)))
-(ROOT (S (NP (JJ Lesser) (JJ political) (NNS figures)) (VP (VBD met) (NP (NN death)) (PP (IN in) (NP (CD six) (JJ other) (NNS countries)))) (. .)))
-(ROOT (S (NP (CD Three) (JJ presidential) (NNS candidates)) (VP (VBD were) (VP (VBN killed) (PP (IN in) (NP (NNP Columbia))) (PP (IN over) (NP (DT a) (JJ nine-month) (NN period))))) (. .)))
-(ROOT (S (NP (NP (DT A) (JJ presidential) (NN candidate)) (CC and) (NP (DT another) (JJ Mexican) (NN politician))) (VP (VBD were) (VP (VBN murdered))) (. .)))
-(ROOT (S (NP (NP (DT The) (JJ second) (JJ ranking) (NN official)) (PP (IN within) (NP (DT the) (NNP PLO)))) (VP (VBD was) (VP (VBN assassinated) (PP (IN in) (NP (NNP Tunisia))))) (. .)))
-(ROOT (S (S (NP (JJ Iraqi) (NNS agents)) (VP (VBD killed) (NP (NP (DT the) (NN leader)) (PP (IN of) (NP (DT the) (JJ Egyptian) (NN parliament)))))) (, ,) (CC and) (S (NP (JJ Abu-Nidal) (NNS terrorists)) (VP (VBD assassinated) (NP (DT a) (NNP Jordanian) (NN diplomat)) (PP (IN in) (NP (NNP Lebanon))))) (. .)))
-(ROOT (S (NP (JJ Communist) (NNS rebels)) (VP (VBD killed) (NP (NP (DT the) (NNP Chief)) (PP (IN of) (NP (NNP Police)))) (PP (IN in) (NP (NP (NNP Makati)) (, ,) (NP (NP (DT a) (NN city)) (PP (IN in) (NP (DT the) (NNPS Philippines))))))) (. .)))

@@ -1,2 +1,0 @@
-In March 1989, an Exxon oil tanker crashed on a reef near Valdez, Alaska, spilling 8.4 million gallons of oil into Prince William Sound seriously damaging the environment.
-The cleanup was slow and Exxon was subject to severe compensation costs and indictment by a federal jury on five criminal charges.

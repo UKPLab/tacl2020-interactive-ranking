@@ -1,4 +1,0 @@
-Bush nominated veteran diplomats James Lilley (formerly CIA) to China, John Negroponte (who helped direct CIA aid to Contras) to Mexico, Deane Hinton to Panama, Harry Shlaudeman to Nicaragua (over Melissa Wells), Thomas Pickering to India, and Wesley Egan to Jordan (interpreted there as signaling Jordanian importance to the US).
-Edward Perkins became UN ambassador.
-Nominees Joseph Zappala (Spain), Marvin Semble (Australia), Della Newman (New Zealand), and Joseph Gildenhorn (Switzerland) were said qualified only by large campaign contributions, and nomination of loudmouth Peter Secchia (Italy) was called a mistake.
-Other nominations included Shirley Temple Black (Czechoslovakia), Thomas Melady (Vatican), Keith Brown (Denmark), and William Howard Taft IV (NATO).

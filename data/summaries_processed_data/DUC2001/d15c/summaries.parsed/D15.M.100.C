@@ -1,0 +1,8 @@
+(ROOT (S (NP (NP (DT The) (NNS occurrences)) (PP (IN of) (NP (NNP tuberculosis)))) (VP (VBD increased) (PP (IN in) (NP (DT the) (NNS 1980s))) (PP (IN after) (NP (DT a) (CD three) (NN decade) (NN decline)))) (. .)))
+(ROOT (S (PP (IN By) (NP (CD 1990))) (NP (PRP it)) (VP (VBD was) (NP (NP (DT the) (NN world) (POS 's)) (JJS deadliest) (JJ infectious) (NN disease)) (, ,) (S (VP (VBG killing) (NP (QP (CD three) (CD million))) (ADVP (RB annually))))) (. .)))
+(ROOT (S (NP (DT The) (NNP tuberculosis)) (VP (VBD was) (VP (VBN fueled) (PP (IN by) (NP (NP (NNP AIDS) (NNS patients)) (SBAR (WHNP (WP who)) (S (VP (VBD were) (ADJP (JJ vulnerable)) (SBAR (WHADVP (WRB when)) (S (NP (PRP$ their) (VBN lowered) (JJ immune) (NN system)) (VP (VBD allowed) (NP (DT the) (NN latent) (NNS bacteria)) (S (VP (TO to) (VP (VB develop) (PP (IN into) (NP (JJ active) (NNP tuberculosis)))))))))))))))) (. .)))
+(ROOT (S (NP (PRP They)) (ADVP (RB then)) (VP (VBD transmitted) (NP (PRP it)) (PP (TO to) (NP (NNS others)))) (. .)))
+(ROOT (S (NP (NNS Tuberculosis)) (VP (VP (VBD ran) (ADJP (JJ rampant)) (PP (IN in) (NP (JJ sub-Saharan) (NNP Africa)))) (, ,) (CC and) (VP (VBD increased) (PP (IN in) (NP (NP (NNP Latin) (NNP America)) (CC and) (NP (NNP Southeast) (NNP Asia)))))) (. .)))
+(ROOT (S (PP (IN In) (NP (DT the) (NNP United) (NNPS States))) (NP (NP (DT the) (JJS highest) (NNS rates)) (PP (IN of) (NP (NN infection)))) (VP (VBD were) (PP (IN in) (NP (DT the) (NN Northeast)))) (. .)))
+(ROOT (S (NP (NNS Prisoners)) (VP (VBP are) (ADJP (RB highly) (JJ susceptible) (PP (TO to) (NP (DT the) (NN disease))))) (. .)))
+(ROOT (S (NP (NP (JJ Airtight) (NNS buildings)) (PP (IN with) (NP (JJ bad) (NN ventilation)))) (VP (VBZ spawns) (NP (NNP tuberculosis))) (. .)))

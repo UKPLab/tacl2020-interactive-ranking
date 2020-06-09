@@ -361,10 +361,10 @@ if __name__ == '__main__':
         # Each entry of vec_list is a list of vector representations of the pooled answers + gold answer.
         # Each entry of pred_list is a list of baseline predictions for each of the pooled answers + gold_answer.
         if baseline == 'COALA':
-            fname = 'coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
+            fname = 'data/cqa_base_models/coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
             qa_list, vec_list, pred_list = pickle.load(open(fname, 'rb'), encoding='latin1')
         elif baseline == 'BERT':
-            fname = 'BERT_cQA_vec_pred/%s.tsv' % topic
+            fname = 'data/cqa_base_models/BERT_vec_pred/%s.tsv' % topic
             # there is a separate csv file for each question
 
             # the tsv file contains a row per 'pooled' answer + a row at the end for the gold answer.
@@ -435,7 +435,7 @@ if __name__ == '__main__':
 
                     gold_answer = re.sub('<[^<]+>', "", original_gold_answer)
                     # cache it to file
-                    gold_filename = 'data/coala_cache_%s_%i.txt' % (topic, question_id)
+                    gold_filename = 'data/cache/coala_cache_%s_%i.txt' % (topic, question_id)
                     if not os.path.exists(gold_filename):
                         with open(gold_filename, 'w') as fh:
                             fh.writelines(gold_answer)
@@ -447,9 +447,9 @@ if __name__ == '__main__':
                         pool_answers = pool_answers[:n_debug]
 
                     if baseline == 'COALA':
-                        ref_filename = 'data/coala_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
+                        ref_filename = 'data/cqa_ref_scores/coala_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
                     elif baseline == 'BERT':
-                        ref_filename = 'data/bert_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
+                        ref_filename = 'data/cqa_ref_scores/bert_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
 
                     if not os.path.exists(ref_filename):
                         ref_values = []

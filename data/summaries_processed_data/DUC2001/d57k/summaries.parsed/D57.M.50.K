@@ -1,0 +1,5 @@
+(ROOT (S (PP (IN In) (NP (CD 1988))) (, ,) (NP (CD 27,000) (NNS people)) (VP (VBD died) (PP (IN in) (NP (NNS earthquakes))) (, ,) (ADVP (RBS most)) (PP (IN in) (NP (NNP Armenia)))) (. .)))
+(ROOT (S (NP (EX There)) (VP (VBD were) (NP (NP (CD 61) (NNS quakes)) (VP (VBN reported) (NP (DT that) (NN year)) (PP (IN by) (NP (DT the) (NNP U.S.) (NNP Geological) (NNP Survey)))))) (. .)))
+(ROOT (S (PP (IN In) (NP (CD 1989))) (, ,) (NP (NNP California) (CC and) (NNP Guadacanal)) (VP (VBD suffered) (NP (JJ severe) (NNS quakes))) (. .)))
+(ROOT (S (S (NP (NNP Chile) (CC and) (NNP Japan)) (VP (VBP are) (DT both) (ADJP (JJ vulnerable)))) (CC and) (S (NP (NNP Japan)) (VP (VBZ supports) (NP (DT an) (JJ early) (NN warning) (NN center)))) (. .)))
+(ROOT (S (NP (DT The) (NNP Geological) (NN Survey)) (VP (VBZ feels) (SBAR (S (NP (NNS predictions)) (VP (VBP are) (ADJP (JJ unreliable)))))) (. .)))

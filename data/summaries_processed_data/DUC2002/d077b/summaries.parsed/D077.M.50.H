@@ -1,0 +1,8 @@
+(ROOT (S (NP (DT A) (CD 6.9) (NN earthquake)) (VP (VBD rocked) (NP (NP (NNP Northern) (NNP California)) (PP (IN on) (NP (NNP October) (CD 17) (, ,) (CD 1989) (, ,)))) (PP (IN at) (NP (DT a) (JJ predicted) (NN epicenter)))) (. .)))
+(ROOT (S (NP (DT The) (CD 1906) (NN quake)) (VP (VBD measured) (NP (CD 8.3))) (. .)))
+(ROOT (S (NP (NP (NNP Poor) (NN soil)) (CC and) (NP (JJ structural) (NN design))) (VP (VBD caused) (NP (NN building) (NNS collapses))) (. .)))
+(ROOT (S (NP (NNP Fire)) (VP (VBD swept) (NP (DT the) (NNP Marina) (NNP District))) (. .)))
+(ROOT (S (NP (DT A) (NNP Bay) (NNP Bridge) (NN section)) (VP (VBD collapsed)) (. .)))
+(ROOT (S (NP (NNP World) (NNP Series) (NNP Game) (NNP Three)) (VP (VBD was) (VP (VBN postponed))) (. .)))
+(ROOT (S (NP (NP (NNS Offers)) (PP (IN of) (NP (NN help)))) (VP (VBD were) (ADJP (JJ widespread))) (. .)))
+(ROOT (S (NP (NNP Charleston)) (VP (VBD suffered) (NP (JJ comparable) (NN damage)) (PP (IN from) (NP (NNP Hurricane) (NNP Hugo)))) (. .)))

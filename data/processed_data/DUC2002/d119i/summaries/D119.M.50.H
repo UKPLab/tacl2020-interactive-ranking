@@ -1,2 +1,0 @@
-Veteran diplomats nominated by Bush as ambassadors included James Lilley (China), John Negroponte (Mexico), Deane Hinton (Panama), Harry Shlaudeman (Nicaragua), Thomas Pickering (India), Wesley Egan (Jordan), and Edward Perkins (UN).
-Bush also nominated campaign contributors Joseph Zappala (Spain), Marvin Semble (Australia), Della Newman (New Zealand), Joseph Gildenhorn (Switzerland), and Peter Secchia (Italy).

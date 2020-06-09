@@ -1,4 +1,0 @@
-(ROOT (S (NP (NP (NNP Leonard) (NNP Bernstein)) (PRN (: --) (NP (NP (NN pianist)) (, ,) (NP (NN composer)) (, ,) (NP (NN conductor)) (, ,) (NP (NN recording) (NN star)) (, ,) (NP (NN teacher)) (, ,) (NP (NN TV) (NN personality)) (, ,) (NP (NN liberal)) (, ,) (CC and) (NP (JJ bon) (NN vivant))) (: --))) (VP (VBD died) (NP (NNP October) (CD 14)) (PP (IN from) (NP (NN lung) (NN disease)))) (. .)))
-(ROOT (S (NP (PRP He)) (VP (VBD was) (NP (DT the) (JJ first) (JJ American) (NN conductor) (S (VP (TO to) (VP (VB attain) (NP (NN world) (NN fame))))))) (. .)))
-(ROOT (S (NP (JJ Posthumous) (NNS plaudits)) (VP (VBP have) (VP (VBN come) (PP (IN from) (NP (RB everywhere))))) (. .)))
-(ROOT (S (NP (NP (NN Memorial) (NNS concerts)) (PP (IN in) (NP (NP (NNP New) (NNP York)) (CC and) (NP (NNP Los) (NNP Angles))))) (VP (VBD were) (ADJP (JJ reminiscent) (PP (IN of) (NP (PRP$ his) (JJ 70th) (NN birthday) (NNS celebrations))))) (. .)))

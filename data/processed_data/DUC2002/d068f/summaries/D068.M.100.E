@@ -1,5 +1,0 @@
-Checkpoint Charlie was lifted into history today during a ceremony including the foreign ministers of the four World War II allies.
-Secretary of State Baker, citing Checkpoint Charlie as a symbol of the Cold War, hoped its removal would bury the conflicts it created.
-Soviet Foreign Minister Shevardnadze, the first Soviet foreign minister to visit Berlin, called for a removal of Berlin's status as an allied controlled city.
-Checkpoint Charlie became superfluous when the East Germany overthrew its communist-controlled government and the border between East and West Germany was opened.
-Although the ceremony was closed to the public, residents of the street watched from their windows.

@@ -67,7 +67,7 @@ if __name__ == '__main__':
                     all_result_dic = json.load(fh)
 
                 accs = []
-                fname = 'coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
+                fname = 'data/coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
 
                 if learner_type is not None:
                     learner_type_label = learner_type.__name__

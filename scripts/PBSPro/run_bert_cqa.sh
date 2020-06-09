@@ -22,7 +22,9 @@ module load lang/python/anaconda/pytorch lang/cuda
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 #  run the script
-python -u BERT_cQA.py
+python -u BERT_cQA.py apple
+python -u BERT_cQA.py cooking
+python -u BERT_cQA.py travel
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)

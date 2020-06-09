@@ -1,0 +1,2 @@
+A panel established after the worst fire season ever in Yellowstone National Park has challenged the government's policy on forest fires in national parks of "let it burn."
+Experts say fire renews forests, giving new species a chance to grow, but said, "in some cases, the social and economic effects may be unacceptable."

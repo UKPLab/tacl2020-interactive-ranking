@@ -1,0 +1,6 @@
+(ROOT (S (NP (NNP Hurricane) (NNP Andrew)) (VP (VBD caused) (NP (QP (RB about) ($ $) (CD 20) (CD billion)) (NN damage))) (. .)))
+(ROOT (S (NP (QP (RB About) ($ $) (CD 8) (CD billion))) (VP (VBZ is) (VP (VBN covered) (PP (IN by) (NP (NN insurance))))) (. .)))
+(ROOT (S (NP (JJS Most) (NNS costs)) (VP (MD will) (VP (VB fall) (PP (IN on) (NP (JJ American) (NNS companies))) (, ,) (SBAR (IN with) (S (NP (NNP British)) (VP (VBZ loses) (ADJP (JJ limited))))))) (. .)))
+(ROOT (S (NP (NNP Andrew)) (VP (VBD tore) (PP (IN through) (NP (JJ southern) (NNP Florida))) (, ,) (S (VP (VP (VBG flattening) (NP (NNP Homestead))) (CC and) (VP (VBG leaving) (NP (CD 25,000) (NN homeless)))))) (. .)))
+(ROOT (S (NP (NP (NNP Industries)) (CC and) (NP (NNS farms))) (VP (VBD were) (VP (VBN damaged) (PP (IN in) (NP (NNP Louisiana))))) (. .)))
+(ROOT (S (NP (DT The) (NN dollar)) (VP (VBD sustained) (NP (DT a) (JJ similar) (NN assault))) (. .)))
