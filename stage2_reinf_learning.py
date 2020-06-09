@@ -63,7 +63,7 @@ if __name__ == '__main__':
         reward_types = ['rouge']
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-    seeds, n_debug, n_threads, dataset = process_cmd_line_args(sys.argv[1:])
+    seeds, n_debug, n_threads, dataset, feature_type = process_cmd_line_args(sys.argv[1:])
 
     if 'learnt' in reward_types:
         for q in querier_types:
@@ -144,7 +144,8 @@ if __name__ == '__main__':
                         else:
                             # the rewards we need don't exist, so learn them now
                             print('no learnt reward available. start learnign now')
-                            summary_vectors = load_summary_vectors(summaries, dataset, topic, root_dir, docs)
+                            summary_vectors = load_summary_vectors(summaries, dataset, topic, root_dir, docs,
+                                                                   feature_type)
 
                             if n_debug:
                                 heuristic_list = heuristic_list[:n_debug]
