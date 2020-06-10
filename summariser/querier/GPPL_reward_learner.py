@@ -70,7 +70,7 @@ class GPPLRewardLearner():
                                               forgetting_rate=0.7, delay=1, fixed_s=self.fixed_s, verbose=True,
                                               ls_initial=ls_initial)
 
-                self.learner.set_max_threads(self.n_threads)
+                # self.learner.set_max_threads(self.n_threads)
 
                 logging.debug('Initialised GPPL.')
 
