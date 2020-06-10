@@ -198,8 +198,7 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         elif querier_type == 'imp':
             querier = ExpectedImprovementQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
         elif querier_type == 'eig':
-            querier = Informati
-            onGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = InformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
         elif querier_type == 'ttt':
             querier = ThompsonTopTwoQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
         elif querier_type == 'tig':
@@ -420,7 +419,7 @@ if __name__ == '__main__':
                 summaries, ref_values_dic, heuristic_list = readSampleSummaries(dataset, topic)
                 print('num of summaries read: {}'.format(len(summaries)))
 
-                summary_vectors = load_summary_vectors(summaries, datetime, dataset, topic, root_dir, docs, feature_type)
+                summary_vectors = load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type)
 
                 if n_debug:
                     heuristic_list = heuristic_list[:n_debug]
