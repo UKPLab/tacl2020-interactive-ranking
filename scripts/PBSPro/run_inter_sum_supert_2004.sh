@@ -23,11 +23,11 @@ module load lang/python/anaconda/pytorch
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_imp_gpplhh "[imp]" . 24 DUC2004 supert
-python -u stage1_active_pref_learning.py LR     0 duc04_supert_ran_lr     "[random]" . 24 DUC2004 supert
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_ran_gpplhh "[random]" . 24 DUC2004 supert
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_unp_gpplhh "[pair_unc]" . 24 DUC2004 supert
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_eig_gpplhh "[eig]" . 24 DUC2004 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_imp_gpplhh "[imp]" . 24 DUC2004 100 supert
+python -u stage1_active_pref_learning.py LR     0 duc04_supert_ran_lr     "[random]" . 24 DUC2004 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_ran_gpplhh "[random]" . 24 DUC2004 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_unp_gpplhh "[pair_unc]" . 24 DUC2004 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_eig_gpplhh "[eig]" . 24 DUC2004 100 supert
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
