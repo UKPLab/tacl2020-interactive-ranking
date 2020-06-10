@@ -108,7 +108,8 @@ def train_epoch(model, data_loader, loss_fn, optimizer, device, scheduler):
     count_examples = 0
 
     for step, batch in enumerate(data_loader):
-        print("Training step %i / %i" % (step, len(data_loader)))
+        if np.mod(step, 100) == 0:
+            print("Training step %i / %i" % (step, len(data_loader)))
 
         input_ids1 = batch["input_ids1"].to(device)
         attention_mask1 = batch["attention_mask1"].to(device)
@@ -496,7 +497,7 @@ if __name__ == "__main__":
     # Load the training set
     traindata = pd.read_csv(os.path.join(datadir, 'train.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
                             index_col=0)
-    tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=0)
+    tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=20)
 
     # Load the validation set
     # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
