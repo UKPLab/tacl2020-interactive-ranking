@@ -10,7 +10,8 @@ import logging
 from joblib import Parallel, delayed
 import multiprocessing
 
-max_no_jobs = 48
+max_no_jobs = 24
+
 
 def compute_distance(col, row):
     # create a grid where each element of the row is subtracted from each element of the column
@@ -187,7 +188,8 @@ def matern_3_2_from_raw_vals(vals, ls, vals2=None, operator='*'):
 
     # if vals2 is None:
     #    vals2 = vals
-    # K = Parallel(n_jobs=num_jobs, backend='threading')(delayed(matern_3_2_onedimension_from_raw_vals)(vals[:, i:i+1], vals2[:, i:i+1], ls[i])
+    # K = Parallel(n_jobs=num_jobs, backend='threading')(delayed(matern_3_2_onedimension_from_raw_vals)(vals[:, i:i+1],
+    # vals2[:, i:i+1], ls[i])
     #                                  for i in range(vals.shape[1]))
 
     if operator == '*':
