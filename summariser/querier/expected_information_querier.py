@@ -1,5 +1,5 @@
 import numpy as np
-from gp_pref_learning import pref_likelihood
+from gppl.gp_pref_learning import pref_likelihood
 from summariser.querier.pairwise_uncertainty_querier import PairUncQuerier
 
 class InformationGainQuerier(PairUncQuerier):
