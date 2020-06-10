@@ -11,6 +11,7 @@ import sys
 from gppl.gp_classifier_vb import compute_median_lengthscales
 from gppl.gp_pref_learning import GPPrefLearning
 
+
 class GPPLRewardLearner():
 
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0):
@@ -59,15 +60,15 @@ class GPPLRewardLearner():
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
 
-                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=1.0,
-                                                         n_threads=self.n_threads)
+                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=1.0)
                 # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far.
 
                 logging.debug('Estimated length scales.')
 
-                self.learner = GPPrefLearning(len(vector_list[0]), shape_s0=1.0, rate_s0=rate,
-                                use_svi=True, ninducing=500, max_update_size=1000, kernel_combination='*',
-                                forgetting_rate=0.7, delay=1, fixed_s=self.fixed_s, verbose=True, ls_initial=ls_initial)
+                self.learner = GPPrefLearning(len(vector_list[0]), shape_s0=1.0, rate_s0=rate, use_svi=True,
+                                              ninducing=500, max_update_size=1000, kernel_combination='*',
+                                              forgetting_rate=0.7, delay=1, fixed_s=self.fixed_s, verbose=True,
+                                              ls_initial=ls_initial)
 
                 self.learner.set_max_threads(self.n_threads)
 
