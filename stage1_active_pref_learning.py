@@ -275,6 +275,9 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
     elif feature_type == 'supert':
         vec = SupertVectoriser(docs)
         summary_vectors, _ = vec.getSummaryVectors(summaries)
+        # TODO since this is not working so well.... we may want to try with only the supert features and exclude the
+        #  final REAPER features that are appended.
+        # TODO check what supert was fine-tuned on. Does it need some in-domain training?
         np.savetxt(summary_vecs_cache_file, summary_vectors)
         print('Cached summary vectors to %s' % summary_vecs_cache_file)
 

@@ -3,7 +3,7 @@
 # Run the interactive summarisation simulations with SUPERT
 
 # Job name
-#PBS -N intersum_sup_2002
+#PBS -N intsum_sup_02
 
 # Output file
 #PBS -o pbs_intersumsup2002_output.log
