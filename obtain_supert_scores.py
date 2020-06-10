@@ -47,34 +47,34 @@ class SupertVectoriser(Vectoriser):
 
         return vector_list, supert_scores
 
+if __name__ == '__main__':
+    for dataset in ['DUC2001', 'DUC2002', 'DUC2004']:
 
-for dataset in ['DUC2001', 'DUC2002', 'DUC2004']:
+        # read documents and ref. summaries
+        reader = CorpusReader(PROCESSED_PATH)
+        data = reader.get_data(dataset)
 
-    # read documents and ref. summaries
-    reader = CorpusReader(PROCESSED_PATH)
-    data = reader.get_data(dataset)
+        for topic, docs, models in data:
+            summaries_acts_list, _ = readSummaries(dataset, topic, 'heuristic')
+            print('num of summaries read: {}'.format(len(summaries_acts_list)))
 
-    for topic, docs, models in data:
-        summaries_acts_list, _ = readSummaries(dataset, topic, 'heuristic')
-        print('num of summaries read: {}'.format(len(summaries_acts_list)))
+            # Use the vectoriser to obtain summary embedding vectors
+            vec = SupertVectoriser(docs)
+            summary_vectors, scores = vec.getSummaryVectors(summaries_acts_list)
 
-        # Use the vectoriser to obtain summary embedding vectors
-        vec = SupertVectoriser(docs)
-        summary_vectors, scores = vec.getSummaryVectors(summaries_acts_list)
+            # Save the vectors to the cache file
+            if not os.path.exists('./data/supert'):
+                os.mkdir('./data/supert')
+            summary_vecs_cache_file = './data/summary_vectors/supert/summary_vectors_%s_%s.csv' % (dataset, topic)
+            np.savetxt(summary_vecs_cache_file, summary_vectors)
 
-        # Save the vectors to the cache file
-        if not os.path.exists('./data/supert'):
-            os.mkdir('./data/supert')
-        summary_vecs_cache_file = './data/summary_vectors/supert/summary_vectors_%s_%s.csv' % (dataset, topic)
-        np.savetxt(summary_vecs_cache_file, summary_vectors)
+            # Write to the output file
+            output_file = os.path.join(SUMMARY_DB_DIR, dataset, topic, 'supert')
+            with open(output_file, 'w') as ofh:
+                for i, summ in enumerate(summaries_acts_list):
+                    act_str = np.array(summ).astype(str)
+                    actions_line = "actions:" + ",".join(act_str) + "\n"
+                    ofh.write(actions_line)
 
-        # Write to the output file
-        output_file = os.path.join(SUMMARY_DB_DIR, dataset, topic, 'supert')
-        with open(output_file, 'w') as ofh:
-            for i, summ in enumerate(summaries_acts_list):
-                act_str = np.array(summ).astype(str)
-                actions_line = "actions:" + ",".join(act_str) + "\n"
-                ofh.write(actions_line)
-
-                utility_line = "utility:" + str(scores[i]) + "\n"
-                ofh.write(utility_line)
+                    utility_line = "utility:" + str(scores[i]) + "\n"
+                    ofh.write(utility_line)
