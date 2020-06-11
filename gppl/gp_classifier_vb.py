@@ -432,6 +432,7 @@ class GPClassifierVB(object):
     def _init_covariance(self):
         # Get the correct covariance matrix
         if self.kernel_func is not None and self.cov_type != 'pre':
+            logging.debug("Computing the cov matrix K")
             self.K = self.kernel_func(self.obs_coords, self.ls, operator=self.kernel_combination)
             self.K += 1e-6 * np.eye(len(self.K))  # jitter
         elif self.K is None:
@@ -1162,9 +1163,11 @@ class GPClassifierVB(object):
                 self.out_feats = out_feats
                 # compute kernels given the feature vectors supplied
                 out_feats_arr = np.array(out_feats).astype(float)
+                logging.debug('Obtaining output cov matrix K_star')
                 self.K_star = self.kernel_func(out_feats_arr, self.ls, self._get_training_feats(),
                                                operator=self.kernel_combination)
                 if full_cov:
+                    logging.debug('Obtaining output cov matrix K_starstar')
                     self.K_starstar = self.kernel_func(out_feats_arr, self.ls, out_feats_arr,
                                                        operator=self.kernel_combination)
                 else:
