@@ -537,7 +537,7 @@ class GPClassifierVB(object):
         #             self.kernel_func = sq_exp_cov
         #             self.kernel_der = deriv_sq_exp_cov
 
-        elif cov_type is 'pre':
+        elif cov_type == 'pre':
             # the covariance matrix is prespecified and passed in using set_covariance()
             self.kernel_func = None
             self.kernel_derfactor = None

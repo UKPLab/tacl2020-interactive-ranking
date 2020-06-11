@@ -51,8 +51,8 @@ class RandomQuerier:
 
         ### ensure the sampled pair has not been queried before
         while rand2 == rand1 or self.inLog(rand1,rand2,log):
-            rand1 = random.randint(0,summary_num-1)
-            rand2 = random.randint(0,summary_num-1)
+            rand1 = random.randint(0, summary_num-1)
+            rand2 = random.randint(0, summary_num-1)
 
         return rand1, rand2
 

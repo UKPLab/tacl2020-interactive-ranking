@@ -1,8 +1,11 @@
+import logging
+
 from summariser.querier.random_querier import RandomQuerier
 import numpy as np
 
 import sys
 from gppl.gp_pref_learning import pref_likelihood
+
 
 class PairUncQuerier(RandomQuerier):
     '''
@@ -46,7 +49,7 @@ class PairUncQuerier(RandomQuerier):
 
         return candidate_idxs
 
-    def getQuery(self,log):
+    def getQuery(self, log):
         if self.reward_learner.n_labels_seen == 0 and self.random_initial_sample:
             return super().getQuery(log)
         elif self.reward_learner.n_labels_seen == 0:
@@ -57,7 +60,11 @@ class PairUncQuerier(RandomQuerier):
 
         candidate_idxs = self._get_candidates()
 
+        logging.debug(self.reward_learner)
+        logging.debug(self.reward_learner.full_cov)
+        logging.debug('calling predictive_cov:')
         Cov = self.reward_learner.predictive_cov(candidate_idxs)
+
         pairwise_entropy = self._compute_pairwise_scores(f[candidate_idxs], Cov)
 
         # Find out which of our candidates have been compared already
