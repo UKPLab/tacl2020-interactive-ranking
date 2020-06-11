@@ -96,6 +96,9 @@ class GPPLRewardLearner():
             self.learner.fit(new_item_ids0, new_item_ids1, new_items_feat, new_labels, optimize=False,
                              input_type='binary', use_median_ls=False, mu0=self.mu0[:, None])
 
+            logging.debug('GPPL feature vector size:' + str(new_items_feat.shape))
+            logging.debug('GPPL kernel size: ' + str(self.learner.K_nm.shape))
+
             if self.tune:
                 # Can't really use Pearson in a realistic setting because we don't have the oracle
                 # train_score = pearsonr(self.learner.f[tr_items].flatten(), true_scores)[0]
@@ -124,7 +127,7 @@ class GPPLRewardLearner():
 
         self.n_labels_seen = len(pref_history)
 
-        self.rewards, self.reward_var = self.learner.predict_f(out_feats=new_items_feat, full_cov=False,
+        self.rewards, self.reward_var = self.learner.predict_f(full_cov=False,
                                                                reuse_output_kernel=True, mu0_output=self.mu0[:, None])
 
 
