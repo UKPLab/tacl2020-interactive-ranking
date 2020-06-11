@@ -348,8 +348,7 @@ def construct_pairwise_dataset(dataframe, n_neg_samples=10):
 
         # some of the lines seem to have two gold ids. Just use the first.
         gold_ans_ids = gold_ans_id.split(' ')
-        if len(gold_ans_ids) > 1:
-            gold_ans_id = gold_ans_ids[0]
+        gold_ans_id = gold_ans_ids[0]
 
         tokids = answers.loc[gold_ans_id].values[0].split(' ')
         toks = vocab[np.array(tokids).astype(int)]
@@ -437,6 +436,10 @@ def construct_single_item_dataset(dataframe):
         if len(ans_ids) < 2:
             continue
 
+        gold_id = dataframe.loc[qid]["goldid"]
+        gold_id = gold_id.split(' ')
+        gold_id = gold_id[0]
+
         for ans_idx, ans_id in enumerate(ans_ids):
             tokids = answers.loc[ans_id].values[0].split(' ')
             toks = vocab[np.array(tokids).astype(int)]
@@ -447,8 +450,12 @@ def construct_single_item_dataset(dataframe):
             qids.append(qid)
             aids.append(ans_id)
 
-            if ans_id == dataframe.loc[qid]["goldid"]:
+            if ans_id == gold_id:
                 goldids[qid] = ans_id
+
+        if qid not in goldids:
+            print("Didn't find the goldid in the list of candidates for q %i. Gold ID = %s, answers = %s" %
+                  (qid, dataframe.loc[qid]["goldid"], dataframe.loc[qid]["ansids"]))
 
     data_loader = DataLoader(
         SESingleDataset(qas, qids, aids, goldids),
@@ -499,19 +506,9 @@ if __name__ == "__main__":
                             index_col=0)
     tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=20)
 
-    # Load the validation set
-    # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
-    #                              names=['goldid', 'ansids'], index_col=0, nrows=2)
-    # va_qas, va_qids, va_goldids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
-
-    # Load the test set
-    testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                           index_col=0)
-    te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
-
     # Train the model ----------------------------------------------------------------------------------------------
     bertcqa_model, device = train_bertcqa(tr_data_loader, 3, 42, os.path.join(outputdir, 'model_params_%s' % topic),
-                                          reload_model=False)
+                                          reload_model=True)
 
     # Compute performance on training set --------------------------------------------------------------------------
     print("Evaluating on training set:")
@@ -519,10 +516,21 @@ if __name__ == "__main__":
     evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
 
     # Compute performance on validation set ------------------------------------------------------------------------
+    # Load the validation set
+    # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
+    #                              names=['goldid', 'ansids'], index_col=0, nrows=2)
+    # va_qas, va_qids, va_goldids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
+    #
     # print("Evaluating on validation set:")
     # evaluate_accuracy(bertcqa_model, va_data_loader, device, va_qids, va_goldids)
 
     # Compute performance on test set ------------------------------------------------------------------------------
+
+    # Load the test set
+    testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
+                           index_col=0)
+    te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
+
     print("Evaluating on test set:")
     _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device)
 
