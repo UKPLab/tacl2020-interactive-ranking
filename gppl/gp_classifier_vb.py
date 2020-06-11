@@ -11,6 +11,18 @@ from joblib import Parallel, delayed
 import multiprocessing
 
 max_no_jobs = 24
+parallel = None
+
+
+def get_parallel():
+    global parallel
+    if parallel is None:
+        num_jobs = multiprocessing.cpu_count()
+        if num_jobs > max_no_jobs:
+            num_jobs = max_no_jobs
+        parallel = Parallel(n_jobs=num_jobs, backend="threading")
+    return parallel
+
 
 def compute_distance(col, row):
     # create a grid where each element of the row is subtracted from each element of the column
@@ -181,7 +193,7 @@ def matern_3_2_from_raw_vals(vals, ls, vals2=None, operator='*'):
     if num_jobs > max_no_jobs:
         num_jobs = max_no_jobs
     subset_size = int(np.ceil(vals.shape[1] / float(num_jobs)))
-    K = Parallel(n_jobs=num_jobs, backend='threading')(delayed(compute_K_subset)(i, subset_size, vals, vals2, ls,
+    K = get_parallel()(delayed(compute_K_subset)(i, subset_size, vals, vals2, ls,
                                                                                  matern_3_2_onedimension_from_raw_vals,
                                                                                  operator) for i in range(num_jobs))
 
@@ -250,10 +262,8 @@ def compute_median_lengthscales(items_feat, multiply_heuristic_power=1.0, N_max=
         items_feat = items_feat[np.random.choice(items_feat.shape[0], N_max, replace=False)]
 
     ndims = items_feat.shape[1]
-    num_jobs = multiprocessing.cpu_count()
-    if num_jobs > max_no_jobs:
-        num_jobs = max_no_jobs
-    default_ls_value = Parallel(n_jobs=num_jobs, backend="threading")(delayed(_dists_f)(
+
+    default_ls_value = get_parallel()(delayed(_dists_f)(
         items_feat[:, f], f) for f in range(ndims))
 
     ls_initial_guess = np.ones(ndims) * default_ls_value
