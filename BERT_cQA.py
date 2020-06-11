@@ -209,7 +209,8 @@ def predict_bertcqa(model, data_loader, device):
     model.eval()
 
     for step, batch in enumerate(data_loader):
-        print("Prediction step  %i / %i" % (step, len(data_loader)))
+        if np.mod(step, 100) == 0:
+            print("Prediction step  %i / %i" % (step, len(data_loader)))
 
         input_ids = batch["input_ids"].to(device)
         attention_mask = batch["attention_mask"].to(device)
@@ -511,9 +512,10 @@ if __name__ == "__main__":
                                           reload_model=True)
 
     # Compute performance on training set --------------------------------------------------------------------------
-    print("Evaluating on training set:")
-    tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
-    evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
+    # Training is very large, don't bother with this.
+    # print("Evaluating on training set:")
+    # tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
+    # evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
 
     # Compute performance on validation set ------------------------------------------------------------------------
     # Load the validation set
