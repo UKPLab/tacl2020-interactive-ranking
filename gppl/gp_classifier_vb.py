@@ -10,7 +10,7 @@ import logging
 from joblib import Parallel, delayed
 import multiprocessing
 
-max_no_jobs = 24
+max_no_jobs = 2
 parallel = None
 
 
