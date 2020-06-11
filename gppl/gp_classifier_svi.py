@@ -77,6 +77,7 @@ class GPClassifierSVI(GPClassifierVB):
         super(GPClassifierSVI, self)._init_params(mu0, reinit_params, K)
 
     def _init_covariance(self):
+        logging.debug('initing covariance. SVI = ' + str(self.use_svi))
         if not self.use_svi:
             return super(GPClassifierSVI, self)._init_covariance()
 

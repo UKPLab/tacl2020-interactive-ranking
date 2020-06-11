@@ -129,6 +129,7 @@ class GPPLRewardLearner():
 
         self.rewards, self.reward_var = self.learner.predict_f(full_cov=False,
                                                                reuse_output_kernel=True, mu0_output=self.mu0[:, None])
+        logging.debug('--- Rewards obtained.')
 
 
     def get_rewards(self):
