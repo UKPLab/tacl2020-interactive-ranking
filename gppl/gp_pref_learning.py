@@ -149,7 +149,7 @@ class GPPrefLearning(GPClassifierSVI):
     # Initialisation --------------------------------------------------------------------------------------------------
 
     def _init_prior_mean_f(self, z0):
-        self.mu0_default = z0 # for preference learning, we pass in the latent mean directly
+        self.mu0_default = z0  # for preference learning, we pass in the latent mean directly
 
     def _init_obs_prior(self):
         # to make a and b smaller and put more weight onto the observations, increase v_prior by increasing rate_s0/shape_s0
@@ -240,8 +240,8 @@ class GPPrefLearning(GPClassifierSVI):
             keys_0[idxs_to_swap] = keys_1[idxs_to_swap]
             keys_1[idxs_to_swap] = swap_coords_0
 
-            grid_obs_counts = coo_matrix((totals, (keys_0, keys_1)) ).toarray()
-            grid_obs_pos_counts = coo_matrix((poscounts, (keys_0, keys_1)) ).toarray()
+            grid_obs_counts = coo_matrix((totals, (keys_0, keys_1))).toarray()
+            grid_obs_pos_counts = coo_matrix((poscounts, (keys_0, keys_1))).toarray()
 
             nonzero_v, nonzero_u = grid_obs_counts.nonzero() # coordinate key pairs with duplicate pairs removed
 
@@ -266,14 +266,14 @@ class GPPrefLearning(GPClassifierSVI):
     # Mapping between latent and observation spaces -------------------------------------------------------------------
 
     def forward_model(self, fmean=None, fvar=None, subset_idxs=[], v=[], u=[], return_g_f=False):
-        '''
+        """
         f - should be of shape nobs x 1
 
         This returns the probability that each pair has a value of 1, which is referred to as Phi(z)
         in the chu/ghahramani paper, and the latent parameter referred to as z in the chu/ghahramani paper.
         In this work, we use z to refer to the observations, i.e. the fraction of comparisons of a given pair with
         value 1, so use a different label here.
-        '''
+        """
         if fmean is None:
             fmean = self.obs_f
         if len(v) == 0:
