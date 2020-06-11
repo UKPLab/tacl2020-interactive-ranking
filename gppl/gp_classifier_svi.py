@@ -451,8 +451,17 @@ class GPClassifierSVI(GPClassifierVB):
         if not self.use_svi:
             return super(GPClassifierSVI, self)._expec_f_output(Ks_starstar, Ks_star, mu0, full_cov, reuse_output_kernel)
 
+        logging('sorting out covpair_out:')
+        logging.debug(self.covpair_out is None)
+
         if self.covpair_out is None or not reuse_output_kernel:
             self.covpair_out = scipy.linalg.solve(self.K_mm/self.s, Ks_star.T).T
+            logging.debug('created a new covpair_out using Ks_star with shape:')
+            logging.debug(Ks_star.shape)
+
+
+        logging.debug(self.covpair_out.shape)
+
         f, C_out = self._f_given_u(self.covpair_out, mu0, Ks_starstar, full_cov=full_cov)
 
         return f, C_out
