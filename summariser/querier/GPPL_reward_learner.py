@@ -93,7 +93,7 @@ class GPPLRewardLearner():
             logging.debug('GPPL fitting with %i pairwise labels' % len(new_labels))
 
             self.learner.fit(new_item_ids0, new_item_ids1, new_items_feat, new_labels, optimize=False,
-                             input_type='binary', use_median_ls=False, mu0=self.mu0)
+                             input_type='binary', use_median_ls=False, mu0=self.mu0[:, None])
 
             if self.tune:
                 # Can't really use Pearson in a realistic setting because we don't have the oracle

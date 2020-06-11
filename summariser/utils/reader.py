@@ -15,9 +15,12 @@ def read_file(filename):
         return fp.read()
 
 
-def readSampleSummaries(dataset, topic):
+def readSampleSummaries(dataset, topic, feature_type):
     summaries, ref_values = readSummaries(dataset, topic, 'rouge')
-    summaries, heu_values = readSummaries(dataset, topic, 'heuristic')
+    if feature_type == 'april':
+        summaries, heu_values = readSummaries(dataset, topic, 'heuristic')
+    else:
+        summaries, heu_values = readSummaries(dataset, topic, 'supert')
 
     return summaries, ref_values, heu_values
 
@@ -30,7 +33,7 @@ def readSummaries(dataset, topic, reward_type='rouge'):
     sample_num = 9999
 
     with open(path, 'r') as ff:
-        if reward_type == 'heuristic':
+        if reward_type == 'heuristic' or reward_type == 'supert':
             cnt = 0
             while cnt < sample_num:
                 line = ff.readline()
@@ -89,7 +92,7 @@ def readSummaries(dataset, topic, reward_type='rouge'):
 
     # normalise
     norm_value_dic = {}
-    if reward_type == 'heuristic':
+    if reward_type == 'heuristic' or reward_type == 'supert':
         norm_value_dic = normaliseList(value_list)
     else:
         assert reward_type == 'rouge'

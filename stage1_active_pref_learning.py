@@ -419,7 +419,7 @@ if __name__ == '__main__':
                 if 0 < max_topics < topic_cnt or (n_debug and topic_cnt > 1):
                     continue
 
-                summaries, ref_values_dic, heuristic_list = readSampleSummaries(dataset, topic)
+                summaries, ref_values_dic, heuristic_list = readSampleSummaries(dataset, topic, feature_type)
                 print('num of summaries read: {}'.format(len(summaries)))
 
                 summary_vectors = load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type)
