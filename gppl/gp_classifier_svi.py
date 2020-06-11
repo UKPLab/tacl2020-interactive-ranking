@@ -10,7 +10,7 @@ import logging
 
 import scipy
 
-from gppl.gp_classifier_vb import GPClassifierVB, sigmoid, max_no_jobs
+from gppl.gp_classifier_vb import GPClassifierVB, sigmoid, max_no_jobs, get_parallel
 from sklearn.cluster import MiniBatchKMeans
 from joblib import Parallel, delayed
 import multiprocessing
@@ -252,13 +252,13 @@ class GPClassifierSVI(GPClassifierVB):
         if num_jobs > max_no_jobs:
             num_jobs = max_no_jobs
         if len(self.ls) > 1:
-            gradient = Parallel(n_jobs=num_jobs, backend='threading')(
+            gradient = get_parallel()(n_jobs=num_jobs, backend='threading')(
                 delayed(_gradient_terms_for_subset)(self.K_mm, self.invK_mm, self.kernel_derfactor, self.kernel_combination,
                     common_term, self.ls[dim], self.inducing_coords[:, dim:dim + 1], self.s)
                 for dim in dims)
 
         else:
-            gradient = Parallel(n_jobs=num_jobs, backend='threading')(
+            gradient = get_parallel()(n_jobs=num_jobs, backend='threading')(
                 delayed(_gradient_terms_for_subset)(self.K_mm, self.invK_mm, self.kernel_derfactor, self.kernel_combination,
                     common_term, self.ls[0], self.inducing_coords[:, dim:dim + 1], self.s)
                 for dim in dims)
