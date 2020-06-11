@@ -56,6 +56,7 @@ class GPPLRewardLearner():
 
             if self.learner is None or self.tune: # needs the vectors to init
                 new_items_feat = np.array(vector_list)
+                self.items_feat = new_items_feat
 
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
@@ -123,8 +124,8 @@ class GPPLRewardLearner():
 
         self.n_labels_seen = len(pref_history)
 
-        self.rewards, self.reward_var = self.learner.predict_f(full_cov=False, reuse_output_kernel=True,
-                                                               mu0_output=self.mu0[:, None])
+        self.rewards, self.reward_var = self.learner.predict_f(out_feats=new_items_feat, full_cov=False,
+                                                               reuse_output_kernel=True, mu0_output=self.mu0[:, None])
 
 
     def get_rewards(self):
@@ -135,8 +136,10 @@ class GPPLRewardLearner():
 
     def predictive_cov(self, idxs):
         if self.full_cov:
-            return self.learner.predict_f(out_idxs=idxs, full_cov=True, reuse_output_kernel=False,
-                   mu0_output=self.mu0[idxs] if not self.mu0 is None and not np.isscalar(self.mu0) else self.mu0)[1]
+            return self.learner.predict_f(out_feats=self.items_feat, out_idxs=idxs, full_cov=True,
+                                          reuse_output_kernel=False,
+                                          mu0_output=self.mu0[idxs] if self.mu0 is not None and
+                                          not np.isscalar(self.mu0) else self.mu0)[1]
         else:
             if self.reward_var.shape[1] == 1:
                 return self.reward_var[idxs]
