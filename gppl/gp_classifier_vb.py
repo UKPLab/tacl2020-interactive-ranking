@@ -1187,7 +1187,7 @@ class GPClassifierVB(object):
             # use the training feature vectors
             self.K_star, self.K_starstar = self._get_training_cov()
             logging.debug('in predict f:')
-            logging.debug(self.K_start.shape)
+            logging.debug(self.K_star.shape)
             if not full_cov:
                 self.K_starstar = np.diag(self.K_starstar)
 
