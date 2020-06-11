@@ -1186,6 +1186,8 @@ class GPClassifierVB(object):
         elif out_feats is None and K_star is None and K_starstar is None:
             # use the training feature vectors
             self.K_star, self.K_starstar = self._get_training_cov()
+            logging('in predict f:')
+            logging(self.K_start.shape)
             if not full_cov:
                 self.K_starstar = np.diag(self.K_starstar)
 
