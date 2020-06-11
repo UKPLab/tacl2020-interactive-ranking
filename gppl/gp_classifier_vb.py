@@ -12,7 +12,6 @@ import multiprocessing
 
 max_no_jobs = 24
 
-
 def compute_distance(col, row):
     # create a grid where each element of the row is subtracted from each element of the column
     if issparse(col) or issparse(row):
@@ -254,7 +253,7 @@ def compute_median_lengthscales(items_feat, multiply_heuristic_power=1.0, N_max=
     num_jobs = multiprocessing.cpu_count()
     if num_jobs > max_no_jobs:
         num_jobs = max_no_jobs
-    default_ls_value = Parallel(n_jobs=num_jobs, backend="multiprocessing")(delayed(_dists_f)(
+    default_ls_value = Parallel(n_jobs=num_jobs, backend="threading")(delayed(_dists_f)(
         items_feat[:, f], f) for f in range(ndims))
 
     ls_initial_guess = np.ones(ndims) * default_ls_value
@@ -1163,7 +1162,6 @@ class GPClassifierVB(object):
                 self.out_feats = out_feats
                 # compute kernels given the feature vectors supplied
                 out_feats_arr = np.array(out_feats).astype(float)
-                logging.debug('Obtaining output cov matrix K_star')
                 self.K_star = self.kernel_func(out_feats_arr, self.ls, self._get_training_feats(),
                                                operator=self.kernel_combination)
                 if full_cov:

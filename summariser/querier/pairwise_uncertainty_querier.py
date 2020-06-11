@@ -60,9 +60,6 @@ class PairUncQuerier(RandomQuerier):
 
         candidate_idxs = self._get_candidates()
 
-        logging.debug(self.reward_learner)
-        logging.debug(self.reward_learner.full_cov)
-        logging.debug('calling predictive_cov:')
         Cov = self.reward_learner.predictive_cov(candidate_idxs)
 
         pairwise_entropy = self._compute_pairwise_scores(f[candidate_idxs], Cov)

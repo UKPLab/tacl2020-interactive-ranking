@@ -22,6 +22,9 @@ module load lang/python/anaconda/pytorch
 # We might need to add the global paths to our code to the pythonpath. Also set the data directories globally.
 cd /work/es1595/text_ranking_bayesian_optimisation
 
+# Run the script using heuristics only and no interactions.
+python -u stage1_active_pref_learning.py H 0 duc01_supert_H "[random]" . 24 DUC2001 0 supert
+
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
 python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_imp_gpplhh "[imp]" . 24 DUC2001 100 supert
 python -u stage1_active_pref_learning.py LR     0 duc01_supert_ran_lr     "[random]" . 24 DUC2001 100 supert
