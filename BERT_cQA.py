@@ -160,7 +160,7 @@ def train_bertcqa(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
     model = BertRanker()
     model = model.to(device)
 
-    if reload_model and os.path.exists(save_path):
+    if reload_model and os.path.exists(save_path+'.pkl'):
         print('Found a previously-saved model... reloading')
         model.load_state_dict(torch.load(save_path+'.pkl'))
         with open(save_path+'_num_epochs.txt', 'r') as fh:
