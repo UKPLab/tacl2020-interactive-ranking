@@ -124,7 +124,7 @@ class GPPLRewardLearner():
         self.n_labels_seen = len(pref_history)
 
         self.rewards, self.reward_var = self.learner.predict_f(full_cov=False, reuse_output_kernel=True,
-                                                               mu0_output=self.mu0)
+                                                               mu0_output=self.mu0[:, None])
 
 
     def get_rewards(self):
