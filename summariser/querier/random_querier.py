@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 class RandomQuerier:
 
-    def __init__(self, reward_learner_class, summary_vectors, heuristic_values, learnt_weight=0.5, n_threads=0):
+    def __init__(self, reward_learner_class, summary_vectors, heuristic_values, learnt_weight=0.5):
         self.summary_vectors = summary_vectors
         if reward_learner_class is not None:
             self.reward_learner = reward_learner_class(heuristics=heuristic_values, n_threads=n_threads)
