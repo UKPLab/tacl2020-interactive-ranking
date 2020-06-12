@@ -11,7 +11,7 @@ import logging
 from joblib import Parallel, delayed
 import multiprocessing
 
-max_no_jobs = 2
+max_no_jobs = 4
 parallel = None
 
 
@@ -1173,6 +1173,9 @@ class GPClassifierVB(object):
                 self.out_feats = out_feats
                 # compute kernels given the feature vectors supplied
                 out_feats_arr = np.array(out_feats).astype(float)
+
+                # TODO if reuseoutput kernel, we should cache this? Or we should only create it for the out_idxs?
+                logging.debug('computing K_star')
                 self.K_star = self.kernel_func(out_feats_arr, self.ls, self._get_training_feats(),
                                                operator=self.kernel_combination)
                 if full_cov:
@@ -1181,6 +1184,7 @@ class GPClassifierVB(object):
                 else:
                     self.K_starstar = 1.0  # assuming that the kernel function places ones along diagonals
             else:
+                logging.debug('reusing K_star')
                 pass  # we reuse the previous self.K_star and self.K_starstar values
 
         elif out_feats is None and K_star is None and K_starstar is None:
