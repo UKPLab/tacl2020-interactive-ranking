@@ -1176,8 +1176,6 @@ class GPClassifierVB(object):
                 self.K_star = self.kernel_func(out_feats_arr, self.ls, self._get_training_feats(),
                                                operator=self.kernel_combination)
                 if full_cov:
-                    logging.debug('Obtaining output cov matrix K_starstar')
-                    traceback.print_stack()
                     self.K_starstar = self.kernel_func(out_feats_arr, self.ls, out_feats_arr,
                                                        operator=self.kernel_combination)
                 else:
@@ -1188,8 +1186,6 @@ class GPClassifierVB(object):
         elif out_feats is None and K_star is None and K_starstar is None:
             # use the training feature vectors
             self.K_star, self.K_starstar = self._get_training_cov()
-            logging.debug('in predict f:')
-            logging.debug(self.K_star.shape)
             if not full_cov:
                 self.K_starstar = np.diag(self.K_starstar)
 
