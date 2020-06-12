@@ -263,6 +263,8 @@ class GPClassifierSVI(GPClassifierVB):
                     common_term, self.ls[0], self.inducing_coords[:, dim:dim + 1], self.s)
                 for dim in dims)
 
+        stop_using_parallel()  # increase the number of threads available per thread now we have only one thread
+
         if self.n_lengthscales == 1:
             # sum the partial derivatives over all the dimensions
             gradient = [np.sum(gradient)]
