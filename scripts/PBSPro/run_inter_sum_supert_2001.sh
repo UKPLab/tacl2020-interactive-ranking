@@ -13,7 +13,7 @@
 
 # request resources and set limits
 #PBS -l walltime=72:00:00
-#PBS -l select=1:ncpus=24:mem=128GB:ompthreads=12
+#PBS -l select=1:ncpus=24:mem=128GB:ompthreads=24
 # 'select' chooses number of nodes.
 
 #  load required modules

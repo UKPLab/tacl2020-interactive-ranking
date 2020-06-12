@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import traceback
 
 import numpy as np
@@ -11,18 +12,31 @@ import logging
 from joblib import Parallel, delayed
 import multiprocessing
 
-max_no_jobs = 4
+max_no_jobs = 12
 parallel = None
 
 
 def get_parallel():
     global parallel
+
+    num_cpus = multiprocessing.cpu_count()
+    os.environ["OMP_NUM_THREADS"] = str(num_cpus/max_no_jobs)  # the number of CPUs that would be available per thread
+
     if parallel is None:
-        num_jobs = multiprocessing.cpu_count()
+        num_jobs = num_cpus
         if num_jobs > max_no_jobs:
             num_jobs = max_no_jobs
         parallel = Parallel(n_jobs=num_jobs, backend="threading")
     return parallel
+
+
+def stop_using_parallel():
+    """
+    Call me after you finish using Joblib parallel to maximise the number of CPUs available for the main thread.
+    """
+    num_cpus = multiprocessing.cpu_count()
+    os.environ["OMP_NUM_THREADS"] = str(num_cpus)  # use all available CPUs for the OMP threading now that we have
+    # stopped using joblib threading
 
 
 def compute_distance(col, row):
@@ -197,6 +211,7 @@ def matern_3_2_from_raw_vals(vals, ls, vals2=None, operator='*'):
     K = get_parallel()(delayed(compute_K_subset)(i, subset_size, vals, vals2, ls,
                                                                                  matern_3_2_onedimension_from_raw_vals,
                                                                                  operator) for i in range(num_jobs))
+    stop_using_parallel()  # increase the number of threads available per thread now we have only one thread
 
     # if vals2 is None:
     #    vals2 = vals
@@ -266,6 +281,7 @@ def compute_median_lengthscales(items_feat, multiply_heuristic_power=1.0, N_max=
 
     default_ls_value = get_parallel()(delayed(_dists_f)(
         items_feat[:, f], f) for f in range(ndims))
+    stop_using_parallel()  # increase the number of threads available per thread now we have only one thread
 
     ls_initial_guess = np.ones(ndims) * default_ls_value
 
