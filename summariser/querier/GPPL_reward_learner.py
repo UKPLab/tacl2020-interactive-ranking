@@ -12,7 +12,7 @@ from gppl.gp_classifier_vb import compute_median_lengthscales
 from gppl.gp_pref_learning import GPPrefLearning
 
 
-class GPPLRewardLearner():
+class GPPLRewardLearner:
 
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0):
         self.learner = None
@@ -137,9 +137,8 @@ class GPPLRewardLearner():
 
     def predictive_cov(self, idxs):
         if self.full_cov:
-            return self.learner.predict_f(out_feats=self.items_feat, out_idxs=idxs, full_cov=True,
-                                          reuse_output_kernel=False,
-                                          mu0_output=self.mu0[idxs] if self.mu0 is not None and
+            return self.learner.predict_f(out_idxs=idxs, full_cov=True,
+                                          mu0_output=self.mu0[idxs, None] if self.mu0 is not None and
                                           not np.isscalar(self.mu0) else self.mu0)[1]
         else:
             if self.reward_var.shape[1] == 1:

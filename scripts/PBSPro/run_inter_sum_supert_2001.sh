@@ -23,14 +23,14 @@ module load lang/python/anaconda/pytorch
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 # Run the script using heuristics only and no interactions.
-#python -u stage1_active_pref_learning.py H 0 duc01_supert_H "[random]" . 2 DUC2001 0 supert
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_imp_gpplhh "[imp]" . 2 DUC2001 100 supert
-#python -u stage1_active_pref_learning.py LR     0 duc01_supert_ran_lr     "[random]" . 2 DUC2001 100 supert
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_ran_gpplhh "[random]" . 2 DUC2001 100 supert
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_unp_gpplhh "[pair_unc]" . 2 DUC2001 100 supert
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_eig_gpplhh "[eig]" . 2 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_imp_gpplhh "[imp]" . 4 DUC2001 100 supert
+python -u stage1_active_pref_learning.py H 0 duc01_supert_H "[random]" . 4 DUC2001 0 supert
+python -u stage1_active_pref_learning.py LR     0 duc01_supert_ran_lr     "[random]" . 4 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_ran_gpplhh "[random]" . 4 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_unp_gpplhh "[pair_unc]" . 4 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_eig_gpplhh "[eig]" . 4 DUC2001 100 supert
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
