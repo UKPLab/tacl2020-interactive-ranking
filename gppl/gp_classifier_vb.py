@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import traceback
 
 import numpy as np
 from scipy.linalg import cholesky, solve_triangular
@@ -1176,6 +1177,7 @@ class GPClassifierVB(object):
                                                operator=self.kernel_combination)
                 if full_cov:
                     logging.debug('Obtaining output cov matrix K_starstar')
+                    traceback.print_stack()
                     self.K_starstar = self.kernel_func(out_feats_arr, self.ls, out_feats_arr,
                                                        operator=self.kernel_combination)
                 else:
