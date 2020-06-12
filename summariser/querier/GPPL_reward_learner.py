@@ -138,7 +138,7 @@ class GPPLRewardLearner():
     def predictive_cov(self, idxs):
         if self.full_cov:
             return self.learner.predict_f(out_feats=self.items_feat, out_idxs=idxs, full_cov=True,
-                                          reuse_output_kernel=False,
+                                          reuse_output_kernel=True,
                                           mu0_output=self.mu0[idxs] if self.mu0 is not None and
                                           not np.isscalar(self.mu0) else self.mu0)[1]
         else:
