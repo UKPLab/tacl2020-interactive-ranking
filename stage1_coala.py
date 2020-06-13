@@ -449,7 +449,9 @@ if __name__ == '__main__':
 
                     gold_answer = re.sub('<[^<]+>', "", original_gold_answer)
                     # cache it to file
-                    gold_filename = 'data/cache/coala_cache_%s_%i.txt' % (topic, question_id)
+                    if not os.path.exists('data/cache'):
+                        os.mkdir('data/cache')
+                    gold_filename = 'data/cache/cqa_cache_%s_%i_%s.txt' % (topic, question_id, baseline)
                     if not os.path.exists(gold_filename):
                         with open(gold_filename, 'w') as fh:
                             fh.writelines(gold_answer)
