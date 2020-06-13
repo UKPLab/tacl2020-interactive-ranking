@@ -373,9 +373,9 @@ if __name__ == '__main__':
 
             # the tsv file contains a row per 'pooled' answer + a row at the end for the gold answer.
             # The columns are: 'answer', 'prediction', 'vector'.
-            qdata = pd.read_csv(fname, '\t', header=0, names=['qids', 'answer', 'prediction', 'vector'])
+            qdata = pd.read_csv(fname, '\t', header=0)
             answers = qdata['answer'].values
-            qids = qdata['qids'].values
+            qids = qdata['qid'].values
             isgold = qdata['isgold'].values
 
             qa_list = []
