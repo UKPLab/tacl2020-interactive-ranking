@@ -379,14 +379,18 @@ if __name__ == '__main__':
             isgold = qdata['isgold'].values
 
             qa_list = []
+            vec_list = []
+            pred_list = []
             uqids = np.unique(qids)
             for qid in uqids:
-                qanswers = answers[qids == qid]
-                qgoldidx = np.argwhere(isgold[qids == qid]).flatten()[0]
+                qidxs = qids == qid
+                qanswers = answers[qidxs]
+                qgoldidx = np.argwhere(isgold[qidxs]).flatten()[0]
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
-
-            vec_list = qdata['vector'].values
-            pred_list = qdata['prediction'].values
+                vec_list.extend(qdata['vector'].values[qidxs])
+                vec_list.extend(qdata['vector'].values[qgoldidx])
+                pred_list.extend(qdata['prediction'].values[qidxs])
+                pred_list.extend(qdata['prediction'].values[qgoldidx])
 
         print('sanity check')
         assert len(qa_list) == len(vec_list) == len(pred_list)
