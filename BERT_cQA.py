@@ -504,11 +504,11 @@ if __name__ == "__main__":
 
     # Load the training set
     traindata = pd.read_csv(os.path.join(datadir, 'train.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                            index_col=0, nrows=1)
-    tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=1)
+                            index_col=0)
+    tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=20)
 
     # Train the model ----------------------------------------------------------------------------------------------
-    bertcqa_model, device = train_bertcqa(tr_data_loader, 1, 42, os.path.join(outputdir, 'model_params_%s' % topic),
+    bertcqa_model, device = train_bertcqa(tr_data_loader, 3, 42, os.path.join(outputdir, 'model_params_%s' % topic),
                                           reload_model=True)
 
     # Compute performance on training set --------------------------------------------------------------------------
@@ -530,7 +530,7 @@ if __name__ == "__main__":
 
     # Load the test set
     testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                           index_col=0, nrows=3)
+                           index_col=0)
     te_qas, te_qids, te_goldids, te_aids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
     print("Evaluating on test set:")
