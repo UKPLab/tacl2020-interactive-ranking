@@ -387,10 +387,14 @@ if __name__ == '__main__':
                 qanswers = answers[qidxs]
                 qgoldidx = np.argwhere(isgold[qidxs]).flatten()[0]
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
-                vec_list.extend(qdata['vector'].values[qidxs])
-                vec_list.extend(qdata['vector'].values[qgoldidx])
-                pred_list.extend(qdata['prediction'].values[qidxs])
-                pred_list.extend(qdata['prediction'].values[qgoldidx])
+
+                qvec_list = qdata['vector'].values[qidxs]
+                qvec_list.append(qdata['vector'].values[qgoldidx])
+                qpred_list = qdata['prediction'].values[qidxs]
+                qpred_list.append(qdata['prediction'].values[qgoldidx])
+
+                vec_list.append(qvec_list)
+                pred_list.append(qpred_list)
 
         print('sanity check')
         assert len(qa_list) == len(vec_list) == len(pred_list)
