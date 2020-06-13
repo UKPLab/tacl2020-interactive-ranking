@@ -15,7 +15,7 @@ class Rouge(object):
         self.reference_summary_temp_filename = "reference_summary.txt"
         config_file = "config.xml"
 
-        self.temp_dir = os.path.join(base_dir,'rouge_temp_files')
+        self.temp_dir = os.path.join(base_dir, 'rouge_temp_files')
         if not os.path.exists(self.temp_dir):
             os.mkdir(self.temp_dir)
 

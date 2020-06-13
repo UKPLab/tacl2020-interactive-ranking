@@ -18,6 +18,7 @@
 
 #  load required modules
 module load lang/python/anaconda/pytorch
+module load lang/perl/5.30.0-bioperl-gcc
 
 # We might need to add the global paths to our code to the pythonpath. Also set the data directories globally.
 cd /work/es1595/text_ranking_bayesian_optimisation
