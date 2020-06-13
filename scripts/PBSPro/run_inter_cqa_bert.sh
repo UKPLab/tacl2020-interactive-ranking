@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Run the interactive summarisation simulations with SUPERT
+# Run the interactive cQA simulations using BERT-cQA model
 
 # Job name
-#PBS -N intsum_sup_01
+#PBS -N intcqa_bert
 
 # Output file
-#PBS -o pbs_intersumsup2001_output.log
+#PBS -o pbs_intercqabert_output.log
 
 # Error file
-#PBS -e pbs_intersumsup2001_err.log
+#PBS -e pbs_intercqabert_err.log
 
 # request resources and set limits
 #PBS -l walltime=72:00:00
@@ -26,11 +26,11 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 
 #  run the script with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
 python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 10 BERT
-python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 10 BERT
-python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 10 BERT
-python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 10 BERT
-python -u stage1_coala.py GPPLHH 0 cqa_bert_unp_gpplhh "[pair_unc]" . 4 10 BERT
-python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 10 BERT
+#python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 10 BERT
+#python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 10 BERT
+#python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 10 BERT
+#python -u stage1_coala.py GPPLHH 0 cqa_bert_unp_gpplhh "[pair_unc]" . 4 10 BERT
+#python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 10 BERT
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
