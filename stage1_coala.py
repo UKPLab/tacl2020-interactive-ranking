@@ -279,6 +279,7 @@ def save_selected_results(output_path, all_result_dic, selected_means, selected_
 
     df.to_csv(output_path + '/table.csv')
 
+
 def save_selected_results_allreps(output_path, selected_means_allreps, selected_vars_allreps, chosen_metrics, method_names, nreps):
     selected_means_allreps /= float(nreps)
     selected_vars_allreps /= float(nreps)
@@ -292,6 +293,7 @@ def save_selected_results_allreps(output_path, selected_means_allreps, selected_
     filename = output_path + '/table_all_reps.csv'
     print('Saving summary of all results to %s' % filename)
     df.to_csv(filename)
+
 
 def make_output_dir(root_dir, output_folder_name, rep):
     if output_folder_name == -1:
@@ -308,6 +310,7 @@ def make_output_dir(root_dir, output_folder_name, rep):
 
     return output_path
 
+
 def compute_ref_values(aidx, answer, gold_filename):
     answer = re.sub('<[^<]+>', "", answer)
     if np.mod(aidx, 20) == 0:
@@ -317,6 +320,7 @@ def compute_ref_values(aidx, answer, gold_filename):
     rouge_scorer.clean()
 
     return RL
+
 
 if __name__ == '__main__':
 
@@ -346,7 +350,7 @@ if __name__ == '__main__':
     folders = []
 
     nqueriers = len(querier_types)
-    chosen_metrics = ['ndcg_at_1%', 'accuracy', 'pcc', 'ndcg_at_5%']#, 'tau', 'ndcg_at_5%', 'ndcg_at_10%', 'rho']
+    chosen_metrics = ['ndcg_at_1%', 'accuracy', 'pcc', 'ndcg_at_5%']  # , 'tau', 'ndcg_at_5%', 'ndcg_at_10%', 'rho']
 
     topics = ['apple', 'cooking', 'travel']
 
