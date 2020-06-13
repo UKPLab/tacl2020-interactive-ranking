@@ -381,8 +381,8 @@ if __name__ == '__main__':
             qa_list = []
             uqids = np.unique(qids)
             for qid in uqids:
-                qanswers = answers[qids==qid]
-                qgoldidx = np.argwhere(isgold[qids==qid]).flatten()[0]
+                qanswers = answers[qids == qid]
+                qgoldidx = np.argwhere(isgold[qids == qid]).flatten()[0]
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
             vec_list = qdata['vector'].values
