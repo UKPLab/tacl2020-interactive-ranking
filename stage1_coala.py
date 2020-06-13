@@ -389,9 +389,9 @@ if __name__ == '__main__':
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
                 qvec_list = qdata['vector'].values[qidxs]
-                qvec_list.append(qdata['vector'].values[qgoldidx])
+                qvec_list = np.append(qvec_list, qdata['vector'].values[qgoldidx])
                 qpred_list = qdata['prediction'].values[qidxs]
-                qpred_list.append(qdata['prediction'].values[qgoldidx])
+                qpred_list = np.append(qpred_list, qdata['prediction'].values[qgoldidx])
 
                 vec_list.append(qvec_list)
                 pred_list.append(qpred_list)
