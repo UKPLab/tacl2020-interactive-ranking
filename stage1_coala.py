@@ -376,12 +376,14 @@ if __name__ == '__main__':
             qdata = pd.read_csv(fname, '\t', header=0, names=['qids', 'answer', 'prediction', 'vector'])
             answers = qdata['answer'].values
             qids = qdata['qids'].values
+            isgold = qdata['isgold'].values
 
             qa_list = []
             uqids = np.unique(qids)
             for qid in uqids:
                 qanswers = answers[qids==qid]
-                qa_list.append({'gold_answer': qanswers[-1], 'pooled_answers': qanswers[:-1]})
+                qgoldidx = np.argwhere(isgold[qids==qid]).flatten()[0]
+                qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
             vec_list = qdata['vector'].values
             pred_list = qdata['prediction'].values

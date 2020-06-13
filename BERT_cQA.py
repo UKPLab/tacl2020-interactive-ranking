@@ -466,7 +466,7 @@ def construct_single_item_dataset(dataframe):
 
     data = next(iter(data_loader))
 
-    return qas, qids, goldids, data_loader, data
+    return qas, qids, goldids, aids, data_loader, data
 
 
 if __name__ == "__main__":
@@ -514,14 +514,14 @@ if __name__ == "__main__":
     # Compute performance on training set --------------------------------------------------------------------------
     # Training is very large, don't bother with this.
     # print("Evaluating on training set:")
-    # tr_qas2, tr_qids2, tr_goldids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
+    # tr_qas2, tr_qids2, tr_goldids2, tr_aids2, tr_data_loader2, tr_data2 = construct_single_item_dataset(traindata)
     # evaluate_accuracy(bertcqa_model, tr_data_loader2, device)
 
     # Compute performance on validation set ------------------------------------------------------------------------
     # Load the validation set
     # validationdata = pd.read_csv(os.path.join(datadir, 'valid.tsv'), sep='\t', header=None,
     #                              names=['goldid', 'ansids'], index_col=0, nrows=2)
-    # va_qas, va_qids, va_goldids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
+    # va_qas, va_qids, va_goldids, va_aids, va_data_loader, va_data = construct_single_item_dataset(validationdata)
     #
     # print("Evaluating on validation set:")
     # evaluate_accuracy(bertcqa_model, va_data_loader, device, va_qids, va_goldids)
@@ -531,7 +531,7 @@ if __name__ == "__main__":
     # Load the test set
     testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
                            index_col=0)
-    te_qas, te_qids, te_goldids, te_data_loader, te_data = construct_single_item_dataset(testdata)
+    te_qas, te_qids, te_goldids, te_aids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
     print("Evaluating on test set:")
     _, te_scores, te_vectors = evaluate_accuracy(bertcqa_model, te_data_loader, device)
@@ -542,39 +542,21 @@ if __name__ == "__main__":
 
     output_df = pd.DataFrame(columns=['qid', 'answer', 'prediction', 'vector'])
 
-    for te_idx, te_qid in enumerate(testdata.index):
-        if np.mod(te_idx, 100) == 0:
-            print('Processing question %i' % te_idx)
+    for i, qid in enumerate(te_qids):
+        goldid = te_goldids[qid]
 
-        # The columns are: 'answer', 'prediction', 'vector'.
-        goldid = testdata['goldid'].loc[te_qid].split(' ')
-        ansids = np.unique(testdata['ansids'].loc[te_qid].split(' ')).tolist()
-        qscores = te_scores[te_qids == te_qid]
-        qvectors = te_vectors[te_qids == te_qid]
+        ansid = te_aids[qid]
+        tokids = answers.loc[ansid].values[0].split(' ')
+        toks = vocab[np.array(tokids).astype(int)]
+        answer_text = ' '.join(toks)
 
-        # only use the first gold answer if there are multiple. Put gold answer at the end of the list of answers.
-        ansids.append(goldid[0])
-        qscores = np.append(qscores, te_goldids[te_qid])
-        qvectors = np.append(qvectors, te_goldids[te_qid])
+        score = te_scores[i]
+        vector = te_vectors[i]
 
-        qids = [te_qid] * len(ansids)
-
-        if len(ansids) != 101:
-            print("Unexpected number of answers for q %i = %i" % (te_idx, len(ansids)))
-            if len(ansids) <= 2:
-                # This is useless, don't write it
-                continue
-
-        answer_texts = []
-        for ans_id in ansids:
-            ans_tokids = answers.loc[ans_id].values[0].split(' ')
-            ans_toks = vocab[np.array(ans_tokids).astype(int)]
-
-            answer = ' '.join(ans_toks)
-            answer_texts.append(answer)
+        isgold = True if goldid == ansid else False
 
         output_df = output_df.append(
-            {'qid': qids, 'answer': answer_texts, 'prediction': qscores, 'vector': qvectors},
+            {'qid': qid, 'answer': answer_text, 'prediction': score, 'vector': vector, 'isgold': isgold},
             ignore_index=True
         )
 
