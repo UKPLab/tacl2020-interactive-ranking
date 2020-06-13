@@ -462,10 +462,7 @@ if __name__ == '__main__':
                         summary_vectors = summary_vectors[:n_debug]
                         pool_answers = pool_answers[:n_debug]
 
-                    if baseline == 'COALA':
-                        ref_filename = 'data/cqa_ref_scores/coala_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
-                    elif baseline == 'BERT':
-                        ref_filename = 'data/cqa_ref_scores/bert_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
+                    ref_filename = 'data/cqa_ref_scores/coala_ref_vals_rougel_lno03_%s_%i.txt' % (topic, question_id)
 
                     if not os.path.exists(ref_filename):
                         ref_values = []
