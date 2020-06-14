@@ -218,14 +218,13 @@ def predict_bertcqa(model, data_loader, device):
         attention_mask = batch["attention_mask"].to(device)
 
         batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
-        print('batch vector size: ' + str(batch_vectors.shape))
 
         scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
         vectors = np.concatenate((vectors, batch_vectors.cpu().numpy()), axis=0)
         qids = np.append(qids, batch["qid"].detach().numpy().flatten())
         ismatch = np.append(ismatch, batch["ismatch"].detach().numpy().flatten())
 
-    print('vectors shape: ' + str(np.array(vectors).shape))
+    print('Outputting an embedding vector with shape ' + str(np.array(vectors).shape))
 
     return scores, vectors, qids, ismatch
 
