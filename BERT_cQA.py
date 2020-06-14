@@ -202,7 +202,7 @@ def train_bertcqa(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
 
 def predict_bertcqa(model, data_loader, device):
     scores = np.zeros(0)
-    vectors = np.zeros(0)
+    vectors = np.zeros((0, model.bert.config.hidden_size))
     qids = np.zeros(0)
     ismatch = np.zeros(0)
 
@@ -218,9 +218,8 @@ def predict_bertcqa(model, data_loader, device):
         batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
         print('batch vector size: ' + str(batch_vectors.shape))
 
-
         scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
-        vectors = np.append(vectors, batch_vectors.cpu().numpy())
+        vectors = np.concatenate((vectors, batch_vectors.cpu().numpy()), axis=0)
         qids = np.append(qids, batch["qid"].detach().numpy().flatten())
         ismatch = np.append(ismatch, batch["ismatch"].detach().numpy().flatten())
 
