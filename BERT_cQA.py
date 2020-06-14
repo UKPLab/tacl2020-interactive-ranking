@@ -40,6 +40,8 @@ class BertRanker(nn.Module):
     def __init__(self):
         super(BertRanker, self).__init__()
         bert = BertModel.from_pretrained("bert-base-cased")
+        self.embedding_size = bert.config.hidden_size
+
         # self.bert = DistilBertModel.from_pretrained("distilbert-base-cased")
         self.bert = nn.DataParallel(bert)
 
@@ -47,7 +49,7 @@ class BertRanker(nn.Module):
         self.pooling = nn.DataParallel(self.pooling)
 
         # self.out = nn.Linear(bert.config.hidden_size, 1)
-        self.W1 = nn.Linear(bert.config.hidden_size, 100)
+        self.W1 = nn.Linear(self.embedding_size, 100)
         self.W1 = nn.DataParallel(self.W1)
 
         self.W2 = nn.Linear(100, 10)
@@ -202,7 +204,7 @@ def train_bertcqa(data_loader, nepochs=1, random_seed=42, save_path='saved_bertc
 
 def predict_bertcqa(model, data_loader, device):
     scores = np.zeros(0)
-    vectors = np.zeros((0, model.bert.config.hidden_size))
+    vectors = np.zeros((0, model.embedding_size))
     qids = np.zeros(0)
     ismatch = np.zeros(0)
 
