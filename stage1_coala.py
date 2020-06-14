@@ -393,6 +393,8 @@ if __name__ == '__main__':
                 qpred_list = qdata['prediction'].values[qidxs]
                 qpred_list = np.append(qpred_list, qdata['prediction'].values[qgoldidx])
 
+                print('no. answers for question %i = %i' % (qid, len(qvec_list)))
+
                 vec_list.append(qvec_list)
                 pred_list.append(qpred_list)
 
@@ -486,8 +488,8 @@ if __name__ == '__main__':
                             ref_values = json.load(fh)
 
                     learn_model(question_id, ref_values, querier_type, learner_type, learner_type_str,
-                        summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
-                        output_path, n_threads, np.where(np.array(pool_answers) == original_gold_answer)[0][0])
+                                summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
+                                output_path, n_threads, np.where(np.array(pool_answers) == original_gold_answer)[0][0])
 
                     save_result_dic(all_result_dic, output_path, rep, q_cnt, querier_type, learner_type_str,
                                     n_inter_rounds)
