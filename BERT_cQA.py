@@ -548,7 +548,7 @@ if __name__ == "__main__":
     # The text data and other info goes here:
     text_df = pd.DataFrame(columns=['qid', 'answer', 'isgold'])
     # Store the prediction and embedding vectors here:
-    numerical_data = np.array((len(te_qids), 1 + bertcqa_model.embedding_size))
+    numerical_data = np.empty((len(te_qids), 1 + bertcqa_model.embedding_size))
 
     for i, qid in enumerate(te_qids):
         goldid = te_goldids[qid]
