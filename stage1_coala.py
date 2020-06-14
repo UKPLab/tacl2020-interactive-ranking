@@ -368,15 +368,20 @@ if __name__ == '__main__':
             fname = 'data/cqa_base_models/coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
             qa_list, vec_list, pred_list = pickle.load(open(fname, 'rb'), encoding='latin1')
         elif baseline == 'BERT':
-            fname = 'data/cqa_base_models/BERT_vec_pred/%s.tsv' % topic
+            fname_text = 'data/cqa_base_models/BERT_vec_pred/%s_text.tsv' % topic
+            fname_numerical = 'data/cqa_base_models/BERT_vec_pred/%s_num.tsv' % topic
             # there is a separate csv file for each question
 
             # the tsv file contains a row per 'pooled' answer + a row at the end for the gold answer.
             # The columns are: 'answer', 'prediction', 'vector'.
-            qdata = pd.read_csv(fname, '\t', header=0)
+            qdata = pd.read_csv(fname_text, '\t', header=0)
             answers = qdata['answer'].values
             qids = qdata['qid'].values
             isgold = qdata['isgold'].values
+
+            vdata = pd.read_csv(fname_numerical, '\t', header=0)
+            preds = vdata['prediction'].values
+            vectors = vdata.to_numpy(dtype=float)[:, 1:]
 
             qa_list = []
             vec_list = []
@@ -388,10 +393,10 @@ if __name__ == '__main__':
                 qgoldidx = np.argwhere(isgold[qidxs]).flatten()[0]
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
-                qvec_list = qdata['vector'].values[qidxs]
-                qvec_list = np.append(qvec_list, qdata['vector'].values[qgoldidx])
-                qpred_list = qdata['prediction'].values[qidxs]
-                qpred_list = np.append(qpred_list, qdata['prediction'].values[qgoldidx])
+                qvec_list = vectors[qidxs]
+                qvec_list = np.append(qvec_list, vectors[qgoldidx])
+                qpred_list = preds[qidxs]
+                qpred_list = np.append(qpred_list, preds[qgoldidx])
 
                 print('no. answers for question %i = %i' % (qid, len(qvec_list)))
 

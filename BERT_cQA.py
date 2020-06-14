@@ -542,9 +542,13 @@ if __name__ == "__main__":
 
     # Output predictions in the right format for the GPPL experiments ----------------------------------------------
     # Save predictions for the test data
-    fname = os.path.join(outputdir, '%s.tsv' % topic)
+    fname_text = os.path.join(outputdir, '%s_text.tsv' % topic)
+    fname_numerical = os.path.join(outputdir, '%s_num.tsv' % topic)
 
-    output_df = pd.DataFrame(columns=['qid', 'answer', 'prediction', 'vector'])
+    # The text data and other info goes here:
+    text_df = pd.DataFrame(columns=['qid', 'answer', 'isgold'])
+    # Store the prediction and embedding vectors here:
+    numerical_data = np.array((len(te_qids), 1 + bertcqa_model.embedding_size))
 
     for i, qid in enumerate(te_qids):
         goldid = te_goldids[qid]
@@ -559,10 +563,14 @@ if __name__ == "__main__":
 
         isgold = True if goldid == ansid else False
 
-        output_df = output_df.append(
-            {'qid': qid, 'answer': answer_text, 'prediction': score, 'vector': vector, 'isgold': isgold},
+        text_df = text_df.append(
+            {'qid': qid, 'answer': answer_text, 'isgold': isgold},
             ignore_index=True
         )
 
-    output_df.to_csv(fname, sep='\t')
+        numerical_data[i, 0] = score
+        numerical_data[i, 1:] = vector
+
+    text_df.to_csv(fname_text, sep='\t')
+    pd.DataFrame(numerical_data).to_csv(fname_numerical, sep='\t')
 
