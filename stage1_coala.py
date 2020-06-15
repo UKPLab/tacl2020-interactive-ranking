@@ -379,9 +379,9 @@ if __name__ == '__main__':
             qids = qdata['qid'].values
             isgold = qdata['isgold'].values
 
-            vdata = pd.read_csv(fname_numerical, '\t', header=0)
-            preds = vdata['prediction'].values
-            vectors = vdata.to_numpy(dtype=float)[:, 1:]
+            vdata = pd.read_csv(fname_numerical, '\t', header=0).to_numpy(dtype=float)
+            preds = vdata[:, 0]
+            vectors = vdata[:, 1:]
 
             qa_list = []
             vec_list = []
