@@ -224,7 +224,10 @@ def predict_bertcqa(model, data_loader, device):
         print('vectors shape ' + str(vectors.shape))
 
         scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
-        vectors = np.concatenate((vectors, batch_vectors.cpu().numpy()), axis=0)
+        batch_vectors = batch_vectors.cpu().numpy()
+        if batch_vectors.ndim == 1:
+            batch_vectors = batch_vectors[None, :]
+        vectors = np.concatenate((vectors, batch_vectors), axis=0)
         qids = np.append(qids, batch["qid"].detach().numpy().flatten())
         ismatch = np.append(ismatch, batch["ismatch"].detach().numpy().flatten())
 
@@ -555,6 +558,9 @@ if __name__ == "__main__":
     numerical_data = np.empty((len(te_qids), 1 + bertcqa_model.embedding_size))
 
     for i, qid in enumerate(te_qids):
+        if np.mod(i, 100) == 0:
+            print("Outputting qa pair %i / %i" % (i, len(te_qids)))
+
         goldid = te_goldids[qid]
 
         ansid = te_aids[i]
