@@ -384,8 +384,9 @@ if __name__ == '__main__':
             vectors = vdata[:, 1:]
 
             qa_list = []
-            vec_list = []
-            pred_list = []
+            vec_list = np.empty((0, vectors.shape[1]))
+            pred_list = np.empty(0)
+            
             uqids = np.unique(qids)
             for qid in uqids:
                 qidxs = qids == qid
@@ -394,14 +395,15 @@ if __name__ == '__main__':
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
                 qvec_list = vectors[qidxs]
-                qvec_list = np.append(qvec_list, vectors[qgoldidx])
+                qvec_list = np.concatenate((qvec_list, vectors[qgoldidx][None, :]), axis=0)
+
                 qpred_list = preds[qidxs]
                 qpred_list = np.append(qpred_list, preds[qgoldidx])
 
                 print('no. answers for question %i = %i' % (qid, len(qvec_list)))
 
-                vec_list.append(qvec_list)
-                pred_list.append(qpred_list)
+                vec_list = np.concatenate((vec_list, qvec_list), axis=0)
+                pred_list = np.concatenate((pred_list, qpred_list), axis=0)
 
         print('sanity check')
         assert len(qa_list) == len(vec_list) == len(pred_list)
