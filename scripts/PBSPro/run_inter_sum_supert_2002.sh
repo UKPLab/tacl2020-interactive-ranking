@@ -23,11 +23,11 @@ module load lang/python/anaconda/pytorch
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 # Run the script using heuristics only and no interactions.
-python -u stage1_active_pref_learning.py H 0 duc02_supert_H "[random]" . 24 DUC2002 0 supert
+#python -u stage1_active_pref_learning.py H 0 duc02_supert_H "[random]" . 24 DUC2002 0 supert
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh "[imp]" . 24 DUC2002 100 supert
-python -u stage1_active_pref_learning.py LR     0 duc02_supert_ran_lr     "[random]" . 24 DUC2002 100 supert
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh "[imp]" . 24 DUC2002 100 supert
+#python -u stage1_active_pref_learning.py LR     0 duc02_supert_ran_lr     "[random]" . 24 DUC2002 100 supert
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_ran_gpplhh "[random]" . 24 DUC2002 100 supert
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unp_gpplhh "[pair_unc]" . 24 DUC2002 100 supert
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_eig_gpplhh "[eig]" . 24 DUC2002 100 supert
