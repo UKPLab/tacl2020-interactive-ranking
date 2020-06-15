@@ -386,7 +386,7 @@ if __name__ == '__main__':
             qa_list = []
             vec_list = np.empty((0, vectors.shape[1]))
             pred_list = np.empty(0)
-            
+
             uqids = np.unique(qids)
             for qid in uqids:
                 qidxs = qids == qid
@@ -406,7 +406,7 @@ if __name__ == '__main__':
                 pred_list = np.concatenate((pred_list, qpred_list), axis=0)
 
         print('sanity check')
-        assert len(qa_list) == len(vec_list) == len(pred_list)
+        assert len(qa_list) == np.array(vec_list).shape[0] == len(pred_list)
         print('{} questions in total'.format(len(qa_list)))
 
         first_question = 0
