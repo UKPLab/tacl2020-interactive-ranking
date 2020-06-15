@@ -1,4 +1,5 @@
 ..bfg-report
+data/cqa_base_models/BERT_vec_pred/*_num.tsv
 data/cqa_base_models/BERT_vec_pred/*.pkl
 data/cqa_base_models/BERT_vec_pred/*num_epochs.txt
 data/cqa_data/*/*.gz
