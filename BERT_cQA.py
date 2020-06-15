@@ -219,6 +219,10 @@ def predict_bertcqa(model, data_loader, device):
 
         batch_scores, batch_vectors = model.forward_single_item(input_ids, attention_mask)
 
+        print('step %i' % step)
+        print('batch_vctor shape ' + str(batch_vectors.shape))
+        print('vectors shape ' + str(vectors.shape))
+
         scores = np.append(scores, batch_scores.cpu().detach().numpy().flatten())
         vectors = np.concatenate((vectors, batch_vectors.cpu().numpy()), axis=0)
         qids = np.append(qids, batch["qid"].detach().numpy().flatten())
