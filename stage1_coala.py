@@ -406,6 +406,9 @@ if __name__ == '__main__':
                 pred_list = np.concatenate((pred_list, qpred_list), axis=0)
 
         print('sanity check')
+        print('No. QA pairs = %i' % len(qa_list))
+        print('No. vectors = %i' % np.array(vec_list).shape[0])
+        print('No. prior predictions = %i' % len(pred_list))
         assert len(qa_list) == np.array(vec_list).shape[0] == len(pred_list)
         print('{} questions in total'.format(len(qa_list)))
 
