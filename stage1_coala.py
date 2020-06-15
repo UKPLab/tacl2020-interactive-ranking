@@ -384,8 +384,8 @@ if __name__ == '__main__':
             vectors = vdata[:, 1:]
 
             qa_list = []
-            vec_list = np.empty((0, vectors.shape[1]))
-            pred_list = np.empty(0)
+            vec_list = []
+            pred_list = []
 
             uqids = np.unique(qids)
             for qid in uqids:
@@ -402,8 +402,8 @@ if __name__ == '__main__':
 
                 print('no. answers for question %i = %i' % (qid, len(qvec_list)))
 
-                vec_list = np.concatenate((vec_list, qvec_list), axis=0)
-                pred_list = np.concatenate((pred_list, qpred_list), axis=0)
+                vec_list.append(qvec_list)
+                pred_list.append(qpred_list)
 
         print('sanity check')
         print('No. QA pairs = %i' % len(qa_list))
