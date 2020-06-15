@@ -537,7 +537,7 @@ if __name__ == "__main__":
 
     # Load the test set
     testdata = pd.read_csv(os.path.join(datadir, 'test.tsv'), sep='\t', header=None, names=['goldid', 'ansids'],
-                           index_col=0, nrows=1)
+                           index_col=0)
     te_qas, te_qids, te_goldids, te_aids, te_data_loader, te_data = construct_single_item_dataset(testdata)
 
     print("Evaluating on test set:")
