@@ -22,8 +22,8 @@ module load lang/python/anaconda/pytorch lang/cuda
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 #  run the script
-python -u BERT_cQA.py apple
-python -u BERT_cQA.py cooking
+#python -u BERT_cQA.py apple
+#python -u BERT_cQA.py cooking
 python -u BERT_cQA.py travel
 
 # To submit: qsub run_bert_cqa.sh
