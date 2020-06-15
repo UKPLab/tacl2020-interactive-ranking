@@ -381,6 +381,9 @@ if __name__ == '__main__':
 
             vdata = pd.read_csv(fname_numerical, '\t', header=0).to_numpy(dtype=float)
             preds = vdata[:, 0]
+            print('Predictions: ')
+            print(preds)
+
             vectors = vdata[:, 1:]
 
             qa_list = []
@@ -398,7 +401,13 @@ if __name__ == '__main__':
                 qvec_list = vectors[qidxs]
                 print('no. pooled answers for question %i = %i' % (qid, len(qvec_list)))
                 print(qvec_list.shape)
-                qvec_list = np.concatenate((qvec_list, vectors[qgoldidx][None, :]), axis=0)
+
+                goldvector = vectors[qgoldidx][None, :]
+                print(goldvector.shape)
+
+                qvec_list = np.concatenate((qvec_list, goldvector), axis=0)
+                print(qvec_list.shape)
+
 
                 qpred_list = preds[qidxs]
                 qpred_list = np.append(qpred_list, preds[qgoldidx])
