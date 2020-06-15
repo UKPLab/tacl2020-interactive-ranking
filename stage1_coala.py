@@ -390,17 +390,20 @@ if __name__ == '__main__':
             uqids = np.unique(qids)
             for qid in uqids:
                 qidxs = qids == qid
+                print('no. rows for question %i = %i' % (qid, np.sum(qidxs)))
                 qanswers = answers[qidxs]
                 qgoldidx = np.argwhere(isgold[qidxs]).flatten()[0]
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
                 qvec_list = vectors[qidxs]
+                print('no. pooled answers for question %i = %i' % (qid, len(qvec_list)))
+                print(qvec_list.shape)
                 qvec_list = np.concatenate((qvec_list, vectors[qgoldidx][None, :]), axis=0)
 
                 qpred_list = preds[qidxs]
                 qpred_list = np.append(qpred_list, preds[qgoldidx])
 
-                print('no. answers for question %i = %i' % (qid, len(qvec_list)))
+
 
                 vec_list.append(qvec_list)
                 pred_list.append(qpred_list)
