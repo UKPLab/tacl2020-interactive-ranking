@@ -426,8 +426,6 @@ def construct_single_item_dataset(dataframe):
     :param dataframe:
     :return:
     """
-    ntrain = dataframe.shape[0] * 100  # this is not quite right as some questions have fewer answers...
-
     # Get the positive (matching) qs and as from traindata and put into pairs
     # Sample a number of negative (non-matching) qs and as from the answers listed for each question in traindata
 
@@ -447,6 +445,7 @@ def construct_single_item_dataset(dataframe):
         ans_ids = ans_ids.split(' ')
         if len(ans_ids) < 2:
             continue
+        ans_ids = np.unique(ans_ids) # make sure we don't have the same answer multiple times
 
         gold_id = dataframe.loc[qid]["goldid"]
         gold_id = gold_id.split(' ')

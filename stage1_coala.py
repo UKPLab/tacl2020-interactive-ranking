@@ -379,7 +379,7 @@ if __name__ == '__main__':
             qids = qdata['qid'].values
             isgold = qdata['isgold'].values
 
-            vdata = pd.read_csv(fname_numerical, '\t', header=0).to_numpy(dtype=float)
+            vdata = pd.read_csv(fname_numerical, '\t', header=0).to_numpy(dtype=float)[:, 1:]
             preds = vdata[:, 0]
             print('Predictions: ')
             print(preds)
@@ -391,15 +391,15 @@ if __name__ == '__main__':
             pred_list = []
 
             uqids = np.unique(qids)
-            for qid in uqids:
+            for qidx, qid in enumerate(uqids):
                 qidxs = qids == qid
-                print('no. rows for question %i = %i' % (qid, np.sum(qidxs)))
+                print('no. rows for question %i = %i' % (qidx, np.sum(qidxs)))
                 qanswers = answers[qidxs]
                 qgoldidx = np.argwhere(isgold[qidxs]).flatten()[0]
                 qa_list.append({'gold_answer': qanswers[qgoldidx], 'pooled_answers': qanswers})
 
                 qvec_list = vectors[qidxs]
-                print('no. pooled answers for question %i = %i' % (qid, len(qvec_list)))
+                print('no. pooled answers for question %i = %i' % (qidx, len(qvec_list)))
                 print(qvec_list.shape)
 
                 goldvector = vectors[qgoldidx][None, :]
@@ -508,6 +508,8 @@ if __name__ == '__main__':
                     else:
                         with open(ref_filename, 'r') as fh:
                             ref_values = json.load(fh)
+
+                    print('Number of reference values for question %i = %i' % (question_id, len(ref_values)))
 
                     learn_model(question_id, ref_values, querier_type, learner_type, learner_type_str,
                                 summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
