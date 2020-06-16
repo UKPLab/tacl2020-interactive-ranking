@@ -408,11 +408,8 @@ if __name__ == '__main__':
                 qvec_list = np.concatenate((qvec_list, goldvector), axis=0)
                 print(qvec_list.shape)
 
-
                 qpred_list = preds[qidxs]
                 qpred_list = np.append(qpred_list, preds[qgoldidx])
-
-
 
                 vec_list.append(qvec_list)
                 pred_list.append(qpred_list)
@@ -512,15 +509,15 @@ if __name__ == '__main__':
 
                     print('Number of reference values for question %i = %i' % (question_id, len(ref_values)))
 
-                    learn_model(question_id, ref_values, querier_type, learner_type, learner_type_str,
-                                summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
-                                output_path, n_threads, np.where(np.array(pool_answers) == original_gold_answer)[0][0])
-
-                    save_result_dic(all_result_dic, output_path, rep, q_cnt, querier_type, learner_type_str,
-                                    n_inter_rounds)
-
-                save_selected_results(output_path, all_result_dic, selected_means, selected_vars, selected_means_allreps,
-                                  selected_vars_allreps, chosen_metrics, querier_types, qidx)
-
-        save_selected_results_allreps(output_path, selected_means_allreps, selected_vars_allreps, chosen_metrics,
-                                      querier_types, len(reps))
+        #             learn_model(question_id, ref_values, querier_type, learner_type, learner_type_str,
+        #                         summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
+        #                         output_path, n_threads, np.where(np.array(pool_answers) == original_gold_answer)[0][0])
+        #
+        #             save_result_dic(all_result_dic, output_path, rep, q_cnt, querier_type, learner_type_str,
+        #                             n_inter_rounds)
+        #
+        #         save_selected_results(output_path, all_result_dic, selected_means, selected_vars, selected_means_allreps,
+        #                           selected_vars_allreps, chosen_metrics, querier_types, qidx)
+        #
+        # save_selected_results_allreps(output_path, selected_means_allreps, selected_vars_allreps, chosen_metrics,
+        #                               querier_types, len(reps))
