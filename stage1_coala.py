@@ -28,6 +28,8 @@ from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewar
 from random import seed
 import numpy as np
 
+res_dir = 'results_cqa_lstest'
+
 
 def process_cmd_line_args(args):
 
@@ -54,8 +56,9 @@ def process_cmd_line_args(args):
 
     if len(args) > 5 and args[5][0] != '-':
         root_dir = args[5]
-        if not os.path.exists(root_dir + '/results_coala'):
-            os.mkdir(root_dir + '/results_coala')
+
+        if not os.path.exists(root_dir + '/' + res_dir):
+            os.mkdir(root_dir + '/' + res_dir)
         if not os.path.exists(root_dir + '/data'):
             os.mkdir(root_dir + '/data')
     else:
@@ -188,7 +191,7 @@ def learn_model(question_id, ref_values, querier_type, learner_type, learner_typ
     if n_debug:
         ref_values = ref_values[:n_debug]
 
-    oracle = SimulatedUser(ref_values, 0.1)  # 0.3)  # LNO-0.1
+    oracle = SimulatedUser(ref_values, 0.3)  # LNO-0.1
 
     if querier_type == 'gibbs':
         querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight)
@@ -301,10 +304,10 @@ def make_output_dir(root_dir, output_folder_name, rep):
     else:
         output_folder_name = output_folder_name + '_rep%i' % rep
 
-    if not os.path.exists(root_dir + '/results_coala'):
-        os.mkdir(root_dir + '/results_coala')
+    if not os.path.exists(root_dir + '/' + res_dir):
+        os.mkdir(root_dir + '/' + res_dir)
 
-    output_path = root_dir + '/results_coala/%s' % output_folder_name
+    output_path = root_dir + '/' + res_dir + '/%s' % output_folder_name
     if not os.path.exists(output_path):
         os.mkdir(output_path)
 

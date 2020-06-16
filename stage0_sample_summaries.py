@@ -53,13 +53,13 @@ if __name__ == '__main__':
         vec = Vectoriser(docs,summary_len)
         if topic_cnt >= start and topic_cnt < end:
             print('-----Generate samples for topic {}: {}-----'.format(topic_cnt,topic))
-            act_list, h_rewards, r_rewards = vec.sampleRandomReviews(summary_num,True,True,models)
+            act_list, h_rewards, r_rewards = vec.sampleRandomReviews(summary_num, True, True, models)
 
             assert len(act_list) == len(h_rewards) == len(r_rewards)
 
             for ii in range(len(act_list)):
-                writeSample(act_list[ii],h_rewards[ii],os.path.join(dir_path,'heuristic'))
-                writeSample(act_list[ii],r_rewards[ii],os.path.join(dir_path,'rouge'))
+                writeSample(act_list[ii], h_rewards[ii], os.path.join(dir_path, 'heuristic'))
+                writeSample(act_list[ii], r_rewards[ii], os.path.join(dir_path, 'rouge'))
 
     print('dataset {}; total topic num: {}; start: {}; end: {}'.format(dataset,topic_cnt,start,end-1))
 

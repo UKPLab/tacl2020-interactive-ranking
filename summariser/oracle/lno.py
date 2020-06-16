@@ -3,14 +3,15 @@ from resources import BASE_DIR, ROUGE_DIR
 import random
 import math
 
+
 class SimulatedUser:
-    def __init__(self,model,len,temp=2.5):
-        self.rouge_score = Rouge(ROUGE_DIR,BASE_DIR,False)
+    def __init__(self, model, len, temp=2.5):
+        self.rouge_score = Rouge(ROUGE_DIR, BASE_DIR, False)
         self.temperature = temp
         self.model = model
         self.summary_len = len
 
-    def getPref(self,sum1,sum2):
+    def getPref(self, sum1, sum2):
         R11, R12, R1SU = self.rouge_score(sum1, self.model, self.summary_len)
         R21, R22, R2SU = self.rouge_score(sum2, self.model, self.summary_len)
         self.rouge_score.clean()

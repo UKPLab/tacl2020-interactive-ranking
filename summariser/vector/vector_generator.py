@@ -25,7 +25,7 @@ class Vectoriser:
 
         self.load_data()
 
-    def sampleRandomReviews(self,num,heuristic_reward=True,rouge_reward=True,models=None):
+    def sampleRandomReviews(self, num, heuristic_reward=True, rouge_reward=True, models=None):
         heuristic_list = []
         rouge_list = []
         act_list = []

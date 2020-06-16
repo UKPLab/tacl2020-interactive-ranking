@@ -61,8 +61,9 @@ class GPPLRewardLearner:
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
 
-                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=1.0)
-                # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far.
+                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=0.5)
+                # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far on the
+                # April/Reaper and COALA setups.
 
                 logging.debug('Estimated length scales.')
 

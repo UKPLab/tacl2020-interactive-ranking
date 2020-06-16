@@ -3,9 +3,7 @@ import json
 import os
 import sys
 from datetime import datetime
-
 import pandas as pd
-
 from obtain_supert_scores import SupertVectoriser
 from summariser.oracle.lno_ref_values import SimulatedUser
 from summariser.querier.expected_improvement_querier import ExpectedImprovementQuerier
@@ -21,14 +19,14 @@ from summariser.utils.reader import readSampleSummaries
 from summariser.vector.vector_generator import Vectoriser
 from summariser.utils.evaluator import evaluateReward
 from summariser.querier.random_querier import RandomQuerier
-
+import numpy as np
 import logging
+from random import seed
 logging.basicConfig(level=logging.DEBUG)
-
 from summariser.querier.logistic_reward_learner import LogisticRewardLearner
 from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewardLearner, GPPLHsRewardLearner
-from random import seed
-import numpy as np
+
+res_dir = '/results_lstest'
 
 
 def process_cmd_line_args(args):
@@ -56,8 +54,8 @@ def process_cmd_line_args(args):
 
     if len(args) > 5 and args[5][0] != '-':
         root_dir = args[5]
-        if not os.path.exists(root_dir + '/results'):
-            os.mkdir(root_dir + '/results')
+        if not os.path.exists(root_dir + res_dir):
+            os.mkdir(root_dir + res_dir)
         if not os.path.exists(root_dir + '/data'):
             os.mkdir(root_dir + '/data')
     else:
@@ -185,7 +183,7 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         with open(reward_file, 'r') as fh:
             learnt_rewards = json.load(fh)
     else:
-        oracle = SimulatedUser(rouge_values, 1)
+        oracle = SimulatedUser(rouge_values)
 
         if querier_type == 'gibbs':
             querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight)
@@ -330,13 +328,14 @@ def save_selected_results_allreps(output_path, selected_means_allreps, selected_
     print('Saving summary of all results to %s' % filename)
     df.to_csv(filename)
 
-def make_output_dir(root_dir, output_folder_name, rep):
+
+def make_output_dir(root_dir, res_dir, output_folder_name, rep):
     if output_folder_name == -1:
         output_folder_name = datetime.datetime.now().strftime('started-%Y-%m-%d-%H-%M-%S')
     else:
         output_folder_name = output_folder_name + '_rep%i' % rep
 
-    output_path = root_dir + '/results/%s' % output_folder_name
+    output_path = root_dir + '/' + res_dir + '/%s' % output_folder_name
     if not os.path.exists(output_path):
         os.mkdir(output_path)
 
@@ -371,8 +370,8 @@ if __name__ == '__main__':
     if dataset is None:
         dataset = 'DUC2001'  # 'DUC2001'  # DUC2001, DUC2002, 'DUC2004'#
 
-    print('Running stage1 summary preference learning with %s, writing to %s/results/%s' % (
-        dataset, root_dir, output_folder_name))
+    print('Running stage1 summary preference learning with %s, writing to %s/%s%s' % (
+        dataset, root_dir, res_dir, output_folder_name))
 
     max_topics = -1  # set to greater than zero to use a subset of topics for debugging
     folders = []
@@ -388,7 +387,7 @@ if __name__ == '__main__':
         selected_means = np.zeros((nqueriers, len(chosen_metrics)))
         selected_vars = np.zeros((nqueriers, len(chosen_metrics)))
 
-        output_path = make_output_dir(root_dir, output_folder_name, rep)
+        output_path = make_output_dir(root_dir, res_dir, output_folder_name, rep)
 
         # saves a list of result folders containing repeats from the same run
         folders.append(output_path)
