@@ -262,6 +262,9 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
     # TODO distinguish between the supert and other summary vectors! Rename supert?
     summary_vecs_cache_file = root_dir + '/data/summary_vectors/%s/summary_vectors_%s_%s.csv' % (feature_type,
                                                                                                  dataset, topic)
+
+    if not os.path.exists('/data/summary_vectors/%s' % feature_type):
+        os.mkdir('/data/summary_vectors/%s' % feature_type)
     if os.path.exists(summary_vecs_cache_file):
         print('Warning: reloading feature vectors for summaries from cache')
         # This should be fine, but if there is an error, we may need to check that the loading order has not changed.
