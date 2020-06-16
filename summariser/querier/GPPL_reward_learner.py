@@ -54,7 +54,7 @@ class GPPLRewardLearner:
 
         for rate in rates:
 
-            if self.learner is None or self.tune: # needs the vectors to init
+            if self.learner is None or self.tune:  # needs the vectors to init
                 new_items_feat = np.array(vector_list)
                 self.items_feat = new_items_feat
 
@@ -146,16 +146,19 @@ class GPPLRewardLearner:
             else:
                 return np.diag(self.reward_var[idxs])
 
+
 class GPPLHRewardLearner(GPPLRewardLearner):
-    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, heuristic_offset=0.0, heuristic_scale=1.0):
+    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, heuristic_offset=0.0,
+                 heuristic_scale=1.0):
 
         super(GPPLHRewardLearner, self).__init__(steep, full_cov, n_threads=n_threads)
 
         minh = np.min(heuristics)
         maxh = np.max(heuristics)
 
-        self.mu0 = (heuristics - minh) /(maxh - minh) - 0.5 #  * 2 * np.sqrt(200)
+        self.mu0 = (heuristics - minh) / (maxh - minh) - 0.5  # * 2 * np.sqrt(200)
         self.mu0 = self.mu0 * heuristic_scale + heuristic_offset
+
 
 class GPPLHsRewardLearner(GPPLHRewardLearner):
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0):

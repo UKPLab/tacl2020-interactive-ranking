@@ -11,7 +11,7 @@ def addResult(all_dic,result):
             all_dic[metric] = [result[metric]]
 
 
-def normaliseList(ll,max_value=10.):
+def normaliseList(ll, max_value=10.):
     minv = min(ll)
     maxv = max(ll)
     gap = maxv-minv
@@ -22,7 +22,7 @@ def normaliseList(ll,max_value=10.):
 
     return new_ll
 
-def sigmoid(x,temp=1.):
+def sigmoid(x, temp=1.):
     return 1.0/(1.+math.exp(-x/temp))
 
 
