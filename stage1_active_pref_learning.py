@@ -185,7 +185,7 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         with open(reward_file, 'r') as fh:
             learnt_rewards = json.load(fh)
     else:
-        oracle = SimulatedUser(rouge_values)
+        oracle = SimulatedUser(rouge_values, 1)
 
         if querier_type == 'gibbs':
             querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight)

@@ -188,7 +188,7 @@ def learn_model(question_id, ref_values, querier_type, learner_type, learner_typ
     if n_debug:
         ref_values = ref_values[:n_debug]
 
-    oracle = SimulatedUser(ref_values, 0.3)  # LNO-0.1
+    oracle = SimulatedUser(ref_values, 0.1)  # 0.3)  # LNO-0.1
 
     if querier_type == 'gibbs':
         querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight)
