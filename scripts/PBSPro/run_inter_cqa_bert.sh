@@ -25,7 +25,7 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 # Run the script using heuristics only and no interactions.
 
 #  run the script with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-#python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 10 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 10 BERT
 python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 10 BERT
 python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 10 BERT
 python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 10 BERT
