@@ -61,9 +61,14 @@ class GPPLRewardLearner:
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
 
-                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=0.5)
+                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=0.75)
                 # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far on the
                 # April/Reaper and COALA setups.
+                # Original submission (REAPER) uses 1.0
+                # Earlier results_noisy (supert) uses 1.0
+                # results_lstest use 0.5
+                # results_lstest2 uses 0.75
+                # consider increasing noise (decreasing rate_s0 to reduce the scale of the function)
 
                 logging.debug('Estimated length scales.')
 
