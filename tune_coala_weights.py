@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     output_folder_topic = output_folder_name + '_%s' % topic
 
-    rep = 1000 # just use this so we don't clash with other runs
+    rep = 1000  # just use this so we don't clash with other runs
 
     dev_sample_size = 250
 

@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.DEBUG)
 from summariser.querier.logistic_reward_learner import LogisticRewardLearner
 from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewardLearner, GPPLHsRewardLearner
 
-res_dir = '/results_lstest2'
+res_dir = '/results_lstest3'
 
 
 def process_cmd_line_args(args):
