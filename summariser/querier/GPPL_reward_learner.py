@@ -47,8 +47,8 @@ class GPPLRewardLearner:
         if self.tune:
             rates = [800, 1600, 3200, 6400, 12800]
         else:
-            # rates = [200]  # used in initial submission
-            rates = [100]
+            rates = [200]  # used in initial submission
+            # rates = [100]
 
         best_train_score = -np.inf
         best_rate = 200
@@ -62,7 +62,7 @@ class GPPLRewardLearner:
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
 
-                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=0.5)
+                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=0.25)
                 # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far on the
                 # April/Reaper and COALA setups.
                 # Original submission (REAPER) uses 1.0
@@ -70,6 +70,8 @@ class GPPLRewardLearner:
                 # results_lstest use 0.5
                 # results_lstest2 uses 0.75 -- this was bad
                 # consider increasing noise (decreasing rate_s0 to reduce the scale of the function)
+                # lstest3 uses 0.5 with s0_rate 100
+                # lstest 4 uses 0.25 with s0_Rate 200
 
                 logging.debug('Estimated length scales.')
 
