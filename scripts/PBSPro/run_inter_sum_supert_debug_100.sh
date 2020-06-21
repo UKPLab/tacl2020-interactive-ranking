@@ -23,9 +23,9 @@ module load lang/python/anaconda/pytorch
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh_10 "[imp]" results_lstest5 24 DUC2002 10 supert 200 2
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh_10 "[imp]" results_lstest6 24 DUC2002 10 supert 20 2
-python -u stage1_active_pref_learning.py GPPLHHs 0 duc02_supert_imp_gpplhh_10 "[imp]" results_lstest5 24 DUC2004 10 supert 200 2
+python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh "[imp]" results_lstest5 24 DUC2002 100 supert 200 2
+python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh "[imp]" results_lstest6 24 DUC2002 100 supert 20 2
+python -u stage1_active_pref_learning.py GPPLHHs 0 duc02_supert_imp_gpplhh "[imp]" results_lstest5 24 DUC2004 100 supert 200 2
 # python -u stage1_active_pref_learning.py LR     0 duc04_supert_ran_lr_10     "[random]" . 24 DUC2004 10 supert
 
 # To submit: qsub run_bert_cqa.sh

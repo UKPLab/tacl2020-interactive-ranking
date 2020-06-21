@@ -14,7 +14,7 @@ from gppl.gp_pref_learning import GPPrefLearning
 
 class GPPLRewardLearner:
 
-    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0):
+    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, rate=200, lspower=1):
         self.learner = None
         self.steep = steep
 
@@ -30,6 +30,9 @@ class GPPLRewardLearner:
         self.mu0 = None
 
         self.n_threads = n_threads
+
+        self.default_rate = rate
+        self.lspower = lspower
 
     def train(self, pref_history, vector_list, true_scores=None, tr_items=None):
         '''
@@ -47,9 +50,10 @@ class GPPLRewardLearner:
         if self.tune:
             rates = [800, 1600, 3200, 6400, 12800]
         else:
+            rates = [self.default_rate]
             # rates = [200]  # used in initial submission
             # rates = [100]
-            rates = [10]
+            # rates = [10] # lstest4
 
         best_train_score = -np.inf
         best_rate = 200
@@ -63,7 +67,7 @@ class GPPLRewardLearner:
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
 
-                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=0.25)
+                ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=self.lspower)
                 # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far on the
                 # April/Reaper and COALA setups.
                 # Original submission (REAPER) uses 1.0
@@ -72,7 +76,9 @@ class GPPLRewardLearner:
                 # results_lstest2 uses 0.75 -- this was bad
                 # consider increasing noise (decreasing rate_s0 to reduce the scale of the function)
                 # lstest3 uses 0.5 with s0_rate 100
-                # lstest 4 uses 0.25 with s0_Rate 200
+                # lstest 4 uses 0.25 with s0_Rate 10
+                # lstest 5 uses 2 with rate 200
+                # lstest 6 uses 2 with rate 20
 
                 logging.debug('Estimated length scales.')
 
@@ -159,9 +165,9 @@ class GPPLRewardLearner:
 
 class GPPLHRewardLearner(GPPLRewardLearner):
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, heuristic_offset=0.0,
-                 heuristic_scale=1.0):
+                 heuristic_scale=1.0, rate=200, lspower=1):
 
-        super(GPPLHRewardLearner, self).__init__(steep, full_cov, n_threads=n_threads)
+        super(GPPLHRewardLearner, self).__init__(steep, full_cov, n_threads=n_threads, rate=200, lspower=1)
 
         minh = np.min(heuristics)
         maxh = np.max(heuristics)
@@ -171,8 +177,8 @@ class GPPLHRewardLearner(GPPLRewardLearner):
 
 
 class GPPLHsRewardLearner(GPPLHRewardLearner):
-    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0):
+    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, rate=200, lspower=1):
 
-        super(GPPLHsRewardLearner, self).__init__(steep, full_cov, heuristics, n_threads)
+        super(GPPLHsRewardLearner, self).__init__(steep, full_cov, heuristics, n_threads, rate=200, lspower=1)
 
         self.fixed_s = False

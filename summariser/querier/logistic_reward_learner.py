@@ -3,7 +3,7 @@ from sklearn import linear_model
 
 class LogisticRewardLearner():
 
-    def __init__(self, steep=1.0, heuristics=None, n_threads=0):
+    def __init__(self, steep=1.0, heuristics=None, n_threads=0, rate=200, lspower=1):
         self.learner = linear_model.LogisticRegression(fit_intercept=False)
         self.steep = steep
         self.n_labels_seen = 0

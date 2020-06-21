@@ -3,18 +3,22 @@ import random
 from summariser.utils.misc import normaliseList
 from sklearn.metrics.pairwise import cosine_similarity
 
+
 class RandomQuerier:
 
-    def __init__(self, reward_learner_class, summary_vectors, heuristic_values, learnt_weight=0.5, n_threads=0):
+    def __init__(self, reward_learner_class, summary_vectors, heuristic_values, learnt_weight=0.5, n_threads=0,
+                 rate=200, lspower=1):
         self.summary_vectors = summary_vectors
         if reward_learner_class is not None:
-            self.reward_learner = reward_learner_class(heuristics=heuristic_values, n_threads=n_threads)
+            self.reward_learner = reward_learner_class(heuristics=heuristic_values, n_threads=n_threads, rate=rate,
+                                                       lspower=lspower)
         self.heuristics = heuristic_values
         self.learnt_weight = learnt_weight
         self.learnt_values = [0.]*len(summary_vectors)
 
         # use a random sample to initialise the AL process, then apply the AL strategy to subsequent iterations.
-        # This flag only affects the classes that inherit from this class since the random querier always chooses randomly
+        # This flag only affects the classes that inherit from this class since the random querier always chooses
+        # randomly
         self.random_initial_sample = True
 
     def tune_learner(self):

@@ -63,7 +63,7 @@ if __name__ == '__main__':
         reward_types = ['rouge']
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-    seeds, n_debug, n_threads, dataset, feature_type = process_cmd_line_args(sys.argv[1:])
+    seeds, n_debug, n_threads, dataset, feature_type, _, _ = process_cmd_line_args(sys.argv[1:])
 
     if 'learnt' in reward_types:
         for q in querier_types:

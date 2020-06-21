@@ -1,3 +1,4 @@
+results_*
 ..bfg-report
 data/cqa_ref_scores
 data/cqa_base_models/BERT_vec_pred/*

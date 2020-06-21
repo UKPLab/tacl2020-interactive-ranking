@@ -81,6 +81,16 @@ def process_cmd_line_args(args):
     else:
         feature_type = 'april'
 
+    if len(args) > 10:
+        rate = args[10]
+    else:
+        rate = 200
+
+    if len(args) > 11:
+        lspower = args[11]
+    else:
+        lspower = 1
+
     if learner_type_str == 'LR':
         if querier_types is None:
             querier_types = ['random', 'unc']
@@ -157,7 +167,7 @@ def process_cmd_line_args(args):
         learner_type = None
 
     return learner_type, learner_type_str, n_inter_rounds, output_folder_name_in, querier_types, root_dir, post_weight, \
-           reps, seeds, n_debug, nthreads, dataset, feature_type
+           reps, seeds, n_debug, nthreads, dataset, feature_type, rate, lspower
 
 
 def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors, heuristics_list,
@@ -186,23 +196,30 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         oracle = SimulatedUser(rouge_values)
 
         if querier_type == 'gibbs':
-            querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight)
+            querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight, rate, lspower)
         elif querier_type == 'unc':
-            querier = UncQuerier(learner_type, summary_vectors, heuristics_list, post_weight)
+            querier = UncQuerier(learner_type, summary_vectors, heuristics_list, post_weight, rate, lspower)
         elif querier_type == 'pair_unc':
-            querier = PairUncQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = PairUncQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads,
+                                     rate, lspower)
         elif querier_type == 'pair_unc_SO':
-            querier = PairUncSOQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = PairUncSOQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads, rate,
+                                       lspower)
         elif querier_type == 'imp':
-            querier = ExpectedImprovementQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = ExpectedImprovementQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads,
+                                                 rate, lspower)
         elif querier_type == 'eig':
-            querier = InformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = InformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads,
+                                             rate, lspower)
         elif querier_type == 'ttt':
-            querier = ThompsonTopTwoQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = ThompsonTopTwoQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads,
+                                            rate, lspower)
         elif querier_type == 'tig':
-            querier = ThompsonInformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = ThompsonInformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight,
+                                                     n_threads, rate, lspower)
         else:
-            querier = RandomQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
+            querier = RandomQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads,
+                                    rate, lspower)
 
         log = []
 
@@ -364,7 +381,7 @@ if __name__ == '__main__':
     '''
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-        seeds, n_debug, n_threads, dataset, feature_type = process_cmd_line_args(sys.argv)
+        seeds, n_debug, n_threads, dataset, feature_type, rate, lspower = process_cmd_line_args(sys.argv)
 
     # parameters
     if dataset is None:

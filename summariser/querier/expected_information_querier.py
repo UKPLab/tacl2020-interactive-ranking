@@ -2,6 +2,7 @@ import numpy as np
 from gppl.gp_pref_learning import pref_likelihood
 from summariser.querier.pairwise_uncertainty_querier import PairUncQuerier
 
+
 class InformationGainQuerier(PairUncQuerier):
     '''
     Choose the pair with highest expected information gain over the score function given the pairwise label.

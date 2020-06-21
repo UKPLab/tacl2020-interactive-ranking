@@ -2,6 +2,7 @@ import numpy as np
 from summariser.querier.pairwise_uncertainty_querier import PairUncQuerier
 from scipy.stats import norm
 
+
 class ExpectedImprovementQuerier(PairUncQuerier):
     '''
     Compare the current best summary against the summary with the largest expected improvement

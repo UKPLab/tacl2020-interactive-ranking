@@ -12,14 +12,15 @@ class PairUncQuerier(RandomQuerier):
     Designed to be used with either GPPL or LR.
     '''
     def __init__(self, reward_learner_class, summary_vectors, heuristic_values, learnt_weight=0.5, n_threads=0,
-                 prior_scale=1.0, prior_offset=0.0):
+                 rate=200, lspower=1, prior_scale=1.0, prior_offset=0.0, ):
         self.summary_vectors = summary_vectors
 
         if prior_scale != 1.0 or prior_offset != 0.0:
             self.reward_learner = reward_learner_class(full_cov=True, heuristics=heuristic_values, n_threads=n_threads,
-                 heuristic_offset=prior_offset, heuristic_scale=prior_scale)
+                 heuristic_offset=prior_offset, heuristic_scale=prior_scale, rate=rate, lspower=lspower)
         else:
-            self.reward_learner = reward_learner_class(full_cov=True, heuristics=heuristic_values, n_threads=n_threads)
+            self.reward_learner = reward_learner_class(full_cov=True, heuristics=heuristic_values, n_threads=n_threads,
+                                                       rate=rate, lspower=lspower)
 
         self.heuristics = heuristic_values
         self.learnt_weight = learnt_weight
