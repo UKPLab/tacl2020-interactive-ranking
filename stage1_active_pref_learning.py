@@ -52,6 +52,9 @@ def process_cmd_line_args(args):
     else:
         querier_types = None
 
+    if len(args) > 12:
+        res_dir = args[12]
+
     if len(args) > 5 and args[5][0] != '-':
         root_dir = args[5]
         if not os.path.exists(root_dir):
