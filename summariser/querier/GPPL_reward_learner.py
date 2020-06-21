@@ -47,8 +47,9 @@ class GPPLRewardLearner:
         if self.tune:
             rates = [800, 1600, 3200, 6400, 12800]
         else:
-            rates = [200]  # used in initial submission
+            # rates = [200]  # used in initial submission
             # rates = [100]
+            rates = [10]
 
         best_train_score = -np.inf
         best_rate = 200
