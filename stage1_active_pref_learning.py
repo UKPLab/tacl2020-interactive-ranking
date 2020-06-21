@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.DEBUG)
 from summariser.querier.logistic_reward_learner import LogisticRewardLearner
 from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewardLearner, GPPLHsRewardLearner
 
-res_dir = '/results_lstest4'
+res_dir = '/results'
 
 
 def process_cmd_line_args(args):
@@ -54,6 +54,8 @@ def process_cmd_line_args(args):
 
     if len(args) > 5 and args[5][0] != '-':
         root_dir = args[5]
+        if not os.path.exists(root_dir):
+            os.mkdir(root_dir)
         if not os.path.exists(root_dir + res_dir):
             os.mkdir(root_dir + res_dir)
         if not os.path.exists(root_dir + '/data'):
