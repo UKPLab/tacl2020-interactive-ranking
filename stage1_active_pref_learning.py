@@ -95,7 +95,7 @@ def process_cmd_line_args(args):
         lspower = 1
 
     if len(args) > 13:
-        temp = args[13]
+        temp = float(args[13])
     else:
         temp = 2.5
 
