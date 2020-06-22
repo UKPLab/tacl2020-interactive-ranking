@@ -28,7 +28,7 @@ from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewar
 from random import seed
 import numpy as np
 
-res_dir = 'results_cqa_lstest'
+res_dir = 'results_cqa'
 
 
 def process_cmd_line_args(args):

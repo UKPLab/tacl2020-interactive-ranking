@@ -52,7 +52,7 @@ from stage1_active_pref_learning import process_cmd_line_args, save_selected_res
 if __name__ == '__main__':
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-    seeds, n_debug, n_threads, dataset, _, _, _ = process_cmd_line_args(sys.argv)
+    seeds, n_debug, n_threads, dataset, _, _, _, _ = process_cmd_line_args(sys.argv)
 
     # get the output path of the last repetition of the experiment
     output_path = None

@@ -29,8 +29,31 @@ python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 10 BERT
 python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 10 BERT
 python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 10 BERT
 python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 10 BERT
-python -u stage1_coala.py GPPLHH 0 cqa_bert_unp_gpplhh "[pair_unc]" . 4 10 BERT
 python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 10 BERT
+
+python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 1 BERT
+python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 1 BERT
+python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 1 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 1 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 1 BERT
+
+python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 5 BERT
+python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 5 BERT
+python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 5 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 5 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 5 BERT
+
+python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 15 BERT
+python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 15 BERT
+python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 15 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 15 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 15 BERT
+
+python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh "[imp]" . 4 20 BERT
+python -u stage1_coala.py H 0 cqa_bert_H "[random]" . 4 20 BERT
+python -u stage1_coala.py LR     0 cqa_bert_ran_lr     "[random]" . 4 20 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_ran_gpplhh "[random]" . 4 20 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_eig_gpplhh "[eig]" . 4 20 BERT
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)

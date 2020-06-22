@@ -94,6 +94,11 @@ def process_cmd_line_args(args):
     else:
         lspower = 1
 
+    if len(args) > 13:
+        temp = args[13]
+    else:
+        temp = 2.5
+
     if learner_type_str == 'LR':
         if querier_types is None:
             querier_types = ['random', 'unc']
@@ -170,11 +175,11 @@ def process_cmd_line_args(args):
         learner_type = None
 
     return learner_type, learner_type_str, n_inter_rounds, output_folder_name_in, querier_types, root_dir, res_dir, \
-           post_weight, reps, seeds, n_debug, nthreads, dataset, feature_type, rate, lspower
+           post_weight, reps, seeds, n_debug, nthreads, dataset, feature_type, rate, lspower, temp
 
 
 def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors, heuristics_list,
-                post_weight, n_inter_rounds, all_result_dic, n_debug, output_path, n_threads):
+                post_weight, n_inter_rounds, all_result_dic, n_debug, output_path, n_threads, temp=2.5):
     model_name = model[0].split('/')[-1].strip()
     print('\n---ref. summary {}---'.format(model_name))
 
@@ -196,7 +201,7 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         with open(reward_file, 'r') as fh:
             learnt_rewards = json.load(fh)
     else:
-        oracle = SimulatedUser(rouge_values)
+        oracle = SimulatedUser(rouge_values, m=temp)
 
         if querier_type == 'gibbs':
             querier = GibbsQuerier(learner_type, summary_vectors, heuristics_list, post_weight, rate, lspower)
@@ -384,7 +389,7 @@ if __name__ == '__main__':
     '''
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, res_dir, post_weight, \
-    reps, seeds, n_debug, n_threads, dataset, feature_type, rate, lspower = process_cmd_line_args(sys.argv)
+    reps, seeds, n_debug, n_threads, dataset, feature_type, rate, lspower, temp = process_cmd_line_args(sys.argv)
 
     # parameters
     if dataset is None:
@@ -453,7 +458,8 @@ if __name__ == '__main__':
                 for model in models:
                     learnt_rewards = learn_model(
                         topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors,
-                        heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug, output_path, n_threads
+                        heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug, output_path, n_threads,
+                        temp
                     )
                     # best summary idx
                     bestidx = np.argmax(learnt_rewards)

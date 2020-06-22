@@ -82,7 +82,7 @@ def readSummaries(dataset, topic, reward_type='rouge'):
                         # R4 = float(scores[3].split(':')[1])
                         # RL = float(scores[4].split(':')[1])
                         RSU = float(scores[5].split(':')[1])
-                        vv = (R1/0.48 + R2/0.212 + RSU/0.195)  # R1/0.47 + R2/0.22 + RSU/0.18  #
+                        vv = R1/0.47 + R2/0.22 + RSU/0.18  # (R1/0.48 + R2/0.212 + RSU/0.195)  #
                         # used the commented out values
                         value.append(vv)
                     elif 'action' not in line and 'R1' not in line:
