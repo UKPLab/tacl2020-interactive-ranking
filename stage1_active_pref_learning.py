@@ -26,8 +26,6 @@ logging.basicConfig(level=logging.DEBUG)
 from summariser.querier.logistic_reward_learner import LogisticRewardLearner
 from summariser.querier.GPPL_reward_learner import GPPLRewardLearner, GPPLHRewardLearner, GPPLHsRewardLearner
 
-res_dir = '/results'
-
 
 def process_cmd_line_args(args):
 
@@ -54,15 +52,15 @@ def process_cmd_line_args(args):
 
     if len(args) > 12:
         res_dir = args[12]
+    else:
+        res_dir = 'results'
 
     if len(args) > 5 and args[5][0] != '-':
         root_dir = args[5]
-        if not os.path.exists(root_dir):
-            os.mkdir(root_dir)
-        if not os.path.exists(root_dir + res_dir):
-            os.mkdir(root_dir + res_dir)
-        if not os.path.exists(root_dir + '/data'):
-            os.mkdir(root_dir + '/data')
+        if not os.path.exists(os.path.join(root_dir, res_dir)):
+            os.mkdir(os.path.join(root_dir, res_dir))
+        if not os.path.exists(os.path.join(root_dir, 'data')):
+            os.mkdir(os.path.join(root_dir, 'data'))
     else:
         root_dir = '.'
 
@@ -171,8 +169,8 @@ def process_cmd_line_args(args):
     else:
         learner_type = None
 
-    return learner_type, learner_type_str, n_inter_rounds, output_folder_name_in, querier_types, root_dir, post_weight, \
-           reps, seeds, n_debug, nthreads, dataset, feature_type, rate, lspower
+    return learner_type, learner_type_str, n_inter_rounds, output_folder_name_in, querier_types, root_dir, res_dir, \
+           post_weight, reps, seeds, n_debug, nthreads, dataset, feature_type, rate, lspower
 
 
 def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str, summary_vectors, heuristics_list,
@@ -385,14 +383,14 @@ if __name__ == '__main__':
 
     '''
 
-    learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, post_weight, reps, \
-        seeds, n_debug, n_threads, dataset, feature_type, rate, lspower = process_cmd_line_args(sys.argv)
+    learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, res_dir, post_weight, \
+    reps, seeds, n_debug, n_threads, dataset, feature_type, rate, lspower = process_cmd_line_args(sys.argv)
 
     # parameters
     if dataset is None:
         dataset = 'DUC2001'  # 'DUC2001'  # DUC2001, DUC2002, 'DUC2004'#
 
-    print('Running stage1 summary preference learning with %s, writing to %s/%s%s' % (
+    print('Running stage1 summary preference learning with %s, writing to %s/%s/%s' % (
         dataset, root_dir, res_dir, output_folder_name))
 
     max_topics = -1  # set to greater than zero to use a subset of topics for debugging
