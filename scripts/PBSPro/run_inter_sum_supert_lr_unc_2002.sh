@@ -29,8 +29,8 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr_20 "[unc]" . 24 DUC2002 20 supert 200 1 results 1
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr "[unc]" . 24 DUC2002 100 supert 200 1 results 1
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr_10 "[unc]" . 24 DUC2002 10 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr_50 "[unc]" . 24 DUC2002 50 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr_75 "[unc]" . 24 DUC2002 75 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr_50 "[unc]" . 24 DUC2002 50 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_unc_lr_75 "[unc]" . 24 DUC2002 75 supert 200 1 results 1
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
