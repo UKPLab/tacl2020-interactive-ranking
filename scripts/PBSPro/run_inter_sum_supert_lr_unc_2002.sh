@@ -3,13 +3,13 @@
 # Run the interactive summarisation simulations with SUPERT
 
 # Job name
-#PBS -N intsum_s20_04
+#PBS -N intsum_lrunc_02
 
 # Output file
-#PBS -o pbs_intersumsup2004_20_output.log
+#PBS -o pbs_intersumsup2002_lrunc_output.log
 
 # Error file
-#PBS -e pbs_intersumsup2004_20_err.log
+#PBS -e pbs_intersumsup2002_lrunc_err.log
 
 # request resources and set limits
 #PBS -l walltime=72:00:00
