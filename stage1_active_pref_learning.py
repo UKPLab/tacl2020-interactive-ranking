@@ -85,12 +85,12 @@ def process_cmd_line_args(args):
         feature_type = 'april'
 
     if len(args) > 10:
-        rate = args[10]
+        rate = float(args[10])
     else:
         rate = 200
 
     if len(args) > 11:
-        lspower = args[11]
+        lspower = float(args[11])
     else:
         lspower = 1
 
