@@ -23,7 +23,7 @@ module load lang/python/anaconda/pytorch
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_ran_gpplhh_20 "[random]" . 24 DUC2002 20 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_ran_gpplhh_20 "[random]" . 24 DUC2002 20 supert 200 1 results 1
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_eig_gpplhh_20 "[eig]" . 24 DUC2002 20 supert 200 1 results 1
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh_20 "[imp]" . 24 DUC2002 20 supert 200 1 results 1
 python -u stage1_active_pref_learning.py LR     0 duc02_supert_ran_lr_20     "[random]" . 24 DUC2002 20 supert 200 1 results 1
