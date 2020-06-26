@@ -12,7 +12,6 @@ import scipy
 
 from gppl.gp_classifier_vb import GPClassifierVB, sigmoid, max_no_jobs, get_parallel
 from sklearn.cluster import MiniBatchKMeans
-from joblib import Parallel, delayed
 import multiprocessing
 from scipy.special import psi
 

@@ -23,7 +23,7 @@ def get_parallel():
     os.environ["OMP_NUM_THREADS"] = str(num_cpus/max_no_jobs)  # the number of CPUs that would be available per thread
 
     if parallel is None:
-        num_jobs = num_cpus
+        num_jobs = max_no_jobs
         if num_jobs > max_no_jobs:
             num_jobs = max_no_jobs
         parallel = Parallel(n_jobs=num_jobs, backend="threading")
