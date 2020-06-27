@@ -92,7 +92,7 @@ for metric in metrics:
 
         for method in methods[learner]:
             my_results = []
-            method_tag = method_tags[method]
+            methodtag = method_tags[method]
 
             for ninter in inters:
 
