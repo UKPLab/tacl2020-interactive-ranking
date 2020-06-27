@@ -84,15 +84,22 @@ for metric in metrics:
     m = 0
 
     for learner in learners:
-
-        if learner == 'gpplhh':
-            idx_last_rep = 0
-        else:
-            idx_last_rep = 9
-
         for method in methods[learner]:
             my_results = []
             methodtag = method_tags[method]
+
+            if learner == 'gpplhh':
+                if method == 'random' and task == 'bertcqa':
+                    idx_last_rep = 4
+                elif method == 'random' and task == 'supert_duc2001':
+                    idx_last_rep = 9
+                else:
+                    idx_last_rep = 0
+            else:
+                if method == 'unc' and task == 'supert_duc2001':
+                    idx_last_rep = 0
+                else:
+                    idx_last_rep = 9
 
             for ninter in inters:
 
