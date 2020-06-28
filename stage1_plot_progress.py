@@ -63,7 +63,7 @@ if task == 'coala':
     metrics = ['accuracy', 'ndcg_at_5%', 'pcc']
     output_path = './results_coala/lno03_%s_%iinter_%s_rep%i/table_all_reps.csv'
 elif task == 'bertcqa':
-    inters = [1, 5, 10, 15, 20, 25]
+    inters = [1, 5, 10, 15, 20]
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
     output_path = './results_cqa/cqa_bert_%s_%s%s_%s_rep%i/table_all_reps.csv'
@@ -141,6 +141,9 @@ for metric in metrics:
             m += 1
 
     plt.legend(loc='best')
+
+    if not os.path.exists('./plots'):
+        os.mkdir('./plots')
 
     plot_dir = './plots/progress_%s' % (task)
     if not os.path.exists(plot_dir):
