@@ -1,3 +1,4 @@
+data/cqa_base_models/coala_vec_pred/qa_vec_coala/se_*_coala.qa_vec_pred
 ~$bert_results.xlsx
 results_*
 ..bfg-report
