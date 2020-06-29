@@ -89,7 +89,7 @@ class GPPLRewardLearner:
                     for col, v in enumerate(new_items_feat.T):
                         new_items_feat[:, col] -= np.sum(u.T.dot(v[:, None]), axis=0) * v
 
-                    new_items_feat = PCA(ndims)(new_items_feat)
+                    new_items_feat = PCA(ndims).fit_transform(new_items_feat)
 
                     # PPA - subtract mean
                     new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
