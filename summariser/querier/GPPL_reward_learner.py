@@ -8,13 +8,15 @@ import numpy as np
 
 import sys
 
+from sklearn.decomposition import PCA
+
 from gppl.gp_classifier_vb import compute_median_lengthscales
 from gppl.gp_pref_learning import GPPrefLearning
 
 
 class GPPLRewardLearner:
 
-    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, rate=200, lspower=1):
+    def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, rate=200, lspower=1, do_dim_reduction=True):
         self.learner = None
         self.steep = steep
 
@@ -33,6 +35,10 @@ class GPPLRewardLearner:
 
         self.default_rate = rate
         self.lspower = lspower
+
+        self.items_feat = None
+        self.do_dim_reduction = do_dim_reduction
+
 
     def train(self, pref_history, vector_list, true_scores=None, tr_items=None):
         '''
@@ -66,6 +72,32 @@ class GPPLRewardLearner:
 
                 logging.debug('Estimating lengthscales for %i features from %i items' %
                       (new_items_feat.shape[1], new_items_feat.shape[0]))
+
+                if self.do_dim_reduction and new_items_feat.shape[1] < 300:
+                    self.do_dim_reduction = False
+                    logging.info('Switching off dimensionality reduction as we already have fewer than 300 dimensions.')
+
+                if self.do_dim_reduction:
+                    # reduce a large feature vector using the method of https://www.aclweb.org/anthology/W19-4328.pdf
+                    ndims = 200 # because this worked well for reaper... could be optimised more
+
+                    # PPA - subtract mean
+                    new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
+                    # PPA - compute PCA components
+                    u = PCA(7).fit_transform(new_items_feat)
+                    # Remove top-d components
+                    for row, v in enumerate(new_items_feat):
+                        new_items_feat[row] -= np.sum(u.dot(v[:, None]), axis=0) * v
+
+                    new_items_feat = PCA(ndims)(new_items_feat)
+
+                    # PPA - subtract mean
+                    new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
+                    # PPA - compute PCA components
+                    u = PCA(7).fit_transform(new_items_feat)
+                    # Remove top-d components
+                    for row, v in enumerate(new_items_feat):
+                        new_items_feat[row] -= np.sum(u.dot(v[:, None]), axis=0) * v
 
                 ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=self.lspower)
                 # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far on the
