@@ -86,18 +86,18 @@ class GPPLRewardLearner:
                     # PPA - compute PCA components
                     u = PCA(7).fit_transform(new_items_feat)
                     # Remove top-d components
-                    for row, v in enumerate(new_items_feat):
-                        new_items_feat[row] -= np.sum(u.dot(v[:, None]), axis=0) * v
+                    for col, v in enumerate(new_items_feat.T):
+                        new_items_feat[:, col] -= np.sum(u.T.dot(v[:, None]), axis=0) * v
 
                     new_items_feat = PCA(ndims)(new_items_feat)
 
                     # PPA - subtract mean
                     new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
                     # PPA - compute PCA components
-                    u = PCA(7).fit_transform(new_items_feat)
+                    u = PCA(7).fit_transform(new_items_feat.T)
                     # Remove top-d components
-                    for row, v in enumerate(new_items_feat):
-                        new_items_feat[row] -= np.sum(u.dot(v[:, None]), axis=0) * v
+                    for col, v in enumerate(new_items_feat):
+                        new_items_feat[:, col] -= np.sum(u.T.dot(v[:, None]), axis=0) * v
 
                 ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=self.lspower)
                 # Tested with random selection, a value of multiply_heuristic_power=1 is better than 0.5 by far on the
