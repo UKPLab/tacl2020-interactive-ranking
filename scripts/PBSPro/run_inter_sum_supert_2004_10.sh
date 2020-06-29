@@ -26,9 +26,9 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py H 0 duc04_supert_H "[random]" . 24 DUC2004 0 supert
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_ran_gpplhh_10 "[random]" . 24 DUC2004 10 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_eig_gpplhh_10 "[eig]" . 24 DUC2004 10 supert 200 1 results 1
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_imp_gpplhh_10 "[imp]" . 24 DUC2004 10 supert 200 1 results 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_DR_ran_gpplhh_10 "[random]" . 24 DUC2004 10 supert 200 1 results 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_DR_eig_gpplhh_10 "[eig]" . 24 DUC2004 10 supert 200 1 results 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_supert_DR_imp_gpplhh_10 "[imp]" . 24 DUC2004 10 supert 200 1 results 1
 #python -u stage1_active_pref_learning.py LR     0 duc04_supert_ran_lr_10     "[random]" . 24 DUC2004 10 supert 200 1 results 1
 
 # To submit: qsub run_bert_cqa.sh
