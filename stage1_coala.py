@@ -355,7 +355,7 @@ if __name__ == '__main__':
     nqueriers = len(querier_types)
     chosen_metrics = ['ndcg_at_1%', 'accuracy', 'pcc', 'ndcg_at_5%']  # , 'tau', 'ndcg_at_5%', 'ndcg_at_10%', 'rho']
 
-    topics = ['apple', 'cooking', 'travel']
+    topics = ['cooking', 'apple', 'cooking', 'travel']
 
     for topic in topics:
 
