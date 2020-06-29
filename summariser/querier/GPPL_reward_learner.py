@@ -94,9 +94,9 @@ class GPPLRewardLearner:
                     # PPA - subtract mean
                     new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
                     # PPA - compute PCA components
-                    u = PCA(7).fit_transform(new_items_feat.T)
+                    u = PCA(7).fit_transform(new_items_feat)
                     # Remove top-d components
-                    for col, v in enumerate(new_items_feat):
+                    for col, v in enumerate(new_items_feat.T):
                         new_items_feat[:, col] -= np.sum(u.T.dot(v[:, None]), axis=0) * v
 
                 ls_initial = compute_median_lengthscales(new_items_feat, multiply_heuristic_power=self.lspower)
