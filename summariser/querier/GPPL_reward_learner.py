@@ -79,7 +79,9 @@ class GPPLRewardLearner:
 
                 if self.do_dim_reduction:
                     # reduce a large feature vector using the method of https://www.aclweb.org/anthology/W19-4328.pdf
-                    ndims = 200 # because this worked well for reaper... could be optimised more
+                    ndims = 200  # because this worked well for reaper... could be optimised more
+                    if new_items_feat.shape[0] < ndims:
+                        ndims = new_items_feat.shape[0] / 2
 
                     # PPA - subtract mean
                     new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
