@@ -1,14 +1,27 @@
 import numpy as np
 from sklearn import linear_model
 
+from summariser.querier.GPPL_reward_learner import reduce_dimensionality
+
+
 class LogisticRewardLearner():
 
-    def __init__(self, steep=1.0, heuristics=None, n_threads=0, rate=200, lspower=1):
+    def __init__(self, steep=1.0, heuristics=None, n_threads=0, rate=200, lspower=1, do_dim_reduction=True):
         self.learner = linear_model.LogisticRegression(fit_intercept=False)
         self.steep = steep
         self.n_labels_seen = 0
 
+        self.do_dim_reduction = do_dim_reduction
+
     def train(self,pref_history,vector_list):
+        new_items_feat = np.array(vector_list)
+        if self.do_dim_reduction and new_items_feat.shape[1] < 300:
+            self.do_dim_reduction = False
+
+        if self.do_dim_reduction:
+            vector_list = reduce_dimensionality(new_items_feat)
+
+
         X = []
         Y = []
         for pref_idx in range(len(pref_history)):
