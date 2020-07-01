@@ -164,7 +164,7 @@ for metric in metrics:
 
             if learner == 'H':
                 plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
-                         ls='-', marker='.  ', color='black')
+                         ls='-', marker='.', color='black')
             else:
                 plt.plot(inters, my_results, label='%s,%s' % (learner_str[learner], method_str[method]),
                      ls=styles[m % len(styles)], marker=markers[m % len(markers)] )
