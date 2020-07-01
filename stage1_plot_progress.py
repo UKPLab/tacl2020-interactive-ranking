@@ -62,6 +62,8 @@ metric_str = {
     'ndcg_at_10%': 'NDCG @10%'
 }
 
+ylimits = None
+
 if task == 'coala':
     inters = [1, 3, 5, 7, 10, 15, 20, 25] # 50, 100?
     xlimits = (0, 25)
@@ -73,6 +75,7 @@ if task == 'coala':
 elif task == 'bertcqa':
     inters = [1, 5, 10, 15, 20]
     xlimits = (0, 25)
+    ylimits = (0.52, 0.74)
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
     output_path = './results_cqa/cqa_bert_%s_%s%s_%s_rep%i/table_all_reps.csv'
@@ -181,6 +184,8 @@ for metric in metrics:
     plt.xlabel('num. interactions')
 
     plt.xlim(xlimits)
+    if ylimits is not None:
+        plt.ylim(ylimits)
 
     if task == 'coala':
         plt.xlim(left=0)
