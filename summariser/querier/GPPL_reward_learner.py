@@ -49,7 +49,7 @@ def reduce_dimensionality(new_items_feat):
 class GPPLRewardLearner:
 
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, rate=200, lspower=1,
-                 do_dim_reduction=True):
+                 do_dim_reduction=False):
         self.learner = None
         self.steep = steep
 

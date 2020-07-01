@@ -6,7 +6,7 @@ from summariser.querier.GPPL_reward_learner import reduce_dimensionality
 
 class LogisticRewardLearner():
 
-    def __init__(self, steep=1.0, heuristics=None, n_threads=0, rate=200, lspower=1, do_dim_reduction=True):
+    def __init__(self, steep=1.0, heuristics=None, n_threads=0, rate=200, lspower=1, do_dim_reduction=False):
         self.learner = linear_model.LogisticRegression(fit_intercept=False)
         self.steep = steep
         self.n_labels_seen = 0
