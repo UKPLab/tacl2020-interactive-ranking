@@ -84,16 +84,16 @@ elif task == 'bertcqa':
     baseline_path = './results_cqa/cqa_bert_H_%s_rep0/table_all_reps.csv'
 elif task == 'supert_duc2001':
     xlimits = (0, 100)
-    inters = [10, 20, 50, 75, 100] # need to copy results for 20, 50, and 75 from Apu to ./results
+    inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
     metrics = ['ndcg_at_1%']
     output_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
     baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
 
 else:
-    inters = [10, 20, 50, 75, 100] # need to copy results for 20, 50, and 75 from Apu to ./results
+    inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
     xlimits = (0, 100)
     metrics = ['ndcg_at_1%', 'pcc']
-    output_path = './results_noisy/duc01_reaper_%s_%s_%i_rep%i/table_all_reps.csv'
+    output_path = './results_noisy/duc01_reaper_%s_%s%s_rep%i/table_all_reps.csv'
     baseline_path = './results_noisy/duc01_reaper_H_rep0/table_all_reps.csv'
     # output_path = './results/duc01_%s_%iinter2_rep%i/table_all_reps.csv'
 
