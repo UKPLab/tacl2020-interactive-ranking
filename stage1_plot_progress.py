@@ -75,7 +75,7 @@ if task == 'coala':
 elif task == 'bertcqa':
     inters = [1, 5, 10, 15, 20]
     xlimits = (0, 25)
-    ylimits = (0.52, 0.74)
+    ylimits = (0.50, 0.78)
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
     output_path = './results_cqa/cqa_bert_%s_%s%s_%s_rep%i/table_all_reps.csv'
@@ -192,5 +192,6 @@ for metric in metrics:
         plt.ylim(bottom=plt.ylim()[0] - 0.02)
 
     plt.grid(True, axis='y')
+    #plt.tight_layout()
 
     plt.savefig(os.path.join(plot_dir, '%s.pdf' % metric))
