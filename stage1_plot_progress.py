@@ -74,7 +74,7 @@ if task == 'coala':
 
 elif task == 'bertcqa':
     inters = [1, 5, 10, 15, 20]
-    xlimits = (0, 20)
+    xlimits = (0, 22)
     ylimits = (0.50, 0.78)
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
