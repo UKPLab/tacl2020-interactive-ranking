@@ -23,7 +23,7 @@ if task == 'bertcqa' or task == 'supert_duc2001':
 else:
     methods = {
         'gpplhh': ['random', 'pair_unc', 'eig', 'tig', 'imp'],
-        'lr': ['random', 'unc']
+        'lr': ['random', 'unc'],
         'H': ['random']
     }
 
