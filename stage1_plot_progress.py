@@ -129,7 +129,7 @@ for metric in metrics:
                     # take an average over the topics
                     val = 0
 
-                    print('tasks: %s' % task)
+                    print('task: %s, learner %s' % (task, learner))
 
                     for topic in topics:
                         if learner == 'H':
