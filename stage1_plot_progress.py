@@ -133,10 +133,12 @@ for metric in metrics:
 
                     for topic in topics:
                         if learner == 'H':
+                            print('baseline')
                             result_file == baseline_path % topic
                         elif ninter == 10:
                             result_file = output_path % (methodtag, learner, '', topic, idx_last_rep)
                         else:
+                            print('default')
                             result_file = output_path % (methodtag, learner, '_%i' % ninter, topic, idx_last_rep)
                         print('Reading data from %s' % result_file)
                         result_data = pd.read_csv(result_file, index_col=0, sep=',')
