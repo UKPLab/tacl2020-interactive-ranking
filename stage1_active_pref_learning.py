@@ -282,7 +282,6 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
 
 
 def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type):
-    # TODO distinguish between the supert and other summary vectors! Rename supert?
     summary_vecs_cache_file = root_dir + '/data/summary_vectors/%s/summary_vectors_%s_%s.csv' % (feature_type,
                                                                                                  dataset, topic)
 
@@ -382,6 +381,17 @@ if __name__ == '__main__':
     querier_types -- a list of querier types. If the reward learner is LR, you can pass any subset of [random, unc].
     If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tig, imp]. The best
     performers are tig and imp.    
+    
+    TODO: reproduce the reaper results. 
+    - There is a problem with the reaper duc 2001 baseline -- are the rouge scores the same?
+    - For Duc 02, the LR scores are same but GPPL is not
+    - For Duc 04, it's unknown.
+    - the summary vectors in Barney appear to differ from the ones on this machine (duc 01 and duc 04)
+    - there seems to be random variation in the reaper? heuristic baseline under testH_rep0 -- testH_rep9, where the first attempt has the results we used in the paper.
+    Steps:
+    1 Why is the reaper baseline random? --> looks like I may have written in the LR rand first repetition result by mistake.
+    2 Rerun the reaper expts with 10 interactions with reaper only, lr random, gpplh imp on all three datasets. 
+    *** careful that the equation for rouge scores is slightly different ***
 
     '''
 
