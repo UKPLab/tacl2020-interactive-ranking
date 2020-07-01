@@ -18,7 +18,7 @@ def do_PPA(new_items_feat, ndims):
     # PPA - subtract mean
     new_items_feat = new_items_feat - np.mean(new_items_feat)
     # PPA - compute PCA components
-    pca = PCA(ndims*2)
+    pca = PCA(ndims)
     pca.fit_transform(new_items_feat)
     U1 = pca.components_
 
@@ -37,7 +37,7 @@ def reduce_dimensionality(new_items_feat):
     if new_items_feat.shape[0] < ndims:
         ndims = int(new_items_feat.shape[0] / 2)
 
-    new_items_feat = do_PPA(new_items_feat, ndims)
+    new_items_feat = do_PPA(new_items_feat, ndims*2)
 
     new_items_feat = PCA(ndims).fit_transform(new_items_feat)
 
