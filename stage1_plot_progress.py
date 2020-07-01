@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-task = 'bertcqa'  # 'coala' # 'duc2001' #
+task = 'duc2001' # 'bertcqa'  # 'coala' # 'duc2001' #
 
 styles = ['-', '-.', '--', ':']
 markers = ['x', 'v', '*', 's', 'd', 'p', 'o', '>']
