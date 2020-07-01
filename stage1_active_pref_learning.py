@@ -293,7 +293,7 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
         # This should be fine, but if there is an error, we may need to check that the loading order has not changed.
         summary_vectors = np.genfromtxt(summary_vecs_cache_file)
 
-    elif feature_type == 'april':
+    elif feature_type == 'april' or feature_type == 'supertreaper':
         vec = Vectoriser(docs)
         summary_vectors = vec.getSummaryVectors(summaries)
         np.savetxt(summary_vecs_cache_file, summary_vectors)
@@ -301,9 +301,6 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
     elif feature_type == 'supert':
         vec = SupertVectoriser(docs)
         summary_vectors, _ = vec.getSummaryVectors(summaries, use_coverage_feats=True)
-        # TODO since this is not working so well.... we may want to try with only the supert features and exclude the
-        #  final REAPER features that are appended.
-        # TODO check what supert was fine-tuned on. Does it need some in-domain training?
         np.savetxt(summary_vecs_cache_file, summary_vectors)
         print('Cached summary vectors to %s' % summary_vecs_cache_file)
 
