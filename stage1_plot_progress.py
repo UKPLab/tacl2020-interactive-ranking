@@ -17,20 +17,15 @@ markers = ['x', 'v', '*', 's', 'd', 'p', 'o', '>']
 if task == 'bertcqa' or task == 'supert_duc2001':
     methods = {
         'gpplhh': ['random', 'eig', 'imp'],
-        'lr': ['random', 'unc']
+        'lr': ['random', 'unc'],
+        'H': ['random']
     }
-
-    if task == 'bertcqa':
-        methods['BERT-cQA'] = 'random'
-    elif task == 'supert_duc2001':
-        methods['SUPERT'] = 'random'
 else:
     methods = {
         'gpplhh': ['random', 'pair_unc', 'eig', 'tig', 'imp'],
         'lr': ['random', 'unc']
+        'H': ['random']
     }
-    if task == 'duc2001':
-        methods['REAPER'] = 'random'
 
 method_str = {
     'random': 'random',
@@ -166,7 +161,7 @@ for metric in metrics:
 
             if learner == 'H':
                 plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
-                         ls='-', marker='.', color='black')
+                         ls='-', marker='.  ', color='black')
             else:
                 plt.plot(inters, my_results, label='%s,%s' % (learner_str[learner], method_str[method]),
                      ls=styles[m % len(styles)], marker=markers[m % len(markers)] )
