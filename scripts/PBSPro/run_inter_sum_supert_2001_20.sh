@@ -25,10 +25,15 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 # Run the script using heuristics only and no interactions.
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_cov_imp_gpplhh_20 "[imp]" . 4 DUC2001 20 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_cov_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supert 200 1 results 1
-python -u stage1_active_pref_learning.py LR     0 duc01_supert_cov_ran_lr_20     "[random, unc]" . 4 DUC2001 20 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_cov_ran_gpplhh_20 "[random]" . 4 DUC2001 20 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_cov_imp_gpplhh_20 "[imp]" . 4 DUC2001 20 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_cov_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py LR     0 duc01_supert_cov_ran_lr_20     "[random, unc]" . 4 DUC2001 20 supert 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_cov_ran_gpplhh_20 "[random]" . 4 DUC2001 20 supert 200 1 results 1
+
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_imp_gpplhh_20 "[imp]" . 4 DUC2001 20 supert 200 1 results_214 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supert 200 1 results_214 1
+python -u stage1_active_pref_learning.py LR     0 duc01_supert_ran_lr_20     "[random, unc]" . 4 DUC2001 20 supert 200 1 results_214 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_ran_gpplhh_20 "[random]" . 4 DUC2001 20 supert 200 1 results_214 1
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)

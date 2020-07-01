@@ -392,6 +392,13 @@ if __name__ == '__main__':
     1 Why is the reaper baseline random? --> looks like I may have written in the LR rand first repetition result by mistake.
     2 Rerun the reaper expts with 10 interactions with reaper only, lr random, gpplh imp on all three datasets. 
     *** careful that the equation for rouge scores is slightly different ***
+    
+    3. Rerun 2001 with supert embeddings and the lower (correct) temp.
+    4. Review the performance of supertreaper with 100 interactions on duc2002 and duc2004. Since
+    this appears to be better with 20 interactions, decide if we want to use it for 100 interactions too. 
+    Choice for 100 interactions is between supertreaper and supert embeddings using the new correct temp. 
+    5. Rerun the supertreaper expts we need with correct temp + (if required) supert emveddings with 100 interactions.
+    6. The plot can use the supert embeddings only, if we decide to use them.  
 
     '''
 
@@ -494,7 +501,7 @@ if __name__ == '__main__':
                 for model in models:
                     learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str,
                                 summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
-                                output_path, n_threads)
+                                output_path, n_threads, temp=2.14 if feature_type == 'supert' else 2.5)
 
                 save_result_dic(all_result_dic, output_path, rep, topic_cnt, querier_type, learner_type_str,
                                 n_inter_rounds)
