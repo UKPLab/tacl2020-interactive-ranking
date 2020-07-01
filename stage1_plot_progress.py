@@ -133,7 +133,7 @@ for metric in metrics:
 
                     for topic in topics:
                         if learner == 'H':
-                            print('baseline')
+                            print('baseline: %s' % baseline_path)
                             result_file == baseline_path % topic
                         elif ninter == 10:
                             result_file = output_path % (methodtag, learner, '', topic, idx_last_rep)
