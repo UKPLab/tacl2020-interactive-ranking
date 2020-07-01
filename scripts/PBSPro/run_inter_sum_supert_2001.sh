@@ -26,10 +26,10 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py H 0 duc01_supert_H "[random]" . 4 DUC2001 0 supert
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_DR_ran_gpplhh "[random]" . 12 DUC2001 100 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_DR_eig_gpplhh "[eig]" . 12 DUC2001 100 supert 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_DR_imp_gpplhh "[imp]" . 12 DUC2001 100 supert
-#python -u stage1_active_pref_learning.py LR     0 duc01_supert_ran_lr     "[random]" . 4 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_DR2_imp_gpplhh "[imp]" . 12 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_DR2_eig_gpplhh "[eig]" . 12 DUC2001 100 supert 200 1 results 1
+python -u stage1_active_pref_learning.py LR     0 duc01_supert_DR2_ran_lr     "[random]" . 4 DUC2001 100 supert
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_DR2_ran_gpplhh "[random]" . 12 DUC2001 100 supert 200 1 results 1
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)

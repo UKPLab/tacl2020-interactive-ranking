@@ -14,29 +14,34 @@ from gppl.gp_classifier_vb import compute_median_lengthscales
 from gppl.gp_pref_learning import GPPrefLearning
 
 
+def do_PPA(new_items_feat, ndims):
+    # PPA - subtract mean
+    new_items_feat = new_items_feat - np.mean(new_items_feat)
+    # PPA - compute PCA components
+    pca = PCA(ndims*2)
+    pca.fit_transform(new_items_feat)
+    U1 = pca.components_
+
+    # Remove top-d components
+    for row, v in enumerate(new_items_feat):
+        for u in U1[0:7]:
+            new_items_feat[row] -= u.T.dot(v[:, None]) * u
+
+    return new_items_feat
+
+
 def reduce_dimensionality(new_items_feat):
     # reduce a large feature vector using the method of https://www.aclweb.org/anthology/W19-4328.pdf
-    ndims = 200  # because this worked well for reaper... could be optimised more
+    ndims = 150  # because this worked well for reaper... could be optimised more
+
     if new_items_feat.shape[0] < ndims:
         ndims = int(new_items_feat.shape[0] / 2)
 
-    # PPA - subtract mean
-    new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
-    # PPA - compute PCA components
-    u = PCA(7).fit_transform(new_items_feat)
-    # Remove top-d components
-    for col, v in enumerate(new_items_feat.T):
-        new_items_feat[:, col] -= np.sum(u.T.dot(v[:, None]), axis=0) * v
+    new_items_feat = do_PPA(new_items_feat, ndims)
 
     new_items_feat = PCA(ndims).fit_transform(new_items_feat)
 
-    # PPA - subtract mean
-    new_items_feat = new_items_feat - np.mean(new_items_feat, axis=0)
-    # PPA - compute PCA components
-    u = PCA(7).fit_transform(new_items_feat)
-    # Remove top-d components
-    for col, v in enumerate(new_items_feat.T):
-        new_items_feat[:, col] -= np.sum(u.T.dot(v[:, None]), axis=0) * v
+    new_items_feat = do_PPA(new_items_feat, ndims)
 
     return new_items_feat
 
