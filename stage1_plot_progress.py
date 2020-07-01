@@ -19,11 +19,18 @@ if task == 'bertcqa' or task == 'supert_duc2001':
         'gpplhh': ['random', 'eig', 'imp'],
         'lr': ['random', 'unc']
     }
+
+    if task == 'bertcqa':
+        methods['BERT-cQA'] = 'random'
+    elif task == 'supert_duc2001':
+        methods['SUPERT'] = 'random'
 else:
     methods = {
         'gpplhh': ['random', 'pair_unc', 'eig', 'tig', 'imp'],
         'lr': ['random', 'unc']
     }
+    if task == 'duc2001':
+        methods['REAPER'] = 'random'
 
 method_str = {
     'random': 'random',
@@ -49,6 +56,16 @@ learner_str = {
     'lr': 'BT'
 }
 
+learners.append('H')
+if task == 'coala':
+    learner_str['H'] = 'COALA with no interactions'
+elif task == 'bertcqa':
+    learner_str['H'] = 'BERT-cQA with no interactions'
+elif task == 'duc2001':
+    learner_str['H'] = 'REAPER with no interactions'
+elif task == 'supert_duc2001':
+    learner_str['H'] = 'SUPERT with no interactions'
+
 metric_str = {
     'pcc': "Pearson's r",
     'accuracy': 'Accuracy',
@@ -62,19 +79,25 @@ if task == 'coala':
     topics = ['cooking', 'travel', 'apple']
     metrics = ['accuracy', 'ndcg_at_5%', 'pcc']
     output_path = './results_coala/lno03_%s_%iinter_%s_rep%i/table_all_reps.csv'
+    baseline_path = './results_coala/coala_H_%s_rep0/table_all_reps.csv'
+
 elif task == 'bertcqa':
     inters = [1, 5, 10, 15, 20]
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
     output_path = './results_cqa/cqa_bert_%s_%s%s_%s_rep%i/table_all_reps.csv'
-elif task == 'super_duc2001':
+    baseline_path = './results_cqa/cqa_bert_H_%s_rep0/table_all_reps.csv'
+elif task == 'supert_duc2001':
     inters = [10, 20, 50, 75, 100] # need to copy results for 20, 50, and 75 from Apu to ./results
     metrics = ['ndcg_at_1%']
     output_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
+    baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
+
 else:
     inters = [10, 20, 50, 75, 100] # need to copy results for 20, 50, and 75 from Apu to ./results
     metrics = ['ndcg_at_1%', 'pcc']
-    output_path = './results/duc01_reaper_%s_%s_%i_rep%i/table_all_reps.csv'
+    output_path = './results_noisy/duc01_reaper_%s_%s_%i_rep%i/table_all_reps.csv'
+    baseline_path = './results_noisy/duc01_reaper_H_rep0/table_all_reps.csv'
     # output_path = './results/duc01_%s_%iinter2_rep%i/table_all_reps.csv'
 
 for metric in metrics:
@@ -88,7 +111,9 @@ for metric in metrics:
             my_results = []
             methodtag = method_tags[method]
 
-            if learner == 'gpplhh':
+            if learner == 'H':
+                idx_last_rep = 0
+            elif learner == 'gpplhh':
                 if method == 'random' and task == 'bertcqa':
                     idx_last_rep = 4
                 elif method == 'random' and task == 'supert_duc2001':
@@ -108,7 +133,9 @@ for metric in metrics:
                     val = 0
 
                     for topic in topics:
-                        if ninter == 10:
+                        if learner == 'H':
+                            result_file == baseline_path % topic
+                        elif ninter == 10:
                             result_file = output_path % (methodtag, learner, '', topic, idx_last_rep)
                         else:
                             result_file = output_path % (methodtag, learner, '_%i' % ninter, topic, idx_last_rep)
@@ -120,10 +147,12 @@ for metric in metrics:
                     val /= float(len(topics))
 
                 elif task == 'duc2001' or task == 'supert_duc2001':
-                    if ninter == 100:
-                        result_file = output_path % (method_tag, learner, '', idx_last_rep)
+                    if learner == 'H':
+                        result_file = baseline_path
+                    elif ninter == 100:
+                        result_file = output_path % (methodtag, learner, '', idx_last_rep)
                     else:
-                        result_file = output_path % (method_tag, learner, '_%i' % ninter, idx_last_rep)
+                        result_file = output_path % (methodtag, learner, '_%i' % ninter, idx_last_rep)
                     result_data = pd.read_csv(result_file, index_col=0, sep=',')
                     result_data = result_data[metric]
                     if method == 'random' and not np.any(result_data.index == method):
@@ -135,7 +164,11 @@ for metric in metrics:
 
                 my_results.append(val)
 
-            plt.plot(inters, my_results, label='%s,%s' % (learner_str[learner], method_str[method]),
+            if learner == 'H':
+                plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
+                         ls='-', marker='.', color='black')
+            else:
+                plt.plot(inters, my_results, label='%s,%s' % (learner_str[learner], method_str[method]),
                      ls=styles[m % len(styles)], marker=markers[m % len(markers)] )
 
             m += 1
