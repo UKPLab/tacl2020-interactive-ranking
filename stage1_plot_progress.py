@@ -63,6 +63,7 @@ metric_str = {
 }
 
 ylimits = None
+xticks = None
 
 if task == 'coala':
     inters = [1, 3, 5, 7, 10, 15, 20, 25] # 50, 100?
@@ -75,6 +76,7 @@ if task == 'coala':
 elif task == 'bertcqa':
     inters = [1, 5, 10, 15, 20]
     xlimits = (0, 22)
+    xticks = [0, 5, 10, 15, 20]
     ylimits = (0.50, 0.78)
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
@@ -184,14 +186,15 @@ for metric in metrics:
     plt.xlabel('num. interactions')
 
     plt.xlim(xlimits)
-    if ylimits is not None:
-        plt.ylim(ylimits)
-
-    if task == 'coala':
+    if task != 'coala':
+        if ylimits is not None:
+            plt.ylim(ylimits)
+        if xticks is not None:
+            plt.xticks(xticks)
+    elif task == 'coala':
         plt.xlim(left=0)
         plt.ylim(bottom=plt.ylim()[0] - 0.02)
 
     plt.grid(True, axis='y')
-    #plt.tight_layout()
 
     plt.savefig(os.path.join(plot_dir, '%s.pdf' % metric))
