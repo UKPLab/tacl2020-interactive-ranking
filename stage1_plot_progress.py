@@ -121,11 +121,15 @@ for metric in metrics:
                 else:
                     idx_last_rep = 9
 
+            print('Learner: %s' % learner)
+
             for ninter in inters:
 
                 if task == 'coala' or task == 'bertcqa':
                     # take an average over the topics
                     val = 0
+
+                    print('tasks: %s' % task)
 
                     for topic in topics:
                         if learner == 'H':
