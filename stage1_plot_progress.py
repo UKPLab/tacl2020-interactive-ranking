@@ -64,7 +64,7 @@ metric_str = {
 
 if task == 'coala':
     inters = [1, 3, 5, 7, 10, 15, 20, 25] # 50, 100?
-    ylimits = (0, 25)
+    xlimits = (0, 25)
     topics = ['cooking', 'travel', 'apple']
     metrics = ['accuracy', 'ndcg_at_5%', 'pcc']
     output_path = './results_coala/lno03_%s_%iinter_%s_rep%i/table_all_reps.csv'
@@ -72,13 +72,13 @@ if task == 'coala':
 
 elif task == 'bertcqa':
     inters = [1, 5, 10, 15, 20]
-    ylimits = (0, 25)
+    xlimits = (0, 25)
     topics = ['cooking', 'travel', 'apple']
     metrics = ['ndcg_at_5%']
     output_path = './results_cqa/cqa_bert_%s_%s%s_%s_rep%i/table_all_reps.csv'
     baseline_path = './results_cqa/cqa_bert_H_%s_rep0/table_all_reps.csv'
 elif task == 'supert_duc2001':
-    ylimits = (0, 100)
+    xlimits = (0, 100)
     inters = [10, 20, 50, 75, 100] # need to copy results for 20, 50, and 75 from Apu to ./results
     metrics = ['ndcg_at_1%']
     output_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
@@ -86,7 +86,7 @@ elif task == 'supert_duc2001':
 
 else:
     inters = [10, 20, 50, 75, 100] # need to copy results for 20, 50, and 75 from Apu to ./results
-    ylimits = (0, 100)
+    xlimits = (0, 100)
     metrics = ['ndcg_at_1%', 'pcc']
     output_path = './results_noisy/duc01_reaper_%s_%s_%i_rep%i/table_all_reps.csv'
     baseline_path = './results_noisy/duc01_reaper_H_rep0/table_all_reps.csv'
@@ -180,7 +180,7 @@ for metric in metrics:
     plt.ylabel(metric_str[metric])
     plt.xlabel('num. interactions')
 
-    plt.ylim(ylimits)
+    plt.xlim(xlimits)
 
     if task == 'coala':
         plt.xlim(left=0)
