@@ -501,7 +501,7 @@ if __name__ == '__main__':
                 for model in models:
                     learn_model(topic, model, ref_values_dic, querier_type, learner_type, learner_type_str,
                                 summary_vectors, heuristic_list, post_weight, n_inter_rounds, all_result_dic, n_debug,
-                                output_path, n_threads, temp=1 if feature_type != 'supert' else 2.14)
+                                output_path, n_threads, temp=1 if feature_type == 'supert' else 2.14)
 
                 save_result_dic(all_result_dic, output_path, rep, topic_cnt, querier_type, learner_type_str,
                                 n_inter_rounds)
