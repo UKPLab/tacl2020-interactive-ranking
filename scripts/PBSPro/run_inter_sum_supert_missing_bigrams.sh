@@ -3,13 +3,13 @@
 # Run the interactive summarisation simulations with SUPERT
 
 # Job name
-#PBS -N intsum_20_01
+#PBS -N intbis20_01
 
 # Output file
-#PBS -o pbs_intersumsup2001_20_output.log
+#PBS -o pbs_intersumbisup2001_output.log
 
 # Error file
-#PBS -e pbs_intersumsup2001_20_err.log
+#PBS -e pbs_intersumbisup2001_err.log
 
 # request resources and set limits
 #PBS -l walltime=72:00:00
@@ -30,6 +30,7 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh_20 "[imp]" . 4 DUC2001 20 supertreaper 200 1 results 1
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supertreaper 200 1 results 1
 #python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_20     "[random, unc]" . 4 DUC2001 20 supertreaper 200 1 results 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supertreaper 200 1 results 1
 python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_ran_gpplhh_20 "[random]" . 4 DUC2001 20 supertreaper 200 1 results 1
 
 python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_50 "[random, unc]" . 4 DUC2001 50 supertreaper 200 1 results 1
