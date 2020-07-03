@@ -213,7 +213,7 @@ class GPPLHRewardLearner(GPPLRewardLearner):
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, heuristic_offset=0.0,
                  heuristic_scale=1.0, rate=200, lspower=1):
 
-        super(GPPLHRewardLearner, self).__init__(steep, full_cov, n_threads=n_threads, rate=200, lspower=1)
+        super(GPPLHRewardLearner, self).__init__(steep, full_cov, n_threads=n_threads, rate=200, lspower=lspower)
 
         minh = np.min(heuristics)
         maxh = np.max(heuristics)
@@ -225,6 +225,6 @@ class GPPLHRewardLearner(GPPLRewardLearner):
 class GPPLHsRewardLearner(GPPLHRewardLearner):
     def __init__(self, steep=1.0, full_cov=False, heuristics=None, n_threads=0, rate=200, lspower=1):
 
-        super(GPPLHsRewardLearner, self).__init__(steep, full_cov, heuristics, n_threads, rate=200, lspower=1)
+        super(GPPLHsRewardLearner, self).__init__(steep, full_cov, heuristics, n_threads, rate=200, lspower=lspower)
 
         self.fixed_s = False

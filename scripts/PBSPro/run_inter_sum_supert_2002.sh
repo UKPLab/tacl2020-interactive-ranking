@@ -26,10 +26,10 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py H 0 duc02_supert_H "[random]" . 24 DUC2002 0 supert
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh "[imp]" . 12 DUC2002 100 supert 200 0.5 results_1 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_eig_gpplhh "[eig]" . 12 DUC2002 100 supert 200 0.5 results_1 1
-python -u stage1_active_pref_learning.py LR     0 duc02_supert_ran_lr     "[random,unc]" . 24 DUC2002 100 supert 200 0.5 results_1 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_ran_gpplhh "[random]" . 12 DUC2002 100 supert 200 0.5 results_1 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_imp_gpplhh "[imp]" . 12 DUC2002 100 supert 200 0.5 results_ls05 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_eig_gpplhh "[eig]" . 12 DUC2002 100 supert 200 0.5 results_ls05 1
+python -u stage1_active_pref_learning.py LR     0 duc02_supert_ran_lr     "[random,unc]" . 24 DUC2002 100 supert 200 0.5 results_ls05 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_ran_gpplhh "[random]" . 12 DUC2002 100 supert 200 0.5 results_ls05 1
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_bi_imp_gpplhh "[imp]" . 12 DUC2002 100 supertreaper 200 1 results 1
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_bi_eig_gpplhh "[eig]" . 12 DUC2002 100 supertreaper 200 1 results 1
 #python -u stage1_active_pref_learning.py LR     0 duc02_supert_bi_ran_lr     "[random,unc]" . 24 DUC2002 100 supertreaper 200 1 results 1
