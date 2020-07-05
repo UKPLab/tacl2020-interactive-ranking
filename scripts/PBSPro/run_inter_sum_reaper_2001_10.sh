@@ -27,13 +27,17 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_imp_gpplhh_10 "[imp]" . 4 DUC2001 20 april 200 1 results_reaper
 #python -u stage1_active_pref_learning.py LR     0 duc01_reaper_ran_lr_10     "[random]" . 4 DUC2001 20 april 200 1 results_reaper
 
-python -u stage1_active_pref_learning.py H 0 duc04_reaper_H "[random]" . 4 DUC2004 0 april
-python -u stage1_active_pref_learning.py GPPLHH 0 duc04_reaper_gpplhh_20 "[imp,tig,eig,unpa]" . 4 DUC2004 20 april 200 1 results_reaper_214 2.14
-python -u stage1_active_pref_learning.py LR     0 duc04_reaper_lr_20     "[random,unc]" . 4 DUC2004 20 april 200 1 results_reaper_214 2.14
+python -u stage1_active_pref_learning.py H 0 duc01_reaper_H "[random]" . 4 DUC2001 0 april
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_gpplhh_20 "[imp,tig,eig,unpa,random]" . 4 DUC2001 20 april 200 1 results_reaper_214 2.14
+python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_20     "[random,unc]" . 4 DUC2001 20 april 200 1 results_reaper_214 2.14
 
-python -u stage1_active_pref_learning.py H 0 duc02_reaper_H "[random]" . 4 DUC2002 0 april
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_reaper_gpplhh_20 "[imp,tig,eig,unpa]" . 4 DUC2002 20 april 200 1 results_reaper_214 2.14
-python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[random,unc]" . 4 DUC2002 20 april 200 1 results_reaper_214 2.14
+#python -u stage1_active_pref_learning.py H 0 duc04_reaper_H "[random]" . 4 DUC2004 0 april
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc04_reaper_gpplhh_20 "[imp,tig,eig,unpa]" . 4 DUC2004 20 april 200 1 results_reaper_214 2.14
+#python -u stage1_active_pref_learning.py LR     0 duc04_reaper_lr_20     "[random,unc]" . 4 DUC2004 20 april 200 1 results_reaper_214 2.14
+#
+#python -u stage1_active_pref_learning.py H 0 duc02_reaper_H "[random]" . 4 DUC2002 0 april
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_reaper_gpplhh_20 "[imp,tig,eig,unpa]" . 4 DUC2002 20 april 200 1 results_reaper_214 2.14
+#python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[random,unc]" . 4 DUC2002 20 april 200 1 results_reaper_214 2.14
 
 #  run the script for each DUC dataset with GPPL-IMP, GPPL-UNPA, GPPL-EIG, GPPL-Random, BT-Random.
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_imp_gpplhh "[imp]" . 4 DUC2001 100 april 200 1 results_reaper
