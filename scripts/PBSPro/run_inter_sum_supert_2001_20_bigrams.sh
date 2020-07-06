@@ -37,6 +37,11 @@ python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_unc_lr_20     
 python -u stage1_active_pref_learning.py LR     0 duc02_supert_bi_unc_lr_20     "[unc]" . 4 DUC2002 20 supertreaper 200 1 results 1
 python -u stage1_active_pref_learning.py LR     0 duc04_supert_bi_unc_lr_20     "[unc]" . 4 DUC2004 20 supertreaper 200 1 results 1
 
+python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_20 "[random]" . 4 DUC2001 20 supertreaper 200 1 results 1
+python -u stage1_active_pref_learning.py LR     0 duc02_supert_bi_ran_lr_20 "[random]" . 4 DUC2002 20 supertreaper 200 1 results 1
+python -u stage1_active_pref_learning.py LR     0 duc04_supert_bi_ran_lr_20 "[random]" . 4 DUC2004 20 supertreaper 200 1 results 1
+
+
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
 # Display server status: qstat -B <server>
