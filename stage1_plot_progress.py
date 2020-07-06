@@ -180,6 +180,8 @@ for t, task in enumerate(tasks):
                 my_results.append(val)
 
             if learner == 'H':
+                if task == 'supert_bi_duc2001':
+                    continue
                 plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
                          ls='-', marker='.', color='black')
             else:
