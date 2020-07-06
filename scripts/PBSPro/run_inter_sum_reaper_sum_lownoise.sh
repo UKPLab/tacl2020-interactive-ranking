@@ -3,7 +3,7 @@
 # Run the interactive summarisation simulations with SUPERT
 
 # Job name
-#PBS -N intsum_rea_02
+#PBS -N intsumreaSUM
 
 # Output file
 #PBS -o pbs_intersumrea2001_10_output.log
@@ -23,15 +23,9 @@ module load lang/python/anaconda/pytorch
 cd /work/es1595/text_ranking_bayesian_optimisation
 
 # Run the script using heuristics only and no interactions.
-python -u stage1_active_pref_learning.py GPPL 0 duc01_reaper_gppl_20 "[imp,random,pair_unc,eig,tig]" . 4 DUC2001 20 april 200 1 results_reaper
-python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_20     "[random,unc]" . 4 DUC2001 20 april 200 1 results_reaper
-
-python -u stage1_active_pref_learning.py GPPL 0 duc02_reaper_gppl_20 "[imp,random,pair_unc,eig,tig]" . 4 DUC2002 20 april 200 1 results_reaper
-python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[random,unc]" . 4 DUC2002 20 april 200 1 results_reaper
-
-python -u stage1_active_pref_learning.py GPPL 0 duc04_reaper_gppl_20 "[imp,random,pair_unc,eig,tig]" . 4 DUC2004 20 april 200 1 results_reaper
-python -u stage1_active_pref_learning.py LR     0 duc04_reaper_lr_20     "[random,unc]" . 4 DUC2004 20 april 200 1 results_reaper
-
+python -u stage1_active_pref_learning.py GPPL 0 duc01_reaper_gppl_20 "[imp,random,pair_unc]" . 4 DUC2001 20 april 200 1 results_reaper_1 1
+python -u stage1_active_pref_learning.py GPPL 0 duc02_reaper_gppl_20 "[imp,random,pair_unc]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
+python -u stage1_active_pref_learning.py GPPL 0 duc04_reaper_gppl_20 "[imp,random,pair_unc]" . 4 DUC2004 20 april 200 1 results_reaper_1 1
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
