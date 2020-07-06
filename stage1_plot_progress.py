@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib
 
-matplotlib.rcParams.update({'font.size': 10})
+matplotlib.rcParams.update({'font.size': 8})
 
 tasks = ['supert_duc2001', 'supert_bi_duc2001']  # 'bertcqa'  # 'coala' # 'duc2001' #
 styles = ['-', ':', '-.', '--']
@@ -186,9 +186,9 @@ for t, task in enumerate(tasks):
 
             method_label = method_str[method]
             if task == 'supert_duc2001':
-                method_str[method] + ',SUP.'
+                method_label = method_str[method] + ',SUP.'
             elif task == 'supert_bi_duc2001':
-                method_str[method] + ',bi+'
+                method_label = method_str[method] + ',bi+'
 
             if learner == 'H':
                 if task == 'supert_duc2001':
