@@ -96,21 +96,12 @@ for t, task in enumerate(tasks):
         metric = 'ndcg_at_1%'
         output_path = './results_1/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
         fallback_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
-
-        for method in method_str:
-            method_str[method] = method_str[method] + ',SUP.'
-
     elif task == 'supert_bi_duc2001':
         xlimits = (0, 100)
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         metric = 'ndcg_at_1%'
         output_path = './results/duc01_supert_bi_%s_%s%s_rep%i/table_all_reps.csv'
-
-        for method in method_str:
-            method_str[method] = method_str[method] + ',bi+'
-
         baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
-
     else:
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         xlimits = (0, 100)
@@ -193,13 +184,19 @@ for t, task in enumerate(tasks):
 
                 my_results.append(val)
 
+            method_label = method_str[method]
+            if task == 'supert_duc2001':
+                method_str[method] + ',SUP.'
+            elif task == 'supert_bi_duc2001':
+                method_str[method] + ',bi+'
+
             if learner == 'H':
                 if task == 'supert_duc2001':
                     continue
                 plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
                          ls='-', marker='.', color='black')
             else:
-                plt.plot(inters, my_results, label='%s,%s' % (learner_str[learner], method_str[method]),
+                plt.plot(inters, my_results, label='%s,%s' % (learner_str[learner], method_label),
                          ls=styles[(t if task == 'supert_duc2001' or task == 'supert_bi_duc2001' else m) % len(styles)],
                          marker=markers[m % len(markers)] )
 
