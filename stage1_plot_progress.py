@@ -106,8 +106,8 @@ for t, task in enumerate(tasks):
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         xlimits = (0, 100)
         metric = 'ndcg_at_1%'
-        output_path = './results_noisy/duc01_reaper_%s_%s%s_rep%i/table_all_reps.csv'
-        baseline_path = './results_noisy/duc01_reaper_H_rep0/table_all_reps.csv'
+        output_path = './results_reaper_1/duc01_reaper_%s_%s%s_rep%i/table_all_reps.csv'
+        baseline_path = './results_reaper_1/duc01_reaper_H_rep0/table_all_reps.csv'
         # output_path = './results/duc01_%s_%iinter2_rep%i/table_all_reps.csv'
 
     m = 0
