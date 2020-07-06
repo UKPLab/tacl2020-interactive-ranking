@@ -58,7 +58,7 @@ for t, task in enumerate(tasks):
     if task == 'bertcqa' or task == 'supert_duc2001' or task == 'supert_bi_duc2001':
         methods = {
             'gpplhh': ['random', 'eig', 'imp'],
-            'lr': ['random', 'unc'],
+            'lr': ['random'] # , 'unc'],
             'H': ['random']
         }
     else:
@@ -180,6 +180,8 @@ for t, task in enumerate(tasks):
                 my_results.append(val)
 
             if learner == 'H':
+                if task == 'supert_bi_duc2001':
+                    continue
                 plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
                          ls='-', marker='.', color='black')
             else:
