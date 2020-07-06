@@ -9,12 +9,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-tasks = ['supert_duc2001', 'supert_bi_duc2001']  # 'bertcqa'  # 'coala' # 'duc2001' #
+matplotlib.rcParams.update({'font.size': 10})
+
+tasks = ['supert_bi_duc2001', 'supert_duc2001']  # 'bertcqa'  # 'coala' # 'duc2001' #
 styles = ['-', ':', '-.', '--']
 markers = ['x', 'v', '*', 's', 'd', 'p', 'o', '>']
 
 method_str = {
-    'random': 'random',
+    'random': 'rand.',
     'unc': 'UNC',
     'pair_unc': 'UNCPA',
     'eig': 'EIG',
@@ -55,6 +57,8 @@ plt.figure()
 
 for t, task in enumerate(tasks):
 
+    plt.gca().set_prop_cycle(None)
+
     if task == 'bertcqa' or task == 'supert_duc2001' or task == 'supert_bi_duc2001':
         methods = {
             'gpplhh': ['random', 'eig', 'imp'],
@@ -92,11 +96,19 @@ for t, task in enumerate(tasks):
         output_path = './results_1/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
         fallback_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
         baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
+
+        for method in method_str:
+            method_str[method] = method_str[method] + ',SUP.'
+
     elif task == 'supert_bi_duc2001':
         xlimits = (0, 100)
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         metric = 'ndcg_at_1%'
         output_path = './results/duc01_supert_bi_%s_%s%s_rep%i/table_all_reps.csv'
+
+        for method in method_str:
+            method_str[method] = method_str[method] + ',bi+'
+
     else:
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         xlimits = (0, 100)
