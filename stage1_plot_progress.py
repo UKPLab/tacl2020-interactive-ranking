@@ -91,7 +91,7 @@ for t, task in enumerate(tasks):
         metric = 'ndcg_at_1%'
         output_path = './results_1/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
         fallback_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
-        baseline_path = './results_1/duc01_supert_H_rep0/table_all_reps.csv'
+        baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
     elif task == 'supert_bi_duc2001':
         xlimits = (0, 100)
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
