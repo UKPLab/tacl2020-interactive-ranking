@@ -3,7 +3,7 @@
 # Run the interactive summarisation simulations with SUPERT
 
 # Job name
-#PBS -N intsum_rea_01
+#PBS -N intsumrea0175
 
 # Output file
 #PBS -o pbs_intersumrea2001_10_output.log
@@ -47,9 +47,9 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc04_reaper_gpplhh_20 "[imp,tig,eig,unpa,random]" . 4 DUC2004 20 april 200 1 results_reaper_1 1
 #python -u stage1_active_pref_learning.py LR     0 duc04_reaper_lr_20     "[random,unc]" . 4 DUC2004 20 april 200 1 results_reaper_1 1
 
-python -u stage1_active_pref_learning.py H 0 duc02_reaper_H "[random]" . 4 DUC2002 0 april
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_reaper_gpplhh_20 "[imp,tig,eig,unpa]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
-python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[random,unc]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
+#python -u stage1_active_pref_learning.py H 0 duc02_reaper_H "[random]" . 4 DUC2002 0 april
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_reaper_gpplhh_20 "[imp,tig,eig,unpa]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
+#python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[random,unc]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
 
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_gpplhh_10 "[imp,tig,eig,unpa,random]" . 4 DUC2001 10 april 200 1 results_reaper_1 1
 #python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_10     "[random,unc]" . 4 DUC2001 10 april 200 1 results_reaper_1 1
@@ -57,8 +57,8 @@ python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[rando
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_gpplhh_50 "[imp,tig,eig,unpa,random]" . 4 DUC2001 50 april 200 1 results_reaper_1 1
 #python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_50     "[random,unc]" . 4 DUC2001 50 april 200 1 results_reaper_1 1
 
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_gpplhh_75 "[imp,tig,eig,unpa,random]" . 4 DUC2001 75 april 200 1 results_reaper_1 1
-#python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_75     "[random,unc]" . 4 DUC2001 75 april 200 1 results_reaper_1 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_gpplhh_75 "[imp,tig,eig,unpa,random]" . 4 DUC2001 75 april 200 1 results_reaper_1 1
+python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_75     "[random,unc]" . 4 DUC2001 75 april 200 1 results_reaper_1 1
 
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_ran_gpplhh_10 "[random]" . 4 DUC2001 10 april
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_unp_gpplhh_10 "[pair_unc]" . 4 DUC2001 10 april
