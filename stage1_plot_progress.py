@@ -159,12 +159,12 @@ for t, task in enumerate(tasks):
                         result_file = baseline_path
                     elif ninter == 100:
                         result_file = outputdir % (methodtag, learner, '', idx_last_rep)
-                        if not os.path.exists(result_file):
+                        if not os.path.exists(result_file) and task == 'supert_duc2001':
                             result_file = fallback_path % (methodtag, learner, '', idx_last_rep)
                             print('Falling back to path %s' % result_file )
                     else:
                         result_file = outputdir % (methodtag, learner, '_%i' % ninter, idx_last_rep)
-                        if not os.path.exists(result_file):
+                        if not os.path.exists(result_file) and task == 'supert_duc2001':
                             result_file = fallback_path % (methodtag, learner, '_%i' % ninter, idx_last_rep)
                             print('Falling back to path %s' % result_file )
 
