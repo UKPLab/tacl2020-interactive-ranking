@@ -96,7 +96,6 @@ for t, task in enumerate(tasks):
         metric = 'ndcg_at_1%'
         output_path = './results_1/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
         fallback_path = './results/duc01_supert_%s_%s%s_rep%i/table_all_reps.csv'
-        baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
 
         for method in method_str:
             method_str[method] = method_str[method] + ',SUP.'
@@ -109,6 +108,8 @@ for t, task in enumerate(tasks):
 
         for method in method_str:
             method_str[method] = method_str[method] + ',bi+'
+
+        baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
 
     else:
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
@@ -166,7 +167,7 @@ for t, task in enumerate(tasks):
 
                 elif task == 'duc2001' or task == 'supert_duc2001' or task == 'supert_bi_duc2001':
                     if learner == 'H':
-                        if task == 'supert_bi_duc2001':
+                        if task == 'supert_duc2001':
                             continue
 
                         result_file = baseline_path
@@ -193,7 +194,7 @@ for t, task in enumerate(tasks):
                 my_results.append(val)
 
             if learner == 'H':
-                if task == 'supert_bi_duc2001':
+                if task == 'supert_duc2001':
                     continue
                 plt.plot(inters, my_results, label='%s' % (learner_str[learner]),
                          ls='-', marker='.', color='black')
