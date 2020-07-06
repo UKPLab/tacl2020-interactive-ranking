@@ -186,9 +186,9 @@ for t, task in enumerate(tasks):
 
             method_label = method_str[method]
             if task == 'supert_duc2001':
-                method_label = method_str[method] + ',SUP.'
+                method_label = method_str[method] + ',SUPERT'
             elif task == 'supert_bi_duc2001':
-                method_label = method_str[method] + ',bi+'
+                method_label = method_str[method] + ',bigram+'
 
             if learner == 'H':
                 if task == 'supert_duc2001':
