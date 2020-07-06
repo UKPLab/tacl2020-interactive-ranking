@@ -114,7 +114,7 @@ def process_cmd_line_args(args):
             ]  # ['ttt', 'tig', 'imp']# 'ttt' 'random' 'gibbs' 'unc' 'eig' 'tig' 'imp' 'eig'
 
         post_weight = 0.5 # 0.7 if n_inter_rounds == 100 else 0.3
-        n_reps = 5
+        n_reps = 10
 
     elif learner_type_str == 'GPPLH':
         if querier_types is None:
