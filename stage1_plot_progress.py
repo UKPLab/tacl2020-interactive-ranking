@@ -8,9 +8,6 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import matplotlib
-
-matplotlib.rcParams.update({'font.size': 8})
 
 tasks = ['supert_duc2001', 'supert_bi_duc2001']  # 'bertcqa'  # 'coala' # 'duc2001' #
 styles = ['-', ':', '-.', '--']
@@ -54,7 +51,7 @@ metric_str = {
 ylimits = None
 xticks = None
 
-plt.figure()
+plt.figure(figsize=(8.0, 7.0))
 
 for t, task in enumerate(tasks):
 
