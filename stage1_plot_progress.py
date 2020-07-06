@@ -8,6 +8,7 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import matplotlib
 
 matplotlib.rcParams.update({'font.size': 10})
 
