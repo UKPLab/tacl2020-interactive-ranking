@@ -117,12 +117,12 @@ for t, task in enumerate(tasks):
             elif learner == 'gpplhh':
                 if method == 'random' and task == 'bertcqa':
                     idx_last_rep = 4
-                elif method == 'random' and task == 'supert_duc2001':
+                elif method == 'random' and (task == 'supert_duc2001' or task == 'supert_bi_duc2001'):
                     idx_last_rep = 9
                 else:
                     idx_last_rep = 0
             else:
-                if method == 'unc' and task == 'supert_duc2001':
+                if method == 'unc' and (task == 'supert_duc2001' or task == 'supert_bi_duc2001'):
                     idx_last_rep = 0
                 else:
                     idx_last_rep = 9
