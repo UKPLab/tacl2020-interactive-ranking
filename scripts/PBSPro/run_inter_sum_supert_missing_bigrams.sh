@@ -30,20 +30,24 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh_20 "[imp]" . 4 DUC2001 20 supertreaper 200 1 results 1
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supertreaper 200 1 results 1
 #python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_20     "[random, unc]" . 4 DUC2001 20 supertreaper 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supertreaper 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_ran_gpplhh_20 "[random]" . 4 DUC2001 20 supertreaper 200 1 results 1
-
-python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_50 "[random, unc]" . 4 DUC2001 50 supertreaper 200 1 results 1
-python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_75 "[random, unc]" . 4 DUC2001 75 supertreaper 200 1 results 1
-
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh_50 "[imp]" . 4 DUC2001 50 supertreaper 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh_75 "[imp]" . 4 DUC2001 75 supertreaper 200 1 results 1
-
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_50 "[eig]" . 4 DUC2001 50 supertreaper 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_75 "[eig]" . 4 DUC2001 75 supertreaper 200 1 results 1
-
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_bi_ran_gpplhh_50 "[random]" . 4 DUC2001 50 supertreaper 200 1 results 1
-python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_bi_ran_gpplhh_75 "[random]" . 4 DUC2001 75 supertreaper 200 1 results 1
+python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_unc_lr_50 "[unc]" . 4 DUC2001 50 supertreaper 200 1 results 1
+python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_unc_lr_75 "[unc]" . 4 DUC2001 75 supertreaper 200 1 results 1
+#
+#
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_20 "[eig]" . 4 DUC2001 20 supertreaper 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_ran_gpplhh_20 "[random]" . 4 DUC2001 20 supertreaper 200 1 results 1
+#
+#python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_50 "[random, unc]" . 4 DUC2001 50 supertreaper 200 1 results 1
+#python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr_75 "[random, unc]" . 4 DUC2001 75 supertreaper 200 1 results 1
+#
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh_50 "[imp]" . 4 DUC2001 50 supertreaper 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh_75 "[imp]" . 4 DUC2001 75 supertreaper 200 1 results 1
+#
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_50 "[eig]" . 4 DUC2001 50 supertreaper 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh_75 "[eig]" . 4 DUC2001 75 supertreaper 200 1 results 1
+#
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_bi_ran_gpplhh_50 "[random]" . 4 DUC2001 50 supertreaper 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc02_supert_bi_ran_gpplhh_75 "[random]" . 4 DUC2001 75 supertreaper 200 1 results 1
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)
