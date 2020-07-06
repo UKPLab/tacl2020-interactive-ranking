@@ -63,7 +63,7 @@ for t, task in enumerate(tasks):
     if task == 'bertcqa' or task == 'supert_duc2001' or task == 'supert_bi_duc2001':
         methods = {
             'gpplhh': ['random', 'eig', 'imp'],
-            'lr': ['random'], #, 'unc'],
+            'lr': ['random', 'unc'],
             'H': ['random']
         }
     else:
