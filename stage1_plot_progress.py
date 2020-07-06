@@ -97,7 +97,6 @@ for t, task in enumerate(tasks):
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         metric = 'ndcg_at_1%'
         output_path = './results/duc01_supert_bi_%s_%s%s_rep%i/table_all_reps.csv'
-        baseline_path = './results/duc01_supert_H_rep0/table_all_reps.csv'
     else:
         inters = [10, 20, 50, 75, 100]  # need to copy results for 20, 50, and 75 from Apu to ./results
         xlimits = (0, 100)
@@ -154,6 +153,9 @@ for t, task in enumerate(tasks):
 
                 elif task == 'duc2001' or task == 'supert_duc2001' or task == 'supert_bi_duc2001':
                     if learner == 'H':
+                        if task == 'supert_bi_duc2001':
+                            continue
+
                         result_file = baseline_path
                     elif ninter == 100:
                         result_file = outputdir % (methodtag, learner, '', idx_last_rep)
