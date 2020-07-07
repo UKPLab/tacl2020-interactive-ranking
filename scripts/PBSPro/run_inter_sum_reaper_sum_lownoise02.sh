@@ -6,10 +6,10 @@
 #PBS -N intsumreaSUM
 
 # Output file
-#PBS -o pbs_intersumrea2001_10_output.log
+#PBS -o pbs_intersumreaSUM02_output.log
 
 # Error file
-#PBS -e pbs_intersumrea2001_10_err.log
+#PBS -e pbs_intersumreaSUM02_err.log
 
 # request resources and set limits
 #PBS -l walltime=72:00:00
