@@ -194,6 +194,8 @@ for t, task in enumerate(tasks):
             print(m)
             print(markers)
             print(styles)
+            print(inters)
+            print(my_results)
 
             if learner == 'H':
                 if task == 'supert_duc2001':
