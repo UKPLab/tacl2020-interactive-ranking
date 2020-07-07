@@ -42,14 +42,14 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         temp = float(sys.argv[1])
     else:
-        temp = 2.5
+        temp = 2.14
 
     max_qs = -1  # set to greater than zero to use a subset of topics for debugging
     folders = []
 
     topic = 'apple'
 
-    fname = 'data/coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
+    fname = 'data/cqa_base_models/coala_vec_pred/qa_vec_coala/se_%s_coala.qa_vec_pred' % topic
     qa_list, vec_list, pred_list = pickle.load(open(fname, 'rb'), encoding='latin1')
 
     print('sanity check')
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     user_log = []
     true_log = []
 
-    for question_id in range(100):
+    for question_id in range(5):
 
         print('\n===== TOPIC {}, QUESTION {}, INTER ROUND {}====='.format(topic, question_id, n_inter_rounds))
 
