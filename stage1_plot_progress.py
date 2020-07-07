@@ -182,7 +182,8 @@ for t, task in enumerate(tasks):
                         result_data = result_data[metric]
 
                     print(result_file)
-
+                    print(method)
+                    print(result_data.index)
                     val = result_data[result_data.index == method]
 
                 my_results.append(val)
