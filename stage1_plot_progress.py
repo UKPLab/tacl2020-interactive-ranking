@@ -12,7 +12,7 @@ import matplotlib
 
 matplotlib.rcParams.update({'font.size': 12})
 
-tasks = 'duc2001'  # ['supert_duc2001', 'supert_bi_duc2001']  # 'bertcqa'  # 'coala' #  #
+tasks = ['duc2001']  # ['supert_duc2001', 'supert_bi_duc2001']  # 'bertcqa'  # 'coala' #  #
 styles = ['-', ':', '-.', '--']
 markers = ['x', 'v', '*', 's', 'd', 'p', 'o', '>']
 
