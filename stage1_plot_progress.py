@@ -76,7 +76,7 @@ for t, task in enumerate(tasks):
 
     fallback_path = None  # where else to look if the results are not in the first output_path
     if task == 'coala':
-        inters = [1, 3, 5, 7, 10, 15, 20, 25] # 50, 100?
+        inters = [1, 3, 5, 7, 10, 15, 20, 25]  # 50, 100?
         xlimits = (0, 25)
         topics = ['cooking', 'travel', 'apple']
         metric = 'ndcg_at_5%'
@@ -190,6 +190,10 @@ for t, task in enumerate(tasks):
                 method_label = method_str[method] + ',SUPERT'
             elif task == 'supert_bi_duc2001':
                 method_label = method_str[method] + ',bigram+'
+
+            print(m)
+            print(markers)
+            print(styles)
 
             if learner == 'H':
                 if task == 'supert_duc2001':
