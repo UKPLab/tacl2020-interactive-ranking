@@ -188,7 +188,9 @@ class GPPLRewardLearner:
         self.n_labels_seen = len(pref_history)
 
         self.rewards, self.reward_var = self.learner.predict_f(full_cov=False,
-                                                               reuse_output_kernel=True, mu0_output=self.mu0[:, None])
+                                                               reuse_output_kernel=True,
+                                                               mu0_output=self.mu0[:, None] if self.mu0 is not None
+                                                               else None)
         logging.debug('...rewards obtained.')
 
 
