@@ -52,6 +52,10 @@ cd /work/es1595/text_ranking_bayesian_optimisation
 python -u stage1_active_pref_learning.py GPPLHH 0 duc02_reaper_ran_gpplhh_20 "[random]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
 #python -u stage1_active_pref_learning.py LR     0 duc02_reaper_lr_20     "[random,unc]" . 4 DUC2002 20 april 200 1 results_reaper_1 1
 
+python -u stage1_active_pref_learning.py GPPLHH 0 duc04_reaper_ran_gpplhh_20 "[random]" . 4 DUC2004 20 april 200 1 results_reaper_1 1
+python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_ran_gpplhh_20 "[random]" . 4 DUC2001 20 april 200 1 results_reaper_1 1
+
+
 #python -u stage1_active_pref_learning.py GPPLHH 0 duc01_reaper_gpplhh_10 "[imp,tig,eig,unpa,random]" . 4 DUC2001 10 april 200 1 results_reaper_1 1
 #python -u stage1_active_pref_learning.py LR     0 duc01_reaper_lr_10     "[random,unc]" . 4 DUC2001 10 april 200 1 results_reaper_1 1
 
