@@ -203,7 +203,7 @@ for t, task in enumerate(tasks):
 
             m += 1
 	
-	plt.legend(loc='best')
+	    plt.legend(loc='best')
         #plt.legend(loc='lower left', bbox_to_anchor=(-0.01, 0.9), ncol=2, borderaxespad=0)
 
         if not os.path.exists('./plots'):
