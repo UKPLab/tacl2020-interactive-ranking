@@ -19,7 +19,7 @@ markers = ['x', 'v', '*', 's', 'd', 'p', 'o', '>']
 method_str = {
     'random': 'rand.',
     'unc': 'UNC',
-    'pair_unc': 'UNCPA',
+    'unpa': 'UNPA',
     'eig': 'EIG',
     'tig': 'TP',
     'imp': 'IMP'
@@ -28,7 +28,7 @@ method_str = {
 method_tags = {
     'random': 'ran',
     'unc': 'unc',
-    'pair_unc': 'unc',
+    'unpa': 'unc',
     'eig': 'eig',
     'tig': 'tig',
     'imp': 'imp'
@@ -69,7 +69,7 @@ for t, task in enumerate(tasks):
         }
     else:
         methods = {
-            'gpplhh': ['random', 'pair_unc', 'eig', 'tig', 'imp'],
+            'gpplhh': ['random', 'unpa', 'eig', 'tig', 'imp'],
             'lr': ['random', 'unc'],
             'H': ['random']
         }
