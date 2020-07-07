@@ -181,6 +181,8 @@ for t, task in enumerate(tasks):
                         result_data = pd.read_csv(result_file, index_col=0, sep=',')
                         result_data = result_data[metric]
 
+                    print(result_file)
+
                     val = result_data[result_data.index == method]
 
                 my_results.append(val)
