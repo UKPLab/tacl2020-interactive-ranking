@@ -54,7 +54,8 @@ metric_str = {
 ylimits = None
 xticks = None
 
-plt.figure(figsize=(8.0, 7.0))
+plt.figure(figsize=(8.0, 12.0))
+plt.subplot(212)
 
 for t, task in enumerate(tasks):
 
@@ -201,8 +202,9 @@ for t, task in enumerate(tasks):
                          marker=markers[m % len(markers)] )
 
             m += 1
-
-        plt.legend(loc='best')
+	
+	plt.legend(loc='best')
+        #plt.legend(loc='lower left', bbox_to_anchor=(-0.01, 0.9), ncol=2, borderaxespad=0)
 
         if not os.path.exists('./plots'):
             os.mkdir('./plots')
