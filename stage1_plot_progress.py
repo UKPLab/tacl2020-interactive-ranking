@@ -54,8 +54,9 @@ metric_str = {
 ylimits = None
 xticks = None
 
-plt.figure(figsize=(8.0, 12.0))
-plt.subplot(212)
+plt.figure()
+# plt.figure(figsize=(8.0, 12.0))
+# plt.subplot(212)
 
 for t, task in enumerate(tasks):
 
