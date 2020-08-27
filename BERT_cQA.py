@@ -517,6 +517,18 @@ if __name__ == "__main__":
                             index_col=0)
     tr_qa_pairs, tr_data_loader, tr_data = construct_pairwise_dataset(traindata, n_neg_samples=20)
 
+    qmax = 0
+    noverlength = 0
+    for q in tr_qa_pairs:
+        l = len(q[0].split(' '))
+        qmax = l if l > qmax else qmax
+        if l > 512:
+            noverlength += 1
+
+    print('QuestionAnswer max length: %i' % qmax)
+    print('Number over length = %i' % noverlength)
+    print('number of qas = %i' % len(tr_qa_pairs))
+
     # Train the model ----------------------------------------------------------------------------------------------
     bertcqa_model, device = train_bertcqa(tr_data_loader, 3, 42, os.path.join(outputdir, 'model_params_%s' % topic),
                                           reload_model=True)
@@ -582,4 +594,3 @@ if __name__ == "__main__":
 
     text_df.to_csv(fname_text, sep='\t')
     pd.DataFrame(numerical_data).to_csv(fname_numerical, sep='\t')
-

@@ -454,6 +454,8 @@ if __name__ == '__main__':
                 all_result_dic = {}
                 q_cnt = 0
 
+                amax = 0
+
                 for question_id in range(first_question,  len(qa_list)):
 
                     print('\n=====(repeat {}) TOPIC {}, QUESTION {}, QUERIER {}, INTER ROUND {}====='.format(rep,
