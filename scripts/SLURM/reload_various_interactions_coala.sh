@@ -42,4 +42,4 @@ export OMP_NUM_THREADS=24
 #python3 -u reload_stage1_coala_results.py LR 0 lno03_lr_100inter "[random,unc]" . 2 100
 
 
-python3 -u reload_stage1_coala_results.py GPPLHH 0 lno03_gpplhh_10inter "[random,pair_unc,eig,imp,tig]" . 2 10
+python3 -u reload_stage1_coala_results.py GPPLHH 0 lno03_gpplhh_10inter "[random,pair_unc,eig,imp,tp]" . 2 10

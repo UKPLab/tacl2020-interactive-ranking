@@ -92,7 +92,7 @@ def process_cmd_line_args(args):
                 'random',
                 'pair_unc',
                 'pair_unc_SO',
-            ]  # ['ttt', 'tig', 'imp']# 'ttt' 'random' 'gibbs' 'unc' 'eig' 'tig' 'imp' 'eig'
+            ]  # ['ttt', 'tp', 'imp']# 'ttt' 'random' 'gibbs' 'unc' 'eig' 'tp' 'imp' 'eig'
 
         post_weight = 0.5
         n_reps = 5
@@ -117,7 +117,7 @@ def process_cmd_line_args(args):
                 #'eig', # this should be very similar to pari_unc_SO so I think it's redundant
                 'imp',
                 # 'ttt', # this didn't work
-                'tig'
+                'tp'
             ]
         post_weight = 1
 
@@ -208,7 +208,7 @@ def learn_model(question_id, ref_values, querier_type, learner_type, learner_typ
         querier = InformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
     elif querier_type == 'ttt':
         querier = ThompsonTopTwoQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
-    elif querier_type == 'tig':
+    elif querier_type == 'tp':
         querier = ThompsonInformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
     else:
         querier = RandomQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads)
@@ -341,8 +341,8 @@ if __name__ == '__main__':
     This will be a subfolder of ./results_coala/ .
 
     querier_types -- a list of querier types. If the reward learner is LR, you can pass any subset of [random, unc].
-    If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tig, imp]. The best
-    performers are tig and imp.    
+    If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tp, imp]. The best
+    performers are tp and imp.    
 
     '''
 

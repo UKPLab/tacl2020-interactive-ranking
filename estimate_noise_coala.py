@@ -29,9 +29,7 @@ from random import seed
 import numpy as np
 
 # possible future work: plot the results at each AL iteration (or at 10, 50, 100) to see if we really need so many when the prior is given.
-#TODO: reduce the number of interactions to 10 to make the experiments quicker -- how does it affect results? --> so far
-# not good. So try the next step...
-#TODO: test with perfect oracle
+
 
 if __name__ == '__main__':
 

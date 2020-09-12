@@ -32,10 +32,10 @@ python -u stage1_active_pref_learning.py LR     0 duc01_supert_ran_lr     "[rand
 python -u stage1_active_pref_learning.py LR     0 duc01_supert_unc_lr     "[unc]" . 4 DUC2001 100 supert 200 1 results_1 1
 python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_ran_gpplhh "[random]" . 12 DUC2001 100 supert 200 1 results_1 1
 
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh "[imp]" . 12 DUC2001 100 supertreaper
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh "[eig]" . 12 DUC2001 100 supertreaper 200 1 results 1
-#python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr     "[random]" . 4 DUC2001 100 supertreaper
-#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_ran_gpplhh "[random]" . 12 DUC2001 100 supertreaper 200 1 results 1
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_imp_gpplhh "[imp]" . 12 DUC2001 100 supertbigram+
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_eig_gpplhh "[eig]" . 12 DUC2001 100 supertbigram+ 200 1 results 1
+#python -u stage1_active_pref_learning.py LR     0 duc01_supert_bi_ran_lr     "[random]" . 4 DUC2001 100 supertbigram+
+#python -u stage1_active_pref_learning.py GPPLHH 0 duc01_supert_bi_ran_gpplhh "[random]" . 12 DUC2001 100 supertbigram+ 200 1 results 1
 
 # To submit: qsub run_bert_cqa.sh
 # To display the queue: qstat -Q gpu (this is usually where the GPU job ends up)

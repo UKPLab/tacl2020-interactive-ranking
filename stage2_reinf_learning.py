@@ -13,7 +13,7 @@ from summariser.vector.vector_generator import Vectoriser
 from summariser.rl.deep_td import DeepTDAgent
 from summariser.utils.evaluator import evaluateSummary
 
-# TODO add documentation on running cpan XML::DOM to install Perl requirements
+# Run cpan XML::DOM to install Perl requirements
 # Same same for the wordnet database -- execture the following steps:
 # cd summariser/rouge/ROUGE-RELEASE-1.5.5/data/
 # rm WordNet-2.0.exc.db
@@ -27,6 +27,7 @@ def add_result(all_dic, result):
         else:
             if isinstance(result[metric],list): all_dic[metric] = result[metric]
             else: all_dic[metric] = [result[metric]]
+
 
 if __name__ == '__main__':
 
@@ -52,8 +53,8 @@ if __name__ == '__main__':
     This will be a subfolder of ./results/ .
 
     querier_types -- a list of querier types. If the reward learner is LR, you can pass any subset of [random, unc].
-    If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tig, imp]. The best
-    performers are tig and imp.    
+    If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tp, imp]. The best
+    performers are tp and imp.    
 
     '''
 

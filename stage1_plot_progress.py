@@ -21,7 +21,7 @@ method_str = {
     'unc': 'UNC',
     'unpa': 'UNPA',
     'eig': 'EIG',
-    'tig': 'TP',
+    'tp': 'TP',
     'imp': 'IMP'
 }
 
@@ -30,7 +30,7 @@ method_tags = {
     'unc': 'unc',
     'unpa': 'unc',
     'eig': 'eig',
-    'tig': 'tig',
+    'tp': 'tp',
     'imp': 'imp'
 }
 
@@ -70,7 +70,7 @@ for t, task in enumerate(tasks):
         }
     else:
         methods = {
-            'gpplhh': ['random', 'unpa', 'eig', 'tig', 'imp'],
+            'gpplhh': ['random', 'unpa', 'eig', 'tp', 'imp'],
             'lr': ['random', 'unc'],
             'H': ['random']
         }

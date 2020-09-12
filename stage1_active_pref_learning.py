@@ -111,7 +111,7 @@ def process_cmd_line_args(args):
                 'random',
                 'pair_unc',
                 'pair_unc_SO',
-            ]  # ['ttt', 'tig', 'imp']# 'ttt' 'random' 'gibbs' 'unc' 'eig' 'tig' 'imp' 'eig'
+            ]  # ['ttt', 'tp', 'imp']# 'ttt' 'random' 'gibbs' 'unc' 'eig' 'tp' 'imp' 'eig'
 
         post_weight = 0.5 # 0.7 if n_inter_rounds == 100 else 0.3
         n_reps = 5
@@ -136,7 +136,7 @@ def process_cmd_line_args(args):
                 #'eig', # this should be very similar to pari_unc_SO so I think it's redundant
                 'imp',
                 # 'ttt', # this didn't work
-                'tig'
+                'tp'
             ]
         post_weight = 1
 
@@ -222,7 +222,7 @@ def learn_model(topic, model, ref_values_dic, querier_type, learner_type, learne
         elif querier_type == 'ttt':
             querier = ThompsonTopTwoQuerier(learner_type, summary_vectors, heuristics_list, post_weight, n_threads,
                                             rate, lspower)
-        elif querier_type == 'tig':
+        elif querier_type == 'tig' or querier_type == 'tp':
             querier = ThompsonInformationGainQuerier(learner_type, summary_vectors, heuristics_list, post_weight,
                                                      n_threads, rate, lspower)
         else:
@@ -292,7 +292,7 @@ def load_summary_vectors(summaries, dataset, topic, root_dir, docs, feature_type
         # This should be fine, but if there is an error, we may need to check that the loading order has not changed.
         summary_vectors = np.genfromtxt(summary_vecs_cache_file)
 
-    elif feature_type == 'april' or feature_type == 'supertreaper':
+    elif feature_type == 'april' or feature_type == 'supertbigram+':
         vec = Vectoriser(docs)
         summary_vectors = vec.getSummaryVectors(summaries)
         np.savetxt(summary_vecs_cache_file, summary_vectors)
@@ -379,27 +379,9 @@ if __name__ == '__main__':
     This will be a subfolder of ./results/ .
 
     querier_types -- a list of querier types. If the reward learner is LR, you can pass any subset of [random, unc].
-    If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tig, imp]. The best
+    If the reward learner is any of the GPPL variants, you can pass [random, pair_unc, pair_unc_SO, tp, imp]. The best
     performers are tig and imp.    
     
-    TODO: reproduce the reaper results. 
-    - There is a problem with the reaper duc 2001 baseline -- are the rouge scores the same?
-    - For Duc 02, the LR scores are same but GPPL is not
-    - For Duc 04, it's unknown.
-    - the summary vectors in Barney appear to differ from the ones on this machine (duc 01 and duc 04)
-    - there seems to be random variation in the reaper? heuristic baseline under testH_rep0 -- testH_rep9, where the first attempt has the results we used in the paper.
-    Steps:
-    1 Why is the reaper baseline random? --> looks like I may have written in the LR rand first repetition result by mistake.
-    2 Rerun the reaper expts with 10 interactions with reaper only, lr random, gpplh imp on all three datasets. 
-    *** careful that the equation for rouge scores is slightly different ***
-    
-    3. Rerun 2001 with supert embeddings and the lower (correct) temp.
-    4. Review the performance of supertreaper with 100 interactions on duc2002 and duc2004. Since
-    this appears to be better with 20 interactions, decide if we want to use it for 100 interactions too. 
-    Choice for 100 interactions is between supertreaper and supert embeddings using the new correct temp. 
-    5. Rerun the supertreaper expts we need with correct temp + (if required) supert emveddings with 100 interactions.
-    6. The plot can use the supert embeddings only, if we decide to use them.  
-
     '''
 
     learner_type, learner_type_str, n_inter_rounds, output_folder_name, querier_types, root_dir, res_dir, post_weight, \

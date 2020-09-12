@@ -46,6 +46,7 @@ class SupertVectoriser(Vectoriser):
 
         return vector_list, supert_scores
 
+
 if __name__ == '__main__':
     for dataset in ['DUC2001', 'DUC2002', 'DUC2004']:
 
