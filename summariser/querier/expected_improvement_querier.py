@@ -50,7 +50,8 @@ class ExpectedImprovementQuerier(PairUncQuerier):
         cdf_u = norm.cdf(u) # probability of improvement
         pdf_u = norm.pdf(u) #
 
-        E_improvement = sigma * (u * cdf_u + pdf_u)
+        E_improvement = np.sqrt(sigma) * (u * cdf_u + pdf_u)  # the sqrt was added back in in October 2020 after it was
+        # accidentally removed in???
         E_improvement[best_idx] = -np.inf
 
         # make it back into a matrix
