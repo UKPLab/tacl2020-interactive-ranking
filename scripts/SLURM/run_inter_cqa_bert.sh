@@ -23,7 +23,7 @@
 module load lang/python/anaconda/pytorch
 
 # We might need to add the global paths to our code to the pythonpath. Also set the data directories globally.
-cd /work/es1595/text_ranking_bayesian_optimisation
+cd /user/home/es1595/tacl2020-interactive-ranking
 export OMP_NUM_THREADS=24
 
-python -u stage1_coala.py GPPLHH 0 cqa_bert_DR2_imp_gpplhh_5 "[imp]" . 4 4 BERT
+python -u stage1_coala.py GPPLHH 0 cqa_bert_imp_gpplhh_4 "[imp]" . 4 4 BERT
