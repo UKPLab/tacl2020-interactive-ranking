@@ -32,7 +32,7 @@ class InformationGainQuerier(PairUncQuerier):
         #Get the current entropy of pairs
         var = np.diag(Cov)
 
-        pairwise_var  = var[:, None] + var[None, :] - 2 * Cov
+        pairwise_var = var[:, None] + var[None, :] - 2 * Cov
         pair_probs = pref_likelihood(f, pairwise_var)
 
         neg_probs = 1 - pair_probs
@@ -43,6 +43,8 @@ class InformationGainQuerier(PairUncQuerier):
         H_current = - pair_probs * np.log(pair_probs) - (neg_probs) * np.log(neg_probs)
 
         # now approximate the future entropy -- if there were no uncertainty in f -- a la Houlsby 2011 BALD method.
+        # This looks like it may have some errors in compared to the Houlsby paper, but that only gives the
+        # value for classification, not preference learning, and contains approximations... so it might work out?
         C = np.sqrt(2 * np.pi * np.log(2) / 2.0)
         H_updated = (-np.log(0.5)) * C / np.sqrt(C**2 + pairwise_var) * np.exp(- (f-f.T)**2 / (2*(C*2 + pairwise_var)))
 
