@@ -11,8 +11,7 @@
 #SBATCH -n 1
 #SBATCH -c 24
 #SBATCH --mem=128G
-# #SBATCH --exclusive
-# #SBATCH -C avx
+#SBATCH --exclusive
 
 #  load required modules
 module load lang/python/anaconda/pytorch
