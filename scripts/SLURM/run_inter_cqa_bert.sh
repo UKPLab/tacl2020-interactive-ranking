@@ -6,8 +6,8 @@
 #SBATCH -J intcqa_bert_quick
 #SBATCH --mail-user=edwin.simpson@bristol.ac.uk
 #SBATCH --mail-type=FAIL
-#SBATCH -e /work/scratch/es14puve/intercqabert.err.%j
-#SBATCH -o /work/scratch/es14puve/intercqabert.out.%j
+#SBATCH -e /user/work/es1595/intercqabert.err.%j
+#SBATCH -o /user/work/es1595/intercqabert.out.%j
 #SBATCH -n 1
 #SBATCH -c 24
 #SBATCH --mem=128G
