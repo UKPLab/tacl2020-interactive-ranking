@@ -10,9 +10,9 @@
 #SBATCH -o /work/scratch/es14puve/intercqabert.out.%j
 #SBATCH -n 1
 #SBATCH -c 24
-#SBATCH --mem=128GB
-#SBATCH --exclusive
-#SBATCH -C avx
+#SBATCH --mem=128G
+# #SBATCH --exclusive
+# #SBATCH -C avx
 
 #  load required modules
 module load lang/python/anaconda/pytorch
