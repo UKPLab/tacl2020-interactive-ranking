@@ -10,14 +10,9 @@
 #SBATCH -o /work/scratch/es14puve/intercqabert.out.%j
 #SBATCH -n 1
 #SBATCH -c 24
-#SBATCH --mem-per-cpu=8192
+#SBATCH --mem=128GB
 #SBATCH --exclusive
 #SBATCH -C avx
-
-# request resources and set limits
-
-#PBS -l select=1:ncpus=24:mem=128GB:ompthreads=24
-# 'select' chooses number of nodes.
 
 #  load required modules
 module load lang/python/anaconda/pytorch
